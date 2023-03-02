@@ -55,12 +55,12 @@ Sum up your game idea in 2 sentences. A kind of elevator pitch. Keep it simple!
 ### **Gameplay**
 
 What should the gameplay be like? What is the goal of the game, and what kind of obstacles are in the way? What tactics should the player use to overcome them?
-- The goal of the game is for Toby, the protagonist, to make its way back to his family of pegasos. In order to do this he must navigate through five levels and defeat an enemy in each. The gameplay is a side-scrolling platformer, while navigating through each level, the player must collect items such as gold bars, fruit, weapons, powers, and shields to help him in his journey. As he transforms from a mule to a donkey, horse, unicorn, and finally a pegasus, Toby gains new abilities that help him overcome obstacles and defeat enemies. If Toby dies in his quest to obtain items before encountering his enemy, he will be sent to his enemy's dungeon where he will have to play a mini-game to escape, having only three opportunities. If he fails to win the mini-game, the game will restart and Toby will be sent back to square one. The player should also be strategic in their use of Toby's limited lives and resources to ensure they make it through all five levels and ultimately reunite Toby with his family.
+- The goal of the game is for Toby, the protagonist, to make its way back to his family of pegasus. In order to do this he must navigate through five levels and defeat an enemy in each. The gameplay is a side-scrolling platformer, while navigating through each level, the player must collect items such as gold bars, fruit, weapons, powers, and shields to help him in his journey. As he transforms from a mule to a donkey, horse, unicorn, and finally a pegasus, Toby gains new abilities that help him overcome obstacles and defeat enemies. If Toby dies in his quest to obtain items before encountering his enemy, he will be sent to his enemy's dungeon where he will have to play a mini-game to escape, having only three opportunities. If he fails to win the mini-game, the game will restart and Toby will be sent back to square one. The player should also be strategic in their use of Toby's limited lives and resources to ensure they make it through all five levels and ultimately reunite Toby with his family.
 
 ### **Mindset**
 
 What kind of mindset do you want to provoke in the player? Do you want them to feel powerful, or weak? Adventurous, or nervous? Hurried, or calm? How do you intend to provoke those emotions?
-- The mindset we want to create for the players is for them to have a sense of need to reunite Toby with his family. As they level up and unlock new features, we want them to feel like they are becoming stronger and more capable of overcoming challenges. As the player increases the level, we want to challenge him/her with tough enemies and obstacles that will require them to think carefully about their tactics and strategies. Overall, the goal is to create a gams that is engaging and immersive, that will make the player want to keep coming back for more.
+- The mindset we want to create for the players is for them to have a sense of need to reunite Toby with his family. As they level up and unlock new features, we want them to feel like they are becoming stronger and more capable of overcoming challenges. As the player increases the level, we want to challenge him/her with tough enemies and obstacles that will require them to think carefully about their tactics and strategies. Overall, the goal is to create a game that is engaging and immersive, that will make the player want to keep coming back for more. Always keeping the game balanced between the sense of achivement and the need to win challenges. 
 
 ## _Technical_
 
@@ -322,7 +322,7 @@ Creación de llaves primarias en la base de datos.
 Identificar qué datos se guardarán en la base (info personajes, info niveles, estructuras primitivas, gadgets)
 Crear el modelo de datos a partir de un diagrama entidad relación uml.(cada columna e información que guardar)
 
-Videogame
+**Videogame**
 
 Instalar unity de manera funcional en todos los equipos
 Creacion de sprites de los personajes principales en Unix
@@ -340,7 +340,7 @@ reutilizar un midi para cierta mecánica del juego.
 Crear mecánica de combate del personaje
 Creación de controles del juego
 
-WEB
+**WEB**
 Crear pantalla principal con login y que se conecte con la base de datos.
 embeber juego con pagina web
 Configurar el servidor que va a alojar la página web.
