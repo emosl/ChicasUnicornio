@@ -1,5 +1,13 @@
 # **Game Authors**
+Arantza Parra Martínez A01782013
+
+Emilia Salazar Leipen A01781931
+
 Lucía Barrenechea A01782021
+
+Maria Fernanda Cortés Lozano A01026613
+
+Maria Fernanda Osorio Arroyo A01026502
 
 # **Game Name Here**
 
