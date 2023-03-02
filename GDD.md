@@ -1,3 +1,6 @@
+# **Game Authors**
+Lucía Barrenechea A01782021
+
 # **Game Name Here**
 
 ## _Game Design Document_
@@ -117,6 +120,19 @@ _(Note : These sections can safely be skipped if they&#39;re not relevant, or yo
             1. Guards
             2. Giant rats
             3. Chests
+
+2. Rainbow sky
+    1. Mood
+        1. tricky, fun, fast
+    2. Objects
+        1. _Ambient_
+            1. 
+            2. 
+            3. 
+        2. _Interactive_
+            1. 
+            2. 
+            3. 
 
 _(example)_
 
@@ -294,3 +310,47 @@ _(define the main activities and the expected dates when they should be finished
 7. design music
 
 _(example)_
+
+# Requirements
+Requerimientos Funcionales (Críticos para el buen funcionamiento del sistema)
+
+Base De Datos
+
+Establecer prioridades para realizar el proyecto
+Creación de Base de datos
+Creación de llaves primarias en la base de datos.
+Identificar qué datos se guardarán en la base (info personajes, info niveles, estructuras primitivas, gadgets)
+Crear el modelo de datos a partir de un diagrama entidad relación uml.(cada columna e información que guardar)
+
+Videogame
+
+Instalar unity de manera funcional en todos los equipos
+Creacion de sprites de los personajes principales en Unix
+Definición de mecánicas del juego
+Creación de bocetos del videojuego (pantalla principal, dungeon, etc)
+Crear 4 sprite del jugador principal. Implica el monito en movimiento y su funcionalidad
+Determinar sprites reusables o modificables.
+Crear ambiente del juego a través de sprites usables. (buscarlos)
+Diseñar los NPC (non player characters).
+Crear la interacción entre los NPC
+Crear mecánica de movilidad.
+Inserción de sonidos de ambiente en el juego, (encontrarlo, asociarlo a acción)
+Crear un midy adecuado a cierta mecánica del juego
+reutilizar un midi para cierta mecánica del juego.
+Crear mecánica de combate del personaje
+Creación de controles del juego
+
+WEB
+Crear pantalla principal con login y que se conecte con la base de datos.
+embeber juego con pagina web
+Configurar el servidor que va a alojar la página web.
+Aprender a usar javascript, unity
+usar bootstrap para implementarlo en la página web y reducir el tiempo de diseño.
+
+Requerimientos No Funcionales
+Establecer colores y diseño
+Agregar manual de usuario
+Determinar fuente de texto
+Creación de un usuario
+Creación de cosas extras.
+Crear una tabla que guarde el log de todo lo sucedido en el juego
