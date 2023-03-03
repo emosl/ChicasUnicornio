@@ -52,20 +52,21 @@ Maria Fernanda Osorio Arroyo A01026502
 8. [Schedule](#schedule)
 
 ## _Game Design_
+Elevator pitch
+Toby is a pegasus that fell into the trap of an evil equine shapeshifter, one day he found a golden apple and decided to eat it. What he didn’t know was that this apple was part of the trap and it would make him fall from his magical pegasus world into the ordinary mule world. Join Toby on his quest to return to his family. 
+While on his quest Toby will face 5 different stages, the first being a mule. Navigating through the adventure he will have to collect valuable items, overcome obstacles, and play a strategic game in order to defeat the evil mule. If the player manages to win the battle, he will evolve into a donkey, starting a new quest with increased difficulty to defeat the evil donkey. This same gameplay will apply throughout each level, mule, donkey, horse, unicorn and pegasus, increasing the difficulty to overcome the obstacles, collect items and a need for strategy.  
 
----
+Genero del juego
+El género del juego es de aventura ya que el énfasis está en la narrativa en vez de elementos de acción. El jugador debe recolectar items, poderes especiales e interactuar con NPCs para avanzar en la historia.
+
 
 ### **Summary**
 
-Sum up your game idea in 2 sentences. A kind of elevator pitch. Keep it simple!
-- In this game, you play as Toby, a pegasus who fell for a trick and was transformed into a mule. To return to his family, Toby must fight through levels of different transformations, collect items, and defeat enemies using weapons and shields. The game has a single-player, sideways view, and features five levels of increasing difficulty.
+In this game, you play as Toby, a pegasus who fell for a trick and was transformed into a mule. To return to his family, Toby must fight through levels of different transformations, collect items, and defeat enemies using weapons and shields. The game has a single-player, sideways view, and features five levels of increasing difficulty.
 
 ### **Gameplay**
 
-What should the gameplay be like? What is the goal of the game, and what kind of obstacles are in the way? What tactics should the player use to overcome them?
-- The goal of the game is for Toby, the protagonist, to make its way back to his family of pegasus. In order to do this he must navigate through five levels and defeat an enemy in each. The gameplay is a side-scrolling platformer, while navigating through each level, the player must collect items such as gold bars, fruit, weapons, powers, and shields to help him in his journey. As he transforms from a mule to a donkey, a  horse, a unicorn, and finally a pegasus, Toby gains new abilities that help him overcome obstacles and defeat enemies. 
-
-- If Toby dies in his quest to obtain items before encountering his enemy, he will be sent to his enemy's dungeon where he will have to play a mini-game to escape, having only three opportunities. If he fails to win the mini-game, the game will restart and Toby will be sent back to square one. The player should also be strategic in their use of Toby's limited lives and resources to ensure they make it through all five levels and ultimately reunite Toby with his family.
+The goal of the game is for Toby, the protagonist, to make his way back to his family of pegasus; starting from a mule. In order to do this he must navigate through five different levels and defeat an enemy at the end of each. If he succeeds, he will evolve into a new character as he levels up. He must  transform from a mule to a donkey, to a horse, to a unicorn, and finally to a pegasus all while being chased by his enemies. While navigating through each level, the player must collect items such as gems, fruit and weapons, as well as overcome obstacles such as spikes, lava and pools of poison, in order to gather enough materials to eventually defeat the enemy. The player must create a strategy to succesfully use the items collected and the path taken to achieve the most points at the end of the level, in order to be ranked as a top pegasus. git 
 
 ### **Mindset**
 
