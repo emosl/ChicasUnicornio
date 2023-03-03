@@ -60,6 +60,41 @@ While on his quest Toby will face 5 different stages, the first being a mule. Na
 #### Genero del juego
 El género del juego es de aventura ya que el énfasis está en la narrativa en vez de elementos de acción. El jugador debe recolectar items, poderes especiales e interactuar con NPCs para avanzar en la historia.
 
+
+### **RPG Elements**
+The RPG elements that the game contains are the items that you must collect: food (apple, carrots), metals (gold and silver) and powers (speed and strength). Inside the dungeon you will find special items: chocolate cake, platinum and a life of gold (if the player is victorious in the dungeon and obtains this item, once he returns to the normal world he will have 20 seconds of immortality).
+Another RPG element is the NPCs, we plan to have two, a magic flower and…
+
+#### **Visual style of the game**
+The visual style of the video game will be pixel art. The graphics of the video game will be built with pixels since it is a very basic form and that allows, with relatively few resources, very striking art. It also produces a retro and nostalgic look. 
+
+**Video Game Sketches**
+- main character: 
+
+![Toby](/Toby.jpeg)
+
+- logo:
+![Logo](/Logo.png)
+
+- sketch of main game scene:
+![view](/gameView.jpeg)
+
+
+## **References**
+
+We have taken inspiration from different games, their functionalities and views.
+![FireWater](/Fireboy%20and%20Watergirl%201%20OG%20Image.png)
+
+This game is called *Fireboy and Watergirl in The Forest Temple*. From this game we have taken the different obstacles the user has to go through in order to reach the end of the level. 
+Functionalities such as incentives to go through the obstacles were also taken into account.
+
+![Pamplona](/extremepamplonac.avif)
+From the game called *Extreme pamplona*, we took the idea of the enemy following the principal character as he overcomes  the obstacles. If the enemy catches him, he needs to start over. In our game, the player will lose one of their 3 lives.
+
+![Donkey](/DonkeyKong_TA.webp)
+The game *Donkey Kong* inspired us for the type of visuals we wanted our game to have. Our characters, as the ones in donkey kong will be made with pixel art. 
+
+
 ### **Reglas y mecánicas básicas del juego**
 Se encuentran en la parte de Mechanics.
 
