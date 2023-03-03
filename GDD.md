@@ -60,6 +60,21 @@ While on his quest Toby will face 5 different stages, the first being a mule. Na
 #### Genero del juego
 El género del juego es de aventura ya que el énfasis está en la narrativa en vez de elementos de acción. El jugador debe recolectar items, poderes especiales e interactuar con NPCs para avanzar en la historia.
 
+### ** Reglas y mecánicas básicas del juego **
+Se encuentran en la parte de Mechanics.
+
+### ** Listado de estadísticas va a recopilar el juego dentro de la base de datos **
+Databases will partake in our video game development. Data such as lives lost, prizes recollected, levels overcome and user data will be not only useful but necessary. 
+ Creating and using a database will allow us to develop a fully functional system. This system must function using relative databases in order to avoid redundancy in the data or a superfluous amount of data that could be detrimental to the main functions of the database. 
+
+In the game we will receive information that it is essential for the game to work. Since the outcome of our game is based on the accumulation of points, it is necessary to create a database that contains the points accumulated as well as important information. Some of the statistics that will be saved throughout the game are the following:
+1. Player information.
+2. Quantity and quality of the items collected throughout the game by the user.
+3. The location of the player in the game.
+4. Game history of the player.
+5. Points accumulated by the player in each level and throughout the game.
+6. The rules of the game: how to lose a life, how to earn points, etc.
+
 
 ### **Summary**
 
@@ -68,11 +83,13 @@ In this game, you play as Toby, a pegasus who fell for a trick and was transform
 ### **Gameplay**
 
 The goal of the game is for Toby, the protagonist, to make his way back to his family of pegasus; starting from a mule. In order to do this he must navigate through five different levels and defeat an enemy at the end of each. If he succeeds, he will evolve into a new character as he levels up. He must  transform from a mule to a donkey, to a horse, to a unicorn, and finally to a pegasus all while being chased by his enemies. While navigating through each level, the player must collect items such as gems, fruit and weapons, as well as overcome obstacles such as spikes, lava and pools of poison, in order to gather enough materials to eventually defeat the enemy. The player must create a strategy to succesfully use the items collected and the path taken to achieve the most points at the end of the level, in order to be ranked as a top pegasus. 
+
+
  
 ### **Mindset**
 
 What kind of mindset do you want to provoke in the player? Do you want them to feel powerful, or weak? Adventurous, or nervous? Hurried, or calm? How do you intend to provoke those emotions?
-- The mindset we want to create for the players is for them to have a sense of need to reunite Toby with his family. As they level up and unlock new features, we want them to feel like they are becoming stronger and more capable of overcoming challenges. As the player increases the level, we want to challenge them with tough enemies and obstacles that will require them to think carefully about their tactics and strategies. Overall, the goal is to create a game that is engaging and immersive, that will make the player want to keep coming back for more. Always keeping the game balanced between the sense of achivement and the need to win challenges. 
+- The mindset we want to create for the players is for them to have a sense of need to reunite Toby with his family. As they level up and unlock new features, we want them to feel like they are becoming stronger and more capable of overcoming challenges. As the player increases the level, we want to challenge them with tough enemies and obstacles that will require them to think carefully about their tactics and strategies. We also want them to feel rushed and excited while navigating each level. To evoke these emotions, we have the enemy following them around while they try to pass each level.  Overall, the goal is to create a game that is engaging and immersive, that will make the player want to keep coming back for more. Always keeping the game balanced between the sense of achievement and the need to win challenges.
 
 ## _Technical_
 
