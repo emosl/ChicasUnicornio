@@ -160,6 +160,7 @@ In the dungeon better gadgets will exist. Inside the dungeon, Toby will be chase
 
 How to lose a life
 It is important that the player understands that they have 3 lives through each level. if they lose all 3, they will start from the beginning with nothing.
+
 There are 4 possibilities for the player to lose a life in the game. These are the following:
 1. If you touch a killer sprite you will die. The player will reappear next to the killer sprite with one less life but with his gadgets intact.
 2. If you get caught inside the dungeon, you will lose a life and you will lose all of the gadgets collected. The player will reappear next to the dungeon.
