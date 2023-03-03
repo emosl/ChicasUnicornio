@@ -60,10 +60,10 @@ While on his quest Toby will face 5 different stages, the first being a mule. Na
 #### Genero del juego
 El género del juego es de aventura ya que el énfasis está en la narrativa en vez de elementos de acción. El jugador debe recolectar items, poderes especiales e interactuar con NPCs para avanzar en la historia.
 
-### ** Reglas y mecánicas básicas del juego **
+### **Reglas y mecánicas básicas del juego**
 Se encuentran en la parte de Mechanics.
 
-### ** Listado de estadísticas va a recopilar el juego dentro de la base de datos **
+### **Listado de estadísticas va a recopilar el juego dentro de la base de datos**
 Databases will partake in our video game development. Data such as lives lost, prizes recollected, levels overcome and user data will be not only useful but necessary. 
  Creating and using a database will allow us to develop a fully functional system. This system must function using relative databases in order to avoid redundancy in the data or a superfluous amount of data that could be detrimental to the main functions of the database. 
 
