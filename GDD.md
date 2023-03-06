@@ -7,7 +7,7 @@ Lucía Barrenechea A01782021
 
 Maria Fernanda Cortés Lozano A01026613
 
-Mariana Fernanda Osorio Arroyo A01026502
+Maria Fernanda Osorio Arroyo A01026502
 
 # **Toby's Quest for Wings**
 
