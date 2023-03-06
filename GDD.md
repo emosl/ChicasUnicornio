@@ -90,6 +90,7 @@ Functionalities such as incentives to go through the obstacles were also taken i
 
 ![Pamplona](/extremepamplonac.avif)
 From the game called *Extreme pamplona*, we took the idea of the enemy following the principal character as he overcomes  the obstacles. If the enemy catches him, he needs to start over. In our game, the player will lose one of their 3 lives.
+The point of having the villan chase you, is that there is only one power that you can have to beat the other ( apart from the rest of the items) thus you will nedd / want to reach it first!
 
 ![Donkey](/DonkeyKong_TA.webp)
 The game *Donkey Kong* inspired us for the type of visuals we wanted our game to have. Our characters, as the ones in donkey kong will be made with pixel art. 
