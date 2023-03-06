@@ -3,7 +3,7 @@ Arantza Parra Martínez A01782013
 
 Emilia Salazar Leipen A01781931
 
-Lucía  A01782021
+Lucía Barrenechea A01782021
 
 Maria Fernanda Cortés Lozano A01026613
 
