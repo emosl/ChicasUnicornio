@@ -182,6 +182,7 @@ It is important that the player understands that they have 3 lives through each 
 The final battle is the most important aspect of the game. Here, Toby will confront his enemy in an epic battle. He will have to put to use all of the gadgets that he collected along the level as well as his strategies. Toby will have to create gadget combinations that will uncover the enemies weakness. The player will have hints of the enemies weakness in the level.
 
 
+
 ## _Level Design_
 
 ---
