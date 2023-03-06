@@ -9,7 +9,7 @@ Maria Fernanda Cortés Lozano A01026613
 
 Maria Fernanda Osorio Arroyo A01026502
 
-# **Toby's Quest for Wings**
+# **Wings of Glory: The pegasus chronicles** 
 
 ## _Game Design Document_
 
