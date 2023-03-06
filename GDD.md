@@ -408,7 +408,7 @@ _(example)_
 # Requirements
 Requerimientos Funcionales (Críticos para el buen funcionamiento del sistema)
 
-**Base De Datos**
+**Base De Datos
 
 Establecer prioridades para realizar el proyecto
 Creación de Base de datos
