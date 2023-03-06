@@ -210,7 +210,7 @@ While playing the game, the player will be ranked on a point basis, each battle 
 The main objective of the game is for Toby to eventually reach his family. To do this he must travel through 5 different worlds (levels). At the end of each level Toby will have to fight his enemy. To do this he will have to use the gadgets collected throughout the level. Toby's enemy will be chasing the player throughout the game ensuring that the player feels pressured to move along and finish the course. The player will have 3 lives throughout each level. If the player loses them all it’s game over.
 
 The Gadgets
-To have a greater chance, as Toby goes  through the course he will collect different gadgets that will make him stronger. In order to get the best gadgets, the player will have the choice to access “the dungeon”. 
+To have a greater chance, as Toby goes  through the course he will collect different gadgets that will make him stronger in the final battle. Some gadgets will be used throughout the game since they will help Toby collect even better gadgets. In order to get the best gadgets, the player will have the choice to access “the dungeon”. 
 
 Killer Sprites
 As Toby traverses through each level he will face threats such as spikes, acid pool and lava pool. If the player touches any of these, he will die. He will reappear next to the killer sprite with his gadgets intact but with one less life.
@@ -220,6 +220,10 @@ In the dungeon better gadgets will exist. Inside the dungeon, Toby will be chase
 
 How to lose a life
 It is important that the player understands that they have 3 lives through each level. if they lose all 3, they will start from the beginning with nothing.
+
+The Final Battle
+The final battle is the most important aspect of the game. Here, Toby will confront his enemy in an epic battle. He will have to put to use all of the gadgets that he collected along the level as well as his strategies. Toby will have to create gadget combinations that will uncover the enemies weakness. The player will have hints of the enemies weakness in the level.
+
 
 There are 4 possibilities for the player to lose a life in the game. These are the following:
 1. If you touch a killer sprite you will die. The player will reappear next to the killer sprite with one less life but with his gadgets intact.
