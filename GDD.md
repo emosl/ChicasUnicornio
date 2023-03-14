@@ -304,35 +304,31 @@ Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), a
 ### **Graphics Needed**
 
 1. Characters
-    1. Human-like
-        1. Goblin (idle, walking, throwing)
-        2. Guard (idle, walking, stabbing)
-        3. Prisoner (walking, running)
+    1. Animal-like
+        1. Toby (walking, jumping, dead, hitting)
+        2. Enemy (walking, jumping, dead, hitting)
+        3. Owl (talking, jumping)
     2. Other
-        1. Wolf (idle, walking, running)
-        2. Giant Rat (idle, scurrying)
+        1. flower (right incline, left incline.)
 2. Blocks
-    1. Dirt
-    2. Dirt/Grass
-    3. Stone Block
-    4. Stone Bricks
-    5. Tiled Floor
-    6. Weathered Stone Block
-    7. Weathered Stone Bricks
+    1. Dirt/Grass
+    2. Stone Block
+    3. Stone Blocks with plants
+    5. Black hole (purple)
 3. Ambient
-    1. Tall Grass
-    2. Rodent (idle, scurrying)
-    3. Torch
-    4. Armored Suit
-    5. Chains (matching Weathered Stone Bricks)
-    6. Blood stains (matching Weathered Stone Bricks)
-4. Other
-    1. Chest
-    2. Door (matching Stone Bricks)
-    3. Gate
-    4. Button (matching Weathered Stone Bricks)
-
-_(example)_
+    1. Lava pool
+    2. Acid pool
+    3. Deadly spikes
+4. Collectable Gadgets
+    1. Carrot
+    2. Apple
+    3. Cookie
+    4. Gold
+    5. Silver
+    6. Bronze
+    7. Box glove
+    8. Horse shoe
+    9. Wings
 
 
 ## _Sounds/Music_
