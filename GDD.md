@@ -134,7 +134,6 @@ At the final step of the game, Toby will have to confront his enemy. He will be 
 ---
 
 ### **Screens**
-
 1. Title Screen
     1. Options
 2. Level Select
@@ -145,19 +144,15 @@ At the final step of the game, Toby will have to confront his enemy. He will be 
 
 _(example)_
 
-### **Controls**
 
-How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
-- The player will interact with the game using standard platformer controls, such as moving left and right, jumping, tapping, and attacking. In-game events can be triggered by the player through various actions such as attacking enemies, collecting items, and reaching specific points in the level. Additionally, the player may have to solve puzzles to progress through the game, which would require interacting with the environment and manipulating objects in various ways.
-
-### **Mechanics**
-
-Are there any interesting mechanics? If so, how are you going to accomplish them? Physics, algorithms, etc.
-- 
+## **Mechanics**
 While playing the game, the player will be ranked on a point basis, each battle winned will increase their points as well as each life lost and the way it was lost will decrease points. When reaching the final stage of the quest and becoming the pegasus, Toby will evolve into one of the five ranks of pegasus, depending the points accumulated by the player, making the game scalable and leaving the player with the need to keep playing and changing their strategy each time in order to play a perfect game and become the Supreme Pegasus. 
 The main objective of the game is for Toby to eventually reach his family. To do this he must travel through 5 different worlds (levels). At the end of each level Toby will have to fight his enemy. To do this he will have to use the gadgets collected throughout the level. Toby's enemy will be chasing the player throughout the game ensuring that the player feels pressured to move along and finish the course. The player will have 3 lives throughout each level. If the player loses them all it’s game over.
 
-### The Gadgets
+### **Controls**
+- The player will interact with the game using standard platformer controls, such as moving left and right, jumping, tapping, and attacking. In-game events can be triggered by the player through various actions such as attacking enemies, collecting items, and reaching specific points in the level. Additionally, the player may have to solve puzzles to progress through the game, which would require interacting with the environment and manipulating objects in various ways.
+
+### **The Gadgets**
 To have a greater chance, as Toby goes  through the course he will collect different gadgets that will make him stronger in the final battle. Some gadgets will be used throughout the game since they will help Toby collect even better gadgets. In order to get the best gadgets, the player will have the choice to access “the dungeon”. 
 
 Gadget|Pros|Cons
@@ -172,13 +167,13 @@ Box Gloves||
 Horse Shoe||
 
 
-### Killer Sprites
+### **Killer Sprites**
 As Toby traverses through each level he will face threats such as spikes, acid pool and lava pool. If the player touches any of these, he will die. He will reappear next to the killer sprite with his gadgets intact but with one less life.
 
-### The Dungeon
+### **The Dungeon**
 In the dungeon better gadgets will exist. Inside the dungeon, Toby will be chased by smaller enemies in a maze setting. If he is caught, he will lose his life. There is one thing that the player must take into consideration, if he loses a life inside the dungeon, he will also lose all of the gadgets he has collected. Each dungeon can only be accessed once by the player.
 
-### How to Lose a Life
+### **How to Lose a Life**
 It is important that the player understands that they have 3 lives through each level. if they lose all 3, they will start from the beginning with nothing.
     There are 4 possibilities for the player to lose a life in the game. These are the following:
 1. If you touch a killer sprite you will die. The player will reappear next to the killer sprite with one less life but with his gadgets intact.
@@ -186,9 +181,9 @@ It is important that the player understands that they have 3 lives through each 
 3. If you get caught by Toby’s enemy at any point throughout the game you will lose a life and you will appear at the beginning of the obstacle course with your gadgets intact.
 4. If you don’t have the necessary gadgets to beat Toby's enemy at the final stage of the game, you will lose a life and the gadgets you used trying to win. If you have extra lives and extra gadgets, you can fight once again.   
 
-### The Final Battle
+### **The Final Battle**
 The final battle is the most important aspect of the game. Here, Toby will confront his enemy in an epic battle. He will have to put to use all of the gadgets that he collected along the level as well as his strategies. Toby will have to create gadget combinations that will uncover the enemies weakness. The player will have to strategize the best way to defeat the enemy. The player will have hints of the enemies weakness in the level. Whoever loses his life first, either Toby or the enemy, will loose the battle.
-#### How will the battle work?
+#### **How will the battle work?**
 The fight will work the following way:
 1. The fight will work with turns. Toby will attack first and later the enemy.
 2. Toby's attack: The player will use the gadgets collected as well as his strategy to combat the enemey. The player must use the enemies weaknesses against him. After the player chooses his attack, he will have a time limit to build up his energy. He will have to press on the spacebar. The greater the presses, the greater the energy. Toby will punch the enemy. His atack will lower the enemies life.
