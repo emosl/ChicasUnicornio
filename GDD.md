@@ -57,7 +57,7 @@ Toby is a pegasus that fell into the trap of an evil equine shapeshifter, one da
  
 While on his quest Toby will face 5 different stages, the first being a mule. Navigating through the adventure he will have to collect valuable items, overcome obstacles, and play a strategic game in order to defeat the evil mule. If the player manages to win the battle, he will evolve into a donkey, starting a new quest with increased difficulty to defeat the evil donkey. This same gameplay will apply throughout each level, mule, donkey, horse, unicorn and pegasus, increasing the difficulty to overcome the obstacles, collect items and a need for strategy.  
 
-#### Genero del juego
+### **Genero del juego**
 El género del juego es de aventura ya que el énfasis está en la narrativa en vez de elementos de acción. El jugador debe recolectar items, poderes especiales e interactuar con NPCs para avanzar en la historia.
 
 
@@ -65,7 +65,7 @@ El género del juego es de aventura ya que el énfasis está en la narrativa en 
 The RPG elements that the game contains are the items that you must collect: food (apple, carrots), metals (gold and silver) and powers (speed and strength). Inside the dungeon you will find special items: chocolate cake, platinum and a life of gold (if the player is victorious in the dungeon and obtains this item, once he returns to the normal world he will have 20 seconds of immortality).
 Another RPG element is the NPCs, we plan to have two, a magic flower and…
 
-#### **Visual style of the game**
+### **Visual style of the game**
 The visual style of the video game will be pixel art. The graphics of the video game will be built with pixels since it is a very basic form and that allows, with relatively few resources, very striking art. It also produces a retro and nostalgic look. 
 
 **Video Game Sketches**
@@ -124,13 +124,9 @@ In this game, you play as Toby, a pegasus who fell for a trick and was transform
 The items play a crucial role in the game since the combination of said items can improve the possibilities for the player to defeat the enemy. If the player is not strategic with the combination he made, he will lose the fight against the enemy.  
 Another factor that the player should be cautious about is the pace they keep while going through the level because they will always have an enemy on their backs. If the enemy catches up with them, they lose a life. 
 At the final step of the game, Toby will have to confront his enemy. He will be faced with a fight that he can only win if he collected enough valuable gadgets. In order for Toby to win the fight he must be strong enough.to achieve this he must collect points throughout the level. 
-
-
-
  
 ### **Mindset**
 
-What kind of mindset do you want to provoke in the player? Do you want them to feel powerful, or weak? Adventurous, or nervous? Hurried, or calm? How do you intend to provoke those emotions?
 - The mindset we want to create for the players is for them to have a sense of need to reunite Toby with his family. As they level up and unlock new features, we want them to feel like they are becoming stronger and more capable of overcoming challenges. As the player increases the level, we want to challenge them with tough enemies and obstacles that will require them to think carefully about their tactics and strategies. We also want them to feel rushed and excited while navigating each level. To evoke these emotions, we have the enemy following them around while they try to pass each level.  Overall, the goal is to create a game that is engaging and immersive, that will make the player want to keep coming back for more. Always keeping the game balanced between the sense of achievement and the need to win challenges.
 
 ## _Technical_
@@ -164,6 +160,18 @@ The main objective of the game is for Toby to eventually reach his family. To do
 ### The Gadgets
 To have a greater chance, as Toby goes  through the course he will collect different gadgets that will make him stronger in the final battle. Some gadgets will be used throughout the game since they will help Toby collect even better gadgets. In order to get the best gadgets, the player will have the choice to access “the dungeon”. 
 
+Gadget|Pros|Cons
+ -|-|-
+Gold|Creates stronger punches|  Increases character weight
+||Can help cross lava| 
+Silver||
+Wings|Gives flying ability|  Can only be found in dungeon
+Carrot|Gives energy| 
+Cookie||
+Box Gloves||
+Horse Shoe||
+
+
 ### Killer Sprites
 As Toby traverses through each level he will face threats such as spikes, acid pool and lava pool. If the player touches any of these, he will die. He will reappear next to the killer sprite with his gadgets intact but with one less life.
 
@@ -192,8 +200,13 @@ The fight will work the following way:
 ## _Level Design_
 
 ---
+### Level Details
+#### Level 1
+Characters|Details
+ -|-
 
-_(Note : These sections can safely be skipped if they&#39;re not relevant, or you&#39;d rather go about it another way. For most games, at least one of them should be useful. But I&#39;ll understand if you don&#39;t want to use them. It&#39;ll only hurt my feelings a little bit.)_
+
+
 
 ### **Themes**
 
@@ -321,7 +334,7 @@ Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), a
     3. Deadly spikes
 4. Collectable Gadgets
     1. Carrot
-    2. Apple
+    2. Armor
     3. Cookie
     4. Gold
     5. Silver
