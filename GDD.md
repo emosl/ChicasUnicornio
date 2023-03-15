@@ -69,9 +69,25 @@ Another RPG element is the NPCs, we plan to have two, a magic flower and…
 The visual style of the video game will be pixel art. The graphics of the video game will be built with pixels since it is a very basic form and that allows, with relatively few resources, very striking art. It also produces a retro and nostalgic look. 
 
 **Video Game Sketches**
-- main character: 
+
+### Main characters: 
+#### *Toby*
+
 
 ![Toby](./img/Toby.jpeg)
+
+Toby's Pallette
+![Tobypallette](./img/Toby_pallette.png)
+
+#### *Enemy*
+
+
+![Toby](./img/Toby.jpeg)
+
+Enemies's Pallette
+![Enemypallette](./img/Enemy_pallette.png)
+
+
 
 - logo:
 ![Logo](./img/Logo.png)
