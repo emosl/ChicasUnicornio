@@ -83,16 +83,16 @@ The visual style of the video game will be pixel art. The graphics of the video 
 ## **References**
 
 We have taken inspiration from different games, their functionalities and views.
-![FireWater](/Fireboy%20and%20Watergirl%201%20OG%20Image.png)
+![FireWater](../img/Fireboy%20and%20Watergirl%201%20OG%20Image.png)
 
 This game is called *Fireboy and Watergirl in The Forest Temple*. From this game we have taken the different obstacles the user has to go through in order to reach the end of the level. 
 Functionalities such as incentives to go through the obstacles were also taken into account.
 
-![Pamplona](/extremepamplonac.avif)
+![Pamplona](../img/extremepamplonac.avif)
 From the game called *Extreme pamplona*, we took the idea of the enemy following the principal character as he overcomes  the obstacles. If the enemy catches him, he needs to start over. In our game, the player will lose one of their 3 lives.
 The point of having the villan chase you, is that there is only one power that you can have to beat the other ( apart from the rest of the items) thus you will nedd / want to reach it first!
 
-![Donkey](/DonkeyKong_TA.webp)
+![Donkey](../img/DonkeyKong_TA.webp)
 The game *Donkey Kong* inspired us for the type of visuals we wanted our game to have. Our characters, as the ones in donkey kong will be made with pixel art. 
 
 
