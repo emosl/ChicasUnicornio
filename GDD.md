@@ -153,6 +153,64 @@ At the final step of the game, Toby will have to confront his enemy. He will be 
 ## _Technical_
 ### How will point accumulation work?
 <!-- Emo aqui escribe la matematica de la puntuación -->
+## Food
+|       | Strength | Agility | Shield | Speed |
+|-------|----------|---------|--------|-------|
+| Carrot| (-2,2)   | (7,8)   | (-7,-8)| (-2,2)|
+| Cake  | (-2,2)   | (3,4)   | (-3,-4)| (-2,2)|
+| Apple | (-2,2)   | (5,6)   | (-5,-6)| (-2,2)|
+
+## Horse Shoe
+|          | Strength | Agility | Shield | Speed |
+|----------|----------|---------|--------|-------|
+| Spike Shoe| (7,8)    | (-7,-8) | (-2,2) | (-2,2)|
+| Fire Shoe | (5,6)    | (-5,-6) | (-2,2) | (-2,2)|
+| Fire Shoe | (3,4)    | (-3,-4) | (-2,2) | (-2,2)|
+
+
+## Armor
+|      | Strength | Agility | Shield | Speed   |
+|------|----------|---------|--------|---------|
+| Gold | (2,-2)   | (-2,2)  | (7,8)  | (-7,-8) |
+| Silver| (2,-2)   | (-2,2)  | (5,6)  | (-5,-6) |
+| Bronze| (2,-2)   | (-2,2)  | (3,4)  | (-3,-4) |
+
+
+##  Headset
+|       | Strength | Agility | Shield | Speed   |
+|-------|----------|---------|--------|---------|
+| Crown | (-7,-8)  | (-2,2)  | (-2,2) | (7,8)   |
+| Hat   | (-5,-6)  | (-2,2)  | (-2,2) | (5,6)   |
+| Hairband|(-3,-4)  | (-2,2)  | (-2,2) | (3,4)   |
+
+## Obstacles
+| Items     | Ability Needed | Consequence                                            |
+|-----------|----------------|--------------------------------------------------------|
+| Bomb      | Shield: 5-9    | The item with the most amount of shield value is taken |
+| Pool      | Speed: 5-9     | The item with the most amount of speed value is taken  |
+| Iceicles  | Agility: 5-9   | The item with the most amount of agility value is taken|
+| Rock      | Strength: 5-9  | The item with the most amount of strength value is taken|
+
+
+## Evil Player 
+
+| Evil Equines Stats | Strengths       | Weaknesses        | Intermediate |
+|--------------------|----------------|-------------------|--------------|
+|                    | 0 - 2          | 0 - -2            | 0            |
+| Evil Mule          | Speed          | Shield Agility    | Strength     |
+|                    |                |                   |              |
+|                    | 3 - 4          | -3 - -4           | -2 - 2       |
+| Evil Donkey        | Strength       | Agility           | Speed Shield |
+|                    |                |                   |              |
+|                    | 5 - 6          | -5 - -6           | -4 - 4       |
+| Evil Horse         | Shield Agility | Strength          | Speed        |
+|                    |                |                   |              |
+|                    | 7 - 8          | -7 - -8           | -6 - 6       |
+| Evil Unicorn       | Agility Strength | Speed          | Shield       |
+|                    |                |                   |              |
+|                    | 9 - 10         | -9 - -10          | -8 - 8       |
+| Evil Pegasus       | Speed Strength | Agility           | Shield       |
+
 
 
 ---
