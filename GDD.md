@@ -50,10 +50,16 @@ Maria Fernanda Osorio Arroyo A01026502
     2. [Sounds Needed](#sounds-needed)
     3. [Music Needed](#music-needed)
 8. [Schedule](#schedule)
+<style>
+    .content {
+        text-align: justify;
+    }
+</style>
+<div class="content">
 
 ## _Game Design_
 #### **Elevator pitch**
-Toby is a pegasus that fell into the trap of an evil equine shapeshifter, one day he found a golden apple and decided to eat it. What he didn’t know was that this apple was part of the trap and it would make him fall from his magical pegasus world into the ordinary mule world. Join Toby on his quest to return to his family.
+Toby is a pegasus that fell into the trap of an evil equine shapeshifter, one day he found a golden apple and decided to eat it. What he didn’t know was that this apple was part of the trap and it would make him fall from his magical pegasus world into the ordinary mule world. Join Toby on his quest to return to his family.</
  
 While on his quest Toby will face 5 different stages, the first being a mule. Navigating through the adventure he will have to collect valuable items, overcome obstacles, and play a strategic game in order to defeat the evil mule. If the player manages to win the battle, he will evolve into a donkey, starting a new quest with increased difficulty to defeat the evil donkey. This same gameplay will apply throughout each level, mule, donkey, horse, unicorn and pegasus, increasing the difficulty to overcome the obstacles, collect items and a need for strategy.  
 
@@ -542,4 +548,4 @@ _(define the main activities and the expected dates when they should be finished
 10. Test-run finished videogame.
 
 
-
+</div>
