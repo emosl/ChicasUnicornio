@@ -65,54 +65,6 @@ The game  genre is RPG which means it is a role playing game. The player will ha
 ### **RPG Elements**
 At the beginning of the game the player will have the choice to choose their armor. Each armor will give the player different abilities and weaknesses which will determine the way the player plays the game. The gadgets will give extra abilities and will increase or decrease the initial abilities given to the player. Inside the game the player will find a non-player character called “flower”. The flower will explain certain aspects of the game and it will hint the weaknesses of the enemy to the player. The game will also have an owl that will lead Toby throughout the game. The player will now have to create a strategy that will lead to his victory. 
 
-
-### **Visual style of the game**
-The visual style of the video game will be pixel art. The graphics of the video game will be built with pixels since it is a very basic form and that allows, with relatively few resources, very striking art. It also produces a retro and nostalgic look. 
-
-**Video Game Sketches**
-
-### Main characters: 
-#### *Toby*
-
-
-![Toby](./img/Toby.jpeg)
-
-Toby's Pallette
-![Tobypallette](./img/Toby_pallette.png)
-
-#### *Enemy*
-
-
-![Toby](./img/Toby.jpeg)
-
-Enemies's Pallette
-![Enemypallette](./img/Enemy_pallette.png)
-
-
-
-- logo:
-![Logo](./img/Logo.png)
-
-- sketch of main game scene:
-![view](./img/gameView.jpeg)
-
-
-## **References**
-
-We have taken inspiration from different games, their functionalities and views.
-![FireWater](./img/Fireboy%20and%20Watergirl%201%20OG%20Image.png)
-
-This game is called *Fireboy and Watergirl in The Forest Temple*. From this game we have taken the different obstacles the user has to go through in order to reach the end of the level. 
-Functionalities such as incentives to go through the obstacles were also taken into account.
-
-<!-- ![Pamplona](./img/extremepamplonac.avif)
-From the game called *Extreme pamplona*, we took the idea of the enemy following the principal character as he overcomes  the obstacles. If the enemy catches him, he needs to start over. In our game, the player will lose one of their 3 lives.
-The point of having the villan chase you, is that there is only one power that you can have to beat the other ( apart from the rest of the items) thus you will nedd / want to reach it first! -->
-
-![Donkey](./img/DonkeyKong_TA.webp)
-The game *Donkey Kong* inspired us for the type of visuals we wanted our game to have. Our characters, as the ones in donkey kong will be made with pixel art. 
-
-
 ### **Reglas y mecánicas básicas del juego**
 Se encuentran en la parte de Mechanics.
 
@@ -325,26 +277,26 @@ Characters|Details
 #### Level 2
 Characters|Details
  -|-
-  Toby Donkey| Toby will be in the form of a mule during the level.
-  Enemy Donkey| The enemy will be in the form of a mule. His main weakness will be  based around Shield and his strength will be stregth.
+  Toby Donkey| Toby will be in the form of a donkey during the level.
+  Enemy Donkey| The enemy will be in the form of a donkey. His main weakness will be  based around agility and his strength will be speed.
 
 #### Level 3
 Characters|Details
  -|-
-  Toby Horse| Toby will be in the form of a mule during the level.
-  Enemy Horse| The enemy will be in the form of a mule. His main weakness will be  based around Shield and his strength will be stregth.
+  Toby Horse| Toby will be in the form of a horse during the level.
+  Enemy Horse| The enemy will be in the form of a horse. His main weakness will be  based around strength and his strength will be shield.
 
 #### Level 4
 Characters|Details
  -|-
-  Toby Unicorn| Toby will be in the form of a mule during the level.
-  Enemy Unicorn| The enemy will be in the form of a mule. His main weakness will be  based around Shield and his strength will be stregth.
+  Toby Unicorn| Toby will be in the form of a unicorn during the level.
+  Enemy Unicorn| The enemy will be in the form of a unicorn. His main weakness will be  based around speed and his strength will be agility.
 
 #### Level 5
 Characters|Details
  -|-
-  Toby Mule| Toby will be in the form of a mule during the level.
-  Enemy Mule| The enemy will be in the form of a mule. His main weakness will be  based around Shield and his strength will be stregth.
+  Toby Pegasus| Toby will be in the form of a pegasus during the level.
+  Enemy Pegasus| The enemy will be in the form of a pegasus. His main weakness will be  based around agility and his strength will be speed.
 
 ### **Themes**
 
@@ -405,7 +357,7 @@ Characters|Details
 
 ### **Game Flow**
 
-1. Player starts in forest
+1. Player starts in prarie
 2. Pond to the left, must move right
 3. To the right is a hill, player jumps to traverse it (&quot;jump&quot; taught)
 4. Player encounters castle - door&#39;s shut and locked
@@ -460,12 +412,53 @@ _(example)_
 ---
 
 ### **Style Attributes**
+### **Visual style of the game**
+The visual style of the video game will be pixel art. The graphics of the video game will be built with pixels since it is a very basic form and that allows, with relatively few resources, very striking art. It also produces a retro and nostalgic look. 
+
+**Video Game Sketches**
+
+### Main characters: 
+#### *Toby*
+
+
+![Toby](./img/Toby.jpeg)
+
+Toby's Pallette
+![Tobypallette](./img/Toby_pallette.png)
+
+#### *Enemy*
+
+
+![Toby](./img/Toby.jpeg)
+
+Enemies's Pallette
+![Enemypallette](./img/Enemy_pallette.png)
+
+
+
+- logo:
+![Logo](./img/Logo.png)
+
+- sketch of main game scene:
+![view](./img/gameView.jpeg)
+
+
+## **References**
+
+We have taken inspiration from different games, their functionalities and views.
+![FireWater](./img/Fireboy%20and%20Watergirl%201%20OG%20Image.png)
+
+This game is called *Fireboy and Watergirl in The Forest Temple*. From this game we have taken the different obstacles the user has to go through in order to reach the end of the level. 
+Functionalities such as incentives to go through the obstacles were also taken into account.
+
+<!-- ![Pamplona](./img/extremepamplonac.avif)
+From the game called *Extreme pamplona*, we took the idea of the enemy following the principal character as he overcomes  the obstacles. If the enemy catches him, he needs to start over. In our game, the player will lose one of their 3 lives.
+The point of having the villan chase you, is that there is only one power that you can have to beat the other ( apart from the rest of the items) thus you will nedd / want to reach it first! -->
+
+![Donkey](./img/DonkeyKong_TA.webp)
+The game *Donkey Kong* inspired us for the type of visuals we wanted our game to have. Our characters, as the ones in donkey kong will be made with pixel art. 
 
 What kinds of colors will you be using? Do you have a limited palette to work with? A post-processed HSV map/image? Consistency is key for immersion.
-
-What kind of graphic style are you going for? Cartoony? Pixel-y? Cute? How, specifically? Solid, thick outlines with flat hues? Non-black outlines with limited tints/shades? Emphasize smooth curvatures over sharp angles? Describe a set of general rules depicting your style here.
-
-Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), are great for teaching the player how to play through trial and error, instead of scripting a lengthy tutorial. What kind of visual feedback are you going to use to let the player know they&#39;re interacting with something? That they \*can\* interact with something?
 
 ### **Graphics Needed**
 
@@ -574,48 +567,5 @@ _(define the main activities and the expected dates when they should be finished
 6. design sounds
 7. design music
 
-_(example)_
 
-# Requirements
-Requerimientos Funcionales (Críticos para el buen funcionamiento del sistema)
 
-**Base De Datos
-
-Establecer prioridades para realizar el proyecto
-Creación de Base de datos
-Creación de llaves primarias en la base de datos.
-Identificar qué datos se guardarán en la base (info personajes, info niveles, estructuras primitivas, gadgets)
-Crear el modelo de datos a partir de un diagrama entidad relación uml.(cada columna e información que guardar)
-
-**Videogame**
-
-Instalar unity de manera funcional en todos los equipos
-Creacion de sprites de los personajes principales en Unix
-Definición de mecánicas del juego
-Creación de bocetos del videojuego (pantalla principal, dungeon, etc)
-Crear 4 sprite del jugador principal. Implica el monito en movimiento y su funcionalidad
-Determinar sprites reusables o modificables.
-Crear ambiente del juego a través de sprites usables. (buscarlos)
-Diseñar los NPC (non player characters).
-Crear la interacción entre los NPC
-Crear mecánica de movilidad.
-Inserción de sonidos de ambiente en el juego, (encontrarlo, asociarlo a acción)
-Crear un midy adecuado a cierta mecánica del juego
-reutilizar un midi para cierta mecánica del juego.
-Crear mecánica de combate del personaje
-Creación de controles del juego
-
-**WEB**
-Crear pantalla principal con login y que se conecte con la base de datos.
-embeber juego con pagina web
-Configurar el servidor que va a alojar la página web.
-Aprender a usar javascript, unity
-usar bootstrap para implementarlo en la página web y reducir el tiempo de diseño.
-
-Requerimientos No Funcionales
-Establecer colores y diseño
-Agregar manual de usuario
-Determinar fuente de texto
-Creación de un usuario
-Creación de cosas extras.
-Crear una tabla que guarde el log de todo lo sucedido en el juego
