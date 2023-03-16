@@ -374,35 +374,31 @@ _(example)_
     1. BasePlayer
     2. BaseEnemy
     3. BaseObject
-2. BaseObstacle
-3. BaseInteractable
-
-_(example)_
-
+2. BaseStatistics
 ### **Derived Classes / Component Compositions**
 
 1. BasePlayer
-    1. PlayerMain
-    2. PlayerUnlockable
+    1. PlayerMule
+    2. PlayerDonkey
+    3. PlayerHores
+    4. PlayerUnicorn
+    5. PlayerPegazus
 2. BaseEnemy
-    1. EnemyWolf
-    2. EnemyGoblin
-    3. EnemyGuard (may drop key)
-    4. EnemyGiantRat
-    5. EnemyPrisoner
-3. BaseObject
-    1. ObjectRock (pick-up-able, throwable)
-    2. ObjectChest (pick-up-able, throwable, spits gold coins with key)
-    3. ObjectGoldCoin (cha-ching!)
-    4. ObjectKey (pick-up-able, throwable)
-4. BaseObstacle
-    1. ObstacleWindow (destroyed with rock)
-    2. ObstacleWall
-    3. ObstacleGate (watches to see if certain buttons are pressed)
-5. BaseInteractable
-    1. InteractableButton
-
-_(example)_
+    1. EnemyMule
+    2. EnemyDonkey
+    3. EnemyHores
+    4. EnemyUnicorn
+    5. EnemyPegazus
+3. BaseGadgets
+    1. food (collectables)
+    2. HorseShoe (collectables)
+    3. Armor (collectables)
+    4. Hats (collectables)
+4. BaseAbilities
+    1. Strength
+    2. Speed
+    3. Agility
+    4. Armor
 
 ## _Graphics_
 
@@ -447,10 +443,6 @@ We have taken inspiration from different games, their functionalities and views.
 
 This game is called *Fireboy and Watergirl in The Forest Temple*. From this game we have taken the different obstacles the user has to go through in order to reach the end of the level. 
 Functionalities such as incentives to go through the obstacles were also taken into account.
-
-<!-- ![Pamplona](./img/extremepamplonac.avif)
-From the game called *Extreme pamplona*, we took the idea of the enemy following the principal character as he overcomes  the obstacles. If the enemy catches him, he needs to start over. In our game, the player will lose one of their 3 lives.
-The point of having the villan chase you, is that there is only one power that you can have to beat the other ( apart from the rest of the items) thus you will nedd / want to reach it first! -->
 
 ![Donkey](./img/DonkeyKong_TA.webp)
 The game *Donkey Kong* inspired us for the type of visuals we wanted our game to have. Our characters, as the ones in donkey kong will be made with pixel art. 
@@ -501,6 +493,8 @@ Stylistically, what kind of sound effects are you looking for? Do you want to ex
 
  Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music _and_ sounds - so plan accordingly!
 
+ The game will use
+
 ### **Sounds Needed**
 
 1. Effects
@@ -513,11 +507,11 @@ Stylistically, what kind of sound effects are you looking for? Do you want to ex
     7. Door Opening
 2. Feedback
     1. Relieved &quot;Ahhhh!&quot; (health)
-    2. Shocked &quot;Ooomph!&quot; (attacked)
+    2. Pain &quot;Ahhhh!&quot;
     3. Happy chime (extra life)
     4. Sad chime (died)
 
-_(example)_
+
 
 ### **Music Needed**
 
@@ -535,34 +529,17 @@ _(example)_
 ---
 
 _(define the main activities and the expected dates when they should be finished. This is only a reference, and can change as the project is developed)_
-
-1. develop base classes
-    1. base entity
-        1. base player
-        2. base enemy
-        3. base block
-  2. base app state
-        1. game world
-        2. menu world
-2. develop player and basic block classes
-    1. physics / collisions
-3. find some smooth controls/physics
-4. develop other derived classes
-    1. blocks
-        1. moving
-        2. falling
-        3. breaking
-        4. cloud
-    2. enemies
-        1. soldier
-        2. rat
-        3. etc.
-5. design levels
-    1. introduce motion/jumping
-    2. introduce throwing
-    3. mind the pacing, let the player play between lessons
-6. design sounds
-7. design music
+1. Create Sprites for our main charcters (sprint 1)
+    1. Create sprites for Toby
+    2. Create sprites of enemy
+2. Create videoGame tilesets (sprint 1) 
+3. Design Level 1 (sprint 2)
+4. Develop base classes
+5. Develop player Movement
+7. Create backstory graphics.
+8. Develop derived classes
+9. Design music and sounds.
+10. Test-run finished videogame.
 
 
 
