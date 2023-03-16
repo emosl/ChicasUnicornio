@@ -214,6 +214,14 @@ At the final step of the game, Toby will have to confront his enemy. He will be 
 
 ---
 
+## Initial Armor
+|        | Strength | Shield | Speed | Agility |
+|--------|----------|--------|-------|---------|
+| Pink   | (-2,-2)  | (0,-5) | (0,-3)| (-1,3)  |
+| Green  | (0,-5)   | (-2,2) | (-1,3)| (0,-3)  |
+| Blue   | (-1,3)   | (0,-3) | (-2,2)| (0,-5)  |
+
+
 ### **Screens**
 1. Title Screen
     1. Options
