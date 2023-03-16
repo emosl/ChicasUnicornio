@@ -52,7 +52,7 @@ Maria Fernanda Osorio Arroyo A01026502
 8. [Schedule](#schedule)
 
 ## _Game Design_
-#### Elevator pitch
+#### **Elevator pitch**
 Toby is a pegasus that fell into the trap of an evil equine shapeshifter, one day he found a golden apple and decided to eat it. What he didn’t know was that this apple was part of the trap and it would make him fall from his magical pegasus world into the ordinary mule world. Join Toby on his quest to return to his family.
  
 While on his quest Toby will face 5 different stages, the first being a mule. Navigating through the adventure he will have to collect valuable items, overcome obstacles, and play a strategic game in order to defeat the evil mule. If the player manages to win the battle, he will evolve into a donkey, starting a new quest with increased difficulty to defeat the evil donkey. This same gameplay will apply throughout each level, mule, donkey, horse, unicorn and pegasus, increasing the difficulty to overcome the obstacles, collect items and a need for strategy.  
@@ -153,64 +153,6 @@ At the final step of the game, Toby will have to confront his enemy. He will be 
 ## _Technical_
 ### How will point accumulation work?
 <!-- Emo aqui escribe la matematica de la puntuación -->
-## Food
-|       | Strength | Agility | Shield | Speed |
-|-------|----------|---------|--------|-------|
-| Carrot| (-2,2)   | (7,8)   | (-7,-8)| (-2,2)|
-| Cake  | (-2,2)   | (3,4)   | (-3,-4)| (-2,2)|
-| Apple | (-2,2)   | (5,6)   | (-5,-6)| (-2,2)|
-
-## Horse Shoe
-|          | Strength | Agility | Shield | Speed |
-|----------|----------|---------|--------|-------|
-| Spike Shoe| (7,8)    | (-7,-8) | (-2,2) | (-2,2)|
-| Fire Shoe | (5,6)    | (-5,-6) | (-2,2) | (-2,2)|
-| Fire Shoe | (3,4)    | (-3,-4) | (-2,2) | (-2,2)|
-
-
-## Armor
-|      | Strength | Agility | Shield | Speed   |
-|------|----------|---------|--------|---------|
-| Gold | (2,-2)   | (-2,2)  | (7,8)  | (-7,-8) |
-| Silver| (2,-2)   | (-2,2)  | (5,6)  | (-5,-6) |
-| Bronze| (2,-2)   | (-2,2)  | (3,4)  | (-3,-4) |
-
-
-##  Headset
-|       | Strength | Agility | Shield | Speed   |
-|-------|----------|---------|--------|---------|
-| Crown | (-7,-8)  | (-2,2)  | (-2,2) | (7,8)   |
-| Hat   | (-5,-6)  | (-2,2)  | (-2,2) | (5,6)   |
-| Hairband|(-3,-4)  | (-2,2)  | (-2,2) | (3,4)   |
-
-## Obstacles
-| Items     | Ability Needed | Consequence                                            |
-|-----------|----------------|--------------------------------------------------------|
-| Bomb      | Shield: 5-9    | The item with the most amount of shield value is taken |
-| Pool      | Speed: 5-9     | The item with the most amount of speed value is taken  |
-| Iceicles  | Agility: 5-9   | The item with the most amount of agility value is taken|
-| Rock      | Strength: 5-9  | The item with the most amount of strength value is taken|
-
-
-## Evil Player 
-
-| Evil Equines Stats | Strengths       | Weaknesses        | Intermediate |
-|--------------------|----------------|-------------------|--------------|
-|                    | 0 - 2          | 0 - -2            | 0            |
-| Evil Mule          | Speed          | Shield Agility    | Strength     |
-|                    |                |                   |              |
-|                    | 3 - 4          | -3 - -4           | -2 - 2       |
-| Evil Donkey        | Strength       | Agility           | Speed Shield |
-|                    |                |                   |              |
-|                    | 5 - 6          | -5 - -6           | -4 - 4       |
-| Evil Horse         | Shield Agility | Strength          | Speed        |
-|                    |                |                   |              |
-|                    | 7 - 8          | -7 - -8           | -6 - 6       |
-| Evil Unicorn       | Agility Strength | Speed          | Shield       |
-|                    |                |                   |              |
-|                    | 9 - 10         | -9 - -10          | -8 - 8       |
-| Evil Pegasus       | Speed Strength | Agility           | Shield       |
-
 
 
 ---
@@ -225,8 +167,6 @@ At the final step of the game, Toby will have to confront his enemy. He will be 
 4. End Credits
 
 _(example)_
-
-
 
 
 ## **Mechanics**
@@ -309,6 +249,7 @@ The fight will work the following way:
 
 
 ## _Level Design_
+Trying to do GGD merge conflict
 
 ---
 ### Level Details
@@ -577,5 +518,3 @@ Determinar fuente de texto
 Creación de un usuario
 Creación de cosas extras.
 Crear una tabla que guarde el log de todo lo sucedido en el juego
-
-
