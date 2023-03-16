@@ -169,6 +169,8 @@ At the final step of the game, Toby will have to confront his enemy. He will be 
 _(example)_
 
 
+
+
 ## **Mechanics**
 While playing the game, the player will be ranked on a point basis, each battle winned will increase their points as well as each life lost and the way it was lost will decrease points. When reaching the final stage of the quest and becoming the pegasus, Toby will evolve into one of the five ranks of pegasus, depending the points accumulated by the player, making the game scalable and leaving the player with the need to keep playing and changing their strategy each time in order to play a perfect game and become the Supreme Pegasus. 
 The main objective of the game is for Toby to eventually reach his family. To do this he must travel through 5 different worlds (levels). At the end of each level Toby will have to fight his enemy. To do this he will have to use the gadgets collected throughout the level. Toby will also be able to use the gadgets in the level to facilitate the game. The player will have 3 lives throughout each level. If the player loses them all it’s game over.
@@ -517,3 +519,5 @@ Determinar fuente de texto
 Creación de un usuario
 Creación de cosas extras.
 Crear una tabla que guarde el log de todo lo sucedido en el juego
+
+
