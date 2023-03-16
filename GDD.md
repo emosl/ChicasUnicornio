@@ -57,7 +57,7 @@ Toby is a pegasus that fell into the trap of an evil equine shapeshifter, one da
  
 While on his quest Toby will face 5 different stages, the first being a mule. Navigating through the adventure he will have to collect valuable items, overcome obstacles, and play a strategic game in order to defeat the evil mule. If the player manages to win the battle, he will evolve into a donkey, starting a new quest with increased difficulty to defeat the evil donkey. This same gameplay will apply throughout each level, mule, donkey, horse, unicorn and pegasus, increasing the difficulty to overcome the obstacles, collect items and a need for strategy.  
 
-### **Genero del juego**
+### **Game Genre**
 The game  genre is RPG which means it is a role playing game. The player will have a series of choices to make along the game which will determine the final outcome. The game is not linear.
 
 
@@ -65,10 +65,8 @@ The game  genre is RPG which means it is a role playing game. The player will ha
 ### **RPG Elements**
 At the beginning of the game the player will have the choice to choose their armor. Each armor will give the player different abilities and weaknesses which will determine the way the player plays the game. The gadgets will give extra abilities and will increase or decrease the initial abilities given to the player. Inside the game the player will find a non-player character called “flower”. The flower will explain certain aspects of the game and it will hint the weaknesses of the enemy to the player. The game will also have an owl that will lead Toby throughout the game. The player will now have to create a strategy that will lead to his victory. 
 
-### **Reglas y mecánicas básicas del juego**
-Se encuentran en la parte de Mechanics.
 
-### **Listado de estadísticas va a recopilar el juego dentro de la base de datos**
+### **List of stats that will be compiled during the game**
 Databases will partake in our video game development. Data such as lives lost, prizes recollected, levels overcome and user data will be not only useful but necessary. 
  Creating and using a database will allow us to develop a fully functional system. This system must function using relative databases in order to avoid redundancy in the data or a superfluous amount of data that could be detrimental to the main functions of the database. 
 
@@ -101,77 +99,6 @@ At the final step of the game, Toby will have to confront his enemy. He will be 
 ### **Mindset**
 
 - The mindset we want to create for the players is for them to have a sense of need to reunite Toby with his family. As they level up and unlock new features, we want them to feel like they are becoming stronger and more capable of overcoming challenges. As the player increases the level, we want to challenge them with tough enemies and obstacles that will require them to think carefully about their tactics and strategies. The player will have to weight cons and pros of each gadget to get the best combination possible. He will be presented with a series of decisions that will change the outcome of the game. This will give the player the sense that he is in control of his destiny, Overall, the goal is to create a game that is engaging and immersive, that will make the player want to keep coming back for more. Always keeping the game balanced between the sense of achievement and the need to win challenges.
-
-## _Technical_
-### How will point accumulation work?
-<!-- Emo aqui escribe la matematica de la puntuación -->
-## Food
-|       | Strength | Agility | Shield | Speed |
-|-------|----------|---------|--------|-------|
-| Carrot| (-2,2)   | (7,8)   | (-5,-6)| (-2,2)|
-| Apple | (-2,2)   | (5,6)   | (-3,-4)| (-2,2)|
-| Cake  | (-2,2)   | (3,4)   | (-1,-2)| (-2,2)|
-
-## Horse Shoe
-|          | Strength | Agility | Shield | Speed |
-|----------|----------|---------|--------|-------|
-| Spike Shoe| (7,8)    | (-5,-6) | (-2,2) | (-2,2)|
-| Fire Shoe | (5,6)    | (-3,-4) | (-2,2) | (-2,2)|
-| Fire Shoe | (3,4)    | (-1,-2) | (-2,2) | (-2,2)|
-
-
-## Armor
-|      | Strength | Agility | Shield | Speed   |
-|------|----------|---------|--------|---------|
-| Gold | (2,-2)   | (-2,2)  | (7,8)  | (-5,-6) |
-| Silver| (2,-2)   | (-2,2)  | (5,6)  | (-3,-4) |
-| Bronze| (2,-2)   | (-2,2)  | (3,4)  | (-1,-2) |
-
-
-##  Headset
-|       | Strength | Agility | Shield | Speed   |
-|-------|----------|---------|--------|---------|
-| Crown | (-5,-6)  | (-2,2)  | (-2,2) | (7,8)   |
-| Hat   | (-3,-4)  | (-2,2)  | (-2,2) | (5,6)   |
-| Hairband|(-1,-2)  | (-2,2)  | (-2,2) | (3,4)   |
-
-## Obstacles
-| Items     | Ability Needed | Consequence                                            |
-|-----------|----------------|--------------------------------------------------------|
-| Bomb      | Shield: 5-9    | The item with the most amount of shield value is taken |
-| Pool      | Speed: 5-9     | The item with the most amount of speed value is taken  |
-| Iceicles  | Agility: 5-9   | The item with the most amount of agility value is taken|
-| Rock      | Strength: 5-9  | The item with the most amount of strength value is taken|
-
-
-## Evil Player 
-
-| Evil Equines Stats | Strengths       | Weaknesses        | 
-|--------------------|----------------|-------------------|
-|                    | 0 - 2          | 6 - -10            | 
-| Evil Mule          | Strength          | Shield     | 
-|                    |                |                   |    
-|                    | 0 - 4          | -8 - -4           | 
-| Evil Donkey        | Speed       | Agility           | 
-|                    |                |                   |            
-|                    | 2 - 6          | -6 - -2           | 
-| Evil Horse         | Shield | Strength          | 
-|                    |                |                   |              
-|                    | 4 - 8          | -4 - -0           | 
-| Evil Unicorn       | Agility | Speed          | 
-|                    |                |                   |              
-|                    | 6 - 10         | -2 - -0          |
-| Evil Pegasus       | Speed | Agility           | 
-
-
----
-
-## Initial Armor
-|        | Strength | Shield | Speed | Agility |
-|--------|----------|--------|-------|---------|
-| Pink   | (-2,-2)  | (0,-5) | (0,-3)| (-1,3)  |
-| Green  | (0,-5)   | (-2,2) | (-1,3)| (0,-3)  |
-| Blue   | (-1,3)   | (0,-3) | (-2,2)| (0,-5)  |
 
 
 ### **Screens**
@@ -262,6 +189,77 @@ The fight will work the following way:
 2. Toby's attack: The player will use the gadgets collected as well as his strategy to combat the enemey. The player must use the enemies weaknesses against him. After the player chooses his attack, he will have a time limit to build up his energy. He will have to press on the spacebar. The greater the presses, the greater the energy. Toby will punch the enemy. His atack will lower the enemies life.
 3. Enemies attack: The enemy will attack Toby with a series of punches. This will lower toby's life.
 
+## _Technical_
+### How will point accumulation work?
+<!-- Emo aqui escribe la matematica de la puntuación -->
+The point accumulation will be based on a range basis. As shown previously, depending on each section of the armour, there are three items available for each and each item will give the player an advantage on a certain skill as well as a disadvantage. Each item will have a range of points that can be given or substracted, this points will be randomized during the game. This will allow the player to have a different experience each time they play the game. The points will be given as follows:
+## Food
+|       | Strength | Agility | Shield | Speed |
+|-------|----------|---------|--------|-------|
+| Carrot| (-2,2)   | (7,8)   | (-5,-6)| (-2,2)|
+| Apple | (-2,2)   | (5,6)   | (-3,-4)| (-2,2)|
+| Cake  | (-2,2)   | (3,4)   | (-1,-2)| (-2,2)|
+
+## Horse Shoe
+|          | Strength | Agility | Shield | Speed |
+|----------|----------|---------|--------|-------|
+| Spike Shoe| (7,8)    | (-5,-6) | (-2,2) | (-2,2)|
+| Fire Shoe | (5,6)    | (-3,-4) | (-2,2) | (-2,2)|
+| Fire Shoe | (3,4)    | (-1,-2) | (-2,2) | (-2,2)|
+
+
+## Armor
+|      | Strength | Agility | Shield | Speed   |
+|------|----------|---------|--------|---------|
+| Gold | (2,-2)   | (-2,2)  | (7,8)  | (-5,-6) |
+| Silver| (2,-2)   | (-2,2)  | (5,6)  | (-3,-4) |
+| Bronze| (2,-2)   | (-2,2)  | (3,4)  | (-1,-2) |
+
+
+##  Headset
+|       | Strength | Agility | Shield | Speed   |
+|-------|----------|---------|--------|---------|
+| Crown | (-5,-6)  | (-2,2)  | (-2,2) | (7,8)   |
+| Hat   | (-3,-4)  | (-2,2)  | (-2,2) | (5,6)   |
+| Hairband|(-1,-2)  | (-2,2)  | (-2,2) | (3,4)   |
+
+## Obstacles
+| Items     | Ability Needed | Consequence                                            |
+|-----------|----------------|--------------------------------------------------------|
+| Bomb      | Shield: 5-9    | The item with the most amount of shield value is taken |
+| Pool      | Speed: 5-9     | The item with the most amount of speed value is taken  |
+| Iceicles  | Agility: 5-9   | The item with the most amount of agility value is taken|
+| Rock      | Strength: 5-9  | The item with the most amount of strength value is taken|
+
+
+## Evil Player 
+
+| Evil Equines Stats | Strengths       | Weaknesses        | 
+|--------------------|----------------|-------------------|
+|                    | 0 - 2          | 6 - -10            | 
+| Evil Mule          | Strength          | Shield     | 
+|                    |                |                   |    
+|                    | 0 - 4          | -8 - -4           | 
+| Evil Donkey        | Speed       | Agility           | 
+|                    |                |                   |            
+|                    | 2 - 6          | -6 - -2           | 
+| Evil Horse         | Shield | Strength          | 
+|                    |                |                   |              
+|                    | 4 - 8          | -4 - -0           | 
+| Evil Unicorn       | Agility | Speed          | 
+|                    |                |                   |              
+|                    | 6 - 10         | -2 - -0          |
+| Evil Pegasus       | Speed | Agility           | 
+
+
+---
+
+## Initial Armor
+|        | Strength | Shield | Speed | Agility |
+|--------|----------|--------|-------|---------|
+| Pink   | (-2,-2)  | (0,-5) | (0,-3)| (-1,3)  |
+| Green  | (0,-5)   | (-2,2) | (-1,3)| (0,-3)  |
+| Blue   | (-1,3)   | (0,-3) | (-2,2)| (0,-5)  |
 
 
 
@@ -354,7 +352,6 @@ Characters|Details
             4. lightning
         2. _Interactive_
             1. NPC: flower
-
 ### **Game Flow**
 
 1. Player starts in prarie
