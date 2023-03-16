@@ -314,58 +314,94 @@ The fight will work the following way:
 
 
 ## _Level Design_
-Trying to do GGD merge conflict
-
 ---
 ### Level Details
 #### Level 1
 Characters|Details
  -|-
+  Toby Mule| Toby will be in the form of a mule during the level.
+  Enemy Mule| The enemy will be in the form of a mule. His main weakness will be  based around Shield and his strength will be stregth.
 
+#### Level 2
+Characters|Details
+ -|-
+  Toby Donkey| Toby will be in the form of a mule during the level.
+  Enemy Donkey| The enemy will be in the form of a mule. His main weakness will be  based around Shield and his strength will be stregth.
 
+#### Level 3
+Characters|Details
+ -|-
+  Toby Horse| Toby will be in the form of a mule during the level.
+  Enemy Horse| The enemy will be in the form of a mule. His main weakness will be  based around Shield and his strength will be stregth.
 
+#### Level 4
+Characters|Details
+ -|-
+  Toby Unicorn| Toby will be in the form of a mule during the level.
+  Enemy Unicorn| The enemy will be in the form of a mule. His main weakness will be  based around Shield and his strength will be stregth.
+
+#### Level 5
+Characters|Details
+ -|-
+  Toby Mule| Toby will be in the form of a mule during the level.
+  Enemy Mule| The enemy will be in the form of a mule. His main weakness will be  based around Shield and his strength will be stregth.
 
 ### **Themes**
 
-1. Forest
+1. Prarie
     1. Mood
-        1. Dark, calm, foreboding
+        1. Joyful, Calm, Mystic
   2. Objects
         1. _Ambient_
-            1. Fireflies
-            2. Beams of moonlight
-            3. Tall grass
+            1. Flowers
+            2. Grass
+            3. Stones
         2. _Interactive_
-            1. Wolves
-            2. Goblins
-            3. Rocks
-2. Castle
+            1. NPC: flower
+2. Haystack
     1. Mood
-        1. Dangerous, tense, active
+        1. Dry, Calm, Lonely
     2. Objects
         1. _Ambient_
-            1. Rodents
-            2. Torches
-            3. Suits of armor
+            1. Blocks of hay
+            2. Blocks of mud
+            3. Cloudy
         2. _Interactive_
-            1. Guards
-            2. Giant rats
-            3. Chests
+            1. NPC: flower
 
-2. Rainbow sky
+3. Mountain
     1. Mood
-        1. tricky, fun, fast
+        1. Cold, Fun, Cloudy
     2. Objects
         1. _Ambient_
-            1. 
-            2. 
-            3. 
+            1. Trees
+            2. Rocks
+            3. Flowers
         2. _Interactive_
-            1. 
-            2. 
-            3. 
+            1. NPC: flower
 
-_(example)_
+4. Rainbow sky
+    1. Mood
+        1. Colorful, Playful, Happy
+    2. Objects
+        1. _Ambient_
+            1. Rainbow
+            2. Gold
+            3. Shiny clouds
+        2. _Interactive_
+            1. NPC: flower
+
+5. Heaven
+    1. Mood
+        1. Glorious, Mystical, Fun
+    2. Objects
+        1. _Ambient_
+            1. Shiny Clouds
+            2. Gold
+            3. Rays of light
+            4. lightning
+        2. _Interactive_
+            1. NPC: flower
 
 ### **Game Flow**
 
