@@ -430,8 +430,23 @@ Toby's Pallette
 
 ![Toby](./img/Toby.jpeg)
 
-Enemies's Pallette
+Enemies's Pallette:
+
 ![Enemypallette](./img/Enemy_pallette.png)
+Enemy:
+
+![Enemy](./img/pageasso_malo.png)
+
+Enemies sprites:
+
+
+Enemy walking:
+
+![Enemy_walking](./Sprites/evil_character/malo_pegaso_caminando.png)
+
+Enemy dying and transformation:
+
+![Enemy_dying](./Sprites/evil_character/malo_revive.png)
 
 
 
@@ -439,7 +454,7 @@ Enemies's Pallette
 ![Logo](./img/Logo.png)
 
 - sketch of main game scene:
-![view](./img/gameView.jpeg)
+![view](./img/gameplay.jpeg)
 
 - sketch of Log in sceen:
 ![LogIn](./img/LOG_IN.png)
