@@ -425,10 +425,28 @@ The visual style of the video game will be pixel art. The graphics of the video 
 Toby's Pallette
 ![Tobypallette](./img/Toby_pallette.png)
 
+
+
+Toby's sprites:
+
+Toby's evolution:
+![Tobyevolving](./Sprites/Toby/Evolucion_Toby_SpriteSheet.png)
+
+Toby walking:
+![Tobywalking](./Sprites/Toby/TobyBurro/Burro_Caminando_spritesheet.png)
+
+
+
+Toby jumping
+![TobyJumping](./Sprites/Toby/TobyMula/TobySaltando_spritesheet.png)
+
+
+
+Toby Changing from Pegasus to mule:
+![TobyChanging2](./Sprites/Toby/TobyPegaso/PegasoAMula_spritesheet.png)
 #### *Enemy*
 
 
-![Toby](./img/Toby.jpeg)
 
 Enemies's Pallette:
 
@@ -448,7 +466,11 @@ Enemy dying and transformation:
 
 ![Enemy_dying](./Sprites/evil_character/malo_revive.png)
 
+#### *NPC´s*
 
+NPCS #2 Wise Flower: 
+
+![WiseFlower_moving](./Sprites/NPCs/Flower_NPC_SpriteSheet.png)
 
 - logo:
 ![Logo](./img/Logo.png)
