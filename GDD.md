@@ -420,7 +420,7 @@ The visual style of the video game will be pixel art. The graphics of the video 
 #### *Toby*
 
 
-![Toby](./img/Toby.jpeg)
+![Toby](./img/Toby_pegaso.png)
 
 Toby's Pallette
 ![Tobypallette](./img/Toby_pallette.png)
@@ -440,6 +440,17 @@ Enemies's Pallette
 
 - sketch of main game scene:
 ![view](./img/gameView.jpeg)
+
+- sketch of Log in sceen:
+![LogIn](./img/LOG_IN.png)
+
+- sketch of Items Menu:
+![Items](./img/ITEMS.png)
+
+- sketch of Killer Sprites Menu:
+![Items](./img/Killer_Sprites.png)
+
+
 
 
 ## **References**
