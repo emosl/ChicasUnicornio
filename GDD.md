@@ -468,7 +468,7 @@ Enemy dying and transformation:
 
 #### *NPC´s*
 
-NPCS #2 Wise Flower: 
+NPC #2 Wise Flower: 
 
 ![WiseFlower_moving](./Sprites/NPCs/Flower_NPC_SpriteSheet.png)
 
