@@ -121,10 +121,10 @@ _(example)_
 
 ## **Mechanics**
 While playing the game, the player will be ranked on a point basis, each battle winned will increase their points as well as each life lost and the way it was lost will decrease points. When reaching the final stage of the quest and becoming the pegasus, Toby will evolve into one of the five ranks of pegasus, depending the points accumulated by the player, making the game scalable and leaving the player with the need to keep playing and changing their strategy each time in order to play a perfect game and become the Supreme Pegasus. 
-The main objective of the game is for Toby to eventually reach his family. To do this he must travel through 5 different worlds (levels). At the end of each level Toby will have to fight his enemy. To do this he will have to use the gadgets collected throughout the level. Toby will also be able to use the gadgets in the level to facilitate the game. The player will have 3 lives throughout each level. If the player loses them all it’s game over.
+The main objective of the game is for Toby to eventually reach his family. To do this he must travel through 5 different worlds (levels). At the end of each level Toby will have to fight his enemy. To do this he will have to use the gadgets collected throughout the level. Toby will also be able to use the gadgets in the level to facilitate the game. THere are 4 types of gadgets that give different abilities to the player.The player will have 3 lives throughout each level. If the player loses them all it’s game over. The player will face different possible paths to reach the final battle. Here, the player must use his strategy to determine which of his abilities (strength, speed, agility and shield) he will use during the game or which he will save for the final battle. The player must analyze each path and weight the pros and cons that each specific path holds. Some may have more gadgets but a more difficult killer sprite on the way or some may have less gadgets but an easier killer sprite to overcome. The player will navigate the world moving either right, left or up. The viewpoint will follow the player using a determined area which will limit the view of the world to the player.
 
 ### **Controls**
-- The player will interact with the game using standard platformer controls, such as moving left and right, jumping, tapping, and attacking. In-game events can be triggered by the player through various actions such as attacking enemies, collecting items, and reaching specific points in the level. Additionally, the player may have to solve puzzles to progress through the game, which would require interacting with the environment and manipulating objects in various ways.
+- The player will interact with the game using standard platformer controls, such as moving left and right, jumping, tapping, and attacking. In-game events can be triggered by the player through various actions such as attacking enemies, collecting items, and reaching specific points in the level. Additionally, the player will have to use his strategies to find the most valuable path. The controls used throughout the game will be the right arrow, the left arrow, the up arrow and the space.
 
 ### **Habilities**
 In the game Toby will have 4 different habilities that will help him reach his objective.
@@ -164,9 +164,9 @@ Each gadget mentioned before will aditioinally contain extra habilities. These h
 
 
 ### **Killer Sprites**
-As Toby traverses through each level he will face threats such as spikes, acid pool and lava pool. If the player touches any of these, he will die. He will reappear next to the killer sprite with the ability used reduced.
+As Toby traverses through each level he will face threats such as rock, iceicles, pool and bombs. If the player reaches any of this he will be faced with the option of going through them or not. 
 
-The amount of ability needed to overcome the killer sprites will vary each time. The user will be presented with the option to try or not. If the player is succesful, the ability used will increase. if the player is killed, he will loose of the ability used in the task. Each task will have different requirements of ability that will be unknown to the user. The user will only have a range of possible requirements.
+The amount of ability needed to overcome the killer sprites will vary each time. The user will be presented with the option to try or not. If the player is succesful, the ability used will increase. if the player is killed, he will loose the ability used in the task. Each task will have different requirements of ability that will be unknown to the user. The user will only have a range of possible requirements.
 
 Name|How to overcome|Message Displayed
  -|-|-
