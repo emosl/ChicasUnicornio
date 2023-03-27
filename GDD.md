@@ -379,15 +379,13 @@ Characters|Details
             1. NPC: flower
 ### **Game Flow**
 
-1. Player starts in prarie
-2. Pond to the left, must move right
-3. To the right is a hill, player jumps to traverse it (&quot;jump&quot; taught)
-4. Player encounters castle - door&#39;s shut and locked
-5. There&#39;s a window within jump height, and a rock on the ground
-6. Player picks up rock and throws at glass (&quot;throw&quot; taught)
+1. Player starts the game
+2. Player must choose which way to go (left or right)
+3. Player must choose which gadget to get and which killer sprite to confront
+4. Player encounters option to enter dungeon
+5. Player continues to go up to confront his enemy
+6. Player chooses which gadget to get and which killer sprite to confront.
 7. … etc.
-
-_(example)_
 
 ## _Development_
 
@@ -443,7 +441,6 @@ The visual style of the video game will be pixel art. The graphics of the video 
 
 Toby's Pallette
 ![Tobypallette](./img/Toby_pallette.png)
-
 
 
 Toby's sprites:
