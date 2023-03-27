@@ -15,7 +15,7 @@ Maria Fernanda Osorio Arroyo A01026502
 
 ---
 
-##### **Copyright notice / author information / boring legal stuff nobody likes**
+
 
 ##
 ## _Index_
