@@ -24,27 +24,40 @@ Maria Fernanda Osorio Arroyo A01026502
 
 1. [Index](#index)
 2. [Game Design](#game-design)
-    1. [Summary](#summary)
-    2. [Gameplay](#gameplay)
-    3. [Mindset](#mindset)
+    1. [Elevator Pitch](#elevatorpitch)
+    2. [Game Genre](#gamegenre)
+    3. [RPG elements](#RPGelements)
+    4. [Stats](#stats)
+    5. [Summary](#summary)
+
+
 3. [Technical](#technical)
-    1. [Screens](#screens)
-    2. [Controls](#controls)
-    3. [Mechanics](#mechanics)
+    1. [Game Play](#GamePlay)
+    2. [Mindset](#Mindset)
+    3. [Screens](#screens)
+    4. [Mechanics](#mechanics)
+        1. [Controls](#controls)
+        2. [Abilities](#abilities)
+        3. [Gadgets](#gadgets)
+        4. [Killer Sprites](#killersprites)
+        5. [Dungeon](#dungeon)
+        6. [How to lose a life](#howtolosealife)
+        7. [Final Battle](#finalbattle)
+        8. [How will the battle work?](#howwillthebattlework)
+
 4. [Level Design](#level-design)
-    1. [Themes](#themes)
-        1. Ambience
-        2. Objects
-            1. Ambient
-            2. Interactive
-        3. Challenges
-    2. [Game Flow](#game-flow)
+    1. [Level Details](#themes)
+    2. [Themes](#themes)
+    3. [Game Flow](#game-flow)
 5. [Development](#development)
     1. [Abstract Classes](#abstract-classes--components)
     2. [Derived Classes](#derived-classes--component-compositions)
-6. [Graphics](#graphics)
+6. [Graphics ](#graphics)
     1. [Style Attributes](#style-attributes)
-    2. [Graphics Needed](#graphics-needed)
+    2. [Visual style of the game](#visualstyle)
+    3. [Video game sketches](#videogamesketches)
+    4. [Refrences](#refrences)
+    5. [Graphics Needed](#graphicsneeded)
 7. [Sounds/Music](#soundsmusic)
     1. [Style Attributes](#style-attributes-1)
     2. [Sounds Needed](#sounds-needed)
@@ -66,11 +79,8 @@ While on his quest Toby will face 5 different stages, the first being a mule. Na
 ### **Game Genre**
 The game  genre is RPG which means it is a role playing game. The player will have a series of choices to make along the game which will determine the final outcome. The game is not linear.
 
-
-
 ### **RPG Elements**
 At the beginning of the game the player will have the choice to choose their armor. Each armor will give the player different abilities and weaknesses which will determine the way the player plays the game. The gadgets will give extra abilities and will increase or decrease the initial abilities given to the player. Inside the game the player will find a non-player character called “flower”. The flower will explain certain aspects of the game and it will hint the weaknesses of the enemy to the player. The game will also have an owl that will lead Toby throughout the game. The player will now have to create a strategy that will lead to his victory. 
-
 
 ### **List of stats that will be compiled during the game**
 Databases will partake in our video game development. Data such as lives lost, prizes recollected, levels overcome and user data will be not only useful but necessary. 
@@ -99,9 +109,9 @@ In this game, you play as Toby, a pegasus who fell for a trick and was transform
 - There will be a dungeon on each level where the player can obtain special items that will increase their chance at defeating the enemy. The player can decide if they go in or not. If the player loses in the dungeon, they will lose the items they had previously collected and they will be sent back to a checkpoint in the normal world. The player should also be strategic in their use of Toby's limited lives and resources to ensure they make it through the level.
 The items play a crucial role in the game since the combination of said items can improve the possibilities for the player to defeat the enemy. If the player is not strategic with the combination he made, he will lose the fight against the enemy. Each item will have different advantages and disadvantages. The player must consider what he needs to overcome the challenges presented in the game.
 
-At the final step of the game, Toby will have to confront his enemy. He will be faced with a fight that he can only win if he collected enough valuable gadgets. In order for Toby to win the fight he must be strong enough. To achieve this he must collect gadgets that will give him specific abilities that will help him beat his enemy. 
+- At the final step of the game, Toby will have to confront his enemy. He will be faced with a fight that he can only win if he collected enough valuable gadgets. In order for Toby to win the fight he must be strong enough. To achieve this he must collect gadgets that will give him specific abilities that will help him beat his enemy. 
  
- <!-- Another factor that the player should be cautious about is the pace they keep while going through the level because they will always have an enemy on their backs. If the enemy catches up with them, they lose a life.  -->
+ 
 ### **Mindset**
 
 - The mindset we want to create for the players is for them to have a sense of need to reunite Toby with his family. As they level up and unlock new features, we want them to feel like they are becoming stronger and more capable of overcoming challenges. As the player increases the level, we want to challenge them with tough enemies and obstacles that will require them to think carefully about their tactics and strategies. The player will have to weight cons and pros of each gadget to get the best combination possible. He will be presented with a series of decisions that will change the outcome of the game. This will give the player the sense that he is in control of his destiny, Overall, the goal is to create a game that is engaging and immersive, that will make the player want to keep coming back for more. Always keeping the game balanced between the sense of achievement and the need to win challenges.
@@ -116,8 +126,17 @@ At the final step of the game, Toby will have to confront his enemy. He will be 
     2. Assessment / Next Level
 4. End Credits
 
-_(example)_
+- sketch of main game scene:
+![view](./img/gameplay.jpeg)
 
+- sketch of Log in sceen:
+![LogIn](./img/LOG_IN.png)
+
+- sketch of Items Menu:
+![Items](./img/ITEMS.png)
+
+- sketch of Killer Sprites Menu:
+![Items](./img/Killer_Sprites.png)
 
 ## **Mechanics**
 While playing the game, the player will be ranked on a point basis, each battle winned will increase their points as well as each life lost and the way it was lost will decrease points. When reaching the final stage of the quest and becoming the pegasus, Toby will evolve into one of the five ranks of pegasus, depending the points accumulated by the player, making the game scalable and leaving the player with the need to keep playing and changing their strategy each time in order to play a perfect game and become the Supreme Pegasus. 
@@ -126,8 +145,8 @@ The main objective of the game is for Toby to eventually reach his family. To do
 ### **Controls**
 - The player will interact with the game using standard platformer controls, such as moving left and right, jumping, tapping, and attacking. In-game events can be triggered by the player through various actions such as attacking enemies, collecting items, and reaching specific points in the level. Additionally, the player will have to use his strategies to find the most valuable path. The controls used throughout the game will be the right arrow, the left arrow, the up arrow and the space.
 
-### **Habilities**
-In the game Toby will have 4 different habilities that will help him reach his objective.
+### **Abilities**
+In the game Toby will have 4 different abilities that will help him reach his objective.
 These are the following:
 
 - Strength
@@ -135,10 +154,10 @@ These are the following:
 - Shield
 - Speed
 
-These abilities will be displayed in the screen at all times throughout the game. The combination of gadgets will change the amount of ability that Toby has under his disposal. If Toby has 0 ability in one of the four habilities, his life will start to decrease. Toby has to collect more gadgets to stop this from happening.
+These abilities will be displayed in the screen at all times throughout the game. The combination of gadgets will change the amount of ability that Toby has under his disposal. If Toby has 0 ability in one of the four abilities, his life will start to decrease. Toby has to collect more gadgets to stop this from happening.
 
 ### **The Gadgets**
-To have a greater chance, as Toby goes through the course he will collect different gadgets that will make him stronger in the final battle. Some gadgets will be used throughout the game since they will help Toby collect even better gadgets and get throught the killer sprites. In order to get the best gadgets, the player will have the choice to access “the dungeon”. 
+To have a greater chance, as Toby goes through the course he will collect different gadgets that will make him stronger in the final battle. Some gadgets will be used throughout the game since they will help Toby collect even better gadgets and get through the killer sprites. In order to get the best gadgets, the player will have the choice to access “the dungeon”. 
 
 Category|Gadget|Pros|Cons
  -|-|-|-
@@ -159,7 +178,7 @@ Category|Gadget|Pros|Cons
  2|Hat|Speed++|Strength -
  3|Hair band|Speed+|Strength -
 
-Each gadget mentioned before will aditioinally contain extra habilities. These habilities will not be known to the player since they will be determined randomly.
+Each gadget mentioned before will aditionally contain extra abilities. These abilities will not be known to the player since they will be determined randomly.
 
 
 
@@ -183,7 +202,7 @@ In the dungeon better gadgets will exist. Inside the dungeon, Toby will have to 
 ### **How to Lose a Life**
 It is important that the player understands that they have 3 lives through each level. if they lose all 3, they will start from the beginning with nothing.
     There are 3 possibilities for the player to lose a life in the game. These are the following:
-1. If one of the habilities tanks is empty, the life tank will start to decrease.
+1. If one of the abilities tanks is empty, the life tank will start to decrease.
 2. If you get caught inside the dungeon, you will lose a life and you will lose all of the gadgets collected. The player will reappear next to the dungeon.
 3. If you don’t have the necessary gadgets to beat Toby's enemy at the final stage of the game, you will lose a life and the gadgets you used trying to win. If you have extra lives and extra gadgets, you can fight once again.   
 
@@ -474,20 +493,6 @@ NPC #2 Wise Flower:
 
 - logo:
 ![Logo](./img/Logo.png)
-
-- sketch of main game scene:
-![view](./img/gameplay.jpeg)
-
-- sketch of Log in sceen:
-![LogIn](./img/LOG_IN.png)
-
-- sketch of Items Menu:
-![Items](./img/ITEMS.png)
-
-- sketch of Killer Sprites Menu:
-![Items](./img/Killer_Sprites.png)
-
-
 
 
 ## **References**
