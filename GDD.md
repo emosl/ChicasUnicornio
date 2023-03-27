@@ -9,7 +9,7 @@ Maria Fernanda Cortés Lozano A01026613
 
 Maria Fernanda Osorio Arroyo A01026502
 
-# **Toby's Quest for Wings**
+# **Wings of Glory: The Pegasus Chronicles**
 
 ## _Game Design Document_
 
@@ -50,6 +50,12 @@ Maria Fernanda Osorio Arroyo A01026502
     2. [Sounds Needed](#sounds-needed)
     3. [Music Needed](#music-needed)
 8. [Schedule](#schedule)
+<style>
+    .content {
+        text-align: justify;
+    }
+</style>
+<div class="content">
 
 ## _Game Design_
 #### **Elevator pitch**
@@ -414,26 +420,74 @@ The visual style of the video game will be pixel art. The graphics of the video 
 #### *Toby*
 
 
-![Toby](./img/Toby.jpeg)
+![Toby](./img/Toby_pegaso.png)
 
 Toby's Pallette
 ![Tobypallette](./img/Toby_pallette.png)
 
+
+
+Toby's sprites:
+
+Toby's evolution:
+![Tobyevolving](./Sprites/Toby/Evolucion_Toby_SpriteSheet.png)
+
+Toby walking:
+![Tobywalking](./Sprites/Toby/TobyBurro/Burro_Caminando_spritesheet.png)
+
+
+
+Toby jumping
+![TobyJumping](./Sprites/Toby/TobyMula/TobySaltando_spritesheet.png)
+
+
+
+Toby Changing from Pegasus to mule:
+![TobyChanging2](./Sprites/Toby/TobyPegaso/PegasoAMula_spritesheet.png)
 #### *Enemy*
 
 
-![Toby](./img/Toby.jpeg)
 
-Enemies's Pallette
+Enemies's Pallette:
+
 ![Enemypallette](./img/Enemy_pallette.png)
+Enemy:
+
+![Enemy](./img/pageasso_malo.png)
+
+Enemies sprites:
 
 
+Enemy walking:
+
+![Enemy_walking](./Sprites/evil_character/malo_pegaso_caminando.png)
+
+Enemy dying and transformation:
+
+![Enemy_dying](./Sprites/evil_character/malo_revive.png)
+
+#### *NPC´s*
+
+NPC #2 Wise Flower: 
+
+![WiseFlower_moving](./Sprites/NPCs/Flower_NPC_SpriteSheet.png)
 
 - logo:
 ![Logo](./img/Logo.png)
 
 - sketch of main game scene:
-![view](./img/gameView.jpeg)
+![view](./img/gameplay.jpeg)
+
+- sketch of Log in sceen:
+![LogIn](./img/LOG_IN.png)
+
+- sketch of Items Menu:
+![Items](./img/ITEMS.png)
+
+- sketch of Killer Sprites Menu:
+![Items](./img/Killer_Sprites.png)
+
+
 
 
 ## **References**
@@ -487,41 +541,31 @@ What kinds of colors will you be using? Do you have a limited palette to work wi
 
 ### **Style Attributes**
 
-Again, consistency is key. Define that consistency here. What kind of instruments do you want to use in your music? Any particular tempo, key? Influences, genre? Mood?
+### **Sound/Music style of the game**
+ The game will use joyfull sounds and music when the player is doing well, and more serious sounds and music when the player is doing bad. The music will be more serious when the player is in a dangerous area, and more joyfull when the player is in a safe area.  The music will be pretty much the same tune throught the majority of the game, in order to maintain consistancy and a sense of familiarity. 
 
-Stylistically, what kind of sound effects are you looking for? Do you want to exaggerate actions with lengthy, cartoony sounds (e.g. mario&#39;s jump), or use just enough to let the player know something happened (e.g. mega man&#39;s landing)? Going for realism? You can use the music style as a bit of a reference too.
-
- Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music _and_ sounds - so plan accordingly!
-
- The game will use
+ The kind of sounds the game will need are cartoony sounds to maintain the theme of pixel art and old arcade games.
 
 ### **Sounds Needed**
 
 1. Effects
-    1. Soft Footsteps (dirt floor)
-    2. Sharper Footsteps (stone floor)
-    3. Soft Landing (low vertical velocity)
-    4. Hard Landing (high vertical velocity)
-    5. Glass Breaking
-    6. Chest Opening
-    7. Door Opening
+    1. Moved through obstacles
+    2. Started new level
+    3. Finished level
+
 2. Feedback
-    1. Relieved &quot;Ahhhh!&quot; (health)
-    2. Pain &quot;Ahhhh!&quot;
-    3. Happy chime (extra life)
-    4. Sad chime (died)
+    1. Happy chime (extra life)
+    2. Sad chime (died)
 
 
 
 ### **Music Needed**
 
-1. Slow-paced, nerve-racking &quot;forest&quot; track
-2. Exciting &quot;castle&quot; track
-3. Creepy, slow &quot;dungeon&quot; track
-4. Happy ending credits track
-5. Rick Astley&#39;s hit #1 single &quot;Never Gonna Give You Up&quot;
+1. Slow-paced
+2. Happy ending credits track
+5. Rick Astley&#39;s hit #1 single &quot;Never Gonna Give You Up&quot; (for the credits)
 
-_(example)_
+
 
 
 ## _Schedule_
