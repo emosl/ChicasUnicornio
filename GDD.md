@@ -141,7 +141,7 @@ The items play a crucial role in the game since the combination of said items ca
 ## **Mechanics**
 While playing the game, the player will be ranked on a point basis, each obstacle winned will increase their points on the other hand each life lost and the way it was lost will decrease points. When reaching the final stage of the quest and becoming the pegasus, Toby will evolve into one of the five ranks of pegasus, depending the points accumulated by the player. Thus, making the game scalable and leaving the player with the need to keep playing and changing their strategy each time in order to play a perfect game and become the Supreme Pegasus. 
 
-The main objective of the game is for Toby to eventually reach his family. To do this he must travel through 5 different worlds (levels). At the end of each level Toby will have to fight his enemy. To do this he will have to use the gadgets collected throughout the level. Toby will also be able to use the gadgets in the level to facilitate the game. There are 4 types of gadgets that give different abilities to the player.The player will have 3 lives throughout each level. If the player loses them all it’s game over. The player will face different possible paths to reach the final battle. Here, the player must use his strategy to determine which of his abilities (strength, speed, agility and shield) he will use during the game or which he will save for the final battle. The player must analyze each path and weight the pros and cons that each specific path holds. Some may have more gadgets but a more difficult killer sprite (obstcale) on the way or some may have less gadgets but an easier killer sprite to overcome. The player will navigate the world moving either right, left or up. The viewpoint will follow the player using a determined area which will limit the view of the world to the player.
+The main objective of the game is for Toby to eventually reach his family. To do this he must travel through 5 different worlds (levels). At the beginning of each level Toby will have the opportunity to choose from 3 different shields which will give him different abilities. At the end of each level Toby will have to fight his enemy. To do this he will have to use the gadgets collected throughout the level. Toby will also be able to use the gadgets in the level to facilitate the game. There are 4 types of gadgets that give different abilities to the player.The player will have 3 lives throughout each level. If the player loses them all it’s game over. The player will face different possible paths to reach the final battle. Here, the player must use his strategy to determine which of his abilities (strength, speed, agility and shield) he will use during the game or which he will save for the final battle. The player must analyze each path and weight the pros and cons that each specific path holds. Some may have more gadgets but a more difficult killer sprite (obstcale) on the way or some may have less gadgets but an easier killer sprite to overcome. The player will navigate the world moving either right, left or up. The viewpoint will follow the player using a determined area which will limit the view of the world to the player.
 
 ### **Controls**
 - The player will interact with the game using standard platformer controls, such as moving left and right, jumping, tapping, and attacking. In-game events can be triggered by the player through various actions such as attacking enemies, collecting items, and reaching specific points in the level. Additionally, the player will have to use his strategies to find the most valuable path. The controls used throughout the game will be the right arrow, the left arrow, the up arrow and the space bar.
@@ -156,6 +156,8 @@ These are the following:
 - Speed
 
 These abilities will be displayed in the screen at all times throughout the game. The combination of gadgets will change the sum of ability that Toby to his disposal. If Toby has 0 ability in one of the four abilities, his life will start to decrease, therefore he must collect more gadgets to stop this from happening.
+
+Toby will choose at the beginning of each level a shield. There will be 3 different options available. These shields will give the player different rating in thhe 4 abilities mentioned before.
 
 ### **The Gadgets**
 To have a greater chance at winning, as Toby goes through the course he will collect different gadgets that will make him stronger in the final battle. Some gadgets will be used throughout the game since they will help Toby collect even better gadgets and get through the killer sprites. In order to get the best gadgets, the player will have the choice to access “the dungeon”. 
@@ -179,7 +181,7 @@ Category|Gadget|Pros|Cons
  2|Hat|Speed++|Strength -
  3|Hair band|Speed+|Strength -
 
-Each gadget mentioned before will aditionally contain extra abilities. These abilities will not be known to the player since they will be determined randomly.
+Each gadget mentioned before will aditionally contain extra abilities. These abilities will not be known to the player since they will be determined randomly. This will allow the player to choose a different version of the game to play.
 
 
 
@@ -212,7 +214,7 @@ The final battle is the most important aspect of the game. Here, Toby will confr
 #### **How will the battle work?**
 The fight will work the following way:
 1. The fight will work with turns. Toby will attack first and later the enemy.
-2. Toby's attack: The player will use the gadgets collected as well as his strategy to combat the enemey. The player must use the enemies weaknesses against him. After the player chooses his attack, he will have a time limit to build up his energy. He will have to press on the spacebar. The greater the presses, the greater the energy. Toby will punch the enemy. His atack will lower the enemies life.
+2. Toby's attack: The player will use the gadgets collected as well as his strategy to combat the enemy. The player must use the enemies weaknesses against him. After the player chooses his attack, he will have a time limit to build up his energy. He will have to press on the spacebar. The greater the presses, the greater the energy. Toby will punch the enemy. His atack will lower the enemies life.
 3. Enemies attack: The enemy will attack Toby with a series of punches. This will lower toby's life.
 
 ## _Technical_
@@ -283,9 +285,9 @@ The point accumulation will be based on a range basis. As shown previously, depe
 ## Initial Armor
 |        | Strength | Shield | Speed | Agility |
 |--------|----------|--------|-------|---------|
-| Pink   | (-2,-2)  | (0,-5) | (0,-3)| (-1,3)  |
-| Green  | (0,-5)   | (-2,2) | (-1,3)| (0,-3)  |
-| Blue   | (-1,3)   | (0,-3) | (-2,2)| (0,-5)  |
+| Pink   | (-2,2)  | (0,5) | (0,3)| (-1,3)  |
+| Green  | (0,-5)   | (-2,2) | (-1,3)| (0,3)  |
+| Blue   | (-1,3)   | (0,3) | (-2,2)| (0,5)  |
 
 
 
@@ -381,12 +383,13 @@ Characters|Details
 ### **Game Flow**
 
 1. Player starts the game
-2. Player must choose which way to go (left or right)
-3. Player must choose which gadget to get and which killer sprite to confront
-4. Player encounters option to enter dungeon
-5. Player continues to go up to confront his enemy
-6. Player chooses which gadget to get and which killer sprite to confront.
-7. … etc.
+2. Player chooses his armor
+3. Player must choose which way to go (left or right)
+4. Player must choose which gadget to get and which killer sprite to confront
+5. Player encounters option to enter dungeon
+6. Player continues to go up to confront his enemy
+7. Player chooses which gadget to get and which killer sprite to confront.
+8. … etc.
 
 ## _Development_
 
