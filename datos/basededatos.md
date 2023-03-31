@@ -51,4 +51,10 @@
 - space_id (atributo PK)(NOT NULL AUTO_INCREMENT<=8)
 - gadget_id (atributo)
 
+#### Registro Game Time
+- registro_id
+- username
+- game_time 
+
+
 
