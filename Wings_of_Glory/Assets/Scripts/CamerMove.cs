@@ -49,5 +49,6 @@ public class CamerMove : MonoBehaviour {
     void LateUpdate () 
     {
         transform.position = player.transform.position + offset;
+        Debug.Log("Player position: " + player.transform.position);
     }
 }
