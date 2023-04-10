@@ -200,6 +200,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Flower_NPC_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 590
+        width: 246
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13887fde0427542f78ba5ba7c60d1fcb
+      internalID: 456534634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flower_NPC_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 317
+        width: 273
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4881665919908465a897d5629b44c333
+      internalID: 1742213078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flower_NPC_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 282
+        width: 238
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42892f943fb74d39b2b74d9da53c2dd
+      internalID: 1802403175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -215,6 +278,9 @@ TextureImporter:
       Flower_NPC_SpriteSheet_1: -1334574239
       Flower_NPC_SpriteSheet_2: -2110298542
       Flower_NPC_SpriteSheet_3: -463614738
+      Flower_NPC_SpriteSheet_4: 456534634
+      Flower_NPC_SpriteSheet_5: 1742213078
+      Flower_NPC_SpriteSheet_6: 1802403175
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
