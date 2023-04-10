@@ -14,73 +14,88 @@ public class Toby : MonoBehaviour
     public float groundCheckRadius = 0.1f;
     public LayerMask groundLayerMask;
 
-    private bool isGrounded;
-    private bool isMoving;
+    public Vector3 initialPosition; // added variable to store initial position
 
-    public Sprite idleSprite;
-    public Sprite leapSprite;
+private bool isGrounded;
+private bool isMoving;
 
-    void Start()
+public Sprite idleSprite;
+public Sprite leapSprite;
+
+void Start()
+{
+    rb = GetComponent<Rigidbody2D>();
+    spriteRenderer = GetComponent<SpriteRenderer>();
+    initialPosition = transform.position; // save the initial position of the sprite
+}
+
+void Update()
+{
+    // Check if sprite is grounded
+    Bounds bounds = GetComponent<Collider2D>().bounds;
+    Vector2 offset = new Vector2(0f, -bounds.extents.y);
+    isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
+
+    Collider2D barrier = Physics2D.Overlapbox(destination, Vector2.zero, 0f, LayerMask.GetMask("Barrier"));
+    Collider2D barrier = Physics2D.OverlapArea(destination - Vector3.one * 0.5f, destination + Vector3.one * 0.5f, LayerMask.GetMask("Barrier"));
+
+    // Move left or right based on user input
+    if (Input.GetKeyDown(KeyCode.LeftArrow))
     {
-        rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        rb.velocity = new Vector2(-speed, rb.velocity.y);
+        isMoving = true;
+        spriteRenderer.sprite = leapSprite;
+        transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip sprite when moving left
+    }
+    else if (Input.GetKeyDown(KeyCode.RightArrow))
+    {
+        rb.velocity = new Vector2(speed, rb.velocity.y);
+        isMoving = true;
+        spriteRenderer.sprite = leapSprite;
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Reset sprite rotation when moving right
     }
 
-    void Update()
+    // Stop moving left or right when arrow key is released
+    if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)|| Input.GetKeyUp(KeyCode.Space))
     {
-        // Check if sprite is grounded
-        Bounds bounds = GetComponent<Collider2D>().bounds;
-        Vector2 offset = new Vector2(0f, -bounds.extents.y);
-        isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
-
-        // Move left or right based on user input
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
-            isMoving = true;
-            spriteRenderer.sprite = leapSprite;
-            transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip sprite when moving left
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
-            isMoving = true;
-            spriteRenderer.sprite = leapSprite;
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Reset sprite rotation when moving right
-        }
-
-        // Stop moving left or right when arrow key is released
-        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)|| Input.GetKeyUp(KeyCode.Space))
-        {
-            rb.velocity = new Vector2(0f, rb.velocity.y);
-            isMoving = false;
-            spriteRenderer.sprite = idleSprite;
-        }
-
-        // Jump if sprite is grounded and user presses the space key
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            spriteRenderer.sprite = leapSprite;
-        }
-
-        // Add some drag to slow the sprite down when not moving
-        if (!isMoving)
-        {
-            rb.drag = 5f;
-        }
-        else
-        {
-            rb.drag = 3f;
-        }
+        rb.velocity = new Vector2(0f, rb.velocity.y);
+        isMoving = false;
+        spriteRenderer.sprite = idleSprite;
     }
 
-    void FixedUpdate()
+    // Jump if sprite is grounded and user presses the space key
+    if (Input.GetKeyDown(KeyCode.Space))
     {
-        // Adjust gravity scale to make the sprite fall slower
-        rb.gravityScale = 3f;
+        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        spriteRenderer.sprite = leapSprite;
     }
-   
+
+    // Add some drag to slow the sprite down when not moving
+    if (!isMoving)
+    {
+        rb.drag = 5f;
+    }
+    else
+    {
+        rb.drag = 3f;
+    }
+}
+
+void FixedUpdate()
+{
+    // Adjust gravity scale to make the sprite fall slower
+    rb.gravityScale = 3f;
+}
+
+// OnTriggerEnter2D is called when the Collider2D other enters the trigger
+private void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.gameObject.CompareTag("Obstacle"))
+    {
+        transform.position = initialPosition; // reset the position of the sprite to the initial position
+    }
+}
+
     // Start is called before the first frame update
     // void Start()
     // {
