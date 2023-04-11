@@ -32,6 +32,8 @@
 - habilidad_strength (atributo)
 - habilidad_agility (atributo)
 - habilidad_shield (atributo)
+- lives
+- points
 
 #### Usuario (Estancia)
 - useraname (atributo PK) (NOT NULL, varchar(45))
