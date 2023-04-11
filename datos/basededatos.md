@@ -4,8 +4,6 @@
 #### Gadgets (Instance)
 - gadget_Id (attribute, PK)(NOT NULL, AUTO_INCREMENT, SMALLINT)
 - name (attribute)(NOT NULL, varchar(45))
-<!-- - habilidad (atributo)(NOT NULL, varchar(45))
-- puntos (atributo) (NOT NULL, SMALLINT) -->
 - ability_speed (attribute)
 - ability_strength (attribute)
 - ability_agility (attribute)
@@ -37,7 +35,7 @@
 - points
 
 #### Usuario (Instance)
-- useraname (attribute PK) (NOT NULL, varchar(45))
+- username_ID (attribute PK) (NOT NULL, varchar(45))
 - password (attribute) (NOT NULL, varchar(45))
 - email (attribute) (NOT NULL, varchar(45))
 - name (attribute) (NOT NULL, varchar(45))
@@ -56,6 +54,8 @@
 
 #### Register Game Time
 - registro_id
+- created_at
+- checkpoint
 - username
 - game_time 
 
