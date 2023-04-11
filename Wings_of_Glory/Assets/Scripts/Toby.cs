@@ -21,6 +21,7 @@ private bool isMoving;
 
 public Sprite idleSprite;
 public Sprite leapSprite;
+public GameObject[] levels;
 
 void Start()
 {
@@ -64,10 +65,12 @@ void Update()
     }
 
     // Jump if sprite is grounded and user presses the space key
-    if (Input.GetKeyDown(KeyCode.Space))
+    if (isGrounded && Input.GetKeyDown(KeyCode.Space))
     {
         rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         spriteRenderer.sprite = leapSprite;
+        transform.rotation = Quaternion.identity; // Reset sprite rotation when moving right
+
     }
 
     // Add some drag to slow the sprite down when not moving
@@ -94,7 +97,18 @@ private void OnTriggerEnter2D(Collider2D other)
     {
         transform.position = initialPosition; // reset the position of the sprite to the initial position
     }
+
+      if (other.gameObject.CompareTag("LevelChange"))
+    {
+        int rand = Random.Range(0, levels.Length);
+        transform.position = levels[rand].transform.position;
+       // Destroy(levels[rand]); remove the selected level from the scene
+        //levels.RemoveAt(rand); remove the selected level from the levels list
+        Destroy(levels[rand]); // remove the selected level from the levels array
+    }
 }
+
+
 
     // Start is called before the first frame update
     // void Start()
@@ -155,4 +169,16 @@ private void OnTriggerEnter2D(Collider2D other)
         // }
 
     // }
+}
+
+public static class GameObjectExtensions
+{
+    public static void RemoveComponent(this GameObject gameObject, System.Type type)
+    {
+        Component component = gameObject.GetComponent(type);
+        if (component != null)
+        {
+            Object.Destroy(component);
+        }
+    }
 }
