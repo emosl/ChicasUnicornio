@@ -1,4 +1,5 @@
 // Existing code from landing.js
+// 1
 setTimeout(function () {
   anime.timeline()
     .add({
@@ -7,7 +8,7 @@ setTimeout(function () {
       opacity: [0, 1],
       easing: "easeOutCirc",
       duration: 800,
-      delay: (el, i) => 800 * i
+      delay: (el, i) => 800 * i 
     })
     .add({
       targets: "#grid-container-item2 h3 .word",
