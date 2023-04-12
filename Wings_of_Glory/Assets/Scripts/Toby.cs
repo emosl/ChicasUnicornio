@@ -65,7 +65,7 @@ void Update()
     }
 
     // Jump if sprite is grounded and user presses the space key
-    if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+    if (Input.GetKeyDown(KeyCode.Space))
     {
         rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         spriteRenderer.sprite = leapSprite;
