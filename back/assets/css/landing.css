@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+body, html{
+  margin: 0;
+  padding: 0;
+  font-family: 'VT323', monospace;
+}
+
+#grid-container{
+  padding: 10px ;
+  height: 100vh;
+  background-color: #FAA6FF;
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows:repeat(4, 1fr);
+  gap:10px;
+  grid-template-areas: 
+  "nav nav nav nav nav nav nav nav nav nav nav nav"
+  "titulo titulo titulo titulo titulo titulo titulo titulo titulo titulo titulo titulo"
+  "subt subt subt subt subt subt subt subt subt subt subt subt"
+  ". . . . . . . . . . . .";
+}
+
+#grid-container-item1{
+  grid-area: titulo;
+  font-size: 70px;
+  color: #345995;
+  text-align: center;
+  justify-content: center;
+}
+#grid-container-item1 h1 {
+  margin-bottom: 0;
+}
+
+#grid-container-item2{
+  grid-area: subt;
+  font-size: 60px;
+  color: #345995;
+  text-align: center;
+  justify-content: center;
+}
+#grid-container-item2 h3 {
+  margin-top: 0;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.ml15 {
+  font-weight: 800;
+  font-size: 150px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml15 .word {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.ml16 {
+  font-weight: 800;
+  font-size: 70px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml16 .word {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.glow {
+  color: #add8e6;
+  text-shadow:
+      0 0 4px #345995,
+      0 0 6px #345995,
+      0 0 8px #345995,
+      0 0 10px rgba(52,89,149,0.8),
+      0 0 12px rgba(52,89,149,0.8),
+      0 0 14px rgba(52,89,149,0.8),
+      0 0 16px rgba(52,89,149,0.8),
+      0 0 25px rgba(52,89,149,0.8);
+}
+
+
