@@ -12,10 +12,10 @@ body, html{
 
 #grid-container{
   height: 100vh;
-  background-color: #532473;
+  background-color: #5F2E7E;
   display:grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows:5% 80% 10%;
+  grid-template-rows:10% 75% 15%;
   gap:10px;
   grid-template-areas: 
   "nav nav nav nav nav nav nav nav nav nav nav nav"
@@ -31,7 +31,7 @@ body, html{
     color: aliceblue;
     font-size: 30px;
     align-items: center;
-    background-color: #532473;
+    background-color: #5F2E7E;
   }
   
 .row1-items{
@@ -47,12 +47,18 @@ body, html{
     flex-direction: row;
     color: aliceblue;
     font-size: 30px;
-    background: url("../images/Logo.png");
+    /* background: url("../images/principal.mp4"); */
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     border: none;
     height: 100%;
+}
+
+video{
+  height: 100%;
+  width: 100%;
+  background-size: cover;
 }
 
 
@@ -60,30 +66,34 @@ body, html{
     grid-area: bot;
     display: flex;
     justify-content: center;
-    align-items: center; /* Set to flex-end */
+    align-items: top; /* Set to flex-end */
     flex-direction: row;
     color: aliceblue;
     font-size: 30px;
-    background-color: #532473;
-   
+    background-color: #5F2E7E;
+
     height: 100%;
 }
 
 #bot {
-    background-color: #345995; /* Set the background color */
+  background-color: #5F2E7E;
     color: #fff; /* Set the text color */
-    border: none; /* Remove the border */
-    padding: 10px 20px; /* Add some padding */
-    font-size: 30px; /* Set the font size */
+    font-size: 60px; /* Set the font size */
     font-weight: bold; /* Set the font weight */
-    border-radius: 5px; /* Add some border radius */
     cursor: pointer; /* Add a pointer cursor on hover */
     font-family: 'VT323', monospace;
+    text-decoration: none;
   }
   
   #bot:hover {
-    background-color: #FAA6FF; /* Change the background color on hover */
+    color: #FAA6FF; /* Change the background color on hover */
   }
+
+  .row1-items:hover {
+    color: #FAA6FF; /* Change the background color on hover */
+  }
+
+ 
   
 
 
