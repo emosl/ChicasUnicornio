@@ -137,6 +137,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Toby_caminando 1_0
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 36
+        width: 139
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb85e413ccf934d72a6fb648203792ba
+      internalID: 789952632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Toby_caminando 1_1
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 44
+        width: 148
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb56a417fdd5e4a5d8670f4582b2f6e9
+      internalID: -1934334751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -148,6 +190,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Toby_caminando 1_0: 789952632
+      Toby_caminando 1_1: -1934334751
       Toby_caminando_0: 1382840454
   spritePackingTag: 
   pSDRemoveMatte: 0

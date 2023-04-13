@@ -8,6 +8,7 @@ public class Toby : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    public Animator animator;
     public float speed = 5f;
     public float jumpForce = 10f;
     public float groundCheckRadius = 1f;
@@ -36,10 +37,14 @@ public class Toby : MonoBehaviour
         Vector2 offset = new Vector2(0f, -bounds.extents.y);
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
 
+    // Collider2D barrier = Physics2D.Overlapbox(destination, Vector2.zero, 0f, LayerMask.GetMask("Barrier"));
+    // Collider2D barrier = Physics2D.OverlapArea(destination - Vector3.one * 0.5f, destination + Vector3.one * 0.5f, LayerMask.GetMask("Barrier"));
+
         // Move left or right based on user input
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
+            animator.Play("walking");
             isMoving = true;
             spriteRenderer.sprite = leapSprite;
             transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip sprite when moving left
@@ -52,13 +57,13 @@ public class Toby : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Reset sprite rotation when moving right
         }
 
-        // Stop moving left or right when arrow key is released
-        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            rb.velocity = new Vector2(0f, rb.velocity.y);
-            isMoving = false;
-            spriteRenderer.sprite = idleSprite;
-        }
+    // Stop moving left or right when arrow key is released
+    if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)|| Input.GetKeyUp(KeyCode.Space))
+    {
+        rb.velocity = new Vector2(0f, rb.velocity.y);
+        isMoving = false;
+        spriteRenderer.sprite = idleSprite;
+    }
 
         // Jump if sprite is grounded and user presses the space key
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
