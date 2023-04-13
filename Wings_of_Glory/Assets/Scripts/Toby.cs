@@ -44,7 +44,7 @@ public class Toby : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            animator.Play("walking");
+            animator.Play("walking_dos");
             isMoving = true;
             spriteRenderer.sprite = leapSprite;
             transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip sprite when moving left
@@ -52,6 +52,7 @@ public class Toby : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
+            animator.Play("walking_dos");
             isMoving = true;
             spriteRenderer.sprite = leapSprite;
             transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Reset sprite rotation when moving right
@@ -62,6 +63,7 @@ public class Toby : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, rb.velocity.y);
         isMoving = false;
+        animator.Play("idleSprite");
         spriteRenderer.sprite = idleSprite;
     }
 
