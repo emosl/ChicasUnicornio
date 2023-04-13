@@ -110,3 +110,17 @@ public class Toby : MonoBehaviour
     }
 }
 
+//ontriggerstay2d is called when the collider2d other stays in the trigger
+    // private void OnTriggerStay2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Obstacle"))
+    //     {
+    //         transform.position = initialPosition; // reset the position of the sprite to the initial position
+    //     }
+    //     else if (other.gameObject.CompareTag("LevelChange"))
+    //     {
+    //         int rand = Random.Range(0, levels.Length);
+    //         transform.position = levels[rand].transform.position;
+    //         Destroy(levels[rand]); // remove the selected level from the levels array
+    //     }
+    // }
