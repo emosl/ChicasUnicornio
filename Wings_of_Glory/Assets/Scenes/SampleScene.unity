@@ -876,7 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd99c449bf3d450fb6dbbafec78e24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 370204290}
   speed: 10
   jumpForce: 10
   groundCheckRadius: 1
