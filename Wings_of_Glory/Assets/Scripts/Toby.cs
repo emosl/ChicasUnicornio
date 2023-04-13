@@ -28,6 +28,7 @@ public class Toby : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         initialPosition = transform.position; // save the initial position of the sprite
+        animator.Play("idle");
     }
 
     void Update()
@@ -44,7 +45,7 @@ public class Toby : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            animator.Play("walking_dos");
+            animator.Play("walking");
             isMoving = true;
             spriteRenderer.sprite = leapSprite;
             transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip sprite when moving left
@@ -52,7 +53,7 @@ public class Toby : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            animator.Play("walking_dos");
+            animator.Play("walking");
             isMoving = true;
             spriteRenderer.sprite = leapSprite;
             transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Reset sprite rotation when moving right
@@ -63,16 +64,18 @@ public class Toby : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, rb.velocity.y);
         isMoving = false;
-        animator.Play("idleSprite");
+        animator.Play("idle");
         spriteRenderer.sprite = idleSprite;
     }
 
+   
         // Jump if sprite is grounded and user presses the space key
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             transform.rotation = Quaternion.identity; // Reset sprite rotation when jumping
         }
+
 
         // Add some drag to slow the sprite down when not moving
         if (!isMoving)
@@ -106,3 +109,4 @@ public class Toby : MonoBehaviour
         }
     }
 }
+
