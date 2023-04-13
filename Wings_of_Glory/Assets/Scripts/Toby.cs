@@ -69,7 +69,6 @@ public class Toby : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            spriteRenderer.sprite = leapSprite;
             transform.rotation = Quaternion.identity; // Reset sprite rotation when jumping
         }
 
