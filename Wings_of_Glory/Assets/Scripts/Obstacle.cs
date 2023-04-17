@@ -33,6 +33,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     private Collider2D obstacleCollider;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -40,13 +41,11 @@ public class Obstacle : MonoBehaviour
         obstacleCollider = GetComponent<Collider2D>();
     }
 
-    public void AskPermission(Collider2D other)
+    public void AskPermission()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Preguntas preguntas = FindObjectOfType<Preguntas>();
-            preguntas.ShowQuestion("Do you want to go through this obstacle?");
-        }
+        canvas.GetComponent<Preguntas>().Start();
+        canvas.GetComponent<Preguntas>().ShowQuestion("Do you want to go through this obstacle?");
+    
     }
 
     public void MakeTrigger()

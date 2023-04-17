@@ -27,7 +27,7 @@ public class Toby : MonoBehaviour
 
     public Vector3 initialPosition; // added variable to store initial position
 
-    void Start()gi
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -103,18 +103,10 @@ public class Toby : MonoBehaviour
     //OnTriggerEnter2D is called when the Collider2D other enters the trigger;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // if (other.gameObject.CompareTag("Obstacle"))
-        // {
-        //     transform.position = initialPosition; // reset the position of the sprite to the initial position
-        //     Debug.Log("Obstacle02HLKPAHDVOWOVH");
-        //     // button.ButtonPressed();
-        //     // obstacleCollider.OnTriggerEnter2D(other);
-        // }
+        Debug.Log("Obstacle");
          if (other.gameObject.CompareTag("Obstacle"))
         {
-            currentObstacle = other.gameObject.GetComponent<Obstacle>();
-            currentObstacle.AskPermission(other);
-            Debug.log("Obstacle");
+            other.gameObject.GetComponent<Obstacle>().AskPermission();
         }
         else if (other.gameObject.CompareTag("LevelChange"))
         {
@@ -125,7 +117,7 @@ public class Toby : MonoBehaviour
         
     }
     
-    private Obstacle currentObstacle;
+    public Obstacle currentObstacle;
 
     // // OnTriggerEnter2D is called when the Collider2D other enters the trigger
     // private void OnTriggerEnter2D(Collider2D other)
