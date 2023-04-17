@@ -101,19 +101,41 @@ public class Toby : MonoBehaviour
     }
 
     // OnTriggerEnter2D is called when the Collider2D other enters the trigger
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Obstacle"))
+    //     {
+    //         // transform.position = initialPosition; // reset the position of the sprite to the initial position
+    //         // button.ButtonPressed();
+    //         obstacleCollider.OnTriggerEnter2D(other);
+    //     }
+    //     else if (other.gameObject.CompareTag("LevelChange"))
+    //     {
+    //         int rand = Random.Range(0, levels.Length);
+    //         transform.position = levels[rand].transform.position;
+    //         Destroy(levels[rand]); // remove the selected level from the levels array
+    //     }
+    // }
+     private Obstacle currentObstacle;
+
+    // OnTriggerEnter2D is called when the Collider2D other enters the trigger
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            // transform.position = initialPosition; // reset the position of the sprite to the initial position
-            // button.ButtonPressed();
-            obstacleCollider.OnTriggerEnter2D(other);
+            currentObstacle = other.gameObject.GetComponent<Obstacle>();
+            currentObstacle.AskPermission(other);
+            Debug.Log("Obstacle");
         }
-        else if (other.gameObject.CompareTag("LevelChange"))
+        // ... rest of the code
+    }
+
+    public void PermissionGranted()
+    {
+        if (currentObstacle != null)
         {
-            int rand = Random.Range(0, levels.Length);
-            transform.position = levels[rand].transform.position;
-            Destroy(levels[rand]); // remove the selected level from the levels array
+            currentObstacle.MakeTrigger();
+            currentObstacle = null;
         }
     }
 }
