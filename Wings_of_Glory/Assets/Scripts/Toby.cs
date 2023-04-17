@@ -7,6 +7,10 @@ using static UnityEngine.Physics2D;
 public class Toby : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Preguntas ButtonPressed;
+    private Preguntas button;
+    private Obstacle obstacleCollider;
+    private Obstacle obstacle;
     private SpriteRenderer spriteRenderer;
     public Animator animator;
     public float speed = 5f;
@@ -29,6 +33,8 @@ public class Toby : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         initialPosition = transform.position; // save the initial position of the sprite
         animator.Play("idle");
+        button = FindObjectOfType<Preguntas>();
+        obstacleCollider = FindObjectOfType<Obstacle>();
     }
 
     void Update()
@@ -94,12 +100,13 @@ public class Toby : MonoBehaviour
         rb.gravityScale = 3f;
     }
 
-    // OnTriggerEnter2D is called when the Collider2D other enters the trigger
+    //OnTriggerEnter2D is called when the Collider2D other enters the trigger;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Obstacle"))
+        Debug.Log("Obstacle");
+         if (other.gameObject.CompareTag("Obstacle"))
         {
-            transform.position = initialPosition; // reset the position of the sprite to the initial position
+            other.gameObject.GetComponent<Obstacle>().AskPermission();
         }
         else if (other.gameObject.CompareTag("LevelChange"))
         {
@@ -107,6 +114,44 @@ public class Toby : MonoBehaviour
             transform.position = levels[rand].transform.position;
             Destroy(levels[rand]); // remove the selected level from the levels array
         }
+        
+    }
+    
+    public Obstacle currentObstacle;
+
+    // // OnTriggerEnter2D is called when the Collider2D other enters the trigger
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Obstacle"))
+    //     {
+    //         currentObstacle = other.gameObject.GetComponent<Obstacle>();
+    //         currentObstacle.AskPermission(other);
+    //         Debug.Log("Obstacle");
+    //     }
+    //     // ... rest of the code
+    // }
+
+    public void PermissionGranted()
+    {
+        if (currentObstacle != null)
+        {
+            currentObstacle.MakeTrigger();
+            currentObstacle = null;
+        }
     }
 }
 
+//ontriggerstay2d is called when the collider2d other stays in the trigger
+    // private void OnTriggerStay2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Obstacle"))
+    //     {
+    //         transform.position = initialPosition; // reset the position of the sprite to the initial position
+    //     }
+    //     else if (other.gameObject.CompareTag("LevelChange"))
+    //     {
+    //         int rand = Random.Range(0, levels.Length);
+    //         transform.position = levels[rand].transform.position;
+    //         Destroy(levels[rand]); // remove the selected level from the levels array
+    //     }
+    // }
