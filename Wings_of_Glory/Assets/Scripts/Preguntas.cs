@@ -147,6 +147,6 @@ public class Preguntas : MonoBehaviour
     {
         canvas.SetActive(true);
         Text questionText = canvas.GetComponentInChildren<Text>();
-        questionText.text = question;
+        // questionText.text = question;
     }
 }
