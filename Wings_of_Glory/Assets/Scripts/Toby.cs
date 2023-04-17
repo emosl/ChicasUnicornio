@@ -27,7 +27,7 @@ public class Toby : MonoBehaviour
 
     public Vector3 initialPosition; // added variable to store initial position
 
-    void Start()
+    void Start()gi
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -114,7 +114,7 @@ public class Toby : MonoBehaviour
         {
             currentObstacle = other.gameObject.GetComponent<Obstacle>();
             currentObstacle.AskPermission(other);
-            Debug.Log("Obstacle");
+            Debug.log("Obstacle");
         }
         else if (other.gameObject.CompareTag("LevelChange"))
         {
