@@ -7,6 +7,10 @@ using static UnityEngine.Physics2D;
 public class Toby : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Preguntas ButtonPressed;
+    private Preguntas button;
+    private Obstacle obstacleCollider;
+    private Obstacle obstacle;
     private SpriteRenderer spriteRenderer;
     public Animator animator;
     public float speed = 5f;
@@ -29,6 +33,8 @@ public class Toby : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         initialPosition = transform.position; // save the initial position of the sprite
         animator.Play("idle");
+        button = FindObjectOfType<Preguntas>();
+        obstacleCollider = FindObjectOfType<Obstacle>();
     }
 
     void Update()
@@ -99,7 +105,9 @@ public class Toby : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            transform.position = initialPosition; // reset the position of the sprite to the initial position
+            // transform.position = initialPosition; // reset the position of the sprite to the initial position
+            // button.ButtonPressed();
+            obstacleCollider.OnTriggerEnter2D(other);
         }
         else if (other.gameObject.CompareTag("LevelChange"))
         {
