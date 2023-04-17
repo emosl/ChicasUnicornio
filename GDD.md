@@ -7,7 +7,7 @@ Lucía Barrenechea A01782021
 
 Maria Fernanda Cortés Lozano A01026613
 
-Maria Fernanda Osorio Arroyo A01026502
+Ma. Fernanda Osorio Arroyo A01026502
 
 # **Wings of Glory: The Pegasus Chronicles**
 
@@ -80,7 +80,7 @@ While on his quest Toby will face 5 different stages, the first being a mule. Na
 The game  genre is RPG which means it is a role playing game. The player will have a series of choices to make along the game which will determine the final outcome. The game is not linear.
 
 ### **RPG Elements**
-At the beginning of the game the player will have the choice to choose their armor. Each armor will give the player different abilities and weaknesses which will determine the way the player plays the game. The gadgets will give extra abilities and will increase or decrease the initial abilities given to the player. Inside the game the player will find a non-player character called “flower”. The flower will explain certain aspects of the game and it will hint the weaknesses of the enemy to the player. The game will also have an owl that will lead Toby throughout the game. The player will now have to create a strategy that will lead to his victory. 
+At the beginning of the game the player will have the choice to choose their shield. Each shield will give the player different abilities and weaknesses which will determine the way the player plays the game. The gadgets will give extra abilities and will increase or decrease the initial abilities given to the player. Inside the game the player will find a non-player character called “flower”. The flower will explain certain aspects of the game and it will hint the weaknesses of the enemy to the player. The game will also have an owl that will lead Toby throughout the game. The player will now have to create a strategy that will lead to his victory. 
 
 ### **List of stats that will be compiled during the game**
 Databases will partake in our video game development. Data such as lives lost, prizes recollected, levels overcome and user data will be not only useful but necessary. 
@@ -172,7 +172,7 @@ Category|Gadget|Pros|Cons
  1|Spike Shoe|Strength+++|Agility -
  2|Fire Shoe|Strength++|Agility -
  3|Skates|Strength+|Agility -
- Armor|||
+ shield|||
  1|Gold|Shield+++|Speed -
  2|Silver|Shield++|Speed -
  3|Bronze|Shield+|Speed -
@@ -193,7 +193,7 @@ The amount of ability needed to overcome the killer sprites will vary each time.
 Name|How to overcome|Message Displayed
  -|-|-
  Killer Sprites||
- Bomb| To sucessfully move the rock the player will have to use his strength.| Is you armor strong enough to protect you from the blast?
+ Bomb| To sucessfully move the rock the player will have to use his strength.| Is you shield strong enough to protect you from the blast?
  Pool|To go through the pool the player will need to use his speed.| Are you fast enough to walk through water?
  Iceicles| To go under the iceicles the player will use his agility.| Are you agile enough to dodge the iceicles?
  Rock|To move the rock the player will use his strength. Moving the rock will unblock a path.| Are you strong enough to move the rock?
@@ -236,7 +236,7 @@ The point accumulation will be based on a range basis. As shown previously, depe
 | Fire Shoe | (3,4)    | (-1,-2) | (-2,2) | (-2,2)|
 
 
-## Armor
+## shield
 |      | Strength | Agility | Shield | Speed   |
 |------|----------|---------|--------|---------|
 | Gold | (2,-2)   | (-2,2)  | (7,8)  | (-5,-6) |
@@ -282,7 +282,7 @@ The point accumulation will be based on a range basis. As shown previously, depe
 
 ---
 
-## Initial Armor
+## Initial shield
 |        | Strength | Shield | Speed | Agility |
 |--------|----------|--------|-------|---------|
 | Pink   | (-2,2)  | (0,5) | (0,3)| (-1,3)  |
@@ -383,7 +383,7 @@ Characters|Details
 ### **Game Flow**
 
 1. Player starts the game
-2. Player chooses his armor
+2. Player chooses his shield
 3. Player must choose which way to go (left or right)
 4. Player must choose which gadget to get and which killer sprite to confront
 5. Player encounters option to enter dungeon
@@ -419,7 +419,7 @@ Characters|Details
 3. BaseGadgets
     1. food (collectables)
     2. HorseShoe (collectables)
-    3. Armor (collectables)
+    3. shield (collectables)
     4. Hats (collectables)
 4. BaseAbilities
     1. Strength
