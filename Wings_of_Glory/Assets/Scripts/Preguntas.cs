@@ -27,7 +27,7 @@ public class Preguntas : MonoBehaviour
 
         noButton.onClick.AddListener(() => {
             canvas.SetActive(false);
-            toby.PermissionDenied();
+            // toby.PermissionDenied();
             NoButtonPressed?.Invoke();
         });
 

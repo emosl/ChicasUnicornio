@@ -130,12 +130,12 @@ public class Toby : MonoBehaviour
         }
     }
 
-    public void PermissionDenied()
-    {
-        if (currentObstacle != null)
-        {
-            currentObstacle.gameObject.GetComponent<Obstacle>().Restart();
-            currentObstacle = null;
-        }
-    }
+    // public void PermissionDenied()
+    // {
+    //     if (currentObstacle != null)
+    //     {
+    //         currentObstacle.gameObject.GetComponent<Obstacle>().Restart();
+    //         currentObstacle = null;
+    //     }
+    // }
 }
