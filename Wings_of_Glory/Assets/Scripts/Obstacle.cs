@@ -59,7 +59,6 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     private Collider2D obstacleCollider;
-    private bool isTrigger = true;
     public GameObject canvas;
     private Preguntas preguntas;
 
