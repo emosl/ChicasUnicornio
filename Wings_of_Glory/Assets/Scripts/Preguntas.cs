@@ -115,6 +115,7 @@
 
 // }
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -126,6 +127,7 @@ public class Preguntas : MonoBehaviour
     public Button yesButton;
     public Button noButton;
     private Toby toby;
+    public event Action NoButtonPressed;
 
     // Start is called before the first frame update
     public void Start()
@@ -140,6 +142,7 @@ public class Preguntas : MonoBehaviour
 
         noButton.onClick.AddListener(() => {
             canvas.SetActive(false);
+            NoButtonPressed?.Invoke();
         });
     }
 
@@ -147,6 +150,6 @@ public class Preguntas : MonoBehaviour
     {
         canvas.SetActive(true);
         Text questionText = canvas.GetComponentInChildren<Text>();
-        // questionText.text = question;
+        questionText.text = question;
     }
 }
