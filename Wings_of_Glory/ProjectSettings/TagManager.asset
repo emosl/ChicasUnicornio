@@ -18,11 +18,11 @@ TagManager:
   - Water
   - UI
   - 
-  - 
   - groundLayerMask
-  - Barrier
+  - Platform
+  - Obstacle
   - Background
-  - 
+  - Barrier
   - 
   - 
   - 
