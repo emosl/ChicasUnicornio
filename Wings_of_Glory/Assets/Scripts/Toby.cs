@@ -1,3 +1,4 @@
+// joleping
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -103,9 +104,9 @@ public class Toby : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Obstacle");
-         if (other.gameObject.CompareTag("Obstacle"))
+         if (isGrounded && other.gameObject.CompareTag("Obstacle"))
         {
-            other.gameObject.GetComponent<Obstacle>().AskPermission();   
+            other.gameObject.GetComponent<Obstacle>().AskPermission();
             
         }
         else if (other.gameObject.CompareTag("LevelChange"))
@@ -115,27 +116,17 @@ public class Toby : MonoBehaviour
             Destroy(levels[rand]); // remove the selected level from the levels array
         }
         
-
+        
     }
     
     public Obstacle currentObstacle;
-
 
     public void PermissionGranted()
     {
         if (currentObstacle != null)
         {
-            currentObstacle.gameObject.GetComponent<Obstacle>().MakeTrigger();
+            // currentObstacle.gameObject.GetComponent<Obstacle>().MakeTriggersForObstacleColliders();
             currentObstacle = null;
         }
     }
-
-    // public void PermissionDenied()
-    // {
-    //     if (currentObstacle != null)
-    //     {
-    //         currentObstacle.gameObject.GetComponent<Obstacle>().Restart();
-    //         currentObstacle = null;
-    //     }
-    // }
 }

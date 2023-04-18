@@ -6,46 +6,43 @@ using UnityEngine.UI;
 
 public class Preguntas : MonoBehaviour
 {
-    public GameObject canvas;
     public Button yesButton;
     public Button noButton;
-    private Toby toby;
-    private Obstacle obstacleCollider;
-    public event Action NoButtonPressed;
+    public GameObject canvas;
 
-    // Start is called before the first frame update
-    public void Start()
+    public event Action<bool> ButtonPressed;
+
+    private void Start()
     {
         canvas.SetActive(false);
-        toby = FindObjectOfType<Toby>();
 
-        yesButton.onClick.AddListener(() => {
-            canvas.SetActive(false);
-            toby.PermissionGranted();
-            canvas.SetActive(false);
-        });
-
-        noButton.onClick.AddListener(() => {
-            canvas.SetActive(false);
-            // toby.PermissionDenied();
-            NoButtonPressed?.Invoke();
-        });
-
-        
-
+        yesButton.onClick.AddListener(delegate { OnButtonPress(true); });
+        noButton.onClick.AddListener(delegate { OnButtonPress(false); });
     }
 
-    public void ShowQuestion(string question)
+    public void ShowQuestion(string question, Action<bool> callback)
     {
         canvas.SetActive(true);
-        Text questionText = canvas.GetComponentInChildren<Text>();
-        // questionText.text = question;
+         Text questionText = canvas.GetComponentInChildren<Text>();
+        ButtonPressed = callback;
     }
+
 
     public void HideQuestion()
     {
         canvas.SetActive(false);
-        Debug.Log("HideQuestion");
+    }
 
+    private void OnButtonPress(bool decision)
+    {
+        ButtonPressed?.Invoke(decision);
+        HideQuestion();
+    }
+
+    void OnDestroy()
+    {
+        yesButton.onClick.RemoveAllListeners();
+        noButton.onClick.RemoveAllListeners();
     }
 }
+
