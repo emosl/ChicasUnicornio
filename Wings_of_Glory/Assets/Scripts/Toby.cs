@@ -104,7 +104,7 @@ public class Toby : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Obstacle");
-         if (other.gameObject.CompareTag("Obstacle"))
+         if (other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Obstacle1"))
         {
             other.gameObject.GetComponent<Obstacle>().AskPermission();
         }
@@ -116,6 +116,7 @@ public class Toby : MonoBehaviour
         }
         
     }
+    
     
     public Obstacle currentObstacle;
 
