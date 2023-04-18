@@ -1,120 +1,3 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-
-// public class Preguntas: MonoBehaviour
-// {
-//     public GameObject canvas;
-//     // Start is called before the first frame update
-//     void Start()
-//     {
-//         canvas.SetActive(false);
-//     }
-
-//     // Update is called once per frame
-//     void Update()
-//     {
-//         if (canvas.activeSelf)
-//         {
-//             if (Input.GetKeyDown(KeyCode.Return))
-//             {
-//                 // The user clicked "Yes"
-//                 Debug.Log("Game continued!"); // continue playing
-
-//             }
-//             else if (Input.GetKeyDown(KeyCode.Space))
-//             {
-//                 // The user clicked "No"
-//                 Debug.Log("Game stopped!"); // stop playing
-//                 Application.Quit(); // quit the application
-//             }
-//         }
-            
-//     }
-//     private void OnTriggerEnter2D(Collider2D other)
-//     {
-//         if (other.gameObject.CompareTag("Player"))
-//         {
-//             canvas.SetActive(true);
-//         }
-//     }
-//     // public void ShowQuestion(string question)
-//     // {
-//     //     canvas.SetActive(true);
-//     //     Text questionText = canvas.GetComponentInChildren<Text>();
-//     //     questionText.text = question;
-//     // }
-//     public void ButtonPressed()
-//     {
-//         canvas.SetActive(false);
-//     }
-//     // void HideQuestion()
-//     // {
-//     //     canvas.SetActive(false);
-//     // }
-    
-// }
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UI;
-
-// public class Preguntas : MonoBehaviour
-// {
-//     public GameObject canvas;
-//     private bool userAnswer;
-
-//     // Start is called before the first frame update
-//     void Start()
-//     {
-//         canvas.SetActive(false);
-//     }
-
-//     // Update is called once per frame
-//     void Update()
-//     {
-//         if (canvas.activeSelf)
-//         {
-//             if (Input.GetKeyDown(KeyCode.Return))
-//             {
-//                 // The user clicked "Yes"
-//                 Debug.Log("Game continued!"); // continue playing
-//                 userAnswer = true;
-//                 canvas.SetActive(false);
-//             }
-//             else if (Input.GetKeyDown(KeyCode.Space))
-//             {
-//                 // The user clicked "No"
-//                 Debug.Log("Game stopped!"); // stop playing
-//                 userAnswer = false;
-//                 canvas.SetActive(false);
-//                 Application.Quit(); // quit the application
-//             }
-//         }        
-//     }
-
-//     private void OnTriggerEnter2D(Collider2D other)
-//     {
-//         if (other.gameObject.CompareTag("Player"))
-//         {
-//             canvas.SetActive(true);
-//         }
-//     }
-
-//     public void ShowQuestion(string question)
-//     {
-//         canvas.SetActive(true);
-//         Text questionText = canvas.GetComponentInChildren<Text>();
-//         questionText.text = question;
-//     }
-
-//     public bool GetUserAnswer()
-//     {
-//         return userAnswer;
-//     }
-
-// }
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -123,39 +6,43 @@ using UnityEngine.UI;
 
 public class Preguntas : MonoBehaviour
 {
-    public GameObject canvas;
     public Button yesButton;
     public Button noButton;
-    private Toby toby;
-    public event Action NoButtonPressed;
+    public GameObject canvas;
 
-    // Start is called before the first frame update
-    public void Start()
+    public event Action<bool> ButtonPressed;
+
+    private void Start()
     {
         canvas.SetActive(false);
-        toby = FindObjectOfType<Toby>();
 
-        yesButton.onClick.AddListener(() => {
-            canvas.SetActive(false);
-            toby.PermissionGranted();
-            canvas.SetActive(false);
-        });
-
-        noButton.onClick.AddListener(() => {
-            canvas.SetActive(false);
-            NoButtonPressed?.Invoke();
-        });
+        yesButton.onClick.AddListener(delegate { OnButtonPress(true); });
+        noButton.onClick.AddListener(delegate { OnButtonPress(false); });
     }
 
-    public void ShowQuestion(string question)
+    public void ShowQuestion(string question, Action<bool> callback)
     {
         canvas.SetActive(true);
-        Text questionText = canvas.GetComponentInChildren<Text>();
-        // questionText.text = question;
+         Text questionText = canvas.GetComponentInChildren<Text>();
+        ButtonPressed = callback;
     }
+
 
     public void HideQuestion()
     {
         canvas.SetActive(false);
     }
+
+    private void OnButtonPress(bool decision)
+    {
+        ButtonPressed?.Invoke(decision);
+        HideQuestion();
+    }
+
+    void OnDestroy()
+    {
+        yesButton.onClick.RemoveAllListeners();
+        noButton.onClick.RemoveAllListeners();
+    }
 }
+

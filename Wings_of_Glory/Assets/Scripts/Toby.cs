@@ -104,9 +104,10 @@ public class Toby : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Obstacle");
-         if (other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Obstacle1"))
+         if (other.gameObject.CompareTag("Obstacle"))
         {
             other.gameObject.GetComponent<Obstacle>().AskPermission();
+            
         }
         else if (other.gameObject.CompareTag("LevelChange"))
         {
@@ -115,44 +116,17 @@ public class Toby : MonoBehaviour
             Destroy(levels[rand]); // remove the selected level from the levels array
         }
         
+        
     }
     
-    
     public Obstacle currentObstacle;
-
-    // // OnTriggerEnter2D is called when the Collider2D other enters the trigger
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Obstacle"))
-    //     {
-    //         currentObstacle = other.gameObject.GetComponent<Obstacle>();
-    //         currentObstacle.AskPermission(other);
-    //         Debug.Log("Obstacle");
-    //     }
-    //     // ... rest of the code
-    // }
 
     public void PermissionGranted()
     {
         if (currentObstacle != null)
         {
-            currentObstacle.MakeTrigger();
+            // currentObstacle.gameObject.GetComponent<Obstacle>().MakeTriggersForObstacleColliders();
             currentObstacle = null;
         }
     }
 }
-
-//ontriggerstay2d is called when the collider2d other stays in the trigger
-    // private void OnTriggerStay2D(Collider2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Obstacle"))
-    //     {
-    //         transform.position = initialPosition; // reset the position of the sprite to the initial position
-    //     }
-    //     else if (other.gameObject.CompareTag("LevelChange"))
-    //     {
-    //         int rand = Random.Range(0, levels.Length);
-    //         transform.position = levels[rand].transform.position;
-    //         Destroy(levels[rand]); // remove the selected level from the levels array
-    //     }
-    // }
