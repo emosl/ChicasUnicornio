@@ -74,7 +74,7 @@ public class Obstacle : MonoBehaviour
 
     public void AskPermission()
     {
-        preguntas.Start();
+        preguntas.GetComponent<Preguntas>().Start();
         preguntas.ShowQuestion("Do you want to go through this obstacle?");
     }
 
