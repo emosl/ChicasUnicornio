@@ -81,6 +81,7 @@ public class Obstacle : MonoBehaviour
     public void MakeTrigger()
     {
         obstacleCollider.isTrigger = true;
+        canvas.GetComponent<Preguntas>().HideQuestion();
     }
 
     private void TurnTriggerIntoCollider()

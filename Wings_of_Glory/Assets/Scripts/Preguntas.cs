@@ -138,6 +138,7 @@ public class Preguntas : MonoBehaviour
         yesButton.onClick.AddListener(() => {
             canvas.SetActive(false);
             toby.PermissionGranted();
+            canvas.SetActive(false);
         });
 
         noButton.onClick.AddListener(() => {
@@ -150,6 +151,11 @@ public class Preguntas : MonoBehaviour
     {
         canvas.SetActive(true);
         Text questionText = canvas.GetComponentInChildren<Text>();
-        questionText.text = question;
+        // questionText.text = question;
+    }
+
+    public void HideQuestion()
+    {
+        canvas.SetActive(false);
     }
 }
