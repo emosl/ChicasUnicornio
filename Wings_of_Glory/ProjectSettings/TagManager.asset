@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - LevelChange
   - Position
+  - Obstacle_Collider
   layers:
   - Default
   - TransparentFX

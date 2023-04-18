@@ -104,7 +104,7 @@ public class Toby : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Obstacle");
-         if (other.gameObject.CompareTag("Obstacle"))
+         if (isGrounded && other.gameObject.CompareTag("Obstacle"))
         {
             other.gameObject.GetComponent<Obstacle>().AskPermission();
             
