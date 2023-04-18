@@ -47,9 +47,9 @@ app.get('/api/users', async (req, res)=>
         connection = await mysql.createConnection(
         {
             host:'localhost', 
-            user:'ashaparra', 
-            password:'ashaparra2002', 
-            database: 'api_game_db'
+            user:'chica_unicornio', 
+            password:'admin1',
+            database: 'chicasunicornio'
         })
         
         console.log("Connection stablished!")
