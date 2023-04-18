@@ -1,5 +1,8 @@
 .DS_Store
 Wings_of_Glory/Assets/LDtkUnity/Editor/Prefs/LDtkPrefs.cs.meta
 Wings_of_Glory/Assets/LDtkUnity/Runtime.meta
+.DS_Store
+node_modules
+package-lock.json
 
 
