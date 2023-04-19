@@ -103,10 +103,11 @@ public class Toby : MonoBehaviour
     //OnTriggerEnter2D is called when the Collider2D other enters the trigger;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Obstacle");
+        // Debug.Log("Obstacle");
          if (isGrounded && other.gameObject.CompareTag("Obstacle"))
         {
             other.gameObject.GetComponent<Obstacle>().AskPermission();
+            other.gameObject.GetComponent<Obstacle>().UndoTriggersForObstacleColliders();
             
         }
         else if (other.gameObject.CompareTag("LevelChange"))
@@ -114,6 +115,12 @@ public class Toby : MonoBehaviour
             int rand = Random.Range(0, levels.Length);
             transform.position = levels[rand].transform.position;
             Destroy(levels[rand]); // remove the selected level from the levels array
+        }
+        else if (other.gameObject.CompareTag("Dungeon"))
+        {
+            // SceneManager.LoadScene("frogger_dungeon");
+            //Debug.Log("Dungeon");
+            other.gameObject.GetComponent<Dungeon>().Scene();
         }
         
         
