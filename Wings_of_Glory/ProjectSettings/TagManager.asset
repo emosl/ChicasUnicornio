@@ -10,6 +10,22 @@ TagManager:
   - LevelChange
   - Position
   - Obstacle_Collider
+  - Carrot
+  - Cake
+  - Apple
+  - gold
+  - silver
+  - bronze
+  - fireshoe
+  - spike
+  - roller
+  - hat
+  - hairband
+  - crown
+  - Metal
+  - Food
+  - HeadBand
+  - Horseshoe
   layers:
   - Default
   - TransparentFX
