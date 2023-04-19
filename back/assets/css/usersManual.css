@@ -10,15 +10,14 @@
     background-image: linear-gradient(rgb(255, 178, 225), #5F2E7E);
     display:grid;
     grid-template-columns: repeat(12, 1fr);
-    gap:10px;
+    
     grid-template-areas: 
     "menu menu menu menu menu menu menu menu menu menu menu menu"
     "title title title title title title title title title title title title"
     "title title title title title title title title title title title title"  
-    "title title title title title title title title title title title title"
-    "title title title title title title title title title title title title"
-    "title title title title title title title title title title title title"
-    
+    "items items items items items items items items items items items items"
+    "items1 items1 items1 items1 items1 items1 items1 items1 items1 items1 items1 items1"
+    "items1 items1 items1 items1 items1 items1 items1 items1 items1 items1 items1 items1"
     "info info info info info info info info info info info info"
     "info info info info info info info info info info info info"
     "info info info info info info info info info info info info";
@@ -83,6 +82,24 @@ body, html{
     background-color: hwb(277 50% 12%);
   }
 
+  .items{
+    grid-area: items;
+    font-family: 'VT323', monospace;
+    color: #ffc4fd;
+    font-size: 30px;
+    text-shadow: #ae59de 2px 2px 2px;
+    display: flex;
+  }
 
+p{
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+}
+
+.items1{
+    grid-area: items1;
+    
+
+}
 
   
