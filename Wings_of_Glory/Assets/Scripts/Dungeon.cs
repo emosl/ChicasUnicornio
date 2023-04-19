@@ -1,50 +1,95 @@
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+// using UnityEngine.SceneManagement;
+
+// public class Dungeon : MonoBehaviour
+// {
+//     public Transform target;
+//     public Transform respawn;
+//     public string sceneName;
+//     public string sceneToLoad;
+//     public GameObject player;  
+//     // Start is called before the first frame update
+    
+
+//     // Update is called once per frame
+    
+
+//     void Start()
+//     {
+//         player = GameObject.FindGameObjectWithTag("Player");
+//     }    
+
+//     void Update()
+//     {
+        
+//     }
+
+//     private void OnTriggerEnter(Collider other)
+//     {
+//         Debug.Log("Triggered!");
+//         if (other.CompareTag("Player") && other.gameObject.CompareTag("Dungeon"))
+//         {
+//             Debug.Log("Triggered!");
+//             SceneManager.LoadScene(sceneName);
+//         }
+//     }
+
+//     public void Scene()
+//     {
+//         SceneManager.LoadScene(sceneName);
+
+//     }
+
+//     public void RespwanD()
+//     {
+//         player.transform.position = respawn.position;
+//     }
+// }
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class Dungeon : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
+{
     public Transform target;
+    public Transform respawn;
     public string sceneName;
     public string sceneToLoad;
+    public GameObject player;
+    private Vector3 lastPlayerPos; // variable to store player's last position
 
-    void Update()
+    void Start()
     {
-        
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        // if (player.transform.position == target.position)
-        // {
-        //     Debug.Log("Scene loaded");
-        //     // SceneManager.LoadScene(sceneName);
-        //     UnityEngine.SceneManagement.SceneManager.LoadScene (sceneName);
-        //     Debug.Log("Scene loaded");
-        // }
-        // if (player != null && Vector3.Distance(player.transform.position, target.position) < 0.1f)
-        // {
-        //     Debug.Log("Player reached the target position.");
-        //     // show the canvas and ask the user whether or not to change scene
-        // }
+        player = GameObject.FindGameObjectWithTag("Player");
+        lastPlayerPos = player.transform.position; // save player's initial position
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered!");
         if (other.CompareTag("Player") && other.gameObject.CompareTag("Dungeon"))
         {
-            Debug.Log("Triggered!");
+            lastPlayerPos = player.transform.position; // save player's last position before loading scene
             SceneManager.LoadScene(sceneName);
         }
     }
 
     public void Scene()
     {
+        lastPlayerPos = player.transform.position; // save player's last position before loading scene
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void RespawnD()
+    {
+        player.transform.position = respawn.position;
+    }
+
+    public void ReturnToLastPos()
+    {
+        player.transform.position = lastPlayerPos; // set player's position to last saved position
     }
 }

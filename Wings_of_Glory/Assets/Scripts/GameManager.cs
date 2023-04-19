@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,13 +25,21 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         NewGame();
+        // if (PlayerPrefs.GetInt("FirstTime", 1) == 1) {
+        //     PlayerPrefs.SetInt("FirstTime", 0);
+        //     SceneManager.LoadScene("SampleScene");
+        // }
+        // else {
+        //     NewGame();
+        // }
     }
     private void NewGame()
     {
         gameOverMenu.SetActive(false);
         SetScore(0);
-        SetLives(3);
+        SetLives(1);
         Newlevel();
+        
     }
 
     private void Newlevel()
@@ -39,7 +48,9 @@ public class GameManager : MonoBehaviour
         {
             homes[i].enabled = false;
         }
-       Respwan();
+        Respwan();
+    //    SceneManager.LoadScene("SampleScene");
+       
     }
 
 
@@ -77,14 +88,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void GameOver()
-    {
-        frogger.gameObject.SetActive(false);
-        gameOverMenu.SetActive(true);
-        StopAllCoroutines();
-        StartCoroutine(PlayAgain());
+    // private void GameOver()
+    // {
+    //     frogger.gameObject.SetActive(false);
+    //     // gameOverMenu.SetActive(true);
+    //     StopAllCoroutines();
+    //     // StartCoroutine(PlayAgain());
+    //     SceneManager.LoadScene("SampleScene");
+    // }
 
+     private void GameOver()
+    {
+        // Save the current scene name to load it again after the game over
+        PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
+        frogger.gameObject.SetActive(false);
+        StopAllCoroutines();
+        SceneManager.LoadScene("SampleScene");
     }
+
     private IEnumerator PlayAgain()
     {
         bool PlayAgain = false;
@@ -113,13 +134,15 @@ public class GameManager : MonoBehaviour
         
         if(Cleared())
         {
-            SetLives(lives + 1);
-            SetScore(score + 1000);
-            Invoke(nameof(Newlevel), 1f);
+            // SetLives(lives + 1);
+            // SetScore(score + 1000);
+            // Invoke(nameof(Newlevel), 1f);
+            SceneManager.LoadScene("SampleScene");
         }
         else
         {
-            Invoke(nameof(Respwan), 1f);
+            // Invoke(nameof(Respwan), 1f);
+            SceneManager.LoadScene("SampleScene");
         }
     }
 

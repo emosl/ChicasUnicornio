@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Physics2D;
+using UnityEngine.SceneManagement;
 
 public class Toby : MonoBehaviour
 {
@@ -35,11 +36,16 @@ public class Toby : MonoBehaviour
         animator.Play("idle");
         button = FindObjectOfType<Preguntas>();
         obstacleCollider = FindObjectOfType<Obstacle>();
+        
+        // string lastSceneName = PlayerPrefs.GetString("lastScene");
+        // SceneManager.LoadScene(lastSceneName);
     }
+    
 
     void Update()
     {
         // Check if sprite is grounded
+        
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 offset = new Vector2(0f, -bounds.extents.y);
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
@@ -92,6 +98,7 @@ public class Toby : MonoBehaviour
         {
             rb.drag = 3f;
         }
+
     }
 
     void FixedUpdate()
@@ -121,6 +128,10 @@ public class Toby : MonoBehaviour
             // SceneManager.LoadScene("frogger_dungeon");
             //Debug.Log("Dungeon");
             other.gameObject.GetComponent<Dungeon>().Scene();
+            other.gameObject.GetComponent<Dungeon>().ReturnToLastPos();
+            // other.GetComponent<Obstacle>().TurnTriggerIntoCollider();
+            // other.gameObject.GetComponent<Dungeon>().RespwanD();
+            
         }
         
         
