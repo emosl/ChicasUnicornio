@@ -1,17 +1,35 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class Character : MonoBehaviour
 {
+    public Stats Strength;
+    public Stats Agility;
+    public Stats Shield;
+    public Stats Speed;
+
     [SerializeField] Inventory inventory;
     [SerializeField] EquipmentPanel equipmentPanel;
+    [SerializeField] StatPanel statsPanel;
 
-    private void Awake()
+
+private void Awake()
+{
+    if (statsPanel == null || inventory == null || equipmentPanel == null)
     {
-        inventory.OnItemRightClickEvent += EquipFromInventory;
-        equipmentPanel.OnItemRightClickEvent += UnequipFromEquipPanel;
+        Debug.LogError("One or more serialized fields are not assigned in the Character script.");
+        return;
     }
+
+    statsPanel.SetStats(Strength, Agility, Speed, Shield);
+    statsPanel.UpdateStatValues();
+    inventory.OnItemRightClickEvent += EquipFromInventory;
+    equipmentPanel.OnItemRightClickEvent += UnequipFromEquipPanel;
+}
+
+
 
     private void EquipFromInventory(Item item)
     {
@@ -29,8 +47,6 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    
-
     public void Equip(EquippableItem item)
     {
         if (inventory.RemoveItem(item))
@@ -41,7 +57,11 @@ public class InventoryManager : MonoBehaviour
                 if (previousItem != null)
                 {
                     inventory.AddItem(previousItem);
+                    item.Unequip(this);
+                    statsPanel.UpdateStatValues();
                 }
+                item.Equip(this);
+                statsPanel.UpdateStatValues();
             }
             else
             {
@@ -54,7 +74,11 @@ public class InventoryManager : MonoBehaviour
     {
         if (!inventory.IsFull() && equipmentPanel.RemoveItem(item))
         {
+            item.Unequip(this);
+            statsPanel.UpdateStatValues();
             inventory.AddItem(item);
         }
     }
+
+    
 }

@@ -19,24 +19,6 @@ public class Inventory : MonoBehaviour
     }
 }
     
-
-
-    // private void Awake()
-    // {
-
-    //     for (int i =0 ; i < itemSlots.Length; i++)
-    //     {
-    //         itemSlots[i].OnRightClickEvent += OnItemRightClickEvent;
-    //     }
-    // }
-//     private void Awake()
-// {
-//     for (int i = 0; i < itemSlots.Length; i++)
-//     {
-//         itemSlots[i].OnRightClickEvent += HandleRightClick;
-//     }
-// }
-
 private void HandleRightClick(Item item)
     {
         
