@@ -577,10 +577,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4e37b9e60fe43a4b5e28f316c3427c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toby: {fileID: 0}
   gameOverMenu: {fileID: 187354616}
   scoreText: {fileID: 1416698992}
   livesText: {fileID: 1998990551}
   timeText: {fileID: 363681912}
+  sceneName: SampleScene
 --- !u!4 &149230995
 Transform:
   m_ObjectHideFlags: 0

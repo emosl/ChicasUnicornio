@@ -12,15 +12,19 @@ public class GameManager : MonoBehaviour
     private int score;
     private int lives;
     private int time;
+    public Toby toby;
     public GameObject gameOverMenu;
     public TMP_Text scoreText;
     public TMP_Text livesText;
     public TMP_Text timeText;
+    private Vector3 lastPlayerPos; 
+    public string sceneName;
 
     private void Awake()
     {
         homes = FindObjectsOfType<Home>();
         frogger = FindObjectOfType<Frogger>();
+        toby = FindObjectOfType<Toby>();
     }
     private void Start()
     {
@@ -32,6 +36,18 @@ public class GameManager : MonoBehaviour
         // else {
         //     NewGame();
         // }
+        Scene previousScene = SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex - 1);
+        GameObject[] objectsInPreviousScene = previousScene.GetRootGameObjects();
+
+        foreach (GameObject obj in objectsInPreviousScene)
+        {
+            toby = obj.GetComponent<Toby>();
+            if (toby != null)
+            {
+                break;
+            }
+        }
+        lastPlayerPos = toby.transform.position;
     }
     private void NewGame()
     {
@@ -103,7 +119,10 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
         frogger.gameObject.SetActive(false);
         StopAllCoroutines();
+        //toby.GetComponent<CamerMove>().Start();
         SceneManager.LoadScene("SampleScene");
+        // toby.GetComponent<Dungeon>().Scene();
+        // Debug.Log("Game Over");
     }
 
     private IEnumerator PlayAgain()

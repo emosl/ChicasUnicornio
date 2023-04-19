@@ -9,7 +9,7 @@ public class CamerMove : MonoBehaviour {
     private Vector3 offset;            
 
 
-    void Start () 
+    public void Start () 
     {
         player = GameObject.FindGameObjectWithTag("Player");
         offset = transform.position - player.transform.position;
@@ -17,6 +17,8 @@ public class CamerMove : MonoBehaviour {
 
     void LateUpdate () 
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         transform.position = player.transform.position + offset;
     }
+   
 }

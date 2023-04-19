@@ -68,14 +68,14 @@ public class Dungeon : MonoBehaviour
         lastPlayerPos = player.transform.position; // save player's initial position
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && other.gameObject.CompareTag("Dungeon"))
-        {
-            lastPlayerPos = player.transform.position; // save player's last position before loading scene
-            SceneManager.LoadScene(sceneName);
-        }
-    }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.CompareTag("Player") && other.gameObject.CompareTag("Dungeon"))
+    //     {
+    //         lastPlayerPos = player.transform.position; // save player's last position before loading scene
+    //         SceneManager.LoadScene(sceneName);
+    //     }
+    // }
 
     public void Scene()
     {

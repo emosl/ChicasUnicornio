@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Physics2D;
 using UnityEngine.SceneManagement;
+[System.Serializable]
+
+public class Toby_stats 
+{
+    public Vector3 initialPosition;
+    public Vector3 savedPosition;
+}
 
 public class Toby : MonoBehaviour
 {
@@ -19,26 +26,38 @@ public class Toby : MonoBehaviour
     public float groundCheckRadius = 1f;
     public LayerMask groundLayerMask;
 
+    public GameObject player;      
+
+
     private bool isGrounded;
     private bool isMoving;
 
     public Sprite idleSprite;
     public Sprite leapSprite;
     public GameObject[] levels;
+    public Obstacle currentObstacle;
 
-    public Vector3 initialPosition; // added variable to store initial position
+    private Toby_stats toby_stats = new Toby_stats();
+    //public Vector3 initialPosition; // added variable to store initial position
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        initialPosition = transform.position; // save the initial position of the sprite
+        toby_stats.initialPosition = transform.position;
+        toby_stats.savedPosition = transform.position; // save the initial position of the sprite
         animator.Play("idle");
         button = FindObjectOfType<Preguntas>();
         obstacleCollider = FindObjectOfType<Obstacle>();
-        
-        // string lastSceneName = PlayerPrefs.GetString("lastScene");
-        // SceneManager.LoadScene(lastSceneName);
+        string jsonStats = PlayerPrefs.GetString("toby_stats", JsonUtility.ToJson(toby_stats));
+        Debug.Log(jsonStats);
+        toby_stats = JsonUtility.FromJson<Toby_stats>(jsonStats);
+        transform.position = toby_stats.savedPosition;
+
+        PlayerPrefs.DeleteAll();
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<CamerMove>().Start();
     }
     
 
@@ -127,8 +146,13 @@ public class Toby : MonoBehaviour
         {
             // SceneManager.LoadScene("frogger_dungeon");
             //Debug.Log("Dungeon");
+            toby_stats.savedPosition = transform.position; // save the current position of the sprite
+            string jsonStats = JsonUtility.ToJson(toby_stats);
+            PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
+
             other.gameObject.GetComponent<Dungeon>().Scene();
-            other.gameObject.GetComponent<Dungeon>().ReturnToLastPos();
+            //other.GetComponent<CamerMove>().Start();
+            //other.gameObject.GetComponent<Dungeon>().ReturnToLastPos();
             // other.GetComponent<Obstacle>().TurnTriggerIntoCollider();
             // other.gameObject.GetComponent<Dungeon>().RespwanD();
             
@@ -137,7 +161,7 @@ public class Toby : MonoBehaviour
         
     }
     
-    public Obstacle currentObstacle;
+   
 
     public void PermissionGranted()
     {
