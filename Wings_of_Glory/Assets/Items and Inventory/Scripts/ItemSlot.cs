@@ -1,43 +1,4 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UI;
 
-
-// public class ItemSlot : MonoBehaviour
-// {
-//     [SerializeField] Item Item;
-
-//     private Item _item;
-
-//     public Image Image
-//     {
-//         get { return _item;}
-//         set {
-//             _item =value;
-//             if (_item == null)
-//             {
-//                 Image.enabled = false;
-//             }
-//             else
-//             {
-//                 Image.sprite = item.Icon;
-//                 Image.enabled = true;
-//             }
-//         }
-//     }
-
-//     private void OnValidate()
-//     {
-//         if (Image == null)
-//         {
-//             Image = GetComponent<Image>();
-//         }
-//     }
-    
-// }
-
-// using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,6 +9,7 @@ public class ItemSlot : MonoBehaviour , IPointerClickHandler
 {
     [SerializeField] private Item item;
     [SerializeField] private Image itemImage;
+    
 
     public Item Item
     {
@@ -63,6 +25,7 @@ public class ItemSlot : MonoBehaviour , IPointerClickHandler
 
     private void UpdateItemImage()
     {
+        
         if (itemImage == null)
         {
             return;
@@ -79,17 +42,35 @@ public class ItemSlot : MonoBehaviour , IPointerClickHandler
         }
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
-        {
-            if (Item != null && OnRightClickEvent != null)
-            {
-                OnRightClickEvent(Item);
-            }
+    // public void OnPointerClick(PointerEventData eventData)
+    // {
+    //     if (eventData != null && Input.GetMouseButtonDown(1))
+    //     {
+    //         if (Item != null && OnRightClickEvent != null)
+    //         {
+    //             OnRightClickEvent(Item);
+    //         }
 
+    //     }
+    // }
+
+public void OnPointerClick(PointerEventData eventData)
+{
+
+
+    if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
+    {
+   
+
+        if (Item != null && OnRightClickEvent != null)
+        {
+           
+            OnRightClickEvent(Item);
         }
     }
+}
+
+
 
     protected virtual void OnValidate()
     {

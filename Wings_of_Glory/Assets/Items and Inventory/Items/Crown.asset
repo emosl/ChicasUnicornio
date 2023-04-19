@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crown
   m_EditorClassIdentifier: 
   ItemName: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 647560830, guid: a3fc34a4ba7a4418493697856f7ec92e, type: 3}
   StrengthBonus: 0
   AgilityBonus: 0
   SpeedBonus: 0

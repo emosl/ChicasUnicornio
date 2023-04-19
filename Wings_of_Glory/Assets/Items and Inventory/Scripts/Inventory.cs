@@ -10,14 +10,51 @@ public class Inventory : MonoBehaviour
     [SerializeField] ItemSlot[] itemSlots;
 
     public event Action<Item> OnItemRightClickEvent;
-
     private void Awake()
+{
+    for (int i = 0; i < itemSlots.Length; i++)
     {
-        for (int i =0 ; i < itemSlots.Length; i++)
-        {
-            itemSlots[i].OnRightClickEvent += OnItemRightClickEvent;
-        }
+        itemSlots[i].OnRightClickEvent += HandleRightClick;
+        itemSlots[i].OnRightClickEvent += OnItemRightClickEvent;
     }
+}
+    
+
+
+    // private void Awake()
+    // {
+
+    //     for (int i =0 ; i < itemSlots.Length; i++)
+    //     {
+    //         itemSlots[i].OnRightClickEvent += OnItemRightClickEvent;
+    //     }
+    // }
+//     private void Awake()
+// {
+//     for (int i = 0; i < itemSlots.Length; i++)
+//     {
+//         itemSlots[i].OnRightClickEvent += HandleRightClick;
+//     }
+// }
+
+private void HandleRightClick(Item item)
+    {
+        
+        // Perform any other necessary actions here, like using the item or showing a context menu.
+        OnItemRightClickEvent?.Invoke(item);
+    }
+
+
+
+
+private void OnDestroy()
+{
+    for (int i = 0; i < itemSlots.Length; i++)
+    {
+        itemSlots[i].OnRightClickEvent -= HandleRightClick;
+    }
+}
+
 
     private void OnValidate()
     {
