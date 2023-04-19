@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+ 
+*{
+    box-sizing: border-box;
+}
+
+
+#grid-container{
+    height: 100vh;
+    background-image: linear-gradient(rgb(255, 178, 225), #5F2E7E);
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap:10px;
+    grid-template-areas: 
+    "menu menu menu menu menu menu menu menu menu menu menu menu"
+    "title title title title title title title title title title title title"
+    "title title title title title title title title title title title title"  
+    "title title title title title title title title title title title title"
+    "title title title title title title title title title title title title"
+    "title title title title title title title title title title title title"
+    
+    "info info info info info info info info info info info info"
+    "info info info info info info info info info info info info"
+    "info info info info info info info info info info info info";
+  }
+
+#title{
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: aliceblue;
+    font-size: 70px;
+    font-family: 'VT323', monospace;
+    text-shadow: 2px 2px 2px #5F2E7E;
+  }
+
+
+body, html{
+    margin: 0;
+    padding: 0;
+    color: aliceblue;
+  }
+
+#menu{
+    grid-area: menu;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'VT323', monospace;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: sticky;
+    /* top: 0; */
+  }
+
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: rgb(249, 198, 255);
+  }
+  
+  .active {
+    background-color: hwb(277 50% 12%);
+  }
+
+
+
+  
