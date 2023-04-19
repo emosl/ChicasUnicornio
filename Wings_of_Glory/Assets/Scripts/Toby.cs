@@ -14,7 +14,9 @@ public class Toby : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Animator animator;
     public float speed = 5f;
-    public float jumpForce = 10f;
+    public float strength = 10f;
+    public float shield = 0f;
+    public float agility = 0f;
     public float groundCheckRadius = 1f;
     public LayerMask groundLayerMask;
 
@@ -78,7 +80,7 @@ public class Toby : MonoBehaviour
         // Jump if sprite is grounded and user presses the space key
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0f, strength), ForceMode2D.Impulse);
             transform.rotation = Quaternion.identity; // Reset sprite rotation when jumping
         }
 

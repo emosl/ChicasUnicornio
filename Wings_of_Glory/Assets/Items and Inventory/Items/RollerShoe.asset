@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08befef23a7b4c17bee10b32c244ef6, type: 3}
+  m_Name: RollerShoe
+  m_EditorClassIdentifier: 
+  ItemName: 
+  Icon: {fileID: 0}
+  StrengthBonus: 0
+  AgilityBonus: 0
+  SpeedBonus: 0
+  ShieldBonus: 0
+  StrengthPercentBonus: 0
+  AgilityPercentBonus: 0
+  SpeedPercentBonus: 0
+  ShieldPercentBonus: 0
+  EquipmentType: 0
