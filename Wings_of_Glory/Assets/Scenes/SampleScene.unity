@@ -3653,7 +3653,7 @@ GameObject:
   - component: {fileID: 1259013234}
   m_Layer: 0
   m_Name: target
-  m_TagString: Dungeon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3666,7 +3666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259013232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.29, y: -2.79, z: -0.050890546}
+  m_LocalPosition: {x: 8.37, y: -2.93, z: -0.050890546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3686,7 +3686,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03374958, y: -0.25874996}
+  m_Offset: {x: -0.5970049, y: -0.35670662}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3697,7 +3697,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.037504, y: 3.6325035}
+  m_Size: {x: 2.6661015, y: 2.5059967}
   m_EdgeRadius: 0
 --- !u!1 &1304263084
 GameObject:
@@ -3853,9 +3853,10 @@ GameObject:
   - component: {fileID: 1323168130}
   - component: {fileID: 1323168132}
   - component: {fileID: 1323168133}
+  - component: {fileID: 1323168134}
   m_Layer: 0
   m_Name: dungeon
-  m_TagString: Untagged
+  m_TagString: Dungeon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3939,9 +3940,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1dae9f3a1d74faa8938f50e7abcf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1259013233}
+  target: {fileID: 1323168130}
+  respawn: {fileID: 1259013233}
   sceneName: Frogger_dungeon
   sceneToLoad: Frogger_dungeon
+  player: {fileID: 370204284}
+--- !u!61 &1323168134
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323168129}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &1387387545
 GameObject:
   m_ObjectHideFlags: 0
