@@ -10,18 +10,34 @@ TagManager:
   - LevelChange
   - Position
   - Obstacle_Collider
+  - Carrot
+  - Cake
+  - Apple
+  - gold
+  - silver
+  - bronze
+  - fireshoe
+  - spike
+  - roller
+  - hat
+  - hairband
+  - crown
+  - Metal
+  - Food
+  - HeadBand
+  - Horseshoe
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - shields
   - Water
   - UI
   - 
   - 
   - groundLayerMask
   - Barrier
-  - 
+  - Background
   - 
   - 
   - 
@@ -46,4 +62,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sprites
+    uniqueID: 3907074573
+    locked: 1
+  - name: Buttons
+    uniqueID: 399050493
+    locked: 0
+  - name: Back
+    uniqueID: 2087016191
     locked: 0
