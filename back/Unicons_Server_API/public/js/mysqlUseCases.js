@@ -7,7 +7,7 @@ function main()
         const data = new FormData(formSelectUser)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch(`http://localhost:5000/api/users/${dataObj['userID']}`,{
+        let response = await fetch(`http://127.0.1:5000/api/users/${dataObj['userID']}`,{
             method: 'GET'
         })
         
@@ -64,7 +64,7 @@ function main()
         const data = new FormData(formInsert)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch('http://localhost:5000/api/users',{
+        let response = await fetch('http://127.0.1:5000/api/users',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -82,14 +82,39 @@ function main()
         }
     }
 
+    document.getElementById('formInsertGameinventory').onsubmit = async(e)=>
+    {
+        e.preventDefault()
+
+        const data = new FormData(formInsert)
+        const dataObj = Object.fromEntries(data.entries())
+
+        let response = await fetch('http://127.0.1:5000/api/gameinventory',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(dataObj)
+        })
+        
+        if(response.ok)
+        {
+            let results = await response.json()
+        
+            console.log(results)
+            postResults.innerHTML = results.message
+        }
+        else{
+            postResults.innerHTML = response.status
+        }
+    }
+
+
     document.getElementById('formUpdate').onsubmit = async(e)=>
     {
         e.preventDefault()
 
         const data = new FormData(formUpdate)
         const dataObj = Object.fromEntries(data.entries())
-
-        let response = await fetch('http://localhost:5000/api/users',{
+        let response = await fetch('http://127.0.1:5000/api/users',{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(dataObj)
@@ -114,7 +139,7 @@ function main()
         const data = new FormData(formDelete)
         const dataObj = Object.fromEntries(data.entries())
 
-        let response = await fetch(`http://localhost:5000/api/users/${dataObj['userID']}`,{
+        let response = await fetch(`http://127.0.1:5000/api/users/${dataObj['userID']}`,{
             method: 'DELETE'
         })
         
@@ -130,5 +155,5 @@ function main()
         }
     }
 }
-
 main()
+
