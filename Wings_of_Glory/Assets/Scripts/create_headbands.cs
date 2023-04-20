@@ -19,4 +19,10 @@ public class create_headbands : MonoBehaviour
         Instantiate(gadgetsheadbands[rand], transform.position, Quaternion.identity);
         
     }
+    void Update(){
+        if (gadgetsheadbands == null)
+        {
+            creategadgets();
+        }
+    }
 }
