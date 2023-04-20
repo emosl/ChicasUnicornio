@@ -6,7 +6,7 @@ import mysql from 'mysql2/promise'
 import fs from 'fs'
 
 const app = express()
-const port = 8000
+const port = 5000
 
 app.use(express.json())
 app.use(express.static('./public'));
