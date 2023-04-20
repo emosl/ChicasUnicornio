@@ -60,6 +60,21 @@ public void OnPointerClick(PointerEventData eventData)
     }
 }
 
+public void OnPointerEnter(PointerEventData eventData)
+{
+    if (Item is EquippableItem)
+    {
+        tooltip.ShowTooltip((EquippableItem)Item);
+
+    }
+    
+}
+
+public void OnPointerExit(PointerEventData eventData)
+{
+    tooltip.HideTooltip();
+}
+
 
 
     protected virtual void OnValidate()
@@ -76,5 +91,5 @@ public void OnPointerClick(PointerEventData eventData)
     }
 
 
-    
+
 }

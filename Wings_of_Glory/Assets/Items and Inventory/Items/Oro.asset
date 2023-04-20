@@ -14,12 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: 
   Icon: {fileID: -2033842128, guid: a3fc34a4ba7a4418493697856f7ec92e, type: 3}
-  StrengthBonus: 0
-  AgilityBonus: 0
-  SpeedBonus: 0
-  ShieldBonus: 0
-  StrengthPercentBonus: 0
-  AgilityPercentBonus: 0
-  SpeedPercentBonus: 0
-  ShieldPercentBonus: 0
+  StrengthBonus: 2
+  AgilityBonus: 3
+  SpeedBonus: 4
+  ShieldBonus: 1
   EquipmentType: 3
