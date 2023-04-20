@@ -11,7 +11,6 @@ public class Preguntas : MonoBehaviour
     public GameObject canvas;
 
     public event Action<bool> ButtonPressed;
-    
 
     private void Start()
     {
@@ -22,13 +21,6 @@ public class Preguntas : MonoBehaviour
     }
 
     public void ShowQuestion(string question, Action<bool> callback)
-    {
-        canvas.SetActive(true);
-         Text questionText = canvas.GetComponentInChildren<Text>();
-        ButtonPressed = callback;
-    }
-
-    public void ShowQuestionD(string question, Action<bool> callback)
     {
         canvas.SetActive(true);
          Text questionText = canvas.GetComponentInChildren<Text>();
@@ -46,8 +38,6 @@ public class Preguntas : MonoBehaviour
         ButtonPressed?.Invoke(decision);
         HideQuestion();
     }
-
-    
 
     void OnDestroy()
     {
