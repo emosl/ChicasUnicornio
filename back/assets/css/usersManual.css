@@ -4,27 +4,45 @@
     box-sizing: border-box;
 }
 
+.head{
+  display: flex;
 
-#grid-container{
+}
+
+#logo{
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container{
     height: 100vh;
-    background-image: linear-gradient(rgb(255, 178, 225), #5F2E7E);
-    display:grid;
-    grid-template-columns: repeat(12, 1fr);
-    
-    grid-template-areas: 
-    "menu menu menu menu menu menu menu menu menu menu menu menu"
-    "title title title title title title title title title title title title"
-    "title title title title title title title title title title title title"  
-    "items items items items items items items items items items items items"
-    "items1 items1 items1 items1 items1 items1 items1 items1 items1 items1 items1 items1"
-    "items1 items1 items1 items1 items1 items1 items1 items1 items1 items1 items1 items1"
-    "info info info info info info info info info info info info"
-    "info info info info info info info info info info info info"
-    "info info info info info info info info info info info info";
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
   }
 
+  header {
+    color: #fff;
+    padding: 10px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    align-content: start;
+    padding: 10px;
+  }
+  
 #title{
-    grid-area: title;
+    grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,8 +58,24 @@ body, html{
     margin: 0;
     padding: 0;
     color: aliceblue;
+    background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E);
   }
 
+#sub{
+  font-family: 'VT323', monospace;
+  color: #ffc4fd;
+  text-shadow: 2px 2px 2px #eb8b24;
+  font-size: 30px;
+}
+
+  .subtopic {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  
 #menu{
     grid-area: menu;
     justify-content: center;
@@ -75,12 +109,9 @@ body, html{
   }
   
   li a:hover {
-    background-color: rgb(249, 198, 255);
+    background-color: rgb(246, 179, 98);
   }
   
-  .active {
-    background-color: hwb(277 50% 12%);
-  }
 
   .items{
     grid-area: items;
@@ -89,17 +120,23 @@ body, html{
     font-size: 30px;
     text-shadow: #ae59de 2px 2px 2px;
     display: flex;
+    justify-content: center;
   }
 
 p{
-    font-family: 'Courier New', Courier, monospace;
-    color: aliceblue;
-}
-
-.items1{
-    grid-area: items1;
+    font-family: 'Palatino', 'URW Palladio L', serif;
+    font-size: 15px;
+    margin-top: 0;
+    text-align: justify;
+    text-shadow: #cb6dcd 2px 2px 2px;
     
-
 }
+
+img{
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+}
+
 
   
