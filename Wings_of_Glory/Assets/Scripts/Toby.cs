@@ -21,6 +21,8 @@ public class Toby : MonoBehaviour
     private Obstacle obstacle;
     private SpriteRenderer spriteRenderer;
     public Animator animator;
+    // public Animator bombs;
+
     public float speed = 5f;
     public float jumpForce = 10f;
     public float groundCheckRadius = 1f;
@@ -47,17 +49,18 @@ public class Toby : MonoBehaviour
         toby_stats.initialPosition = transform.position;
         toby_stats.savedPosition = transform.position; // save the initial position of the sprite
         animator.Play("idle");
+        // bombs.Play("idle_bomb");
         button = FindObjectOfType<Preguntas>();
         obstacleCollider = FindObjectOfType<Obstacle>();
         string jsonStats = PlayerPrefs.GetString("toby_stats", JsonUtility.ToJson(toby_stats));
         Debug.Log(jsonStats);
         toby_stats = JsonUtility.FromJson<Toby_stats>(jsonStats);
         transform.position = toby_stats.savedPosition;
-
         PlayerPrefs.DeleteAll();
+        
 
         player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<CamerMove>().Start();
+        // player.GetComponent<CamerMove>().Start();
     }
     
 
@@ -133,6 +136,7 @@ public class Toby : MonoBehaviour
          if (isGrounded && other.gameObject.CompareTag("Obstacle"))
         {
             other.gameObject.GetComponent<Obstacle>().AskPermission();
+            // bombs.Play("bomb_anim");
             other.gameObject.GetComponent<Obstacle>().UndoTriggersForObstacleColliders();
             
         }
@@ -145,16 +149,12 @@ public class Toby : MonoBehaviour
         else if (other.gameObject.CompareTag("Dungeon"))
         {
             // SceneManager.LoadScene("frogger_dungeon");
-            //Debug.Log("Dungeon");
             toby_stats.savedPosition = transform.position; // save the current position of the sprite
-            string jsonStats = JsonUtility.ToJson(toby_stats);
+            string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
             PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
-
-            other.gameObject.GetComponent<Dungeon>().Scene();
-            //other.GetComponent<CamerMove>().Start();
-            //other.gameObject.GetComponent<Dungeon>().ReturnToLastPos();
-            // other.GetComponent<Obstacle>().TurnTriggerIntoCollider();
-            // other.gameObject.GetComponent<Dungeon>().RespwanD();
+            other.gameObject.GetComponent<Dungeon>().AskPermissionD();
+            
+            
             
         }
         

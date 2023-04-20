@@ -11,6 +11,7 @@ TagManager:
   - Position
   - Obstacle_Collider
   - Dungeon
+  - Obstacle_Dungeon
   layers:
   - Default
   - TransparentFX

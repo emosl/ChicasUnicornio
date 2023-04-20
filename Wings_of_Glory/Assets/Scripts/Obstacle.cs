@@ -8,6 +8,8 @@ public class Obstacle : MonoBehaviour
     private Collider2D obstacleCollider;
     public GameObject canvas;
     private Preguntas preguntas;
+    public Animator bombs;
+    public Animator wave;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,8 @@ public class Obstacle : MonoBehaviour
         obstacleCollider = GetComponent<Collider2D>();
         preguntas = canvas.GetComponent<Preguntas>();
         preguntas.ButtonPressed += OnTriggerDecision;
+        bombs.Play("idle_bomb");
+        wave.Play("wave_idle");
         
     }
 
@@ -22,6 +26,8 @@ public class Obstacle : MonoBehaviour
     {
         preguntas.ShowQuestion("Do you want to go through this obstacle?", OnTriggerDecision);
         UndoTriggersForObstacleColliders();
+        bombs.Play("idle_bomb");
+        wave.Play("wave_idle");
     }
 
     private void OnTriggerDecision(bool shouldTrigger)
@@ -36,6 +42,8 @@ public class Obstacle : MonoBehaviour
         {
             //no
             TurnTriggerIntoCollider();
+            bombs.Play("bomb_anim");
+            wave.Play("wave_anim");
             Restart();
         }
         

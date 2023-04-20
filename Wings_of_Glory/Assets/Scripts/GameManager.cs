@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         homes = FindObjectsOfType<Home>();
         frogger = FindObjectOfType<Frogger>();
-        toby = FindObjectOfType<Toby>();
+        // toby = FindObjectOfType<Toby>();
     }
     private void Start()
     {
@@ -36,18 +36,18 @@ public class GameManager : MonoBehaviour
         // else {
         //     NewGame();
         // }
-        Scene previousScene = SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex - 1);
-        GameObject[] objectsInPreviousScene = previousScene.GetRootGameObjects();
+        // Scene previousScene = SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex - 1);
+        // GameObject[] objectsInPreviousScene = previousScene.GetRootGameObjects();
 
-        foreach (GameObject obj in objectsInPreviousScene)
-        {
-            toby = obj.GetComponent<Toby>();
-            if (toby != null)
-            {
-                break;
-            }
-        }
-        lastPlayerPos = toby.transform.position;
+        // foreach (GameObject obj in objectsInPreviousScene)
+        // {
+        //     toby = obj.GetComponent<Toby>();
+        //     if (toby != null)
+        //     {
+        //         break;
+        //     }
+        // }
+        // lastPlayerPos = toby.transform.position;
     }
     private void NewGame()
     {
