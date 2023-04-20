@@ -4,7 +4,7 @@ using System.Collections;
 public class CamerMove : MonoBehaviour {
 
     public GameObject player;      
-    private Vector3 offset;
+    public Vector3 offset;
     public Transform target;
     public Transform previousTarget;
     public float smoothSpeed = 0.125f;            
