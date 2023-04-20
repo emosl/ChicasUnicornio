@@ -4516,7 +4516,7 @@ MonoBehaviour:
   bombs: {fileID: 1501214102}
   wave: {fileID: 1517073147}
   ice: {fileID: 987604213}
-  rock: {fileID: 1562875277}
+  rock: {fileID: 6376534022020584389}
 --- !u!61 &1255467969
 BoxCollider2D:
   m_ObjectHideFlags: 0
