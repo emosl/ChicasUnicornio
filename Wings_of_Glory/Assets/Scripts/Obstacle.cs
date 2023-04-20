@@ -10,6 +10,8 @@ public class Obstacle : MonoBehaviour
     private Preguntas preguntas;
     public Animator bombs;
     public Animator wave;
+    public Animator ice;
+    public Animator rock;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,8 @@ public class Obstacle : MonoBehaviour
         preguntas.ButtonPressed += OnTriggerDecision;
         bombs.Play("idle_bomb");
         wave.Play("wave_idle");
+        ice.Play("idle_ice");
+        rock.Play("idle_rock");
         
     }
 
@@ -28,6 +32,8 @@ public class Obstacle : MonoBehaviour
         UndoTriggersForObstacleColliders();
         bombs.Play("idle_bomb");
         wave.Play("wave_idle");
+        ice.Play("idle_ice");
+        rock.Play("idle_rock");
     }
 
     private void OnTriggerDecision(bool shouldTrigger)
@@ -44,6 +50,8 @@ public class Obstacle : MonoBehaviour
             TurnTriggerIntoCollider();
             bombs.Play("bomb_anim");
             wave.Play("wave_anim");
+            ice.Play("icicle_anim");
+            rock.Play("rock_anim");
             Restart();
         }
         
