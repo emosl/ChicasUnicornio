@@ -12,6 +12,22 @@ TagManager:
   - Obstacle_Collider
   - Dungeon
   - Obstacle_Dungeon
+  - Carrot
+  - Cake
+  - Apple
+  - gold
+  - silver
+  - bronze
+  - fireshoe
+  - spike
+  - roller
+  - hat
+  - hairband
+  - crown
+  - Metal
+  - Food
+  - HeadBand
+  - Horseshoe
   layers:
   - Default
   - TransparentFX
