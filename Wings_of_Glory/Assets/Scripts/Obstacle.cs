@@ -42,16 +42,16 @@ public class Obstacle : MonoBehaviour
         {
             //yes
             MakeTriggersForObstacleColliders();
+            bombs.Play("bomb_anim");
+            wave.Play("wave_anim");
+            ice.Play("icicle_anim");
+            rock.Play("rock_anim");
             
         }
         else
         {
             //no
             TurnTriggerIntoCollider();
-            bombs.Play("bomb_anim");
-            wave.Play("wave_anim");
-            ice.Play("icicle_anim");
-            rock.Play("rock_anim");
             Restart();
         }
         
