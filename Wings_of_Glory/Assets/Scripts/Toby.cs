@@ -3,6 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Physics2D;
+using UnityEngine.SceneManagement;
+[System.Serializable]
+
+public class Toby_stats 
+{
+    public Vector3 initialPosition;
+    public Vector3 savedPosition;
+}
 
 public class Toby : MonoBehaviour
 {
@@ -13,6 +21,8 @@ public class Toby : MonoBehaviour
     private Obstacle obstacle;
     private SpriteRenderer spriteRenderer;
     public Animator animator;
+    // public Animator bombs;
+
     public float speed = 5f;
     public float jumpForce = 10f;
 
@@ -23,28 +33,46 @@ public class Toby : MonoBehaviour
     public float groundCheckRadius = 1f;
     public LayerMask groundLayerMask;
 
+    public GameObject player;      
+
+
     private bool isGrounded;
     private bool isMoving;
 
     public Sprite idleSprite;
     public Sprite leapSprite;
     public GameObject[] levels;
+    public Obstacle currentObstacle;
 
-    public Vector3 initialPosition; // added variable to store initial position
+    private Toby_stats toby_stats = new Toby_stats();
+    //public Vector3 initialPosition; // added variable to store initial position
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        initialPosition = transform.position; // save the initial position of the sprite
+        toby_stats.initialPosition = transform.position;
+        toby_stats.savedPosition = transform.position; // save the initial position of the sprite
         animator.Play("idle");
+        // bombs.Play("idle_bomb");
         button = FindObjectOfType<Preguntas>();
         obstacleCollider = FindObjectOfType<Obstacle>();
+        string jsonStats = PlayerPrefs.GetString("toby_stats", JsonUtility.ToJson(toby_stats));
+        Debug.Log(jsonStats);
+        toby_stats = JsonUtility.FromJson<Toby_stats>(jsonStats);
+        transform.position = toby_stats.savedPosition;
+        PlayerPrefs.DeleteAll();
+        
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        // player.GetComponent<CamerMove>().Start();
     }
+    
 
     void Update()
     {
         // Check if sprite is grounded
+        
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 offset = new Vector2(0f, -bounds.extents.y);
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
@@ -97,6 +125,7 @@ public class Toby : MonoBehaviour
         {
             rb.drag = 3f;
         }
+
     }
 
     void FixedUpdate()
@@ -108,10 +137,12 @@ public class Toby : MonoBehaviour
     //OnTriggerEnter2D is called when the Collider2D other enters the trigger;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Obstacle");
+        // Debug.Log("Obstacle");
          if (isGrounded && other.gameObject.CompareTag("Obstacle"))
         {
             other.gameObject.GetComponent<Obstacle>().AskPermission();
+            // bombs.Play("bomb_anim");
+            other.gameObject.GetComponent<Obstacle>().UndoTriggersForObstacleColliders();
             
         }
         else if (other.gameObject.CompareTag("LevelChange"))
@@ -120,6 +151,20 @@ public class Toby : MonoBehaviour
             transform.position = levels[rand].transform.position;
             Destroy(levels[rand]); // remove the selected level from the levels array
         }
+
+        else if (other.gameObject.CompareTag("Dungeon"))
+        {
+            // SceneManager.LoadScene("frogger_dungeon");
+            toby_stats.savedPosition = transform.position; // save the current position of the sprite
+            string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+            PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
+            other.gameObject.GetComponent<Dungeon>().AskPermissionD();
+            
+            
+            
+        }
+        
+
         //aqui escribir si toby encuentra strength hacer tal y asi. Debe mandar al script de gadgets.
         else if (other.gameObject.CompareTag("spike")) //This option is activated when Toby gets a strength gadget.
         {
@@ -169,10 +214,11 @@ public class Toby : MonoBehaviour
         {
             other.gameObject.GetComponent<gadgets>().IncrementSpeed3();
         }
+
         
     }
     
-    public Obstacle currentObstacle;
+   
 
     public void PermissionGranted()
     {

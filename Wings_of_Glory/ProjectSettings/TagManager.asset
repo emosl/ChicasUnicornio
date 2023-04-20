@@ -10,6 +10,8 @@ TagManager:
   - LevelChange
   - Position
   - Obstacle_Collider
+  - Dungeon
+  - Obstacle_Dungeon
   - Carrot
   - Cake
   - Apple
@@ -34,11 +36,11 @@ TagManager:
   - Water
   - UI
   - 
-  - 
   - groundLayerMask
-  - Barrier
+  - Platform
+  - Obstacle
   - Background
-  - 
+  - Barrier
   - 
   - 
   - 
