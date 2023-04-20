@@ -5840,7 +5840,7 @@ MonoBehaviour:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-
+--- !u!1 &1169459380
 
   m_GameObject: {fileID: 1055771458}
   m_Enabled: 1
