@@ -26,6 +26,8 @@ TagManager:
   - Food
   - HeadBand
   - Horseshoe
+  - Dungeon
+  - Obstacle_Dungeon
   layers:
   - Default
   - TransparentFX
@@ -33,8 +35,8 @@ TagManager:
   - shields
   - Water
   - UI
-  - 
-  - 
+  - Platform
+  - Obstacle
   - groundLayerMask
   - Barrier
   - Background
