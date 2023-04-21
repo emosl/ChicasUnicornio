@@ -309,8 +309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bed14fb077ad52792d2c01282f65f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: localhost:5000
+  url: localhost:8000
   getUsersEP: /api/users
+  putUsersEP: /api/users/:id
   errorText: {fileID: 120164208}
   allUsers:
     users: []

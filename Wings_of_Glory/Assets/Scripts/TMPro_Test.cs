@@ -49,19 +49,19 @@ public class TMPro_Test : MonoBehaviour
             rectTransform.anchoredPosition = new Vector2 (0, -50 * i);
 
             // Extract the text from the argument object
-            User us = allUsers.users[i];
-            //Debug.Log("ID: " + us.id_users + " | " + us.name + " " + us.surname);
+            Users us = allUsers.users[i];
+            //Debug.Log("ID: " + us.username_ID + " | " + us.name + " " + us.last_name);
 
             if (type == PrefabType.Button) {
                 // Set the text
                 TextMeshProUGUI field = uiItem.GetComponentInChildren<TextMeshProUGUI>();
-                field.text = "ID: " + us.id_users + " | " + us.name + " " + us.surname;
+                field.text = "ID: " + us.username_ID + " | " + us.name + " " + us.last_name;
                 // Set the callback
                 Button btn = uiItem.GetComponent<Button>();
-		        btn.onClick.AddListener(delegate {GreetName(us.name + " " + us.surname); });
+		        btn.onClick.AddListener(delegate {GreetName(us.name + " " + us.last_name); });
             } else if (type == PrefabType.Text) {
                 TextMeshProUGUI field = uiItem.GetComponent<TextMeshProUGUI>();
-                field.text = "ID: " + us.id_users + " | " + us.name + " " + us.surname;
+                field.text = "ID: " + us.username_ID + " | " + us.name + " " + us.last_name;
             }
         }
     }
