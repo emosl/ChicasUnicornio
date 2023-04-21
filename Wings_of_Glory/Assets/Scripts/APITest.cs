@@ -61,8 +61,8 @@ public class APITest : MonoBehaviour
     // via another script that fills a scrollview
     void DisplayUsers()
     {
-        // TMPro_Test texter = GetComponent<TMPro_Test>();
-        // texter.LoadNames(allUsers);
+        TMPro_Test texter = GetComponent<TMPro_Test>();
+        texter.LoadNames(allUsers);
     }
 
     // These are the functions that must be called to interact with the API
@@ -184,4 +184,3 @@ public class APITest : MonoBehaviour
         }
     }
 }
-
