@@ -27,6 +27,13 @@ public class Preguntas : MonoBehaviour
         ButtonPressed = callback;
     }
 
+    public void ShowQuestionD(string question, Action<bool> callback)
+    {
+        canvas.SetActive(true);
+         Text questionText = canvas.GetComponentInChildren<Text>();
+        ButtonPressed = callback;
+    }
+
 
     public void HideQuestion()
     {
