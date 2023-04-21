@@ -20,24 +20,27 @@ using UnityEngine.Networking;
 // Allow the class to be extracted from Unity
 // https://stackoverflow.com/questions/40633388/show-members-of-a-class-in-unity3d-inspector
 [System.Serializable]
-public class User
+public class Users
 {
-    public int id_users;
+    public int username_ID;
     public string name;
-    public string surname;
+    public string last_name;
+    public string email;
+    public string password;
 }
 
 // Allow the class to be extracted from Unity
 [System.Serializable]
 public class UserList
 {
-    public List<User> users;
+    public List<Users> users;
 }
 
 public class APITest : MonoBehaviour
 {
     [SerializeField] string url;
     [SerializeField] string getUsersEP;
+    [SerializeField] string putUsersEP;
     [SerializeField] Text errorText;
 
     // This is where the information from the api will be extracted
@@ -118,16 +121,19 @@ public class APITest : MonoBehaviour
         */
 
         // Create the object to be sent as json
-        User testUser = new User();
+        Users testUser = new Users();
         testUser.name = "newGuy" + Random.Range(1000, 9000).ToString();
-        testUser.surname = "Tester" + Random.Range(1000, 9000).ToString();
+        testUser.last_name= "Tester" + Random.Range(1000, 9000).ToString();
+        testUser.email = "newGuy" + Random.Range(1000, 9000).ToString() + "@mail.com";
+        testUser.password = "1234";
+
         //Debug.Log("USER: " + testUser);
         string jsonData = JsonUtility.ToJson(testUser);
         //Debug.Log("BODY: " + jsonData);
 
         // Send using the Put method:
         // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
-        using (UnityWebRequest www = UnityWebRequest.Put(url + getUsersEP, jsonData))
+        using (UnityWebRequest www = UnityWebRequest.Put(url + putUsersEP, jsonData))
         {
             //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
             // Set the method later, and indicate the encoding is JSON
