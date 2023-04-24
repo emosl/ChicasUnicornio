@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5593604769222663688}
   - component: {fileID: 3342177291738256450}
+  - component: {fileID: -4161245130957798700}
   m_Layer: 0
   m_Name: hat
   m_TagString: hat
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4161245130957798700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3087486753302773731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eae4e9ee41a3484ea31cb0f3d4cfd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equippableItem: {fileID: 11400000, guid: a7523d6982559496999ab0a2e4f594b3, type: 2}

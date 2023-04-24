@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2573209691791338864}
   - component: {fileID: 2573209691791338865}
+  - component: {fileID: -7594362048425385910}
   m_Layer: 0
   m_Name: fireshoe
   m_TagString: fireshoe
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7594362048425385910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573209691791338871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eae4e9ee41a3484ea31cb0f3d4cfd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equippableItem: {fileID: 11400000, guid: d40d969e3b86f45c3af48105d145b5f0, type: 2}

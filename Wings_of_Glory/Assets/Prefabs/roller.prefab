@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013402895056951051}
   - component: {fileID: 8013402895056951050}
+  - component: {fileID: -850325653031129206}
   m_Layer: 0
   m_Name: roller
   m_TagString: roller
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-850325653031129206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013402895056951048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eae4e9ee41a3484ea31cb0f3d4cfd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equippableItem: {fileID: 11400000, guid: c66ee1dfc24554501bce737ba7932d10, type: 2}
