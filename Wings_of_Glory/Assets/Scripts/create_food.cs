@@ -8,10 +8,15 @@ public class create_food : MonoBehaviour
    
     public GameObject[] gadgetsfood;
     
+    
     public void Start()
     {
         creategadgets();
     }
+
+    // void Update(){
+
+    // }
 
     public void creategadgets()
     {

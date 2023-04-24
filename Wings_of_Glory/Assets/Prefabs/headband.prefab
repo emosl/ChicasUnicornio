@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 2285998784588346299}
   - component: {fileID: 2285998784588346297}
   - component: {fileID: 2285998784588346296}
-  m_Layer: 0
+  - component: {fileID: 7485588087895318781}
+  - component: {fileID: 325522994369651757}
+  m_Layer: 8
   m_Name: headband
   m_TagString: HeadBand
   m_Icon: {fileID: 0}
@@ -101,3 +103,48 @@ MonoBehaviour:
   - {fileID: 7451545272330754834, guid: fac7ac3c002d04b129091f739a71ed20, type: 3}
   - {fileID: 4720631084462301447, guid: f049544f182344d478f2f2394aac6f63, type: 3}
   - {fileID: 3087486753302773731, guid: 4d8458bcaa7ed477780883278f38b818, type: 3}
+--- !u!61 &7485588087895318781
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2285998784588346298}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &325522994369651757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2285998784588346298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a093a6ebdd04a4346a133dc61355a40e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: {fileID: 0}
+  speed: {fileID: 0}
+  shield: {fileID: 0}
+  agility: {fileID: 0}
+  player: {fileID: 0}
+  invisible:
+  - {fileID: 1899308087772049298, guid: 664ca64e211414a7abdd8e1e921fc6dc, type: 3}

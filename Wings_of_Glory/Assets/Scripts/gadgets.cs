@@ -8,12 +8,20 @@ public class gadgets : MonoBehaviour
     public Toby speed;
     public Toby shield;
     public Toby agility;
+    public GameObject player;
+    public GameObject[] invisible;
+    //private Collider2D gadgetCollider;
     // Start is called before the first frame update
     void Start()
     {
         //jumpForce = FindObjectofType<Toby>();
+        //gadgetCollider = GetComponent<Collider2D>();
         
     }
+    public void disappeargadgets(){
+        Instantiate(invisible[0], transform.position, Quaternion.identity);
+    }
+    
 //Tutorial for managing variables: https://www.google.com/search?q=how+to+use+a+variable+in+a+unity+script+in+another+script&rlz=1C5CHFA_enMX923MX923&oq=how+to+use+a+variable+in+a+unity+script+in+another+script&aqs=chrome..69i57j33i160l3.11705j0j4&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:bf91e53c,vid:aRmcN_79KYA
     public void IncrementStrength1()
     {

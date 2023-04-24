@@ -19,11 +19,13 @@ public class Toby : MonoBehaviour
     private Preguntas ButtonPressed;
     private Preguntas button;
     private Obstacle obstacleCollider;
+    
     private Obstacle obstacle;
     private SpriteRenderer spriteRenderer;
     public Animator animator;
     public Obstacle currentObstacle;
     public GameObject player;  
+    private gadgets gadgetcollider;
 
     public float speed = 5f;
 
@@ -142,7 +144,7 @@ public class Toby : MonoBehaviour
         
          if (isGrounded && other.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("Obstacle");
+            Debug.Log("Obstaccle");
             other.gameObject.GetComponent<Obstacle>().AskPermission();
             
         }
@@ -160,55 +162,74 @@ public class Toby : MonoBehaviour
             PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
             other.gameObject.GetComponent<Dungeon>().AskPermissionD();
         }
-        //aqui escribir si toby encuentra strength hacer tal y asi. Debe mandar al script de gadgets.
-        else if (other.gameObject.CompareTag("spike")) //This option is activated when Toby gets a strength gadget.
+        else if (other.gameObject.CompareTag("Food")) //This option is activated when Toby gets a strength gadget.
         {
-            other.gameObject.GetComponent<gadgets>().IncrementStrength1();
+            Debug.Log("Foood");
+            other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
-        else if (other.gameObject.CompareTag("fireshoe")) //This option is activated when Toby gets a strength gadget.
+        else if (other.gameObject.CompareTag("HeadBand")) //This option is activated when Toby gets a strength gadget.
         {
-            other.gameObject.GetComponent<gadgets>().IncrementStrength2();
+            other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
-        else if (other.gameObject.CompareTag("roller")) //This option is activated when Toby gets a strength gadget.
+        else if (other.gameObject.CompareTag("Horseshoe")) //This option is activated when Toby gets a strength gadget.
         {
-            other.gameObject.GetComponent<gadgets>().IncrementStrength3();
+            
+            other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
-        else if (other.gameObject.CompareTag("Carrot")) //This option is activated when Toby gets a strength gadget.
+        else if (other.gameObject.CompareTag("Metal")) //This option is activated when Toby gets a strength gadget.
         {
-            other.gameObject.GetComponent<gadgets>().IncrementAgility1();
+            
+            other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
-        else if (other.gameObject.CompareTag("Cake")) //This option is activated when Toby gets a strength gadget.
-        {
-            other.gameObject.GetComponent<gadgets>().IncrementAgility2();
-        }
-        else if (other.gameObject.CompareTag("Apple")) //This option is activated when Toby gets a strength gadget.
-        {
-            other.gameObject.GetComponent<gadgets>().IncrementAgility3();
-        }
-        else if (other.gameObject.CompareTag("gold")) //This option is activated when Toby gets a strength gadget.
-        {
-            other.gameObject.GetComponent<gadgets>().IncrementShield1();
-        }
-        else if (other.gameObject.CompareTag("silver")) //This option is activated when Toby gets a strength gadget.
-        {
-            other.gameObject.GetComponent<gadgets>().IncrementShield2();
-        }
-        else if (other.gameObject.CompareTag("bronze")) //This option is activated when Toby gets a strength gadget.
-        {
-            other.gameObject.GetComponent<gadgets>().IncrementShield3();
-        }
-        else if (other.gameObject.CompareTag("crown")) //This option is activated when Toby gets a strength gadget.
-        {
-            other.gameObject.GetComponent<gadgets>().IncrementSpeed1();
-        }
-        else if (other.gameObject.CompareTag("hat")) //This option is activated when Toby gets a strength gadget.
-        {
-            other.gameObject.GetComponent<gadgets>().IncrementSpeed2();
-        }
-        else if (other.gameObject.CompareTag("hairband")) //This option is activated when Toby gets a strength gadget.
-        {
-            other.gameObject.GetComponent<gadgets>().IncrementSpeed3();
-        }
+        // //aqui escribir si toby encuentra strength hacer tal y asi. Debe mandar al script de gadgets.
+        // else if (other.gameObject.CompareTag("spike")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementStrength1();
+        // }
+        // else if (other.gameObject.CompareTag("fireshoe")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementStrength2();
+        // }
+        // else if (other.gameObject.CompareTag("roller")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementStrength3();
+        // }
+        // else if (other.gameObject.CompareTag("Carrot")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementAgility1();
+        // }
+        // else if (other.gameObject.CompareTag("Cake")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementAgility2();
+        // }
+        // else if (other.gameObject.CompareTag("Apple")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementAgility3();
+        // }
+        // else if (other.gameObject.CompareTag("gold")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementShield1();
+        // }
+        // else if (other.gameObject.CompareTag("silver")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementShield2();
+        // }
+        // else if (other.gameObject.CompareTag("bronze")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementShield3();
+        // }
+        // else if (other.gameObject.CompareTag("crown")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementSpeed1();
+        // }
+        // else if (other.gameObject.CompareTag("hat")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementSpeed2();
+        // }
+        // else if (other.gameObject.CompareTag("hairband")) //This option is activated when Toby gets a strength gadget.
+        // {
+        //     other.gameObject.GetComponent<gadgets>().IncrementSpeed3();
+        // }
         
     }
     
