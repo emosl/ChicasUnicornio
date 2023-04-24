@@ -110,6 +110,7 @@ body, html{
 
   li {
     float: left;
+    font-size: 30px;  
   }
   
   li a {
@@ -121,7 +122,7 @@ body, html{
   }
   
   li a:hover {
-    background-color: rgb(246, 179, 98);
+    color: rgb(255, 254, 253);
   }
 
   .grid-container {
