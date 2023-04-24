@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gadgets : MonoBehaviour
 {
@@ -17,10 +18,18 @@ public class gadgets : MonoBehaviour
     {
         //jumpForce = FindObjectofType<Toby>();
         //gadgetCollider = GetComponent<Collider2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
         
     }
     public void disappeargadgets(){
-        Instantiate(invisible[0], transform.position, Quaternion.identity);
+        //Instantiate(invisible[0], transform.position, Quaternion.identity);
+        Inventory inventory = player.GetComponent<Character>().inventory;
+                Debug.Log("GADGET: " + inventory.items);
+
+        inventory.items.Add(equippableItem);
+        inventory.itemSlots[0].GetComponent<ItemSlot>().item = equippableItem;
+        inventory.itemSlots[0].GetComponent<ItemSlot>().itemImage = equippableItem.itemImage;
+        Destroy(gameObject);
     }
     
 // //Tutorial for managing variables: https://www.google.com/search?q=how+to+use+a+variable+in+a+unity+script+in+another+script&rlz=1C5CHFA_enMX923MX923&oq=how+to+use+a+variable+in+a+unity+script+in+another+script&aqs=chrome..69i57j33i160l3.11705j0j4&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:bf91e53c,vid:aRmcN_79KYA

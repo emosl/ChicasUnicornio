@@ -5,9 +5,9 @@ using System;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] List<Item> items;
+    public List<Item> items;
     [SerializeField] Transform itemsParent;
-    [SerializeField] ItemSlot[] itemSlots;
+    public ItemSlot[] itemSlots;
 
     public event Action<Item> OnItemRightClickEvent;
     private void Awake()

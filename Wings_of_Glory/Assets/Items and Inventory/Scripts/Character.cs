@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     public Stats Shield;
     public Stats Speed;
 
-    [SerializeField] Inventory inventory;
+    public Inventory inventory;
     [SerializeField] EquipmentPanel equipmentPanel;
     [SerializeField] StatPanel statsPanel;
 

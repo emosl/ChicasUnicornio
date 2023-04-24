@@ -77,7 +77,7 @@ public class Toby : MonoBehaviour
     void Update()
     {
         // Check if sprite is grounded
-        // PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 offset = new Vector2(0f, -bounds.extents.y);
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);

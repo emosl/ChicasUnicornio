@@ -7,8 +7,8 @@ using System;
 
 public class ItemSlot : MonoBehaviour , IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler 
 {
-    [SerializeField] private Item item;
-    [SerializeField] private Image itemImage;
+    public  Item item;
+    public Image itemImage;
     [SerializeField] ItemTooltip tooltip;
     
 
