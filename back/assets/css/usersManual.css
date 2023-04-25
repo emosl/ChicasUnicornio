@@ -10,8 +10,8 @@
 }
 
 #logo{
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 300px;
   margin-right: 10px;
 }
 
@@ -57,7 +57,6 @@ h1 {
 body, html{
     margin: 0;
     padding: 0;
-    color: aliceblue;
     background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E);
   }
 
@@ -74,6 +73,10 @@ body, html{
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    font-family: 'VT323', monospace;
+    color: #ffc4fd;
+    text-shadow: #5F2E7E 2px 2px 2px;
+    font-size: larger;
   }
   
 #menu{
@@ -109,7 +112,7 @@ body, html{
   }
   
   li a:hover {
-    background-color: rgb(246, 179, 98);
+    color: rgb(246, 179, 98);
   }
   
 
@@ -128,6 +131,7 @@ p{
     font-size: 20px;
     margin-top: 0;
     text-align: justify;
+    color: #ffffff;
     text-shadow: #cb6dcd 2px 2px 2px;
     
 }
