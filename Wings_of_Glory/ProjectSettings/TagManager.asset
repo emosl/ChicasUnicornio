@@ -28,6 +28,7 @@ TagManager:
   - Horseshoe
   - Dungeon
   - Obstacle_Dungeon
+  - Diamond
   layers:
   - Default
   - TransparentFX
