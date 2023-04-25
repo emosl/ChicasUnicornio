@@ -57,7 +57,6 @@ h1 {
 body, html{
     margin: 0;
     padding: 0;
-    color: aliceblue;
     background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E);
   }
 
