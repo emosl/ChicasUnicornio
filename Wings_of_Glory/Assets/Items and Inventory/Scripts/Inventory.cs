@@ -5,9 +5,10 @@ using System;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] List<Item> items;
+    public List<Item> items;
     [SerializeField] Transform itemsParent;
-    [SerializeField] ItemSlot[] itemSlots;
+    public ItemSlot[] itemSlots;
+    public EquippableItem equippableItem;
 
     public event Action<Item> OnItemRightClickEvent;
     private void Awake()
@@ -49,22 +50,23 @@ private void OnDestroy()
     }
 
     private void RefreshUI()
+{
+    int i = 0;
+    for (; i < items.Count && i < itemSlots.Length; i++)
     {
-        int i = 0;
-        for(; i < items.Count && i < itemSlots.Length; i++)
-        {
-            itemSlots[i].Item = items[i];
-        }
-
-        for (; i < itemSlots.Length; i++)
-        {
-            itemSlots[i].Item = null;
-        }
-
+        itemSlots[i].Item = items[i];
     }
+
+    for (; i < itemSlots.Length; i++)
+    {
+        itemSlots[i].Item = null;
+    }
+}
+
 
     public bool AddItem(Item item)
     {
+        Debug.Log("item added");
         if (IsFull())
         {
             return false;

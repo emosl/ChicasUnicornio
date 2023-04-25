@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Physics2D;
 using UnityEngine.SceneManagement;
+
 [System.Serializable]
 
 public class Toby_stats 
@@ -27,9 +28,12 @@ public class Toby : MonoBehaviour
     public GameObject player;  
     private gadgets gadgetcollider;
 
+   [SerializeField] private Character character;
+
+
     public float speed = 5f;
 
-    public float jumpForce = 10f;
+    public float strength = 10f;
 
     public float shield=0f;
 
@@ -68,6 +72,8 @@ public class Toby : MonoBehaviour
         toby_stats = JsonUtility.FromJson<Toby_stats>(jsonStats);
         transform.position = toby_stats.savedPosition;
         PlayerPrefs.DeleteAll();
+
+        
         
 
         player = GameObject.FindGameObjectWithTag("Player");
@@ -76,8 +82,12 @@ public class Toby : MonoBehaviour
 
     void Update()
     {
+        speed = Mathf.Clamp(speed, 5, 15);
+        shield = Mathf.Clamp(shield, 0, 10);
+        agility = Mathf.Clamp(agility, 0, 10);
+        strength = Mathf.Clamp(strength, 8, 18);
         // Check if sprite is grounded
-        // PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 offset = new Vector2(0f, -bounds.extents.y);
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
@@ -116,7 +126,7 @@ public class Toby : MonoBehaviour
         // Jump if sprite is grounded and user presses the space key
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0f, strength), ForceMode2D.Impulse);
             transform.rotation = Quaternion.identity; // Reset sprite rotation when jumping
         }
 
@@ -164,8 +174,11 @@ public class Toby : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Food")) //This option is activated when Toby gets a strength gadget.
         {
-            Debug.Log("Foood");
-            other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
+            Debug.Log("Food");
+            // other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
+            
+            other.gameObject.GetComponent<gadgets>().disappeargadgets();
+    
         }
         else if (other.gameObject.CompareTag("HeadBand")) //This option is activated when Toby gets a strength gadget.
         {
@@ -181,55 +194,7 @@ public class Toby : MonoBehaviour
             
             other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
-        // //aqui escribir si toby encuentra strength hacer tal y asi. Debe mandar al script de gadgets.
-        // else if (other.gameObject.CompareTag("spike")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementStrength1();
-        // }
-        // else if (other.gameObject.CompareTag("fireshoe")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementStrength2();
-        // }
-        // else if (other.gameObject.CompareTag("roller")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementStrength3();
-        // }
-        // else if (other.gameObject.CompareTag("Carrot")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementAgility1();
-        // }
-        // else if (other.gameObject.CompareTag("Cake")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementAgility2();
-        // }
-        // else if (other.gameObject.CompareTag("Apple")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementAgility3();
-        // }
-        // else if (other.gameObject.CompareTag("gold")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementShield1();
-        // }
-        // else if (other.gameObject.CompareTag("silver")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementShield2();
-        // }
-        // else if (other.gameObject.CompareTag("bronze")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementShield3();
-        // }
-        // else if (other.gameObject.CompareTag("crown")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementSpeed1();
-        // }
-        // else if (other.gameObject.CompareTag("hat")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementSpeed2();
-        // }
-        // else if (other.gameObject.CompareTag("hairband")) //This option is activated when Toby gets a strength gadget.
-        // {
-        //     other.gameObject.GetComponent<gadgets>().IncrementSpeed3();
-        // }
+      
         
     }
     
@@ -243,4 +208,17 @@ public class Toby : MonoBehaviour
             currentObstacle = null;
         }
     }
+
+    public void UpdateStats(float newStrength, float newShield, float newAgility, float newSpeed)
+{
+    
+    shield = newShield;
+    agility = newAgility;
+    strength = newStrength;
+    speed = newSpeed;
+
+}
+
+
+   
 }

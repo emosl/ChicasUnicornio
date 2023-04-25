@@ -23,27 +23,16 @@ public class InventoryInput : MonoBehaviour
                 if (characterPanelGameObject.activeSelf)
                 {
                     characterPanelGameObject.SetActive(true);
-                    ShowMouseCursor();
+                   
                 }
                 else
-                    HideMouseCursor();
+                    
                 break; // so we don't open and close more than once if we accidentally press again 
             }
         }
 
     }
 
-    public void ShowMouseCursor()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None; // allows mouse to move freely
-    }
-
-    public void HideMouseCursor()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked; // locks the cursor to centre game view
-    }
 
 
 }
