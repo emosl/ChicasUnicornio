@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4523580556299937058}
   - component: {fileID: 6374371071397793931}
   - component: {fileID: 4523580556299937059}
-  - component: {fileID: 4060065481681256458}
   m_Layer: 8
   m_Name: food
   m_TagString: Food
@@ -129,22 +128,3 @@ MonoBehaviour:
   - {fileID: 3800929287371037584, guid: 872813dd4550c41749210b453a0d7e92, type: 3}
   - {fileID: 558936232646681892, guid: f826f926e9539472b8fd6360ef03e7e8, type: 3}
   - {fileID: 1954471572225732023, guid: d20b1351f481749bfbccad7075c62966, type: 3}
---- !u!114 &4060065481681256458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4523580556299937057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a093a6ebdd04a4346a133dc61355a40e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: {fileID: 0}
-  speed: {fileID: 0}
-  shield: {fileID: 0}
-  agility: {fileID: 0}
-  player: {fileID: 0}
-  invisible:
-  - {fileID: 1899308087772049298, guid: 664ca64e211414a7abdd8e1e921fc6dc, type: 3}

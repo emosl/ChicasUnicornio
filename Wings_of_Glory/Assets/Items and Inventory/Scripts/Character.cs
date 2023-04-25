@@ -13,6 +13,7 @@ public class Character : MonoBehaviour
     public Inventory inventory;
     [SerializeField] EquipmentPanel equipmentPanel;
     [SerializeField] StatPanel statsPanel;
+    [SerializeField] private Toby toby;
 
 
 private void Awake()
@@ -47,38 +48,40 @@ private void Awake()
         }
     }
 
-    public void Equip(EquippableItem item)
+    private void Equip(EquippableItem item)
+{
+    if (inventory.RemoveItem(item))
     {
-        if (inventory.RemoveItem(item))
+        EquippableItem previousItem;
+        if (equipmentPanel.AddItem(item, out previousItem))
         {
-            EquippableItem previousItem;
-            if (equipmentPanel.AddItem(item, out previousItem))
+            if (previousItem != null)
             {
-                if (previousItem != null)
-                {
-                    inventory.AddItem(previousItem);
-                    item.Unequip(this);
-                    statsPanel.UpdateStatValues();
-                }
-                item.Equip(this);
+                inventory.AddItem(previousItem);
+                item.Unequip(this);
                 statsPanel.UpdateStatValues();
             }
-            else
-            {
-                inventory.AddItem(item);
-            }
-        }
-    }
-
-    public void Unequip(EquippableItem item)
-    {
-        if (!inventory.IsFull() && equipmentPanel.RemoveItem(item))
-        {
-            item.Unequip(this);
+            item.Equip(this);
             statsPanel.UpdateStatValues();
+            toby.UpdateStats(Strength.Value, Shield.Value, Agility.Value, Speed.Value); // Call UpdateStats method in Toby
+        }
+        else
+        {
             inventory.AddItem(item);
         }
     }
+}
+
+public void Unequip(EquippableItem item)
+{
+    if (!inventory.IsFull() && equipmentPanel.RemoveItem(item))
+    {
+        item.Unequip(this);
+        statsPanel.UpdateStatValues();
+        inventory.AddItem(item);
+        toby.UpdateStats(Strength.Value, Shield.Value, Agility.Value, Speed.Value); // Call UpdateStats method in Toby
+    }
+}
 
     
 
