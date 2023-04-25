@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a6308574c6ab44fdcaca393fb45acd62
+guid: 1f202fe4569404d5083052c2456c808f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,11 +117,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: malo_muerto_0
+      name: TobyMuerto_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 250
+        y: 258
         width: 250
         height: 250
       alignment: 0
@@ -131,18 +131,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07d7fb811e22e4b24a61ea19c5fd6aa2
-      internalID: -884134855
+      spriteID: 39438e5a518a845e9b9d6c44ff822ebe
+      internalID: -419705192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malo_muerto_1
+      name: TobyMuerto_spritesheet_1
       rect:
         serializedVersion: 2
         x: 250
-        y: 250
+        y: 258
         width: 250
         height: 250
       alignment: 0
@@ -152,18 +152,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1ff1906f1f8b4bc38fc14113cd77c7a
-      internalID: -2099054326
+      spriteID: 4d27e35d168b643abadc70ed2424dfdc
+      internalID: -111039360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malo_muerto_2
+      name: TobyMuerto_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 500
+        y: 258
         width: 250
         height: 250
       alignment: 0
@@ -173,8 +173,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70c1d26b9d01c4361b8bc15071a1c85e
-      internalID: 1715168312
+      spriteID: ce3cd041a23cb4350b95167c0e58398b
+      internalID: 72452214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TobyMuerto_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26b5f01a7161401e8413aa4be974d2a
+      internalID: -1280032988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TobyMuerto_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 8
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87bfe8516cdd24b86b42a59ee85bfbb0
+      internalID: -1006736962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TobyMuerto_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 8
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599f798c0130749c5a8124963db8ca33
+      internalID: 38298075
       vertices: []
       indices: 
       edges: []
@@ -190,9 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      malo_muerto_0: -884134855
-      malo_muerto_1: -2099054326
-      malo_muerto_2: 1715168312
+      TobyMuerto_spritesheet_0: -419705192
+      TobyMuerto_spritesheet_1: -111039360
+      TobyMuerto_spritesheet_2: 72452214
+      TobyMuerto_spritesheet_3: -1280032988
+      TobyMuerto_spritesheet_4: -1006736962
+      TobyMuerto_spritesheet_5: 38298075
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

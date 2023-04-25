@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: walking
+  m_Name: toby_fighting
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,17 +19,21 @@ AnimationClip:
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
-    - time: 0
-      value: {fileID: 789952632, guid: 7da852e0a63ea4c949791ba83de3794f, type: 3}
-    - time: 0.1
-      value: {fileID: -1934334751, guid: 7da852e0a63ea4c949791ba83de3794f, type: 3}
-    - time: 0.2
-      value: {fileID: 1382840454, guid: 7da852e0a63ea4c949791ba83de3794f, type: 3}
+    - time: 0.025
+      value: {fileID: -1101922227, guid: e4baebabb58094ff0a17d3fcd9f9c29f, type: 3}
+    - time: 0.0375
+      value: {fileID: 923650535, guid: e4baebabb58094ff0a17d3fcd9f9c29f, type: 3}
+    - time: 0.0875
+      value: {fileID: 0}
+    - time: 0.1875
+      value: {fileID: 0}
+    - time: 0.2875
+      value: {fileID: 0}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 10
+  m_SampleRate: 80
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -44,15 +48,17 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 789952632, guid: 7da852e0a63ea4c949791ba83de3794f, type: 3}
-    - {fileID: -1934334751, guid: 7da852e0a63ea4c949791ba83de3794f, type: 3}
-    - {fileID: 1382840454, guid: 7da852e0a63ea4c949791ba83de3794f, type: 3}
+    - {fileID: -1101922227, guid: e4baebabb58094ff0a17d3fcd9f9c29f, type: 3}
+    - {fileID: 923650535, guid: e4baebabb58094ff0a17d3fcd9f9c29f, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3
+    m_StopTime: 0.29999998
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

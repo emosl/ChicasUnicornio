@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a6308574c6ab44fdcaca393fb45acd62
+guid: 41b06ea10f5644b45a52571e81da8b6c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: malo_muerto_0
+      name: Enemy_walking_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 250
-        width: 250
-        height: 250
+        y: 231
+        width: 206
+        height: 231
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07d7fb811e22e4b24a61ea19c5fd6aa2
-      internalID: -884134855
+      spriteID: e065fbc3650ab48b09a4cf207270e6b9
+      internalID: 2117692183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malo_muerto_1
+      name: Enemy_walking_1
       rect:
         serializedVersion: 2
-        x: 250
-        y: 250
-        width: 250
-        height: 250
+        x: 206
+        y: 231
+        width: 206
+        height: 231
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1ff1906f1f8b4bc38fc14113cd77c7a
-      internalID: -2099054326
+      spriteID: 2e93047fca67b4b9f8b24ef4e262716f
+      internalID: -1545613645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malo_muerto_2
+      name: Enemy_walking_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 250
-        height: 250
+        width: 206
+        height: 231
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70c1d26b9d01c4361b8bc15071a1c85e
-      internalID: 1715168312
+      spriteID: 20a4f85a3448348628d91da67334efcc
+      internalID: 1908035692
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      malo_muerto_0: -884134855
-      malo_muerto_1: -2099054326
-      malo_muerto_2: 1715168312
+      Enemy_walking_0: 2117692183
+      Enemy_walking_1: -1545613645
+      Enemy_walking_2: 1908035692
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
