@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2538461349409975083}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4487999432406584773
 SpriteRenderer:
@@ -142,6 +142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3197265916760204060}
   - {fileID: 3586627893440091812}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -236,4 +237,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6386c9ebd9b4f60a362d46e09edea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frog: {fileID: 6445688764828799016}
+  frog: {fileID: 95603057575706568, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+--- !u!1001 &1844546309771214615
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2538461349409975083}
+    m_Modifications:
+    - target: {fileID: 95603057575706568, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_Name
+      value: diamond
+      objectReference: {fileID: 0}
+    - target: {fileID: 95603057575706568, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.565
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.6386
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.032
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.176
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+--- !u!4 &3197265916760204060 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3875309485423533067, guid: d0174adb69e5c42de85acb8820c2d608, type: 3}
+  m_PrefabInstance: {fileID: 1844546309771214615}
+  m_PrefabAsset: {fileID: 0}
