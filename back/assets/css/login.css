@@ -45,7 +45,7 @@ h1 {
     }
   
     header {
-      color: #fff;
+      color: #ffffff;
       padding: 10px;
     }
 
@@ -60,7 +60,7 @@ h1 {
       
       button {
         background-color: #facf7b;
-        color: white;
+        color: rgb(255, 255, 255);
         padding: 14px 20px;
         margin: 8px 0;
         border: none;
@@ -79,6 +79,8 @@ h1 {
         margin: 0;
         padding: 0;
         font-family: 'VT323', monospace;
+        font-size: 30px;
+
     }
     ul {
         list-style-type: none;
@@ -102,7 +104,7 @@ h1 {
       }
       
       li a:hover {
-        color: rgb(246, 179, 98);
+        color: rgb(65, 13, 75);
       }
 
     button:hover {

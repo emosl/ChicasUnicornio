@@ -73,6 +73,10 @@ body, html{
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    font-family: 'VT323', monospace;
+    color: #ffc4fd;
+    text-shadow: #5F2E7E 2px 2px 2px;
+    font-size: larger;
   }
   
 #menu{
@@ -127,6 +131,7 @@ p{
     font-size: 20px;
     margin-top: 0;
     text-align: justify;
+    color: #ffffff;
     text-shadow: #cb6dcd 2px 2px 2px;
     
 }
