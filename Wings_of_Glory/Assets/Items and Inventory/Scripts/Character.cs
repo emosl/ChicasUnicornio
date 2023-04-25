@@ -48,7 +48,34 @@ private void Awake()
         }
     }
 
-    private void Equip(EquippableItem item)
+//     private void Equip(EquippableItem item)
+// {
+//     if (inventory.RemoveItem(item))
+//     {
+//         EquippableItem previousItem;
+//         if (equipmentPanel.AddItem(item, out previousItem))
+//         {
+//             if (previousItem != null)
+//             {
+//                 inventory.AddItem(previousItem);
+//                 item.Unequip(this);
+//                 statsPanel.UpdateStatValues();
+//             }
+//             item.Equip(this);
+//             statsPanel.UpdateStatValues();
+//             toby.UpdateStats(Strength.Value, Shield.Value, Agility.Value, Speed.Value); // Call UpdateStats method in Toby
+//         }
+//         else
+//         {
+//             inventory.AddItem(item);
+//         }
+//     }
+// }
+
+private bool bonusApplied_Speed = false;
+private bool bonusApplied_Strength = false;
+
+private void Equip(EquippableItem item)
 {
     if (inventory.RemoveItem(item))
     {
@@ -61,6 +88,21 @@ private void Awake()
                 item.Unequip(this);
                 statsPanel.UpdateStatValues();
             }
+
+            // Apply strength bonus if the item has a positive strength value and the bonus has not been applied yet
+            if (!bonusApplied_Strength && item.StrengthBonus > 0)
+            {
+                Strength.BaseValue += 8;
+                bonusApplied_Strength = true;
+            }
+            
+            // Apply speed bonus if the item has a positive speed value and the bonus has not been applied yet
+            if (!bonusApplied_Speed && item.SpeedBonus > 0)
+            {
+                Speed.BaseValue += 5;
+                bonusApplied_Speed = true;
+            }
+
             item.Equip(this);
             statsPanel.UpdateStatValues();
             toby.UpdateStats(Strength.Value, Shield.Value, Agility.Value, Speed.Value); // Call UpdateStats method in Toby
@@ -71,6 +113,8 @@ private void Awake()
         }
     }
 }
+
+
 
 public void Unequip(EquippableItem item)
 {

@@ -82,6 +82,10 @@ public class Toby : MonoBehaviour
 
     void Update()
     {
+        speed = Mathf.Clamp(speed, 5, 15);
+        shield = Mathf.Clamp(shield, 0, 10);
+        agility = Mathf.Clamp(agility, 0, 10);
+        strength = Mathf.Clamp(strength, 8, 18);
         // Check if sprite is grounded
         PlayerPrefs.DeleteAll();
         Bounds bounds = GetComponent<Collider2D>().bounds;
@@ -171,7 +175,10 @@ public class Toby : MonoBehaviour
         else if (other.gameObject.CompareTag("Food")) //This option is activated when Toby gets a strength gadget.
         {
             Debug.Log("Food");
-            other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
+            // other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
+            
+            other.gameObject.GetComponent<gadgets>().disappeargadgets();
+    
         }
         else if (other.gameObject.CompareTag("HeadBand")) //This option is activated when Toby gets a strength gadget.
         {
@@ -204,26 +211,11 @@ public class Toby : MonoBehaviour
 
     public void UpdateStats(float newStrength, float newShield, float newAgility, float newSpeed)
 {
-    strength = newStrength;
-    if(strength <= 0)
-    {
-        strength = 8;
-    }
-    else if(strength >= 10)
-    {
-        strength = 18;
-    }
+    
     shield = newShield;
     agility = newAgility;
+    strength = newStrength;
     speed = newSpeed;
-    if(speed <= 0)
-    {
-        speed = 5;
-    }
-    else if(speed >= 10)
-    {
-        speed = 15;
-    }
 
 }
 

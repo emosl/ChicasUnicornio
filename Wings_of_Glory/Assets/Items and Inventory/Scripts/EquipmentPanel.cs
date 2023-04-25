@@ -70,4 +70,20 @@ private void OnDestroy()
         }
         return false;
     }
+
+    public int GetNumberOfOccupiedSlots()
+{
+    int occupiedSlots = 0;
+
+    for (int i = 0; i < equipmentSlots.Length; i++)
+    {
+        if (equipmentSlots[i].Item != null)
+        {
+            occupiedSlots++;
+        }
+    }
+
+    return occupiedSlots;
+}
+
 }
