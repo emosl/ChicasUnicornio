@@ -57,6 +57,8 @@ public class APITest : MonoBehaviour
     [SerializeField] string url;
     [SerializeField] string getUsersEP;
     [SerializeField] string putUsersEP;
+    [SerializeField] string getScoresEP;
+    [SerializeField] string putScoresEP;
     [SerializeField] Text errorText;
 
     // This is where the information from the api will be extracted
@@ -208,6 +210,48 @@ public class APITest : MonoBehaviour
             }
         }
     }
+
+    IEnumerator AddScore()
+    {
+        /*
+        // This should work with an API that does NOT expect JSON
+        WWWForm form = new WWWForm();
+        form.AddField("name", "newGuy" + Random.Range(1000, 9000).ToString());
+        form.AddField("surname", "Tester" + Random.Range(1000, 9000).ToString());
+        Debug.Log(form);
+        */
+
+        // Create the object to be sent as json
+        highscores testScore = new highscores();
+        // testScore.username_ID = "newID" + Random.Range(1000, 9000).ToString();
+        testScore.total_score=  Random.Range(1000, 9000)
+        // testUser.email = "newGuy" + Random.Range(1000, 9000).ToString() + "@mail.com";
+        
+
+        //Debug.Log("USER: " + testUser);
+        string jsonData = JsonUtility.ToJson(testUser);
+        //Debug.Log("BODY: " + jsonData);
+
+        // Send using the Put method:
+        // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
+        using (UnityWebRequest www = UnityWebRequest.Put(url + getScoresEP, jsonData))
+        {
+            //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
+            // Set the method later, and indicate the encoding is JSON
+            www.method = "POST";
+            www.SetRequestHeader("Content-Type", "application/json");
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                Debug.Log("Response: " + www.downloadHandler.text);
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }
+
 
 
     ////////////////////////////////////////////////////

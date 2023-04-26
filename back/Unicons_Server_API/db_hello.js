@@ -10,15 +10,19 @@ const port = 8000
 app.use(express.json())
 app.use(express.static('./public'));
 
-async function connectToDB()
+function connectToDB()
 {
-    return await mysql.createConnection({
-        host:'localhost',
-        user:'unicorn01',
-        password:'admin01',
-        database:'chicasunicornio'
-    })
+    return mysql.createConnection({host:'localhost', user:'unicorn01', password:'admin01', database:'chicasunicornio'})   
 }
+// async function connectToDB()
+// {
+//     return await mysql.createConnection({
+//         host:'localhost',
+//         user:'unicorn01',
+//         password:'admin01',
+//         database:'chicasunicornio'
+//     })
+// }
 
 app.get('/', (request,response)=>{
     fs.readFile('./public/html/db_use_cases.html', 'utf8', (err, html)=>{
@@ -454,7 +458,7 @@ app.get('/api/highscores', (request, response)=>{
 
         connection.connect()
 
-        connection.query('select * from highscores order by highscore desc limit 5', (error, results, fields)=>{
+        connection.query('select * from highscores', (error, results, fields)=>{
             if(error) console.log(error)
             console.log("Sending data correctly.")
             response.status(200)
