@@ -20,6 +20,23 @@ public class EquipmentPanel : MonoBehaviour
     }
 }
 
+public List<EquippableItem> EquippedItems
+{
+    get
+    {
+        List<EquippableItem> equippedItems = new List<EquippableItem>();
+        foreach (EquipmentSlot slot in equipmentSlots)
+        {
+            if (slot.Item != null)
+            {
+                equippedItems.Add((EquippableItem)slot.Item);
+            }
+        }
+        return equippedItems;
+    }
+}
+
+
 private void HandleRightClick(Item item)
     {
         Debug.Log("Right-clicked item: " + item.name);

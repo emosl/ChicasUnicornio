@@ -151,6 +151,7 @@ public class Toby : MonoBehaviour
     //OnTriggerEnter2D is called when the Collider2D other enters the trigger;
     private void OnTriggerEnter2D(Collider2D other)
     {
+         Debug.Log("OnTriggerEnter2D called with other: " + other.name);
         
          if (isGrounded && other.gameObject.CompareTag("Obstacle"))
         {
@@ -217,6 +218,56 @@ public class Toby : MonoBehaviour
     strength = newStrength;
     speed = newSpeed;
 
+}
+public void RemoveItem(string statName)
+{
+    Debug.Log("Trying to remove item affecting " + statName);
+
+    // Iterate through all equipped items
+    foreach (EquippableItem item in character.GetEquipmentPanel().EquippedItems)
+
+    {
+        // Find the item that affects the specified stat and unequip it
+        switch (statName)
+        {
+            case "Strength":
+                if (item.StrengthBonus > 0)
+                {
+                    Debug.Log("Removing item: " + item.name);
+
+                    character.Unequip(item);
+                    return;
+                }
+                break;
+            case "Shield":
+                if (item.ShieldBonus > 0)
+                {
+                    Debug.Log("Removing item: " + item.name);
+
+                    character.Unequip(item);
+                    return;
+                }
+                break;
+            case "Agility":
+                if (item.AgilityBonus > 0)
+                {
+                    Debug.Log("Removing item: " + item.name);
+
+                    character.Unequip(item);
+                    return;
+                }
+                break;
+            case "Speed":
+                if (item.SpeedBonus > 0)
+                {
+                    Debug.Log("Removing item: " + item.name);
+
+                    character.Unequip(item);
+                    return;
+                }
+                break;
+        }
+    }
 }
 
 
