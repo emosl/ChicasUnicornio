@@ -66,6 +66,43 @@ public class TMPro_Test : MonoBehaviour
         }
     }
 
+
+    public void LoadScores(final_score allScores)
+    {
+        ClearContents();
+        GameObject uiItem;
+        for (int i=0; i<allScores.highscores.Count; i++) {
+            // Create new GUI objects
+            if (type == PrefabType.Button) {
+                uiItem = Instantiate(buttonPrefab);
+            } else {
+                uiItem = Instantiate(textPrefab);
+            }
+            // Add them to the ScollView content
+            uiItem.transform.SetParent(contentTransform);
+
+            // Set the position of each element
+            RectTransform rectTransform = uiItem.GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = new Vector2 (0, -50 * i);
+
+            // Extract the text from the argument object
+            highscores hs = allScores.highscores[i];
+            //Debug.Log("ID: " + us.username_ID + " | " + us.name + " " + us.last_name);
+
+            if (type == PrefabType.Button) {
+                // Set the text
+                TextMeshProUGUI field = uiItem.GetComponentInChildren<TextMeshProUGUI>();
+                field.text = "ID: " + hs.username_ID + " | " + hs.total_score;
+                // Set the callback
+                Button btn = uiItem.GetComponent<Button>();
+		        // btn.onClick.AddListener(delegate {GreetName(us.name + " " + us.last_name); });
+            } else if (type == PrefabType.Text) {
+                TextMeshProUGUI field = uiItem.GetComponent<TextMeshProUGUI>();
+                field.text = "ID: " + hs.username_ID + " | " + hs.total_score;
+            }
+        }
+    }
+
     // Delete any child objects
     void ClearContents()
     {

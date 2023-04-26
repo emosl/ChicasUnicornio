@@ -29,22 +29,41 @@ public class Users
     public string password;
 }
 
+public class highscores
+{
+    // public int score_ID;
+    public int username_ID;
+    public int total_score;
+    // public int score_speed;
+    // public int score_strength;
+    // public int score_agility;
+    // public int score_shield;
+
+}
 // Allow the class to be extracted from Unity
 [System.Serializable]
 public class UserList
 {
     public List<Users> users;
 }
+public class ScoreList
+{
+    public List<highscores> highscores;
+}
+
 
 public class APITest : MonoBehaviour
 {
     [SerializeField] string url;
     [SerializeField] string getUsersEP;
     [SerializeField] string putUsersEP;
+    [SerializeField] string getScoresEP;
+    [SerializeField] string putScoresEP;
     [SerializeField] Text errorText;
 
     // This is where the information from the api will be extracted
     public UserList allUsers; //variable con la lista de usuarios
+    public ScoreList allScores; //variable con la lista de scores
 
     // Update is called once per frame
     void Update()
@@ -68,6 +87,12 @@ public class APITest : MonoBehaviour
         texter.LoadNames(allUsers);
     }
 
+    void DisplayScores()
+    {
+        TMPro_Test texter = GetComponent<TMPro_Test>();
+        texter.LoadScores(allScores);
+    }
+
     // These are the functions that must be called to interact with the API
 
     public void QueryUsers()
@@ -76,9 +101,20 @@ public class APITest : MonoBehaviour
         //corre un metodo en paralelo y espera a que termine
     }
 
+    public void QueryScores()
+    {
+        StartCoroutine(GetScores());
+        //corre un metodo en paralelo y espera a que termine
+    }
+
     public void InsertNewUser()
     {
         StartCoroutine(AddUser());
+    }
+
+    public void InsertNewScore()
+    {
+        StartCoroutine(AddScore());
     }
 
     ////////////////////////////////////////////////////
@@ -109,6 +145,30 @@ public class APITest : MonoBehaviour
             }
         }
     }
+
+    IEnumerator GetScores()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get(url + getUsersEP))
+        //crea un request de tipo get, y le pasa la url
+        {
+            yield return www.SendWebRequest();
+            //espera a que termine el request (await)
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                //Debug.Log("Response: " + www.downloadHandler.text);
+                // Compose the response to look like the object we want to extract
+                // https://answers.unity.com/questions/1503047/json-must-represent-an-object-type.html
+                string jsonString = "{\"scores\":" + www.downloadHandler.text + "}";
+                allScores = JsonUtility.FromJson<ScoreList>(jsonString); //nuevo objeto con la lista de usuarios
+                DisplayScores();
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }
+
 
     IEnumerator AddUser()
     {
@@ -150,6 +210,48 @@ public class APITest : MonoBehaviour
             }
         }
     }
+
+    IEnumerator AddScore()
+    {
+        /*
+        // This should work with an API that does NOT expect JSON
+        WWWForm form = new WWWForm();
+        form.AddField("name", "newGuy" + Random.Range(1000, 9000).ToString());
+        form.AddField("surname", "Tester" + Random.Range(1000, 9000).ToString());
+        Debug.Log(form);
+        */
+
+        // Create the object to be sent as json
+        highscores testScore = new highscores();
+        // testScore.username_ID = "newID" + Random.Range(1000, 9000).ToString();
+        testScore.total_score=  Random.Range(1000, 9000);
+        // testUser.email = "newGuy" + Random.Range(1000, 9000).ToString() + "@mail.com";
+        
+
+        //Debug.Log("USER: " + testUser);
+        string jsonData = JsonUtility.ToJson(testUser);
+        //Debug.Log("BODY: " + jsonData);
+
+        // Send using the Put method:
+        // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
+        using (UnityWebRequest www = UnityWebRequest.Put(url + getScoresEP, jsonData))
+        {
+            //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
+            // Set the method later, and indicate the encoding is JSON
+            www.method = "POST";
+            www.SetRequestHeader("Content-Type", "application/json");
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                Debug.Log("Response: " + www.downloadHandler.text);
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }
+
 
 
     ////////////////////////////////////////////////////

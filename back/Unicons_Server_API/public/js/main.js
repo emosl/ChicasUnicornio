@@ -1,6 +1,5 @@
 // Existing code from landing.js
 // 1
-
 setTimeout(function () {
   anime.timeline()
     .add({
