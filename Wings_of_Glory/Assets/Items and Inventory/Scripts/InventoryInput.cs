@@ -1,3 +1,5 @@
+
+
 using UnityEngine;
 
 public class InventoryInput : MonoBehaviour
@@ -5,12 +7,15 @@ public class InventoryInput : MonoBehaviour
     [SerializeField] GameObject characterPanelGameObject;
     [SerializeField] KeyCode[] toggleCharacterPanelKeys;
 
+    public GameObject CharacterPanelGameObject
+    {
+        get { return characterPanelGameObject; }
+    }
+
     void Start()
     {
         characterPanelGameObject.SetActive(false);
-
     }
-
 
     void Update()
     {
@@ -23,16 +28,12 @@ public class InventoryInput : MonoBehaviour
                 if (characterPanelGameObject.activeSelf)
                 {
                     characterPanelGameObject.SetActive(true);
-                   
                 }
                 else
-                    
-                break; // so we don't open and close more than once if we accidentally press again 
+                {
+                    break; // so we don't open and close more than once if we accidentally press again 
+                }
             }
         }
-
     }
-
-
-
 }

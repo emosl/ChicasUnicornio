@@ -11,6 +11,9 @@ public class Inventory : MonoBehaviour
     public EquippableItem equippableItem;
 
     public event Action<Item> OnItemRightClickEvent;
+
+    public event Action<Item> OnItemAdded;
+
     private void Awake()
 {
     for (int i = 0; i < itemSlots.Length; i++)
@@ -73,6 +76,7 @@ private void OnDestroy()
         }
 
         items.Add(item);
+        OnItemAdded?.Invoke(item);
         RefreshUI();
         return true;
     }

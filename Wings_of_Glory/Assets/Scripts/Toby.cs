@@ -151,6 +151,7 @@ public class Toby : MonoBehaviour
     //OnTriggerEnter2D is called when the Collider2D other enters the trigger;
     private void OnTriggerEnter2D(Collider2D other)
     {
+         Debug.Log("OnTriggerEnter2D called with other: " + other.name);
         
          if (isGrounded && other.gameObject.CompareTag("Obstacle"))
         {
@@ -217,6 +218,53 @@ public class Toby : MonoBehaviour
     strength = newStrength;
     speed = newSpeed;
 
+}
+public void RemoveItem(string statName)
+{
+    EquipmentPanel equipmentPanel = GetComponent<Character>().equipmentPanel;
+    // if (equipmentPanel == null)
+    // {
+    //     equipmentPanel = character.GetEquipmentPanel();
+    // }
+
+    Debug.Log("Trying to remove item affecting " + statName);
+
+    EquippableItem itemToRemove = null;
+    int highestBonus = 0;
+
+    // Iterate through all equipped items
+    foreach (EquippableItem item in equipmentPanel.EquippedItems)
+    {
+        // Find the item that affects the specified stat and has the highest bonus
+        int bonus = 0;
+        switch (statName)
+        {
+            case "Strength":
+                bonus = item.StrengthBonus;
+                break;
+            case "Shield":
+                bonus = item.ShieldBonus;
+                break;
+            case "Agility":
+                bonus = item.AgilityBonus;
+                break;
+            case "Speed":
+                bonus = item.SpeedBonus;
+                break;
+        }
+        
+        if (bonus > highestBonus)
+        {
+            highestBonus = bonus;
+            itemToRemove = item;
+        }
+    }
+
+    if (itemToRemove != null)
+    {
+        Debug.Log("Removing item: " + itemToRemove.name);
+        equipmentPanel.RemoveItem(itemToRemove);
+    }
 }
 
 

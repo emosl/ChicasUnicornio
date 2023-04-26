@@ -21,6 +21,8 @@ public class EquippableItem : Item
     public EquipmentType EquipmentType;
     public batteryplayer batteryplayer;
 
+    public float pickupRange = 1.5f;
+
     public void Equip(Character c)
     {
         if(StrengthBonus != 0)
@@ -45,10 +47,27 @@ public class EquippableItem : Item
         c.Speed.RemoveAllModifiersFromSource(this);
 
     }
+    //  public void Equip(Character character)
+    // {
+    //     character.Strength.AddModifier(new StatModifier(StrengthBonus, StatModType.Flat));
+    //     character.Agility.AddModifier(new StatModifier(AgilityBonus, StatModType.Flat));
+    //     character.Shield.AddModifier(new StatModifier(ShieldBonus, StatModType.Flat));
+    //     character.Speed.AddModifier(new StatModifier(SpeedBonus, StatModType.Flat));
+    // }
+
+    // public void Unequip(Character character)
+    // {
+    //     character.Strength.RemoveAllModifiersFromSource(this);
+    //     character.Agility.RemoveAllModifiersFromSource(this);
+    //     character.Shield.RemoveAllModifiersFromSource(this);
+    //     character.Speed.RemoveAllModifiersFromSource(this);
+    // }
 
 
     public void RandomizeBonuses(string itemName)
 {
+    ItemName = itemName; // Add this line to set the ItemName property
+    Debug.Log("RandomizeBonuses called with itemName: " + itemName + ", ItemName set to: " + ItemName);
     switch (itemName)
     {
         case "Bronze":
