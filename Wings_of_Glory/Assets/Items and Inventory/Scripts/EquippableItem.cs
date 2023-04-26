@@ -20,6 +20,8 @@ public class EquippableItem : Item
     [Space]
     public EquipmentType EquipmentType;
 
+    public float pickupRange = 1.5f;
+
     public void Equip(Character c)
     {
         if(StrengthBonus != 0)
@@ -48,6 +50,8 @@ public class EquippableItem : Item
 
     public void RandomizeBonuses(string itemName)
 {
+    ItemName = itemName; // Add this line to set the ItemName property
+    Debug.Log("RandomizeBonuses called with itemName: " + itemName + ", ItemName set to: " + ItemName);
     switch (itemName)
     {
         case "Bronze":
