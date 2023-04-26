@@ -88,7 +88,6 @@ app.get('/api/gadgets', async (request, response)=>{
         connection = await connectToDB()
         const [results, fields] = await connection.execute('select * from gadgets')
 
-        
         response.json(results)
     }
     catch(error)
@@ -114,7 +113,7 @@ app.get('/api/gameinventory', async (request, response)=>{
         connection = await connectToDB()
         const [results, fields] = await connection.execute('select * from gameinventory')
 
-        
+         
         response.json(results)
     }
     catch(error)
@@ -139,32 +138,6 @@ app.get('/api/Gadget_inventory', async (request, response)=>{
     {
         connection = await connectToDB()
         const [results, fields] = await connection.execute('select * from Gadget_inventory')
-
-        
-        response.json(results)
-    }
-    catch(error)
-    {
-        response.status(500)
-        response.json(error)
-        console.log(error)
-    }
-    finally
-    {
-        if(connection!==null) 
-        {
-            connection.end()
-            console.log("Connection closed succesfully!")
-        }
-    }
-})
-app.get('/api/game_assets', async (request, response)=>{
-    let connection = null
-
-    try
-    {
-        connection = await connectToDB()
-        const [results, fields] = await connection.execute('select * from game_assets')
 
         
         response.json(results)
@@ -210,13 +183,39 @@ app.get('/api/killer_sprites', async (request, response)=>{
         }
     }
 })
-app.get('/api/current_score', async (request, response)=>{
+app.get('/api/killerspriteinventory', async (request, response)=>{
+    let connection = null
+
+    try
+    {
+        connection = await connectToDB()
+        const [results, fields] = await connection.execute('select * from killerspriteinventory')
+
+        
+        response.json(results)
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+})
+app.get('/api/final_score', async (request, response)=>{
     let connection = null
     
     try
     {
         connection = await connectToDB()
-        const [results, fields] = await connection.execute('select * from current_score')
+        const [results, fields] = await connection.execute('select * from final_score')
 
         
         response.json(results)
@@ -341,60 +340,60 @@ app.post('/api/users/:id', async (request, response)=>{
         }
     }
 })
-// app.post('/api/gameinventory', async (request, response)=>{
+app.post('/api/gameinventory', async (request, response)=>{
 
-//     let connection = null
+    let connection = null
 
-//     try
-//     {    
-//         connection = await connectToDB()
+    try
+    {    
+        connection = await connectToDB()
 
-//         const [results, fields] = await connection.query('insert into gameinventory set ?', request.body)
+        const [results, fields] = await connection.query('insert into gameinventory set ?', request.body)
         
-//         response.json({'message': "Data inserted correctly."})
-//     }
-//     catch(error)
-//     {
-//         response.status(500)
-//         response.json(error)
-//         console.log(error)
-//     }
-//     finally
-//     {
-//         if(connection!==null) 
-//         {
-//             connection.end()
-//             console.log("Connection closed succesfully!")
-//         }
-//     }
-// })
-// app.post('/api/game_history', async (request, response)=>{
+        response.json({'message': "Data inserted correctly."})
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+})
+app.post('/api/game_history', async (request, response)=>{
 
-//     let connection = null
+    let connection = null
 
-//     try
-//     {    
-//         connection = await connectToDB()
+    try
+    {    
+        connection = await connectToDB()
 
-//         const [results, fields] = await connection.query('insert into game_history set ?', request.body)
+        const [results, fields] = await connection.query('insert into game_history set ?', request.body)
         
-//         response.json({'message': "Data inserted correctly."})
-//     }
-//     catch(error)
-//     {
-//         response.status(500)
-//         response.json(error)
-//         console.log(error)
-//     }
-//     finally
-//     {
-//         if(connection!==null) 
-//         {
-//             connection.end()
-//             console.log("Connection closed succesfully!")
-//         }
-//     }
-// })
+        response.json({'message': "Data inserted correctly."})
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+ })
 app.put('/api/users', async (request, response)=>{
 
     let connection = null
@@ -447,34 +446,6 @@ app.put('/api/', async (request, response)=>{
         }
     }
 })
-
-// app.delete('/api/users/:id', async (request, response)=>{
-
-//     let connection = null
-
-//     try
-//     {
-//         connection = await connectToDB()
-
-//         const [results, fields] = await connection.query('delete from users where id_users= ?', [request.params.id])
-        
-//         response.json({'message': "Data deleted correctly."})
-//     }
-//     catch(error)
-//     {
-//         response.status(500)
-//         response.json(error)
-//         console.log(error)
-//     }
-//     finally
-//     {
-//         if(connection!==null) 
-//         {
-//             connection.end()
-//             console.log("Connection closed succesfully!")
-//         }
-//     }
-// })
 
 app.listen(port, ()=>
 {
