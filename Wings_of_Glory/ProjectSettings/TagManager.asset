@@ -29,6 +29,7 @@ TagManager:
   - Dungeon
   - Obstacle_Dungeon
   - Diamond
+  - Ice
   layers:
   - Default
   - TransparentFX
