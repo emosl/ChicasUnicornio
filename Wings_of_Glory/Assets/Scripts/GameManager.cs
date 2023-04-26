@@ -156,11 +156,13 @@ public class GameManager : MonoBehaviour
             // SetLives(lives + 1);
             // SetScore(score + 1000);
             // Invoke(nameof(Newlevel), 1f);
+            PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
             SceneManager.LoadScene("SampleScene");
         }
         else
         {
             // Invoke(nameof(Respwan), 1f);
+            PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
             SceneManager.LoadScene("SampleScene");
         }
     }
