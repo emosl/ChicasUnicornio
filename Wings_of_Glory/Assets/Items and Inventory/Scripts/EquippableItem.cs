@@ -19,6 +19,7 @@ public class EquippableItem : Item
     public int ShieldBonus;
     [Space]
     public EquipmentType EquipmentType;
+    public batteryplayer batteryplayer;
 
     public void Equip(Character c)
     {
@@ -55,6 +56,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(-2, 2);
             SpeedBonus = Random.Range(-1, -2);
             ShieldBonus = Random.Range(3, 4);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
         case "Carrot":
@@ -62,6 +67,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(7,8);
             SpeedBonus = Random.Range(-2,2);
             ShieldBonus = Random.Range(-5,-6);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
         case "Crown":
@@ -69,6 +78,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(-2,2);
             SpeedBonus = Random.Range(7,8);
             ShieldBonus = Random.Range(-2,2);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
         case "FireShoe":
@@ -76,6 +89,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(-1,-2);
             SpeedBonus = Random.Range(-2,2);
             ShieldBonus = Random.Range(-2,2);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
         case "Hat":
@@ -83,6 +100,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(-2,2);
             SpeedBonus = Random.Range(5,6);
             ShieldBonus = Random.Range(-2,2);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
         case "Headband":
@@ -90,6 +111,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(-2,2);
             SpeedBonus = Random.Range(3,4);
             ShieldBonus = Random.Range(-2,2);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
         case "Apple":
@@ -97,6 +122,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(5,6);
             SpeedBonus = Random.Range(-2,2);
             ShieldBonus = Random.Range(-3,-4);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
         case "Gold":
@@ -104,6 +133,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(-2,2);
             SpeedBonus = Random.Range(-5,-6);
             ShieldBonus = Random.Range(7,8);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
         
         case "Cake":
@@ -111,6 +144,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(3,4);
             SpeedBonus = Random.Range(-2,2);
             ShieldBonus = Random.Range(-1,-2);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
         case "Silver":
@@ -118,6 +155,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(-2,2);
             SpeedBonus = Random.Range(-3,-4);
             ShieldBonus = Random.Range(5,6);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
         case "RollerShoe":
@@ -125,6 +166,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range(-3,-4);
             SpeedBonus = Random.Range(-2,2);
             ShieldBonus = Random.Range(-2,2);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
         case "SpikeShoe":
@@ -132,6 +177,10 @@ public class EquippableItem : Item
             AgilityBonus = Random.Range	(-5,-6);
             SpeedBonus = Random.Range(-2,2);
             ShieldBonus = Random.Range(-2,2);
+            batteryplayer.ChangeStrength(StrengthBonus);
+            batteryplayer.ChangeAgility(AgilityBonus);
+            batteryplayer.ChangeSpeed(SpeedBonus);
+            batteryplayer.ChangeShield(ShieldBonus);
             break;
 
 
