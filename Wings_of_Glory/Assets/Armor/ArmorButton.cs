@@ -19,9 +19,9 @@ public class ArmorButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PinkButton.onClick.AddListener(delegate { OnButtonPress(true); });
-        BlueButton.onClick.AddListener(delegate { OnButtonPress(true); });
-        RedButton.onClick.AddListener(delegate { OnButtonPress(true); });   
+        PinkButton.onClick.AddListener(delegate { OnButtonPressPink(true); });
+        BlueButton.onClick.AddListener(delegate { OnButtonPressBlue(true); });
+        RedButton.onClick.AddListener(delegate { OnButtonPressRed(true); });   
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class ArmorButton : MonoBehaviour
     {
         
     }
-    private void OnButtonPress(bool decision)
+    private void OnButtonPressPink(bool decision)
     {
         
         ButtonPressed?.Invoke(decision);
@@ -39,6 +39,27 @@ public class ArmorButton : MonoBehaviour
         StartCoroutine(WaitAndDoSomething());
         
     
+    }
+    private void OnButtonPressBlue(bool decision)
+    {
+        
+        ButtonPressed?.Invoke(decision);
+        Audio.Play();
+        Debug.Log("Play");
+        // SceneManager.LoadScene(sceneName);
+        StartCoroutine(WaitAndDoSomething());
+        
+    
+    }
+    private void OnButtonPressRed(bool decision)
+    {
+        
+        ButtonPressed?.Invoke(decision);
+        Audio.Play();
+        Debug.Log("Play");
+        // SceneManager.LoadScene(sceneName);
+        StartCoroutine(WaitAndDoSomething());
+        
     }
 
     IEnumerator WaitAndDoSomething()
