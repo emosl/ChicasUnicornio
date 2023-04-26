@@ -224,7 +224,7 @@ public class APITest : MonoBehaviour
         // Create the object to be sent as json
         highscores testScore = new highscores();
         // testScore.username_ID = "newID" + Random.Range(1000, 9000).ToString();
-        testScore.total_score=  Random.Range(1000, 9000)
+        testScore.total_score=  Random.Range(1000, 9000);
         // testUser.email = "newGuy" + Random.Range(1000, 9000).ToString() + "@mail.com";
         
 
