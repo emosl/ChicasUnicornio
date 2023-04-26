@@ -22,45 +22,45 @@ public class EquippableItem : Item
 
     public float pickupRange = 1.5f;
 
-    // public void Equip(Character c)
-    // {
-    //     if(StrengthBonus != 0)
-    //     c.Strength.AddModifier(new StatModifier(StrengthBonus, StatModType.Flat, this));
-
-    //     if(AgilityBonus != 0)
-    //     c.Agility.AddModifier(new StatModifier(AgilityBonus, StatModType.Flat, this));
-
-    //     if(ShieldBonus != 0)
-    //     c.Shield.AddModifier(new StatModifier(ShieldBonus, StatModType.Flat, this));
-
-    //     if(SpeedBonus != 0)
-    //     c.Speed.AddModifier(new StatModifier(SpeedBonus, StatModType.Flat, this));
-
-    // }
-
-    // public void Unequip(Character c)
-    // {
-    //     c.Strength.RemoveAllModifiersFromSource(this);
-    //     c.Agility.RemoveAllModifiersFromSource(this);
-    //     c.Shield.RemoveAllModifiersFromSource(this);
-    //     c.Speed.RemoveAllModifiersFromSource(this);
-
-    // }
-     public void Equip(Character character)
+    public void Equip(Character c)
     {
-        character.Strength.AddModifier(new StatModifier(StrengthBonus, StatModType.Flat));
-        character.Agility.AddModifier(new StatModifier(AgilityBonus, StatModType.Flat));
-        character.Shield.AddModifier(new StatModifier(ShieldBonus, StatModType.Flat));
-        character.Speed.AddModifier(new StatModifier(SpeedBonus, StatModType.Flat));
+        if(StrengthBonus != 0)
+        c.Strength.AddModifier(new StatModifier(StrengthBonus, StatModType.Flat, this));
+
+        if(AgilityBonus != 0)
+        c.Agility.AddModifier(new StatModifier(AgilityBonus, StatModType.Flat, this));
+
+        if(ShieldBonus != 0)
+        c.Shield.AddModifier(new StatModifier(ShieldBonus, StatModType.Flat, this));
+
+        if(SpeedBonus != 0)
+        c.Speed.AddModifier(new StatModifier(SpeedBonus, StatModType.Flat, this));
+
     }
 
-    public void Unequip(Character character)
+    public void Unequip(Character c)
     {
-        character.Strength.RemoveAllModifiersFromSource(this);
-        character.Agility.RemoveAllModifiersFromSource(this);
-        character.Shield.RemoveAllModifiersFromSource(this);
-        character.Speed.RemoveAllModifiersFromSource(this);
+        c.Strength.RemoveAllModifiersFromSource(this);
+        c.Agility.RemoveAllModifiersFromSource(this);
+        c.Shield.RemoveAllModifiersFromSource(this);
+        c.Speed.RemoveAllModifiersFromSource(this);
+
     }
+    //  public void Equip(Character character)
+    // {
+    //     character.Strength.AddModifier(new StatModifier(StrengthBonus, StatModType.Flat));
+    //     character.Agility.AddModifier(new StatModifier(AgilityBonus, StatModType.Flat));
+    //     character.Shield.AddModifier(new StatModifier(ShieldBonus, StatModType.Flat));
+    //     character.Speed.AddModifier(new StatModifier(SpeedBonus, StatModType.Flat));
+    // }
+
+    // public void Unequip(Character character)
+    // {
+    //     character.Strength.RemoveAllModifiersFromSource(this);
+    //     character.Agility.RemoveAllModifiersFromSource(this);
+    //     character.Shield.RemoveAllModifiersFromSource(this);
+    //     character.Speed.RemoveAllModifiersFromSource(this);
+    // }
 
 
     public void RandomizeBonuses(string itemName)

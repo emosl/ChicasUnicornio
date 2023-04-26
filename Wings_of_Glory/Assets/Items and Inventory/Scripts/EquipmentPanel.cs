@@ -29,6 +29,7 @@ public List<EquippableItem> EquippedItems
         {
             if (slot.Item != null)
             {
+                Debug.Log("Equpped item" + slot.Item.name);
                 equippedItems.Add((EquippableItem)slot.Item);
             }
         }

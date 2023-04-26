@@ -221,52 +221,49 @@ public class Toby : MonoBehaviour
 }
 public void RemoveItem(string statName)
 {
+    EquipmentPanel equipmentPanel = GetComponent<Character>().equipmentPanel;
+    // if (equipmentPanel == null)
+    // {
+    //     equipmentPanel = character.GetEquipmentPanel();
+    // }
+
     Debug.Log("Trying to remove item affecting " + statName);
 
-    // Iterate through all equipped items
-    foreach (EquippableItem item in character.GetEquipmentPanel().EquippedItems)
+    EquippableItem itemToRemove = null;
+    int highestBonus = 0;
 
+    // Iterate through all equipped items
+    foreach (EquippableItem item in equipmentPanel.EquippedItems)
     {
-        // Find the item that affects the specified stat and unequip it
+        // Find the item that affects the specified stat and has the highest bonus
+        int bonus = 0;
         switch (statName)
         {
             case "Strength":
-                if (item.StrengthBonus > 0)
-                {
-                    Debug.Log("Removing item: " + item.name);
-
-                    character.Unequip(item);
-                    return;
-                }
+                bonus = item.StrengthBonus;
                 break;
             case "Shield":
-                if (item.ShieldBonus > 0)
-                {
-                    Debug.Log("Removing item: " + item.name);
-
-                    character.Unequip(item);
-                    return;
-                }
+                bonus = item.ShieldBonus;
                 break;
             case "Agility":
-                if (item.AgilityBonus > 0)
-                {
-                    Debug.Log("Removing item: " + item.name);
-
-                    character.Unequip(item);
-                    return;
-                }
+                bonus = item.AgilityBonus;
                 break;
             case "Speed":
-                if (item.SpeedBonus > 0)
-                {
-                    Debug.Log("Removing item: " + item.name);
-
-                    character.Unequip(item);
-                    return;
-                }
+                bonus = item.SpeedBonus;
                 break;
         }
+        
+        if (bonus > highestBonus)
+        {
+            highestBonus = bonus;
+            itemToRemove = item;
+        }
+    }
+
+    if (itemToRemove != null)
+    {
+        Debug.Log("Removing item: " + itemToRemove.name);
+        equipmentPanel.RemoveItem(itemToRemove);
     }
 }
 
