@@ -13,7 +13,7 @@ public class ObstacleImplementation : MonoBehaviour
         triggerValueAssigner = GetComponent<TriggerValueAssigner>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
          Debug.Log("OnTriggerEnter called with other: " + other.name);
         Toby toby = other.GetComponent<Toby>();
