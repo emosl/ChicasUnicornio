@@ -209,6 +209,7 @@ app.get('/api/killerspriteinventory', async (request, response)=>{
         }
     }
 })
+// Tengi que borrar los get point que tienen vistas?
 app.get('/api/final_score', async (request, response)=>{
     let connection = null
     
@@ -444,6 +445,29 @@ app.put('/api/', async (request, response)=>{
             connection.end()
             console.log("Connection closed succesfully!")
         }
+    }
+})
+app.get('/api/highscores', (request, response)=>{
+    let connection = connectToDB()
+
+    try{
+
+        connection.connect()
+
+        connection.query('select * from highscores order by highscore desc limit 5', (error, results, fields)=>{
+            if(error) console.log(error)
+            console.log("Sending data correctly.")
+            response.status(200)
+            response.json(results)
+        })
+
+        connection.end()
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
     }
 })
 
