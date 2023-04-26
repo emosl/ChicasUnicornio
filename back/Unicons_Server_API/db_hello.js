@@ -54,6 +54,21 @@ app.get('/', (request,response)=>{
         console.log('Loading page...')
         response.send(html)
     })
+
+    // fs.readFile('../assets/images/principal.mp4', 'utf8', (err, html)=>{
+    //     if(err) response.status(500).send('There was an error: ' + err)
+    //     console.log('Loading page...')
+    //     response.send(html)
+    // })
+    
+})
+app.get('/back/Unicons_Server_API/public/html/index.html', (request,response)=>{
+    fs.readFile('./public/html/index.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err)
+        console.log('Loading page...')
+        response.send(html)
+    })
+
     // fs.readFile('../assets/images/principal.mp4', 'utf8', (err, html)=>{
     //     if(err) response.status(500).send('There was an error: ' + err)
     //     console.log('Loading page...')
