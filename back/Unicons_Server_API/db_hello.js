@@ -7,12 +7,6 @@ import fs from 'fs'
 const app = express()
 const port = 8000
 
-
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
 app.use(express.json())
 app.use(express.static('./public'));
 
@@ -21,32 +15,23 @@ async function connectToDB()
 {
     return await mysql.createConnection({host:'localhost', user:'unicorn01', password:'admin01', database:'chicasunicornio'})   
 }
-// async function connectToDB()
-// {
-//     return await mysql.createConnection({
-//         host:'localhost',
-//         user:'unicorn01',
-//         password:'admin01',
-//         database:'chicasunicornio'
-//     })
-// }
 
 /////END POINTS FOR WEB
+app.get('/', (request,response)=>{
+    fs.readFile('./public/html/index.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err)
+        console.log('Loading page...')
+        response.send(html)
+    })
+    
+})
+
 app.get('/statistics.html', async (request, response) => {
     fs.readFile('./public/html/statistics.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err)
         console.log('Loading page...')
         response.send(html)
     })
-    // try {
-    //   const htmlPath = path.join(__dirname, '..','..', 'statistics.html'); // Change 'path/to/file.html' to the actual path of the HTML file you want to read
-    //   const html = fs.readFileSync(htmlPath, 'utf-8'); // Read the contents of the HTML file
-  
-    //   response.send(html);
-    // } catch (error) {
-    //   response.status(500).send(error);
-    //   console.log(error);
-    // }
   });
 
   app.get('/usersManual.html', async (request, response) => {
@@ -55,45 +40,7 @@ app.get('/statistics.html', async (request, response) => {
         console.log('Loading page...')
         response.send(html)
     })
-    // try {
-    //   const htmlPath = path.join(__dirname, '..','..', 'statistics.html'); // Change 'path/to/file.html' to the actual path of the HTML file you want to read
-    //   const html = fs.readFileSync(htmlPath, 'utf-8'); // Read the contents of the HTML file
-  
-    //   response.send(html);
-    // } catch (error) {
-    //   response.status(500).send(error);
-    //   console.log(error);
-    // }
   });
-
-app.get('/', (request,response)=>{
-    fs.readFile('./public/html/index.html', 'utf8', (err, html)=>{
-        if(err) response.status(500).send('There was an error: ' + err)
-        console.log('Loading page...')
-        response.send(html)
-    })
-
-    // fs.readFile('../assets/images/principal.mp4', 'utf8', (err, html)=>{
-    //     if(err) response.status(500).send('There was an error: ' + err)
-    //     console.log('Loading page...')
-    //     response.send(html)
-    // })
-    
-})
-app.get('/back/Unicons_Server_API/public/html/index.html', (request,response)=>{
-    fs.readFile('./public/html/index.html', 'utf8', (err, html)=>{
-        if(err) response.status(500).send('There was an error: ' + err)
-        console.log('Loading page...')
-        response.send(html)
-    })
-
-    // fs.readFile('../assets/images/principal.mp4', 'utf8', (err, html)=>{
-    //     if(err) response.status(500).send('There was an error: ' + err)
-    //     console.log('Loading page...')
-    //     response.send(html)
-    // })
-    
-})
 app.get('/api/users', async (request, response)=>{
     let connection = null
 

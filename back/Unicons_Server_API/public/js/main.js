@@ -1,6 +1,6 @@
 // Existing code from landing.js
 // 1
-
+import $ from 'jquery';
 setTimeout(function () {
   anime.timeline()
     .add({
