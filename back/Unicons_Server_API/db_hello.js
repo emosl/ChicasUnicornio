@@ -16,9 +16,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.json())
 app.use(express.static('./public'));
 
-function connectToDB()
+
+async function connectToDB()
 {
-    return mysql.createConnection({host:'localhost', user:'unicorn01', password:'admin01', database:'chicasunicornio'})   
+    return await mysql.createConnection({host:'localhost', user:'unicorn01', password:'admin01', database:'chicasunicornio'})   
 }
 // async function connectToDB()
 // {
@@ -513,19 +514,14 @@ app.put('/api/', async (request, response)=>{
         }
     }
 })
-app.get('/api/highscores', (request, response)=>{
-    let connection = connectToDB()
+app.get('/api/highscores', async (request, response)=>{
+    let connection = await connectToDB()
 
     try{
 
-        connection.connect()
+        const[results, fields] = await connection.query('select * from highscores')
 
-        connection.query('select * from highscores', (error, results, fields)=>{
-            if(error) console.log(error)
-            console.log("Sending data correctly.")
-            response.status(200)
-            response.json(results)
-        })
+        response.json(results)
 
         connection.end()
     }
