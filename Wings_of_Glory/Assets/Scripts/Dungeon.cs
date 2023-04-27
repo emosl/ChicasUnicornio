@@ -1,6 +1,8 @@
 // This script implements the dungeon, the loading of the dungeon scene, 
 //the respawn of the player, and the question to enter the dungeon.
 
+// Chicas Unicornio: Dungeon in Wings of Glory
+
 // Firstly, we implement the libraries needed for the script.
 using System.Collections;
 using System.Collections.Generic;
@@ -119,7 +121,7 @@ public class Dungeon : MonoBehaviour
         }
         // canvas.GetComponent<Preguntas>().HideQuestion();
     }
-    
+
      void OnDestroy()
     {
         // Unsubscribe the event when the object is destroyed
