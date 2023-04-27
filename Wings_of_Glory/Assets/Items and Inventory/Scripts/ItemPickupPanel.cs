@@ -9,6 +9,7 @@ public class ItemPickupPanel : MonoBehaviour
 {
     public Item item;
     public Image itemImage;
+    // public GameManagerToby gamemanagertoby;
 
 
     [SerializeField] TMP_Text ItemNameText; // Change this to TMP_Text // Change this to TMP_Text
@@ -21,6 +22,7 @@ public class ItemPickupPanel : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         inventory = player.GetComponent<Character>().inventory;
+       // gamemanagertoby.GadgetCounter(OnItemAdded);
         inventory.OnItemAdded += UpdatePanel;
         gameObject.SetActive(false);
     }
@@ -121,7 +123,6 @@ public void UpdatePanel(Item addedItem)
     {
         gameObject.SetActive(false);
 
-        
     }
 
     private void AddStat(float value, string statNames)
