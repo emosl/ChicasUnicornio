@@ -40,7 +40,6 @@ public class GameManagerToby : MonoBehaviour
     {
         //gameOverMenu.SetActive(false);
         SetScore(0);
-        SetLives(1);
         SetArmor(armor);
     }
 
@@ -63,16 +62,20 @@ public class GameManagerToby : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
-    private void SetLives(int lives)
+    private void SetFinalStats(int shield, int strength, int agility, int speed)
     {
-       // this.lives = lives;
-        // livesText.text = lives.ToString();
+        this.shield = shield;
+        this.strength = strength;
+        this.agility = agility;
+        this.speed = speed;
+        this.lives = lives;
     }
 
 //Registers when Toby loses all of his lives.
     private void GameOver()
     {
         // Save the current scene name to load it again after the game over
+        SetFinalStats(int shield, int strength, int agility, int speed);
         PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
         toby.gameObject.SetActive(false);
         StopAllCoroutines();
