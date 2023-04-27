@@ -300,7 +300,7 @@ public class APITest : MonoBehaviour
     {
         // Create the object to be sent as json
         SavedData testData = new SavedData();
-        testData.username_ID = Random.Range(1, 10);
+        testData.username_ID = Random.Range(1, 8);
         testData.total_score =Random.Range(1000, 9000);
         testData.times_played= Random.Range(1000, 9000);
 

@@ -11,6 +11,7 @@ using TMPro;
 public class MenuUser : MonoBehaviour
 {
     public Button PlayButton;
+    public Button UpdateBotton;
     public string sceneName;
     public AudioSource Audio;
     public static string UiD; // The global variable to store the username ID
@@ -25,6 +26,7 @@ public class MenuUser : MonoBehaviour
     {
         // canvas.SetActive(false);
         PlayButton.onClick.AddListener(delegate { OnButtonPress(true); });
+        UpdateBotton.onClick.AddListener(delegate { OnButtonPress2(true); });
 
     }
 
@@ -43,6 +45,15 @@ public class MenuUser : MonoBehaviour
         Debug.Log(UiD);
         GetUser();
         StartCoroutine(WaitAndDoSomething());
+        
+    
+    }
+    private void OnButtonPress2(bool decision)
+    {
+        
+        ButtonPressed?.Invoke(decision);
+        Audio.Play();
+        UpdateData();
         
     
     }
@@ -70,7 +81,7 @@ public class MenuUser : MonoBehaviour
     }
     public void UpdateData()
     {
-        api.UpdateUser();
+        api.UpdateData();
     }
    
 }
