@@ -148,7 +148,7 @@ public class batteryplayer : MonoBehaviour
     public void ChangeLife(int points)
     {
         currentHealth=points;
-        shieldhealthbar.SetHealth(currentHealth);
+        lifehealthbar.SetHealth(currentHealth);
         if(points>0){
             //Changes the TotalScore of the game by the amount specified.
             Debug.Log("Strength increased by "+points);

@@ -18,9 +18,10 @@ public class GameManagerToby : MonoBehaviour
     public static int lives;
     public TMP_Text scoreText;
     //public image stats;
-
+    public batteryplayer bp;
     public List<int> gadgetlist = new List<int>();
     public List<int> killerspritelist = new List<int>();
+    private int score;
 
 
     private void Awake()
@@ -40,15 +41,25 @@ public class GameManagerToby : MonoBehaviour
         //gameOverMenu.SetActive(false);
         SetScore(0);
         SetLives(1);
-        //SetArmor();
+        SetArmor(armor);
     }
 
-
+    public void SetArmor(string armor){
+        if(armor == "pink"){
+            bp.pink();
+        }
+        if(armor == "blue"){
+            bp.blue();
+        }
+        if(armor == "red"){
+            bp.red();
+        }
+    }
 
     //çpublic static void 
     private void SetScore(int score)
     {
-        //this.score = score;
+        this.score = score;
         scoreText.text = score.ToString();
     }
 
@@ -56,6 +67,16 @@ public class GameManagerToby : MonoBehaviour
     {
        // this.lives = lives;
         // livesText.text = lives.ToString();
+    }
+
+//Registers when Toby loses all of his lives.
+    private void GameOver()
+    {
+        // Save the current scene name to load it again after the game over
+        PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
+        toby.gameObject.SetActive(false);
+        StopAllCoroutines();
+        SceneManager.LoadScene("SampleScene");
     }
 //This function stores the gadget_id in a list for the API
 //
