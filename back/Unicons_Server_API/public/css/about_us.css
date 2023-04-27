@@ -24,8 +24,10 @@
 body, html{
     margin: 0;
     padding: 0;
-    /* color: aliceblue;
-    background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E); */
+    
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .background {
@@ -174,3 +176,15 @@ body, html{
     color: #fff;
     text-shadow: #cb6dcd 2px 2px 2px;
 }
+
+img {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+ 
