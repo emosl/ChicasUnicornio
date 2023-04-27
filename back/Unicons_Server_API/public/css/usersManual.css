@@ -57,10 +57,9 @@ h1 {
 body, html{
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     position: relative;
-    background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E); */
-
+    background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E);
   }
 
 #sub{
