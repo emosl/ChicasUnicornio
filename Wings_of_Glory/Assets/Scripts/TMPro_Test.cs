@@ -66,6 +66,36 @@ public class TMPro_Test : MonoBehaviour
         }
     }
 
+    public void LoadUsername(UsernameList allUsernames)
+    {
+        ClearContents();
+        GameObject uiItem;
+        // Debug.Log("allUsernames.usernames.Count: " + allUsernames.usernames.Count);
+        // TextMeshProUGUI field = uiItem.GetComponent<TextMeshProUGUI>();
+        // field.text = "Welcome: " + allUsernames.usernames.name;
+        for (int i=0; i<allUsernames.usernames.Count; i++){
+            if (type == PrefabType.Button) {
+                uiItem = Instantiate(buttonPrefab);
+            } else {
+                uiItem = Instantiate(textPrefab);
+            }
+        
+        uiItem.transform.SetParent(contentTransform);
+        RectTransform rectTransform = uiItem.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = new Vector2 (0, -50 * i);
+
+        Usernames us = allUsernames.usernames[i];
+        if (type == PrefabType.Button) {
+            TextMeshProUGUI field = uiItem.GetComponentInChildren<TextMeshProUGUI>();
+            field.text = "Welcome: " + us.name;
+            Button btn = uiItem.GetComponent<Button>();
+        }
+        }
+
+
+    }
+
+
 
     // public void LoadScores(final_score allScores)
     // {

@@ -619,3 +619,36 @@ app.listen(port, ()=>
 {
     console.log(`App listening at http://localhost:${port}`)
 })
+
+
+
+///UNITY
+app.get('/api/user', async (request, response) => {
+    let connection = await connectToDB()
+    try
+    {
+        const { usernameID } = request.query;
+        const [results, fields] = await connection.execute('SELECT name FROM `users` WHERE `username_ID` = ?', [usernameID]);
+
+        
+        response.json(results)
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+
+  });
+
+
+  

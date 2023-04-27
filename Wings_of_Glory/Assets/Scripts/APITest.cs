@@ -40,6 +40,11 @@ public class highscores
     // public int score_shield;
 
 }
+public class Usernames
+{
+    public int username_ID;
+    public string name;
+}
 // Allow the class to be extracted from Unity
 [System.Serializable]
 public class UserList
@@ -50,20 +55,27 @@ public class ScoreList
 {
     public List<highscores> highscores;
 }
+public class UsernameList
+{
+    public List<Usernames> usernames;
+}
 
 
 public class APITest : MonoBehaviour
 {
     [SerializeField] string url;
     [SerializeField] string getUsersEP;
+    [SerializeField] string getUserEP;
     [SerializeField] string putUsersEP;
     [SerializeField] string getScoresEP;
     [SerializeField] string putScoresEP;
     [SerializeField] Text errorText;
+    string UN = MenuUser.UiD;
 
     // This is where the information from the api will be extracted
     public UserList allUsers; //variable con la lista de usuarios
     public ScoreList allScores; //variable con la lista de scores
+    public UsernameList allUsernames; 
 
     // Update is called once per frame
     void Update()
@@ -86,6 +98,11 @@ public class APITest : MonoBehaviour
         TMPro_Test texter = GetComponent<TMPro_Test>();
         texter.LoadNames(allUsers);
     }
+    void DisplayUser()
+    {
+        TMPro_Test texter2 = GetComponent<TMPro_Test>();
+        texter2.LoadUsername(allUsernames);
+    }
 
     void DisplayScores()
     {
@@ -98,6 +115,13 @@ public class APITest : MonoBehaviour
     public void QueryUsers()
     {
         StartCoroutine(GetUsers());
+        //corre un metodo en paralelo y espera a que termine
+    }
+    public void QueryUser()
+    {
+        StartCoroutine(GetUser());
+        Debug.Log(UN);
+        // Debug.Log("QueryUser");
         //corre un metodo en paralelo y espera a que termine
     }
 
@@ -144,6 +168,30 @@ public class APITest : MonoBehaviour
                 if (errorText != null) errorText.text = "Error: " + www.error;
             }
         }
+    }
+
+    IEnumerator GetUser()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get(url + getUserEP + UN))
+        //crea un request de tipo get, y le pasa la url
+        {
+            yield return www.SendWebRequest();
+            //espera a que termine el request (await)
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                //Debug.Log("Response: " + www.downloadHandler.text);
+                // Compose the response to look like the object we want to extract
+                // https://answers.unity.com/questions/1503047/json-must-represent-an-object-type.html
+                string jsonString = "{\"name\":" + www.downloadHandler.text + "}";
+                allUsernames = JsonUtility.FromJson<UsernameList>(jsonString); //nuevo objeto con la lista de usuarios
+                DisplayUser();
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+        Debug.Log("GetUser");
     }
 
     IEnumerator GetScores()

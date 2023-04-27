@@ -13,7 +13,7 @@ public class MenuUser : MonoBehaviour
     public Button PlayButton;
     public string sceneName;
     public AudioSource Audio;
-    public static string username_ID; // The global variable to store the username ID
+    public static string UiD; // The global variable to store the username ID
     private string input;
 
     [SerializeField] APITest api;
@@ -40,7 +40,8 @@ public class MenuUser : MonoBehaviour
         ButtonPressed?.Invoke(decision);
         Audio.Play();
         OnPlayButtonClicked();
-        Debug.Log(username_ID);
+        Debug.Log(UiD);
+        GetUser();
         StartCoroutine(WaitAndDoSomething());
         
     
@@ -50,7 +51,7 @@ public class MenuUser : MonoBehaviour
 
     IEnumerator WaitAndDoSomething()
     {
-        yield return new WaitForSeconds(2.3f);
+        yield return new WaitForSeconds(3.3f);
         SceneManager.LoadScene(sceneName);
     }   
 
@@ -60,12 +61,12 @@ public class MenuUser : MonoBehaviour
     
     public void OnPlayButtonClicked()
     {
-        username_ID = usernameIDInputField.text; // Assign the username ID from the input field to the global variable
+        UiD = usernameIDInputField.text; // Assign the username ID from the input field to the global variable
     }
 
-    public void GetUsers()
+    public void GetUser()
     {
-        api.QueryUsers();
+        api.QueryUser();
     }
    
 }
