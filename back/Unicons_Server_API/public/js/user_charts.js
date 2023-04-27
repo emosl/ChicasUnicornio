@@ -58,6 +58,55 @@ catch(error)
 {
     console.log(error)
 }
+//HIGHEST SCORES USER
+try
+{
+    const highscores_user_response = await fetch('http://127.0.1:8000/api/highscoresusers',{
+        method: 'GET'
+    })
+
+    console.log('Got a response correctly')
+
+    if(highscores_user_response.ok)
+    {
+        console.log('Response is ok. Converting to JSON.')
+
+        let results = await highscores_user_response.json()
+
+        console.log(results)
+        console.log('Data converted correctly. Plotting chart.')
+        
+        const values = Object.values(results)
+
+        // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
+        const highscores_user = values.map(e => e['name'])
+        const highscores_user_colors = values.map(e => random_color(0.8))
+        const highscores_user_borders = values.map(e => 'rgba(0, 0, 0, 1.0)')
+        const highscores_user_total_score = values.map(e => e['total_score'])
+
+        const ctx_highscores_user = document.getElementById('highscoresuser').getContext('2d');
+        const levelhighscores_user = new Chart(ctx_highscores_user,
+            {
+                type: 'bar',
+                data: {
+                    labels: highscores_user,
+                    datasets: [
+                        {
+                            label: 'Users_Score',
+                            backgroundColor: highscores_user_colors,
+                            borderColor: highscores_user_borders,
+                            borderWidth: 2,
+                            data: highscores_user_total_score
+                        }
+                    ]
+                }
+            })
+    }
+}
+catch(error)
+{
+    console.log(error)
+}
 // GRAFICA MOST PLAYED
 try
 {
@@ -156,4 +205,4 @@ catch(error)
 {
     console.log(error)
 }
-
+// GRAFICA KILLER SPRITE

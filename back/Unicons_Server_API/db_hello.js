@@ -561,6 +561,25 @@ app.get('/api/killersprite_count_view', async (request, response)=>{
         console.log(error)
     }
 })
+// IDEA
+app.get('/api/highscoresusers', async (request, response)=>{
+    let connection = await connectToDB()
+
+    try{
+
+        const[results, fields] = await connection.query('select * from  highscoresuser')
+
+        response.json(results)
+
+        connection.end()
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+})
 
 
 
