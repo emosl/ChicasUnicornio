@@ -51,7 +51,7 @@ public class StatTooltip : MonoBehaviour
             sb.Append(stat.Value - stat.BaseValue);
             sb.Append(" ( ");
         }
-        sb.Append(System.Math.Round(stat.Value - stat.BaseValue, 4));
+        sb.Append(stat.Value - stat.BaseValue);
 
         return sb.ToString();
 
