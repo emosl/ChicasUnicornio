@@ -215,13 +215,13 @@ public class Toby : MonoBehaviour
 {
     
     shield = newShield;
-    bp.ChangeShield(shield);
+   
     agility = newAgility;
-    bp.ChangeAgility(agility);
+   
     strength = newStrength;
-    bp.ChangeAgility(strength);
+   
     speed = newSpeed;
-    bp.ChangeSpeed(speed);
+    
 
 }
 public void RemoveItem(string statName)

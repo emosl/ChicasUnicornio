@@ -123,6 +123,7 @@ public class Character : MonoBehaviour
     // [SerializeField] EquipmentPanel equipmentPanel;
     [SerializeField] StatPanel statsPanel;
     [SerializeField] private Toby toby;
+    [SerializeField] private batteryplayer batteryPlayer;
     public EquipmentPanel equipmentPanel;
 
 
@@ -179,6 +180,11 @@ public class Character : MonoBehaviour
                 item.Equip(this);
                 statsPanel.UpdateStatValues();
                 toby.UpdateStats(Strength.Value, Shield.Value, Agility.Value, Speed.Value); // Call UpdateStats method in Toby
+
+                batteryPlayer.ChangeAgility(Agility.Value);
+                batteryPlayer.ChangeShield(Shield.Value);
+                batteryPlayer.ChangeSpeed(Speed.Value);
+                batteryPlayer.ChangeStrength(Strength.Value);
             }
             else
             {
@@ -195,6 +201,11 @@ public class Character : MonoBehaviour
             statsPanel.UpdateStatValues();
             inventory.AddItem(item);
             toby.UpdateStats(Strength.Value, Shield.Value, Agility.Value, Speed.Value); // Call UpdateStats method in Toby
+
+            batteryPlayer.ChangeAgility(Agility.Value);
+            batteryPlayer.ChangeShield(Shield.Value);
+            batteryPlayer.ChangeSpeed(Speed.Value);
+            batteryPlayer.ChangeStrength(Strength.Value);
         }
     }
 }

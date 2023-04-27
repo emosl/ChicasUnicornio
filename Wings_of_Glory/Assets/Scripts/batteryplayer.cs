@@ -15,6 +15,8 @@ public class batteryplayer : MonoBehaviour
     public Healthbar lifehealthbar;
     public Healthbar shieldhealthbar;
     public TotalScore totalscore;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,22 +62,12 @@ public class batteryplayer : MonoBehaviour
         shieldhealthbar.SetMinHealth(minHealth);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            ChangeStrength(3);
-        }
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            ChangeAgility(5);
-        }
-    }
+    
 //Function that updates mentioned ability score by the amount specified.
     public void ChangeStrength(int points)
     {
         currentHealth+=points;
+        
         strengthhealthbar.SetHealth(currentHealth);
         if(points>0){
             //Changes the TotalScore of the game by the amount specified.
@@ -92,6 +84,7 @@ public class batteryplayer : MonoBehaviour
    public void ChangeAgility(int points)
     {
         currentHealth+=points;
+        
         agilityhealthbar.SetHealth(currentHealth);
         if(points>0){
             //Changes the TotalScore of the game by the amount specified.
@@ -106,6 +99,7 @@ public class batteryplayer : MonoBehaviour
      public void ChangeSpeed(int points)
     {
         currentHealth+=points;
+        
         speedhealthbar.SetHealth(currentHealth);
         if(points>0){
             //Changes the TotalScore of the game by the amount specified.
@@ -120,6 +114,7 @@ public class batteryplayer : MonoBehaviour
     public void ChangeShield(int points)
     {
         currentHealth+=points;
+        
         shieldhealthbar.SetHealth(currentHealth);
         if(points>0){
             //Changes the TotalScore of the game by the amount specified.
