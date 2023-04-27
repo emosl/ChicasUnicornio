@@ -40,10 +40,10 @@ public class highscores
     // public int score_shield;
 
 }
-public class Usernames
+public class Username
 {
     public string name;
-    public int username_ID;  
+    // public int username_ID;  
 }
 
 public class SavedData
@@ -65,7 +65,7 @@ public class ScoreList
 }
 public class UsernameList
 {
-    public List<Usernames> usernames;
+    public List<Username> names;
 }
 
 
@@ -80,14 +80,14 @@ public class APITest : MonoBehaviour
     [SerializeField] string putSavedDataEP;
     [SerializeField] Text errorText;
     string UN = MenuUser.UiD;
-    string UN2 = "4";
+    string UN2;
 
     private GameManagerToby gameManager;
 
     // This is where the information from the api will be extracted
     public UserList allUsers; //variable con la lista de usuarios
     public ScoreList allScores; //variable con la lista de scores
-    public UsernameList allUsernames; 
+    public Username allUsername; 
 
      void Start()
     {
@@ -130,7 +130,7 @@ public class APITest : MonoBehaviour
     void DisplayUser()
     {
         TMPro_Test texter = GetComponent<TMPro_Test>();
-        texter.LoadUsername(allUsernames);
+        texter.LoadUsername(allUsername);
     }
 
     void DisplayScores()
@@ -146,8 +146,9 @@ public class APITest : MonoBehaviour
         StartCoroutine(GetUsers());
         //corre UN2 metodo en paralelo y espera a que termine
     }
-    public void QueryUser()
+    public void QueryUser(string UiD)
     {
+        UN2 = UiD;
         StartCoroutine(GetUser());
         Debug.Log(UN2);
         // Debug.Log("QueryUser");
@@ -215,11 +216,11 @@ public class APITest : MonoBehaviour
                 //Debug.Log("Response: " + www.downloadHandler.text);
                 // Compose the response to look like the object we want to extract
                 // https://answers.unity.com/questions/1503047/json-must-represent-an-object-type.html
-                string jsonString = "{\"name\":" + www.downloadHandler.text + "}";
+                string jsonString =  www.downloadHandler.text;
                 // string jsonString = www.downloadHandler.text;
                 Debug.Log(jsonString);
-                allUsernames = JsonUtility.FromJson<UsernameList>(jsonString); //nuevo objeto con la lista de usuarios
-                // Debug.Log(allUsernames);
+                allUsername = JsonUtility.FromJson<Username>(jsonString); //nuevo objeto con la lista de usuarios
+                Debug.Log(allUsername.name);
                 // Debug.Log("Response: " + www.downloadHandler.text);
                 DisplayUser();
                 if (errorText != null) errorText.text = "";
@@ -304,13 +305,13 @@ public class APITest : MonoBehaviour
         testData.total_score =Random.Range(1000, 9000);
         testData.times_played= Random.Range(1000, 9000);
 
-        //Debug.Log("USER: " + testUser);
+        // Debug.Log("DATA: " + testData.total_score);
         string jsonData = JsonUtility.ToJson(testData);
-        //Debug.Log("BODY: " + jsonData);
+        Debug.Log("BODY: " + jsonData);
 
         // Send using the Put method:
         // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
-        using (UnityWebRequest www = UnityWebRequest.Put(url + putUsersEP, jsonData))
+        using (UnityWebRequest www = UnityWebRequest.Put(url + putSavedDataEP, jsonData))
         {
             //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
             // Set the method later, and indicate the encoding is JSON

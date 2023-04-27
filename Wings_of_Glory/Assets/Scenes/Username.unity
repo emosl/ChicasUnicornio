@@ -328,7 +328,7 @@ MonoBehaviour:
   type: 0
   textPrefab: {fileID: 8059259429740111422, guid: 5ec3c03037bd53c5887de30f4188683b, type: 3}
   buttonPrefab: {fileID: 6223435412183791049, guid: cf7c05a390d5a258588b5aad649ef090, type: 3}
-  contentTransform: {fileID: 1145414319}
+  contentTransform: {fileID: 0}
   greetField: {fileID: 816078687}
 --- !u!1 &334101975
 GameObject:
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1028747938}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 0.9639367
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816078686}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -1338,7 +1338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -86}
+  m_AnchoredPosition: {x: 0, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &971263452
@@ -1599,7 +1599,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 12.622, y: 151.0608}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1148098290
 GameObject:
@@ -2394,8 +2394,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 199}
-  m_SizeDelta: {x: 239.5129, y: 52.1924}
+  m_AnchoredPosition: {x: -55.429962, y: 144.09442}
+  m_SizeDelta: {x: 354.3728, y: 162.0036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1758212622
 MonoBehaviour:
@@ -2917,7 +2917,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1948308785}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.117308006
+  m_Size: 0.9599021
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

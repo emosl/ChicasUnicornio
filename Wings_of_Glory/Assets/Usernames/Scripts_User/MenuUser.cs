@@ -62,7 +62,7 @@ public class MenuUser : MonoBehaviour
 
     IEnumerator WaitAndDoSomething()
     {
-        yield return new WaitForSeconds(3.3f);
+        yield return new WaitForSeconds(5.3f);
         SceneManager.LoadScene(sceneName);
     }   
 
@@ -77,7 +77,7 @@ public class MenuUser : MonoBehaviour
 
     public void GetUser()
     {
-        api.QueryUser();
+        api.QueryUser(UiD);
     }
     public void UpdateData()
     {
