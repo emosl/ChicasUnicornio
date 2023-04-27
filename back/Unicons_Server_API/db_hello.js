@@ -507,7 +507,7 @@ app.get('/api/highscores', async (request, response)=>{
         console.log(error)
     }
 })
-app.get('/api/mostplayed ', async (request, response)=>{
+app.get('/api/mostplayed', async (request, response)=>{
     let connection = await connectToDB()
 
     try{
@@ -525,7 +525,7 @@ app.get('/api/mostplayed ', async (request, response)=>{
         console.log(error)
     }
 })
-app.get('/api/gadget_count_view ', async (request, response)=>{
+app.get('/api/gadget_count_view', async (request, response)=>{
     let connection = await connectToDB()
 
     try{
