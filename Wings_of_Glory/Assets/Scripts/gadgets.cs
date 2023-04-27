@@ -70,9 +70,9 @@ public class gadgets : MonoBehaviour
     public void disappeargadgets()
     {
         inventory.AddItem(equippableItem);
+        Debug.Log("Item added");
+        gameManager.GadgetCounter(equippableItem.ItemName);
         Destroy(gameObject);
-
-        // gameManager.GadgetCounter(equippableItem.ItemName);
 
     }
 

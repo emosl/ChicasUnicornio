@@ -11,6 +11,8 @@ public class ObstacleImplementation : MonoBehaviour
 
     public GameObject itemNotRemovedPanel;
     public GameObject itemRemovedPanel;
+    public EquippableItem equippableItem;
+    public Character character;
     // public GameManagerToby gameManager;
     
 
@@ -53,6 +55,7 @@ public class ObstacleImplementation : MonoBehaviour
 
     private void CheckPlayerStats(Toby toby)
     {
+        //THis function removes the most valuable item if the player doesn't have the stats.
         switch (triggerValueAssigner.triggerTag)
         {
             case TriggerValueAssigner.TriggerTag.Ice:
@@ -61,6 +64,7 @@ public class ObstacleImplementation : MonoBehaviour
                     toby.RemoveItem("Agility");
                     // gameManager.KillerSpriteCounter(triggerValueAssigner.triggerTag.ToString());
                     itemRemovedPanel.SetActive(true);  
+                    equippableItem.Unequip(character);
                     
                 }
                 else

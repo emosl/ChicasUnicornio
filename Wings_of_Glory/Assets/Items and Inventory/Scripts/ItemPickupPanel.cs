@@ -121,7 +121,6 @@ public void UpdatePanel(Item addedItem)
     {
         gameObject.SetActive(false);
 
-        
     }
 
     private void AddStat(float value, string statNames)
