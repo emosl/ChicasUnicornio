@@ -9,8 +9,7 @@ function random_color(alpha=1.0)
 }
 
 Chart.defaults.font.size = 16;
-// To plot data from an API, we first need to fetch a request, and then process the data.
-async function fetchData() {
+// GRAFICA HIGHEST SCORES
 try
 {
     const highscores_response = await fetch('http://127.0.1:8000/api/highscores',{
@@ -44,7 +43,7 @@ try
                     labels: highscores_unsername_ID,
                     datasets: [
                         {
-                            label: 'Highscores',
+                            label: 'Users_Score',
                             backgroundColor: highscores_colors,
                             borderColor: highscores_borders,
                             borderWidth: 2,
@@ -53,46 +52,108 @@ try
                     ]
                 }
             })
-
-        // const ctx_levels2 = document.getElementById('apiChart2').getContext('2d');
-        // const levelChart2 = new Chart(ctx_levels2, 
-        //     {
-        //         type: 'line',
-        //         data: {
-        //             labels: level_names,
-        //             datasets: [
-        //                 {
-        //                     label: 'Completion Rate',
-        //                     backgroundColor: level_colors,
-        //                     pointRadius: 10,
-        //                     data: level_completion
-        //                 }
-        //             ]
-        //         }
-        //     })
-        
-        // const ctx_levels3 = document.getElementById('apiChart3').getContext('2d');
-        // const levelChart3 = new Chart(ctx_levels3, 
-        //     {
-        //         type: 'bar',
-        //         data: {
-        //             labels: level_names,
-        //             datasets: [
-        //                 {
-        //                     label: 'Completion Rate',
-        //                     backgroundColor: level_colors,
-        //                     borderColor: level_borders,
-        //                     borderWidth: 2,
-        //                     data: level_completion
-        //                 }
-        //             ]
-        //         }
-        //     })
     }
 }
 catch(error)
 {
     console.log(error)
 }
+// GRAFICA MOST PLAYED
+try
+{
+    const highscores_response = await fetch('http://127.0.1:8000/api/mostplayed',{
+        method: 'GET'
+    })
+
+    console.log('Got a response correctly')
+
+    if(highscores_response.ok)
+    {
+        console.log('Response is ok. Converting to JSON.')
+
+        let results = await highscores_response.json()
+
+        console.log(results)
+        console.log('Data converted correctly. Plotting chart.')
+        
+        const values = Object.values(results)
+
+        // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
+        const mostplayed_unsername_ID = values.map(e => e['username_ID'])
+        const mostplayed_colors = values.map(e => random_color(0.8))
+        const mostplayed_borders = values.map(e => 'rgba(0, 0, 0, 1.0)')
+        const mostplayed_total_score = values.map(e => e['times_played'])
+
+        const ctx_mostplayed = document.getElementById('mostplayed').getContext('2d');
+        const levelmostplayed = new Chart(ctx_mostplayed,
+            {
+                type: 'bar',
+                data: {
+                    labels: mostplayed_unsername_ID,
+                    datasets: [
+                        {
+                            label: 'times_played',
+                            backgroundColor: mostplayed_colors,
+                            borderColor: mostplayed_borders,
+                            borderWidth: 2,
+                            data: mostplayed_total_score
+                        }
+                    ]
+                }
+            })
+    }
 }
-fetchData();
+catch(error)
+{
+    console.log(error)
+}
+// GRAFICA FAVORITE GADGET
+try
+{
+    const fav_gadgets_response = await fetch('http://127.0.1:8000/api/gadget_count_view',{
+        method: 'GET'
+    })
+
+    console.log('Got a response correctly')
+
+    if(fav_gadgets_response.ok)
+    {
+        console.log('Response is ok. Converting to JSON.')
+
+        let results = await fav_gadgets_response.json()
+
+        console.log(results)
+        console.log('Data converted correctly. Plotting chart.')
+        
+        const values = Object.values(results)
+
+        // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
+        const fav_gadgets_ID = values.map(e => e['gadgetid'])
+        const fav_gadgets_colors = values.map(e => random_color(0.8))
+        const fav_gadgets_borders = values.map(e => 'rgba(0, 0, 0, 1.0)')
+        const fav_gadgets_score = values.map(e => e['gadget_count'])
+
+        const ctx_fav_gadgets = document.getElementById('fav_gadgets').getContext('2d');
+        const fav_gadgets = new Chart(ctx_fav_gadgets,
+            {
+                type: 'bar',
+                data: {
+                    labels: fav_gadgets_ID,
+                    datasets: [
+                        {
+                            label: 'times_chosen',
+                            backgroundColor: fav_gadgets_colors,
+                            borderColor: fav_gadgets_borders,
+                            borderWidth: 2,
+                            data: fav_gadgets_score
+                        }
+                    ]
+                }
+            })
+    }
+}
+catch(error)
+{
+    console.log(error)
+}
+
