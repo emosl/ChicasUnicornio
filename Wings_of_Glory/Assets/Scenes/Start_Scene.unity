@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayButton: {fileID: 2048239075}
-  sceneName: Chooseyourarmor
+  sceneName: Username
   Audio: {fileID: 2048239078}
 --- !u!82 &494422136
 AudioSource:
