@@ -13,6 +13,7 @@ public class ObstacleImplementation : MonoBehaviour
     public GameObject itemRemovedPanel;
     public EquippableItem equippableItem;
     public Character character;
+    public batteryplayer batteryPlayer;
     // public GameManagerToby gameManager;
     
 
@@ -61,15 +62,21 @@ public class ObstacleImplementation : MonoBehaviour
             case TriggerValueAssigner.TriggerTag.Ice:
                 if (toby.agility < triggerValueAssigner.requiredValue)
                 {
+                    Debug.Log("Agility is less than required value");
                     toby.RemoveItem("Agility");
                     // gameManager.KillerSpriteCounter(triggerValueAssigner.triggerTag.ToString());
                     itemRemovedPanel.SetActive(true);  
                     equippableItem.Unequip(character);
+                    equippableItem.RemoveItem(character);
+                    // batteryPlayer.ChangeAgility(0);
+                    // batteryPlayer.ChangeShield(0);
+                    // batteryPlayer.ChangeSpeed(0);
+                    // batteryPlayer.ChangeStrength(0);
                     
                 }
                 else
                 {
-                    itemNotRemovedPanel.SetActive(true);
+                    itemNotRemovedPanel.SetActive(true);s
 
                 }
                 break;
