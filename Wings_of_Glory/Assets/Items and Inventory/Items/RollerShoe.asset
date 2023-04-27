@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08befef23a7b4c17bee10b32c244ef6, type: 3}
   m_Name: RollerShoe
   m_EditorClassIdentifier: 
-  ItemName: 
+  ItemName: RollerShoe
   Icon: {fileID: -483337074, guid: a3fc34a4ba7a4418493697856f7ec92e, type: 3}
-  StrengthBonus: 4
-  AgilityBonus: 3
-  SpeedBonus: 2
-  ShieldBonus: 1
+  itemImage: {fileID: 0}
+  StrengthBonus: 5
+  AgilityBonus: -3
+  SpeedBonus: -1
+  ShieldBonus: -2
   EquipmentType: 1
+  batteryplayer: {fileID: 0}
+  pickupRange: 1.5
