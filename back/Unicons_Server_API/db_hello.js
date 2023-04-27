@@ -48,6 +48,13 @@ app.get('/statistics.html', async (request, response) => {
         response.send(html)
     })
   });
+  app.get('/register.html', async (request, response) => {
+    fs.readFile('./public/html/register.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err)
+        console.log('Loading page...')
+        response.send(html)
+    })
+  });
 
 
 ////BASE DE DATOS
@@ -459,6 +466,7 @@ app.put('/api/save_data', async (request, response)=>{
         connection = await connectToDB()
         const [results, fields] = await connection.query('update final_score set total_score = ? where username_ID = ?', [request.body['total_score'], request.body['username_ID']])
         const [results02, fields02] = await connection.query('update game_history set times_played = ? where username_ID = ?', [request.body['times_played'], request.body['username_ID']])
+        const [results03, fields03] = await connection.query('update gadgetinventory set  = ? where username_ID = ?', [request.body['times_played'], request.body['username_ID']])
 
         
         response.json({'message': "Data updated correctly."})
