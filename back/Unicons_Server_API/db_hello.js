@@ -25,7 +25,6 @@ app.get('/', (request,response)=>{
     })
     
 })
-
 app.get('/statistics.html', async (request, response) => {
     fs.readFile('./public/html/statistics.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err)
@@ -33,7 +32,6 @@ app.get('/statistics.html', async (request, response) => {
         response.send(html)
     })
   });
-
   app.get('/usersManual.html', async (request, response) => {
     fs.readFile('./public/html/usersManual.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err)
@@ -58,6 +56,7 @@ app.get('/statistics.html', async (request, response) => {
 
 
 ////BASE DE DATOS
+// GET REQUESTS
 app.get('/api/users', async (request, response)=>{
     let connection = null
 
@@ -325,6 +324,7 @@ app.get('/api/game_history', async (request, response)=>{
         }
     }
 })
+// POST REQUESTS
 app.post('/api/users/:id', async (request, response)=>{
 
     let connection = null
@@ -439,6 +439,7 @@ app.post('/api/game_history', async (request, response)=>{
         }
     }
  })
+ // PUT REQUESTS
 app.put('/api/users', async (request, response)=>{
 
     let connection = null
@@ -519,32 +520,6 @@ app.put('/api/save_data', async (request, response)=>{
         }
     }
 })
-app.put('/api/ssa', async (request, response)=>{
-
-    let connection = null
-
-    try{
-        connection = await connectToDB()
-
-        const [results, fields] = await connection.query('update highscores set total_score = ?,  where username_ID= ?', [request.body['total_score'], request.body['username_id']])
-        
-        response.json({'message': "Data updated correctly."})
-    }
-    catch(error)
-    {
-        response.status(500)
-        response.json(error)
-        console.log(error)
-    }
-    finally
-    {
-        if(connection!==null) 
-        {
-            connection.end()
-            console.log("Connection closed succesfully!")
-        }
-    }
-})
 // VIEWS
 app.get('/api/highscores', async (request, response)=>{
     let connection = await connectToDB()
@@ -564,6 +539,81 @@ app.get('/api/highscores', async (request, response)=>{
         console.log(error)
     }
 })
+app.get('/api/mostplayed', async (request, response)=>{
+    let connection = await connectToDB()
+
+    try{
+
+        const[results, fields] = await connection.query('select * from mostplayed')
+
+        response.json(results)
+
+        connection.end()
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+})
+app.get('/api/gadget_count_view', async (request, response)=>{
+    let connection = await connectToDB()
+
+    try{
+
+        const[results, fields] = await connection.query('select * from gadget_count_view')
+
+        response.json(results)
+
+        connection.end()
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+})
+app.get('/api/killersprite_count_view', async (request, response)=>{
+    let connection = await connectToDB()
+
+    try{
+
+        const[results, fields] = await connection.query('select * from killersprite_count_view')
+
+        response.json(results)
+
+        connection.end()
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+})
+// IDEA
+app.get('/api/highscoresusers', async (request, response)=>{
+    let connection = await connectToDB()
+
+    try{
+
+        const[results, fields] = await connection.query('select * from  highscoresuser')
+
+        response.json(results)
+
+        connection.end()
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+})
+
+
 
 app.listen(port, ()=>
 {

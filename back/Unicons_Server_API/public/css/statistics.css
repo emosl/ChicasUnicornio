@@ -207,14 +207,25 @@ h1{
   flex-direction: column;
 }
 
-.chartContainer{
+.chartContainer1{
+  border: 0;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+.chartContainer2{
   border: 0;
   justify-content: center;
   display: flex;
   width: 100%;
 }
 
-.chartContainer canvas{
+.chartContainer1 canvas{
+  flex-grow: 1;
+  max-width: 30%; 
+  max-height: 600px;
+}
+.chartContainer2 canvas{
   flex-grow: 1;
   max-width: 30%; 
   max-height: 600px;
