@@ -7,6 +7,7 @@ using UnityEngine;
 public class ObstacleImplementation : MonoBehaviour
 {
     private TriggerValueAssigner triggerValueAssigner;
+    public StatPanel statsPanel;
 
     public GameObject itemNotRemovedPanel;
     public GameObject itemRemovedPanel;

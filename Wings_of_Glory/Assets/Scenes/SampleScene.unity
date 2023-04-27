@@ -4992,6 +4992,18 @@ MonoBehaviour:
   maxHealth: 100
   minHealth: 0
   currentHealth: 0
+  maxShieldHealth: 10
+  minShieldHealth: 0
+  currentShieldHealth: 0
+  maxStrengthHealth: 18
+  minStrengthHealth: 8
+  currentStrengthHealth: 0
+  maxAgilityHealth: 10
+  minAgilityHealth: 0
+  currentAgilityHealth: 0
+  maxSpeedHealth: 15
+  minSpeedHealth: 5
+  currentSpeedHealth: 0
   strengthhealthbar: {fileID: 552507077}
   agilityhealthbar: {fileID: 667707980}
   speedhealthbar: {fileID: 339323998}
@@ -16134,7 +16146,19 @@ MonoBehaviour:
   maxHealth: 10
   minHealth: 0
   currentHealth: 0
-  strengthhealthbar: {fileID: 0}
+  maxShieldHealth: 10
+  minShieldHealth: 0
+  currentShieldHealth: 0
+  maxStrengthHealth: 18
+  minStrengthHealth: 8
+  currentStrengthHealth: 0
+  maxAgilityHealth: 10
+  minAgilityHealth: 0
+  currentAgilityHealth: 0
+  maxSpeedHealth: 15
+  minSpeedHealth: 5
+  currentSpeedHealth: 0
+  strengthhealthbar: {fileID: 552507077}
   agilityhealthbar: {fileID: 667707980}
   speedhealthbar: {fileID: 339323998}
   lifehealthbar: {fileID: 138301835}

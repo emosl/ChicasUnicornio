@@ -39,20 +39,10 @@ public class batteryplayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Sets the current health to the max health in all of the batteries.
-        // currentHealth=maxHealth;
-        // strengthhealthbar.SetMaxHealth(maxHealth);
-        // agilityhealthbar.SetMaxHealth(maxHealth);
-        // speedhealthbar.SetMaxHealth(maxHealth);
-        // lifehealthbar.SetMaxHealth(maxHealth);
-        // shieldhealthbar.SetMaxHealth(maxHealth);
+
 
         currentHealth=minHealth;
-        // strengthhealthbar.SetMinHealth(minHealth);
-        // agilityhealthbar.SetMinHealth(minHealth);
-        // speedhealthbar.SetMinHealth(minHealth);
-        // lifehealthbar.SetMinHealth(minHealth);
-        // shieldhealthbar.SetMinHealth(minHealth);
+
 
         currentShieldHealth = minShieldHealth;
         shieldhealthbar.SetMinHealth(minShieldHealth);
@@ -109,16 +99,7 @@ public class batteryplayer : MonoBehaviour
         
         
 
-        // if(points>0){
-        //     //Changes the TotalScore of the game by the amount specified.
-        //     Debug.Log("Strength increased by "+points);
-        //     //other.gameObject.GetComponent<total>().disappeargadgets();
-        //     totalscore.SetScore(points);
-        // }
-        // else{
-        //     Debug.Log("Strength decreased by "+points);
-        //     totalscore.SetScore(points);
-        // }
+
     }
     //Function that updates mentioned ability score by the amount specified.
    public void ChangeAgility(int points)
@@ -133,14 +114,7 @@ public class batteryplayer : MonoBehaviour
         {
             agilityhealthbar.SetHealth(currentAgilityHealth);
         }
-        // if(points>0){
-        //     //Changes the TotalScore of the game by the amount specified.
-        //     Debug.Log("Strength increased by "+points);
-        //     totalscore.SetScore(points);
-        // }
-        // else{
-        //     Debug.Log("Strength decreased by "+points);
-        // }
+
     }
 
      public void ChangeSpeed(int points)
@@ -156,14 +130,7 @@ public class batteryplayer : MonoBehaviour
              speedhealthbar.SetHealth(currentSpeedHealth);
         }
 
-        // if(points>0){
-        //     //Changes the TotalScore of the game by the amount specified.
-        //     Debug.Log("Strength increased by "+points);
-        //     totalscore.SetScore(points);
-        // }
-        // else{
-        //     Debug.Log("Strength decreased by "+points);
-        // }
+
     }
 
     public void ChangeShield(int points)
@@ -179,14 +146,7 @@ public class batteryplayer : MonoBehaviour
         {
             shieldhealthbar.SetHealth(currentShieldHealth);
         }
-        // if(points>0){
-        //     //Changes the TotalScore of the game by the amount specified.
-        //     Debug.Log("Strength increased by "+points);
-        //     totalscore.SetScore(points);
-        // }
-        // else{
-        //     Debug.Log("Strength decreased by "+points);
-        // }
+   
     }
 
     public void ChangeLife(int points)
