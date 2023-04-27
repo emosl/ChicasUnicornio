@@ -5,54 +5,15 @@
 function random_color(alpha=1.0)
 {
     const r_c = () => Math.round(Math.random() * 255)
-    return `rgba(${r_c()}, ${r_c()}, ${r_c()}, ${alpha}`
+    return `rgba(${r_c()}, ${r_c()}, ${r_c()}, ${alpha}`;
 }
 
 Chart.defaults.font.size = 16;
-
-// We obtain a reference to the canvas that we are going to use to plot the chart.
-const ctx = document.getElementById('highscores').getContext('2d');
-
-// To plot a chart, we need a configuration object that has all the information that the chart needs.
-const highscores = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
 // To plot data from an API, we first need to fetch a request, and then process the data.
+async function fetchData() {
 try
 {
-    const highscores_response = await fetch('http://170.0.1:8000/api/highscores',{
+    const highscores_response = await fetch('http://127.0.1:8000/api/highscores',{
         method: 'GET'
     })
 
@@ -70,15 +31,15 @@ try
         const values = Object.values(results)
 
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
-        const highscores_unsername_ID = values.map(e => e['Username ID'])
+        const highscores_unsername_ID = values.map(e => e['username_ID'])
         const highscores_colors = values.map(e => random_color(0.8))
         const highscores_borders = values.map(e => 'rgba(0, 0, 0, 1.0)')
-        const highscores_total_score = values.map(e => e['Total Score'])
+        const highscores_total_score = values.map(e => e['total_score'])
 
         const ctx_highscores = document.getElementById('highscores').getContext('2d');
         const levelhighscores = new Chart(ctx_highscores,
             {
-                type: 'pie',
+                type: 'bar',
                 data: {
                     labels: highscores_unsername_ID,
                     datasets: [
@@ -86,6 +47,7 @@ try
                             label: 'Highscores',
                             backgroundColor: highscores_colors,
                             borderColor: highscores_borders,
+                            borderWidth: 2,
                             data: highscores_total_score
                         }
                     ]
@@ -132,3 +94,5 @@ catch(error)
 {
     console.log(error)
 }
+}
+fetchData();
