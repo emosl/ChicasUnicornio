@@ -16,7 +16,7 @@ public class ArmorButton : MonoBehaviour
     public AudioSource Audio;
     string username = MenuUser.username_ID;
 
-    public 
+    public batteryplayer batteryplayer;
 
     public event Action<bool> ButtonPressed; 
     // Start is called before the first frame update
@@ -38,6 +38,7 @@ public class ArmorButton : MonoBehaviour
         ButtonPressed?.Invoke(decision);
         Audio.Play();
         Debug.Log("Play");
+        GetComponent<batteryplayer>().pink();
         // SceneManager.LoadScene(sceneName);
         StartCoroutine(WaitAndDoSomething());
         
@@ -49,6 +50,7 @@ public class ArmorButton : MonoBehaviour
         ButtonPressed?.Invoke(decision);
         Audio.Play();
         Debug.Log("Play");
+        batteryplayer.blue();
         // SceneManager.LoadScene(sceneName);
         StartCoroutine(WaitAndDoSomething());
         
@@ -58,6 +60,7 @@ public class ArmorButton : MonoBehaviour
     {
         
         ButtonPressed?.Invoke(decision);
+        batteryplayer.red();
         Audio.Play();
         Debug.Log("Play");
         // SceneManager.LoadScene(sceneName);

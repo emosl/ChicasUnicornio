@@ -9,10 +9,56 @@ public class GameManagerToby : MonoBehaviour
 {
     public GameObject start_game;
     public GameObject Toby;
+    public Toby toby;
+    public static string armor;
+    public static int strength;
+    public static int shield;
+    public static int speed;
+    public static int agility;
+    public static int lives;
+    public TMP_Text scoreText;
+    //public image stats;
+
     public List<int> gadgetlist = new List<int>();
     public List<int> killerspritelist = new List<int>();
 
+
+    private void Awake()
+    {
+        //homes = FindObjectsOfType<Home>();
+        toby = FindObjectOfType<Toby>();
+    
+    }
+
+    private void Start(){
+        NewGame();
+    }
+
+
+    private void NewGame()
+    {
+        //gameOverMenu.SetActive(false);
+        SetScore(0);
+        SetLives(1);
+        //SetArmor();
+    }
+
+
+
+    //çpublic static void 
+    private void SetScore(int score)
+    {
+        //this.score = score;
+        scoreText.text = score.ToString();
+    }
+
+    private void SetLives(int lives)
+    {
+       // this.lives = lives;
+        // livesText.text = lives.ToString();
+    }
 //This function stores the gadget_id in a list for the API
+//
     public void GadgetCounter(string gadget)
     {
         if (gadget == "Carrot")
@@ -87,13 +133,14 @@ public class GameManagerToby : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        // Add code here to initialize the game state
-    }
+
 
     void Update()
     {
         // Add code here to update the game state
     }
+
+    // public void GetArmor(){
+    //     api.UpdateData();
+    // }
 }
