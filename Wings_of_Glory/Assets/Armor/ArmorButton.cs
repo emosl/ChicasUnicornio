@@ -28,7 +28,7 @@ public class ArmorButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(username);
+        // Debug.Log(username);
     }
     private void OnButtonPressPink(bool decision)
     {

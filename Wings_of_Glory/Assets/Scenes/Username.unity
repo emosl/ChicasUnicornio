@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  textPrefab: {fileID: 0}
-  buttonPrefab: {fileID: 0}
+  textPrefab: {fileID: 8059259429740111422, guid: 5ec3c03037bd53c5887de30f4188683b, type: 3}
+  buttonPrefab: {fileID: 6223435412183791049, guid: cf7c05a390d5a258588b5aad649ef090, type: 3}
   contentTransform: {fileID: 1145414319}
   greetField: {fileID: 816078687}
 --- !u!1 &334101975
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   PlayButton: {fileID: 1882600338}
   sceneName: Chooseyourarmor
   Audio: {fileID: 1882600334}
-  api: {fileID: 0}
+  api: {fileID: 274333633}
   usernameIDInputField: {fileID: 500679692}
 --- !u!114 &1148098299
 MonoBehaviour:
