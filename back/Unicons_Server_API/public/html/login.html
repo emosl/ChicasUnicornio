@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link stylesheet rel="stylesheet" href="../css/login.css"> 
+	<script src="../js/login.js"></script>
+
 </head>
 <body>
 	<header>
@@ -26,13 +28,10 @@
 			<input type="text" placeholder="Enter Username" name="uname" required>
 
 			<label for="psw" class="my-label"><b>Password</b></label>
+
 			<input type="password" placeholder="Enter Password" name="psw" required>
 
-			<button type="submit"> Login</button>
-			
-			
-
-
+			<button type="button" onclick="login()">Login</button>
 		</div>
 	</form>
 </body>
