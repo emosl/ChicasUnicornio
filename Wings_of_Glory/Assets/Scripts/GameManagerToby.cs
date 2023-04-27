@@ -12,6 +12,7 @@ public class GameManagerToby : MonoBehaviour
     public List<int> gadgetlist = new List<int>();
     public List<int> killerspritelist = new List<int>();
 
+//This function stores the gadget_id in a list for the API
     public void GadgetCounter(string gadget)
     {
         if (gadget == "Carrot")
@@ -64,6 +65,8 @@ public class GameManagerToby : MonoBehaviour
         }
     }
 
+//This function stores the killersprite_id in a list for the API
+// The string stored comes from ObstacleImplementation. When a killersprite is passed, the name is stored in the list.
     public void KillerSpriteCounter(string killersprite)
     {
         if (killersprite == "Bomb")

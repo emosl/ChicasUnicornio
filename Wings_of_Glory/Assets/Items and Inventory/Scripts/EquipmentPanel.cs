@@ -12,6 +12,7 @@ public class EquipmentPanel : MonoBehaviour
     [SerializeField] private batteryplayer batteryPlayer;
 
     public event Action<Item> OnItemRightClickEvent;
+    public Character character;
 
 
     private void Awake()
@@ -23,6 +24,9 @@ public class EquipmentPanel : MonoBehaviour
     }
 }
 
+// public void Update(){
+//     Isempty();
+// }
 public List<EquippableItem> EquippedItems
 {
     get
@@ -109,5 +113,11 @@ private void OnDestroy()
 
     return occupiedSlots;
 }
+    // public void Isempty(){
+    //     if (GetNumberOfOccupiedSlots = 0){
+    //         character.strength.BaseValue=0;
+    //         character.speed.BaseValue=0;
+    //     }
 
+    // }
 }

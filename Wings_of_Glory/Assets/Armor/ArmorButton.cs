@@ -16,6 +16,8 @@ public class ArmorButton : MonoBehaviour
     public AudioSource Audio;
     string username = MenuUser.username_ID;
 
+    public 
+
     public event Action<bool> ButtonPressed; 
     // Start is called before the first frame update
     void Start()

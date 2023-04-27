@@ -11,7 +11,7 @@ public class ObstacleImplementation : MonoBehaviour
 
     public GameObject itemNotRemovedPanel;
     public GameObject itemRemovedPanel;
-    // public GameManagerToby gameManager;
+    public GameManagerToby gameManagerToby;
     
 
 
@@ -66,6 +66,8 @@ public class ObstacleImplementation : MonoBehaviour
                 else
                 {
                     itemNotRemovedPanel.SetActive(true);
+                    //gameManagerToby.KillerSpriteCounter("Ice");
+
 
                 }
                 break;
@@ -82,6 +84,7 @@ public class ObstacleImplementation : MonoBehaviour
                     else
                     {
                         itemNotRemovedPanel.SetActive(true);
+                        //gameManagerToby.KillerSpriteCounter("Shield");
                     }
                 }
                 break;
@@ -98,6 +101,7 @@ public class ObstacleImplementation : MonoBehaviour
                     else
                     {
                         itemNotRemovedPanel.SetActive(true);
+                        //gameManagerToby.KillerSpriteCounter("Water");
                     }
                 }
                 break;
@@ -114,6 +118,7 @@ public class ObstacleImplementation : MonoBehaviour
                     else
                     {
                         itemNotRemovedPanel.SetActive(true);
+                        //gameManagerToby.KillerSpriteCounter("Rock");
                     }
                 }
                 break;

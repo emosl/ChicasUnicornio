@@ -1326,9 +1326,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 3
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2463,10 +2463,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1357054501}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 20
+  m_MinValue: 5
+  m_MaxValue: 15
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 15
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2665,7 +2665,8 @@ MonoBehaviour:
   currentObstacle: {fileID: 0}
   player: {fileID: 0}
   pickupPanel: {fileID: 0}
-  character: {fileID: 0}
+  inventory: {fileID: 1354601470}
+  character: {fileID: 370204291}
   speed: 5
   strength: 8
   shield: 0
@@ -3988,10 +3989,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1644200405}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 20
+  m_MinValue: 8
+  m_MaxValue: 18
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 18
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5085,6 +5086,9 @@ MonoBehaviour:
   - {fileID: 1782287852}
   - {fileID: 1109140885}
   statsPanel: {fileID: 898054975}
+  toby: {fileID: 0}
+  batteryPlayer: {fileID: 0}
+  character: {fileID: 0}
 --- !u!1 &667707976
 GameObject:
   m_ObjectHideFlags: 0
@@ -5171,9 +5175,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6400,8 +6404,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a597c74f3bd464eb6a6c76d1cf2493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statsPanel: {fileID: 0}
   itemNotRemovedPanel: {fileID: 574972968}
   itemRemovedPanel: {fileID: 235020422}
+  gameManagerToby: {fileID: 0}
 --- !u!1 &845937396
 GameObject:
   m_ObjectHideFlags: 0
@@ -7699,9 +7705,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 20
+  m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -14861,6 +14867,7 @@ MonoBehaviour:
   itemImage: {fileID: 279385782}
   ItemNameText: {fileID: 1003443715}
   ItemStatsText: {fileID: 1112050189}
+  gameManagerToby: {fileID: 0}
 --- !u!114 &1921551553
 MonoBehaviour:
   m_ObjectHideFlags: 0

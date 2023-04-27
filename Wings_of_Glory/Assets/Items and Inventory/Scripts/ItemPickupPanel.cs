@@ -15,6 +15,7 @@ public class ItemPickupPanel : MonoBehaviour
     [SerializeField] TMP_Text ItemStatsText;
 
     private Inventory inventory;
+    public GameManagerToby gameManagerToby;
     
 
     private void Start()
@@ -52,6 +53,8 @@ public void UpdatePanel(Item addedItem)
     {
         Item = addedItem;
         Show(equippableItem);
+        //Debug.Log("gamemanager gadget");
+        //gameManagerToby.GadgetCounter(equippableItem.ToString());
 
         // Hide the panel after 3 seconds
         StartCoroutine(HidePanelAfterDelay(1f));

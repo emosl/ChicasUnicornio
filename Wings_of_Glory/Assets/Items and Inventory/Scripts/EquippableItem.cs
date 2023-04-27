@@ -20,7 +20,7 @@ public class EquippableItem : Item
     [Space]
     public EquipmentType EquipmentType;
     public batteryplayer batteryplayer;
-
+    public GameManagerToby gameManagerToby;
     public float pickupRange = 1.5f;
 
     public void Equip(Character c)
