@@ -457,8 +457,9 @@ app.put('/api/save_data', async (request, response)=>{
 
     try{
         connection = await connectToDB()
+        const [results, fields] = await connection.query('update final_score set total_score = ? where username_ID = ?', [request.body['total_score'], request.body['username_ID']])
+        const [results02, fields02] = await connection.query('update final_score set total_score = ? where username_ID = ?', [request.body['total_score'], request.body['username_ID']])
 
-        const [results, fields] = await connection.query('update highscores set total_score = ?,  where username_ID= ?', [request.body['total_score'], request.body['username_id']])
         
         response.json({'message': "Data updated correctly."})
     }
