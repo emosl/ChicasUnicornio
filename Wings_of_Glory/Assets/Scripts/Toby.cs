@@ -31,6 +31,8 @@ public class Toby : MonoBehaviour
     public Inventory inventory;
 
 
+
+
    [SerializeField] private Character character;
    private batteryplayer bp;
 
