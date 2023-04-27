@@ -28,17 +28,36 @@ public class ItemPickupPanel : MonoBehaviour
     private void OnDestroy()
     {
         inventory.OnItemAdded -= UpdatePanel;
+        
     }
 
-    private void UpdatePanel(Item addedItem)
+//     public void UpdatePanel(Item addedItem)
+// {
+//     Debug.Log("UpdatePanel called with item: " + addedItem.ItemName);
+//     if (addedItem is EquippableItem equippableItem)
+//     {
+//         Item = addedItem;
+//         Show(equippableItem);
+//     }
+// }
+private IEnumerator HidePanelAfterDelay(float delay)
 {
-    Debug.Log("UpdatePanel called with item: " + addedItem.ItemName);
+    yield return new WaitForSeconds(delay);
+    Hide();
+}
+
+public void UpdatePanel(Item addedItem)
+{
     if (addedItem is EquippableItem equippableItem)
     {
         Item = addedItem;
         Show(equippableItem);
+
+        // Hide the panel after 3 seconds
+        StartCoroutine(HidePanelAfterDelay(1f));
     }
 }
+
 
 
     public Item Item

@@ -162,6 +162,9 @@ public class Character : MonoBehaviour
             Unequip((EquippableItem)item);
         }
     }
+    private bool bonusApplied_Speed = false;
+    private bool bonusApplied_Strength = false;
+
 
     private void Equip(EquippableItem item)
     {
@@ -175,6 +178,18 @@ public class Character : MonoBehaviour
                     inventory.AddItem(previousItem);
                     previousItem.Unequip(this);
                     statsPanel.UpdateStatValues();
+                }
+                if (!bonusApplied_Strength && item.StrengthBonus > 0)
+                {
+                    Strength.BaseValue += 8;
+                    bonusApplied_Strength = true;
+                }
+                
+                // Apply speed bonus if the item has a positive speed value and the bonus has not been applied yet
+                if (!bonusApplied_Speed && item.SpeedBonus > 0)
+                {
+                    Speed.BaseValue += 5;
+                    bonusApplied_Speed = true;
                 }
 
                 item.Equip(this);

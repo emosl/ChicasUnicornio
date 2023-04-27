@@ -11,6 +11,8 @@ public class Inventory : MonoBehaviour
     public EquippableItem equippableItem;
 
     public event Action<Item> OnItemRightClickEvent;
+    public event Action<Item> OnItemDoubleClickEvent;
+
 
     public event Action<Item> OnItemAdded;
 
@@ -19,6 +21,7 @@ public class Inventory : MonoBehaviour
     for (int i = 0; i < itemSlots.Length; i++)
     {
         itemSlots[i].OnRightClickEvent += HandleRightClick;
+        itemSlots[i].OnDoubleClickEvent += HandleDoubleClick;
         itemSlots[i].OnRightClickEvent += OnItemRightClickEvent;
     }
 }
@@ -29,6 +32,12 @@ private void HandleRightClick(Item item)
         // Perform any other necessary actions here, like using the item or showing a context menu.
         OnItemRightClickEvent?.Invoke(item);
     }
+
+private void HandleDoubleClick(Item item)
+{
+    RemoveItem(item);
+}
+
 
 
 
@@ -50,6 +59,10 @@ private void OnDestroy()
         }
 
         RefreshUI();
+        for (int i = 0; i < itemSlots.Length; i++)
+    {
+        itemSlots[i].OnDoubleClickEvent += (item) => OnItemDoubleClickEvent?.Invoke(item);
+    }
     }
 
     private void RefreshUI()

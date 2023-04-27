@@ -27,6 +27,9 @@ public class Toby : MonoBehaviour
     public Obstacle currentObstacle;
     public GameObject player;  
     private gadgets gadgetcollider;
+    public ItemPickupPanel pickupPanel;
+    public Inventory inventory;
+
 
    [SerializeField] private Character character;
    private batteryplayer bp;
@@ -73,6 +76,9 @@ public class Toby : MonoBehaviour
         toby_stats = JsonUtility.FromJson<Toby_stats>(jsonStats);
         transform.position = toby_stats.savedPosition;
         PlayerPrefs.DeleteAll();
+
+        pickupPanel = FindObjectOfType<ItemPickupPanel>();
+
 
         
         
@@ -199,7 +205,7 @@ public class Toby : MonoBehaviour
       
         
     }
-    
+
    
 
     public void PermissionGranted()
@@ -227,10 +233,7 @@ public class Toby : MonoBehaviour
 public void RemoveItem(string statName)
 {
     EquipmentPanel equipmentPanel = GetComponent<Character>().equipmentPanel;
-    // if (equipmentPanel == null)
-    // {
-    //     equipmentPanel = character.GetEquipmentPanel();
-    // }
+
 
     Debug.Log("Trying to remove item affecting " + statName);
 
@@ -269,6 +272,7 @@ public void RemoveItem(string statName)
     {
         Debug.Log("Removing item: " + itemToRemove.name);
         equipmentPanel.RemoveItem(itemToRemove);
+        
     }
 }
 
