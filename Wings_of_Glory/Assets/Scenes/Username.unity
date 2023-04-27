@@ -328,7 +328,7 @@ MonoBehaviour:
   type: 0
   textPrefab: {fileID: 8059259429740111422, guid: 5ec3c03037bd53c5887de30f4188683b, type: 3}
   buttonPrefab: {fileID: 6223435412183791049, guid: cf7c05a390d5a258588b5aad649ef090, type: 3}
-  contentTransform: {fileID: 0}
+  contentTransform: {fileID: 1758212621}
   greetField: {fileID: 816078687}
 --- !u!1 &334101975
 GameObject:
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1028747938}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.9639367
+  m_Size: 0.96393657
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369460090}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: UPDATE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1338,8 +1338,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 53.178375, y: -25}
+  m_SizeDelta: {x: 306.3568, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &971263452
 GameObject:
@@ -1999,7 +1999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -305.5996, y: 3.9385}
+  m_AnchoredPosition: {x: -222, y: -166.89}
   m_SizeDelta: {x: 157.0157, y: 50.5303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1513751345
@@ -2394,7 +2394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55.429962, y: 144.09442}
+  m_AnchoredPosition: {x: -76, y: 365}
   m_SizeDelta: {x: 354.3728, y: 162.0036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1758212622
@@ -2917,7 +2917,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1948308785}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9599021
+  m_Size: 0.9599023
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
