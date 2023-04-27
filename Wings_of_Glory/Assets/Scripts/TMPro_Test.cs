@@ -50,6 +50,7 @@ public class TMPro_Test : MonoBehaviour
 
             // Extract the text from the argument object
             Users us = allUsers.users[i];
+            Debug.Log("ID: " + us.username_ID + " | " + us.name + " " + us.last_name);
             //Debug.Log("ID: " + us.username_ID + " | " + us.name + " " + us.last_name);
 
             if (type == PrefabType.Button) {
@@ -65,6 +66,41 @@ public class TMPro_Test : MonoBehaviour
             }
         }
     }
+
+    public void LoadUsername(Username allUsernames)
+    {
+        ClearContents();
+        GameObject uiItem;
+        uiItem = Instantiate(textPrefab);
+        Debug.Log(allUsernames.name);
+        Username us = allUsernames;
+        TextMeshProUGUI field = uiItem.GetComponent<TextMeshProUGUI>();
+        field.text = "Welcome: " + us.name;
+        greetField.text = "Welcome " + us.name + "!";
+        Debug.Log("Welcome: " + us.name);
+
+    //     if (allUsernames.name != null) {
+    //         if (type == PrefabType.Button) {
+    //             uiItem = Instantiate(buttonPrefab);
+    //         } else {
+    //             uiItem = Instantiate(textPrefab);
+    //         }
+
+    //         uiItem.transform.SetParent(contentTransform);
+    //         RectTransform rectTransform = uiItem.GetComponent<RectTransform>();
+    //         rectTransform.anchoredPosition = new Vector2(0, 0);
+
+    //         Username us = allUsernames;
+    //         if (type == PrefabType.Button) {
+    //             TextMeshProUGUI field = uiItem.GetComponentInChildren<TextMeshProUGUI>();
+    //             field.text = "Welcome: " + us.name;
+    //             Button btn = uiItem.GetComponent<Button>();
+    //         }
+    // }
+
+
+    }
+
 
 
     // public void LoadScores(final_score allScores)

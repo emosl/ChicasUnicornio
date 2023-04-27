@@ -2,15 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//holaoooo
+// //holaoooo
 
 public class ObstacleImplementation : MonoBehaviour
 {
     private TriggerValueAssigner triggerValueAssigner;
+    public StatPanel statsPanel;
 
-    public NotPassed notPassed;
     public GameObject itemNotRemovedPanel;
-    public GameManagerToby gameManager;
+    public GameObject itemRemovedPanel;
+    public EquippableItem equippableItem;
+    public Character character;
+    public batteryplayer batteryPlayer;
+    // public GameManagerToby gameManager;
     
 
 
@@ -18,10 +22,9 @@ public class ObstacleImplementation : MonoBehaviour
     {
         triggerValueAssigner = GetComponent<TriggerValueAssigner>();
 
-        //  itemRemovedPanel.SetActive(false);
-        // itemNotRemovedPanel.SetActive(false);
-        itemNotRemovedPanel.SetActive(false);
-        notPassed.Hide();
+         itemRemovedPanel.SetActive(false);
+         itemNotRemovedPanel.SetActive(false);
+       
         
     }
 
@@ -35,17 +38,42 @@ public class ObstacleImplementation : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+         Toby toby = other.GetComponent<Toby>();
+        if (toby != null)
+        {
+            Hide();
+        }
+
+    }
+
+    private void Hide()
+    {
+        itemRemovedPanel.SetActive(false);
+        itemNotRemovedPanel.SetActive(false);
+    }
+
     private void CheckPlayerStats(Toby toby)
     {
+                    // batteryPlayer.ChangeAgility(0);
+                    // batteryPlayer.ChangeShield(0);
+                    // batteryPlayer.ChangeSpeed(0);
+                    // batteryPlayer.ChangeStrength(0);
+        //THis function removes the most valuable item if the player doesn't have the stats.
         switch (triggerValueAssigner.triggerTag)
         {
             case TriggerValueAssigner.TriggerTag.Ice:
                 if (toby.agility < triggerValueAssigner.requiredValue)
                 {
+                    Debug.Log("Agility is less than required value");
                     toby.RemoveItem("Agility");
-                    gameManager.KillerSpriteCounter(triggerValueAssigner.triggerTag.ToString());
-                    // itemRemovedPanel.SetActive(true);  
-                    notPassed.Show(); 
+                    // gameManager.KillerSpriteCounter(triggerValueAssigner.triggerTag.ToString());
+                    itemRemovedPanel.SetActive(true);  
+                    equippableItem.Unequip(character);
+                    equippableItem.RemoveItem(character);
+            
+                    
                 }
                 else
                 {
@@ -60,8 +88,8 @@ public class ObstacleImplementation : MonoBehaviour
 
                     if (toby.shield < triggerValueAssigner.requiredValue)
                     {
-                        // itemRemovedPanel.SetActive(true);
-                        notPassed.Show(); 
+                        itemRemovedPanel.SetActive(true);
+                        
                     }
                     else
                     {
@@ -76,8 +104,8 @@ public class ObstacleImplementation : MonoBehaviour
 
                     if (toby.speed < triggerValueAssigner.requiredValue)
                     {
-                        // itemRemovedPanel.SetActive(true);
-                        notPassed.Show(); 
+                        itemRemovedPanel.SetActive(true);
+                       
                     }
                     else
                     {
@@ -92,8 +120,8 @@ public class ObstacleImplementation : MonoBehaviour
 
                     if (toby.strength < triggerValueAssigner.requiredValue)
                     {
-                        // itemRemovedPanel.SetActive(true);
-                        notPassed.Show(); 
+                        itemRemovedPanel.SetActive(true);
+                       
                     }
                     else
                     {
@@ -102,5 +130,7 @@ public class ObstacleImplementation : MonoBehaviour
                 }
                 break;
         }
+        
     }
 }
+

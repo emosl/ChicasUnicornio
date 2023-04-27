@@ -9,6 +9,7 @@ public class ItemPickupPanel : MonoBehaviour
 {
     public Item item;
     public Image itemImage;
+    // public GameManagerToby gamemanagertoby;
 
 
     [SerializeField] TMP_Text ItemNameText; // Change this to TMP_Text // Change this to TMP_Text
@@ -21,6 +22,7 @@ public class ItemPickupPanel : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         inventory = player.GetComponent<Character>().inventory;
+       // gamemanagertoby.GadgetCounter(OnItemAdded);
         inventory.OnItemAdded += UpdatePanel;
         gameObject.SetActive(false);
     }
@@ -28,17 +30,36 @@ public class ItemPickupPanel : MonoBehaviour
     private void OnDestroy()
     {
         inventory.OnItemAdded -= UpdatePanel;
+        
     }
 
-    private void UpdatePanel(Item addedItem)
+//     public void UpdatePanel(Item addedItem)
+// {
+//     Debug.Log("UpdatePanel called with item: " + addedItem.ItemName);
+//     if (addedItem is EquippableItem equippableItem)
+//     {
+//         Item = addedItem;
+//         Show(equippableItem);
+//     }
+// }
+private IEnumerator HidePanelAfterDelay(float delay)
 {
-    Debug.Log("UpdatePanel called with item: " + addedItem.ItemName);
+    yield return new WaitForSeconds(delay);
+    Hide();
+}
+
+public void UpdatePanel(Item addedItem)
+{
     if (addedItem is EquippableItem equippableItem)
     {
         Item = addedItem;
         Show(equippableItem);
+
+        // Hide the panel after 3 seconds
+        StartCoroutine(HidePanelAfterDelay(1f));
     }
 }
+
 
 
     public Item Item
@@ -102,7 +123,6 @@ public class ItemPickupPanel : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        
     }
 
     private void AddStat(float value, string statNames)

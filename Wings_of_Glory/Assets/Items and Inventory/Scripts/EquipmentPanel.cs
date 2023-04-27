@@ -7,6 +7,10 @@ public class EquipmentPanel : MonoBehaviour
 {
     [SerializeField] Transform equipmentSlotsParent;
     [SerializeField] EquipmentSlot[] equipmentSlots;
+    [SerializeField] StatPanel statsPanel;
+    [SerializeField] private Toby toby;
+    [SerializeField] private batteryplayer batteryPlayer;
+    public Character character;
 
     public event Action<Item> OnItemRightClickEvent;
 
@@ -83,8 +87,12 @@ private void OnDestroy()
             if (equipmentSlots[i].Item == item)
             {
                 equipmentSlots[i].Item = null;
+                //item.Unequip(character);
+                statsPanel.UpdateStatValues();
+                
                 return true;
             }
+
         }
         return false;
     }

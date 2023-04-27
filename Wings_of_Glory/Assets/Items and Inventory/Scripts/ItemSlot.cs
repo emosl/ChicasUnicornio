@@ -42,38 +42,61 @@ public class ItemSlot : MonoBehaviour , IPointerClickHandler, IPointerEnterHandl
             itemImage.enabled = true;
         }
     }
+public event Action<Item> OnDoubleClickEvent;
 
-
-public void OnPointerClick(PointerEventData eventData)
+public void OnDoubleClick()
 {
-
-
-    if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
+     
+    if (Item != null)
     {
-   
+        OnDoubleClickEvent?.Invoke(Item);
+    }
+}
 
-        if (Item != null && OnRightClickEvent != null)
+private float lastClickTime;
+private const float doubleClickTime = 0.2f;
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+
+
+        if (eventData != null && eventData.button == PointerEventData.InputButton.Right)
         {
-           
-            OnRightClickEvent(Item);
-        }
-    }
-}
-
-public void OnPointerEnter(PointerEventData eventData)
-{
-    if (Item is EquippableItem)
-    {
-        tooltip.ShowTooltip((EquippableItem)Item);
-
-    }
     
-}
 
-public void OnPointerExit(PointerEventData eventData)
-{
-    tooltip.HideTooltip();
-}
+            if (Item != null && OnRightClickEvent != null)
+            {
+            
+                OnRightClickEvent(Item);
+            }
+        }
+        if (eventData.button == PointerEventData.InputButton.Left)
+            {
+                float timeSinceLastClick = Time.time - lastClickTime;
+                if (timeSinceLastClick <= doubleClickTime)
+                {
+                    OnDoubleClick();
+                }
+
+                lastClickTime = Time.time;
+            }
+        }
+
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (Item is EquippableItem)
+        {
+            tooltip.ShowTooltip((EquippableItem)Item);
+
+        }
+        
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        tooltip.HideTooltip();
+    }
 
 
 
