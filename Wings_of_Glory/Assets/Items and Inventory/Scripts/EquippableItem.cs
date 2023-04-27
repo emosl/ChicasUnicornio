@@ -47,6 +47,12 @@ public class EquippableItem : Item
         c.Speed.RemoveAllModifiersFromSource(this);
 
     }
+    public void RemoveItem(Character c){
+        c.Strength.RemoveAllModifiersFromSource(this);
+        c.Agility.RemoveAllModifiersFromSource(this);
+        c.Shield.RemoveAllModifiersFromSource(this);
+        c.Speed.RemoveAllModifiersFromSource(this);
+    }
     //  public void Equip(Character character)
     // {
     //     character.Strength.AddModifier(new StatModifier(StrengthBonus, StatModType.Flat));

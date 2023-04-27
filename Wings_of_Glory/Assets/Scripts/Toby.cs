@@ -30,6 +30,8 @@ public class Toby : MonoBehaviour
     public ItemPickupPanel pickupPanel;
     public Inventory inventory;
 
+    
+
 
    [SerializeField] private Character character;
    private batteryplayer bp;
@@ -221,7 +223,7 @@ public class Toby : MonoBehaviour
 {
     
     shield = newShield;
-   
+    
     agility = newAgility;
    
     strength = newStrength;
@@ -271,7 +273,10 @@ public void RemoveItem(string statName)
     if (itemToRemove != null)
     {
         Debug.Log("Removing item: " + itemToRemove.name);
-        equipmentPanel.RemoveItem(itemToRemove);
+        //equipmentPanel.RemoveItem(itemToRemove);
+        character.Unequip(itemToRemove);
+        inventory.RemoveItem(itemToRemove);
+
         
     }
 }

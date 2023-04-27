@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] Transform itemsParent;
     public ItemSlot[] itemSlots;
     public EquippableItem equippableItem;
+    public GameManagerToby gameManagerToby;
 
     public event Action<Item> OnItemRightClickEvent;
     public event Action<Item> OnItemDoubleClickEvent;
@@ -87,7 +88,7 @@ private void OnDestroy()
         {
             return false;
         }
-
+        //gameManagerToby.GadgetCounter(item.ItemName);
         items.Add(item);
         OnItemAdded?.Invoke(item);
         RefreshUI();
