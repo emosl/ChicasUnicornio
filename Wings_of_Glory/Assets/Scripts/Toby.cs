@@ -232,10 +232,7 @@ public class Toby : MonoBehaviour
 public void RemoveItem(string statName)
 {
     EquipmentPanel equipmentPanel = GetComponent<Character>().equipmentPanel;
-    // if (equipmentPanel == null)
-    // {
-    //     equipmentPanel = character.GetEquipmentPanel();
-    // }
+
 
     Debug.Log("Trying to remove item affecting " + statName);
 
