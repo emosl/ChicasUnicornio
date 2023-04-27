@@ -14,6 +14,7 @@ public class ArmorButton : MonoBehaviour
     public Button RedButton;
     public string sceneName;
     public AudioSource Audio;
+    string username = MenuUser.username_ID;
 
     public event Action<bool> ButtonPressed; 
     // Start is called before the first frame update
@@ -27,7 +28,7 @@ public class ArmorButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Debug.Log(username);
     }
     private void OnButtonPressPink(bool decision)
     {

@@ -457,7 +457,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1148098299}
+        m_TargetAssemblyTypeName: ReadInput, Assembly-CSharp
+        m_MethodName: ReadStringInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -903,10 +915,10 @@ GameObject:
   - component: {fileID: 1148098295}
   - component: {fileID: 1148098294}
   - component: {fileID: 1148098293}
-  - component: {fileID: 1148098292}
   - component: {fileID: 1148098298}
   - component: {fileID: 1148098291}
   - component: {fileID: 1148098297}
+  - component: {fileID: 1148098299}
   m_Layer: 5
   m_Name: Canvas_Menu
   m_TagString: Untagged
@@ -1010,21 +1022,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1148098292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148098290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f09e56acdea5a434dbc4439bf75d4ba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayButton: {fileID: 1882600338}
-  sceneName: Chooseyourarmor
-  Audio: {fileID: 1882600334}
 --- !u!114 &1148098293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,7 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53ec8302ba9a46e1bcb5e5f3d2b0564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usernameIDInputField: {fileID: 0}
+  usernameIDInputField: {fileID: 500679692}
 --- !u!114 &1148098298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,6 +1131,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0f9ca22679ef42ed994bb4d1ac2b097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayButton: {fileID: 1882600338}
+  sceneName: Chooseyourarmor
+  Audio: {fileID: 1882600334}
+  usernameIDInputField: {fileID: 500679692}
+--- !u!114 &1148098299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148098290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f40b70ffe314304ae8cb333ce95c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1207635733
