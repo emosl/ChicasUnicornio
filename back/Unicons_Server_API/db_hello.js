@@ -41,6 +41,16 @@ app.get('/statistics.html', async (request, response) => {
         response.send(html)
     })
   });
+  app.get('/aboutus.html', async (request, response) => {
+    fs.readFile('./public/html/aboutus.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err)
+        console.log('Loading page...')
+        response.send(html)
+    })
+  });
+
+
+////BASE DE DATOS
 app.get('/api/users', async (request, response)=>{
     let connection = null
 
@@ -100,7 +110,7 @@ app.get('/api/gadgets', async (request, response)=>{
     try
     {
         connection = await connectToDB()
-        const [results, fields] = await connection.execute('select * from gadgets')
+        const [results, fields] = await connection.execute('select * from gadget_count_view')
 
         response.json(results)
     }
@@ -119,32 +129,11 @@ app.get('/api/gadgets', async (request, response)=>{
         }
     }
 })
-app.get('/api/gameinventory', async (request, response)=>{
-    let connection = null
+//gadgets - post (id_gadgets), killersprite - post(id_ks -> ks_inventory)
+//gamehistory - get (userID,shield,scoreID)
+//shield - post (shieldif -> game history))
+//scoreID - post (scoreID -> game history) scoreID viene de FINAL SCORE 
 
-    try
-    {
-        connection = await connectToDB()
-        const [results, fields] = await connection.execute('select * from gameinventory')
-
-         
-        response.json(results)
-    }
-    catch(error)
-    {
-        response.status(500)
-        response.json(error)
-        console.log(error)
-    }
-    finally
-    {
-        if(connection!==null) 
-        {
-            connection.end()
-            console.log("Connection closed succesfully!")
-        }
-    }
-})
 app.get('/api/Gadget_inventory', async (request, response)=>{
     let connection = null
 

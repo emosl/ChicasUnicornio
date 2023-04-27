@@ -90,7 +90,7 @@ public class APITest : MonoBehaviour
     void DisplayScores()
     {
         TMPro_Test texter = GetComponent<TMPro_Test>();
-        texter.LoadScores(allScores);
+        // texter.LoadScores(allScores);
     }
 
     // These are the functions that must be called to interact with the API
@@ -229,7 +229,7 @@ public class APITest : MonoBehaviour
         
 
         //Debug.Log("USER: " + testUser);
-        string jsonData = JsonUtility.ToJson(testUser);
+        string jsonData = JsonUtility.ToJson(testScore);
         //Debug.Log("BODY: " + jsonData);
 
         // Send using the Put method:
