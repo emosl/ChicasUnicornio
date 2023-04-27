@@ -11,7 +11,7 @@ public class ObstacleImplementation : MonoBehaviour
 
     public GameObject itemNotRemovedPanel;
     public GameObject itemRemovedPanel;
-    public GameManagerToby gameManagerToby;
+    //public GameManagerToby gameManagerToby;
     
 
 
