@@ -27,6 +27,8 @@ public class Toby : MonoBehaviour
     public Obstacle currentObstacle;
     public GameObject player;  
     private gadgets gadgetcollider;
+    public ItemPickupPanel pickupPanel;
+
 
    [SerializeField] private Character character;
    private batteryplayer bp;
@@ -73,6 +75,9 @@ public class Toby : MonoBehaviour
         toby_stats = JsonUtility.FromJson<Toby_stats>(jsonStats);
         transform.position = toby_stats.savedPosition;
         PlayerPrefs.DeleteAll();
+
+        pickupPanel = FindObjectOfType<ItemPickupPanel>();
+
 
         
         
@@ -199,7 +204,7 @@ public class Toby : MonoBehaviour
       
         
     }
-    
+
    
 
     public void PermissionGranted()
