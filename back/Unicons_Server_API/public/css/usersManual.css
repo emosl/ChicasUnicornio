@@ -10,8 +10,8 @@
 }
 
 #logo{
-  width: 400px;
-  height: 300px;
+  width: 300px;
+  height: 200px;
   margin-right: 10px;
 }
 
@@ -55,9 +55,12 @@ h1 {
 
 
 body, html{
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E);
+    position: relative;
+    background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E); */
+
   }
 
 #sub{
@@ -137,13 +140,10 @@ p{
 }
 
 img{
-  /* width: 300px;
-  height: 200px; */
+  width: auto;
+  height: 300px;
   border-radius: 10px;
-  height: 50%;
-  width: 50%;
+  /* height: 50%;
+  width: 50%; */
 
 }
-
-
-  
