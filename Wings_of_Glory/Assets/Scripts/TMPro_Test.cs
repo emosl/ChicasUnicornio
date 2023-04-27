@@ -50,6 +50,7 @@ public class TMPro_Test : MonoBehaviour
 
             // Extract the text from the argument object
             Users us = allUsers.users[i];
+            Debug.Log("ID: " + us.username_ID + " | " + us.name + " " + us.last_name);
             //Debug.Log("ID: " + us.username_ID + " | " + us.name + " " + us.last_name);
 
             if (type == PrefabType.Button) {
@@ -73,24 +74,56 @@ public class TMPro_Test : MonoBehaviour
         // Debug.Log("allUsernames.usernames.Count: " + allUsernames.usernames.Count);
         // TextMeshProUGUI field = uiItem.GetComponent<TextMeshProUGUI>();
         // field.text = "Welcome: " + allUsernames.usernames.name;
-        for (int i=0; i<allUsernames.usernames.Count; i++){
+        // for (int i=0; i<allUsernames.usernames.Count; i++){
+        //     if (type == PrefabType.Button) {
+        //         uiItem = Instantiate(buttonPrefab);
+        //     } else {
+        //         uiItem = Instantiate(textPrefab);
+        //     }
+        
+        // uiItem.transform.SetParent(contentTransform);
+        // RectTransform rectTransform = uiItem.GetComponent<RectTransform>();
+        // rectTransform.anchoredPosition = new Vector2 (0, -50 * i);
+
+        // Usernames us = allUsernames.usernames[i];
+        // if (type == PrefabType.Button) {
+        //     TextMeshProUGUI field = uiItem.GetComponentInChildren<TextMeshProUGUI>();
+        //     field.text = "Welcome: " + us.name;
+        //     Button btn = uiItem.GetComponent<Button>();
+        // }
+        // }
+        
+        // Debug.Log("allUsernames.usernames.Count: " + allUsernames.usernames.Count);
+        // TextMeshProUGUI field = uiItem.GetComponent<TextMeshProUGUI>();
+        // field.text = "Welcome: " + allUsernames.usernames.name;
+        
+        // Usernames user = allUsernames.usernames[0];
+        // if (type == PrefabType.Button) {
+        //         uiItem = Instantiate(buttonPrefab);
+        //     } else {
+        //         uiItem = Instantiate(textPrefab);
+        //     }
+        // TextMeshProUGUI field2 = uiItem.GetComponentInChildren<TextMeshProUGUI>();
+        // field2.text = "Welcome: " + user.name;
+
+        if (allUsernames.usernames.Count >= 0) {
             if (type == PrefabType.Button) {
                 uiItem = Instantiate(buttonPrefab);
             } else {
                 uiItem = Instantiate(textPrefab);
             }
-        
-        uiItem.transform.SetParent(contentTransform);
-        RectTransform rectTransform = uiItem.GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = new Vector2 (0, -50 * i);
 
-        Usernames us = allUsernames.usernames[i];
-        if (type == PrefabType.Button) {
-            TextMeshProUGUI field = uiItem.GetComponentInChildren<TextMeshProUGUI>();
-            field.text = "Welcome: " + us.name;
-            Button btn = uiItem.GetComponent<Button>();
-        }
-        }
+            uiItem.transform.SetParent(contentTransform);
+            RectTransform rectTransform = uiItem.GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = new Vector2(0, 0);
+
+            Usernames us = allUsernames.usernames[0];
+            if (type == PrefabType.Button) {
+                TextMeshProUGUI field = uiItem.GetComponentInChildren<TextMeshProUGUI>();
+                field.text = "Welcome: " + us.name;
+                Button btn = uiItem.GetComponent<Button>();
+            }
+    }
 
 
     }

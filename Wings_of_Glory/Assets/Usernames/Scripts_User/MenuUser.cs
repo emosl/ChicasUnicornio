@@ -68,5 +68,9 @@ public class MenuUser : MonoBehaviour
     {
         api.QueryUser();
     }
+    public void UpdateData()
+    {
+        api.UpdateUser();
+    }
    
 }
