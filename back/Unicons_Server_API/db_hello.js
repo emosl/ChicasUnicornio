@@ -25,7 +25,6 @@ app.get('/', (request,response)=>{
     })
     
 })
-
 app.get('/statistics.html', async (request, response) => {
     fs.readFile('./public/html/statistics.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err)
