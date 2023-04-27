@@ -28,6 +28,7 @@ public class Toby : MonoBehaviour
     public GameObject player;  
     private gadgets gadgetcollider;
     public ItemPickupPanel pickupPanel;
+    public Inventory inventory;
 
 
    [SerializeField] private Character character;
@@ -271,6 +272,7 @@ public void RemoveItem(string statName)
     {
         Debug.Log("Removing item: " + itemToRemove.name);
         equipmentPanel.RemoveItem(itemToRemove);
+        
     }
 }
 
