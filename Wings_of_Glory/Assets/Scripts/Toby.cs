@@ -29,15 +29,16 @@ public class Toby : MonoBehaviour
     private gadgets gadgetcollider;
 
    [SerializeField] private Character character;
+   private batteryplayer bp;
 
 
-    public float speed = 5f;
+    public int speed = 5;
 
-    public float strength = 10f;
+    public int strength = 10;
 
-    public float shield=0f;
+    public int shield=0;
 
-    public float agility=0f;
+    public int agility=0;
 
 
     public float groundCheckRadius = 1f;
@@ -210,13 +211,17 @@ public class Toby : MonoBehaviour
         }
     }
 
-    public void UpdateStats(float newStrength, float newShield, float newAgility, float newSpeed)
+    public void UpdateStats(int newStrength, int newShield, int newAgility, int newSpeed)
 {
     
     shield = newShield;
+    bp.ChangeShield(shield);
     agility = newAgility;
+    bp.ChangeAgility(agility);
     strength = newStrength;
+    bp.ChangeAgility(strength);
     speed = newSpeed;
+    bp.ChangeSpeed(speed);
 
 }
 public void RemoveItem(string statName)
