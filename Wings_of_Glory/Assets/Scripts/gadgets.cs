@@ -82,6 +82,8 @@ public class gadgets : MonoBehaviour
     public Inventory inventory;
     public ItemPickupPanel panel;
     public InventoryInput inventoryInput;
+    public GameManagerToby gameManager;
+
 
     void Start()
     {
@@ -95,6 +97,8 @@ public class gadgets : MonoBehaviour
     public void disappeargadgets()
     {
         inventory.AddItem(equippableItem);
+        gameManager.GadgetCounter(equippableItem.ItemName);
+
         Destroy(gameObject);
     }
 
