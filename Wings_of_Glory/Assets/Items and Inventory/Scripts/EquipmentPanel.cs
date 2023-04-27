@@ -7,6 +7,7 @@ public class EquipmentPanel : MonoBehaviour
 {
     [SerializeField] Transform equipmentSlotsParent;
     [SerializeField] EquipmentSlot[] equipmentSlots;
+    [SerializeField] StatPanel statsPanel;
 
     public event Action<Item> OnItemRightClickEvent;
 
@@ -83,8 +84,10 @@ private void OnDestroy()
             if (equipmentSlots[i].Item == item)
             {
                 equipmentSlots[i].Item = null;
+                statsPanel.UpdateStatValues();
                 return true;
             }
+
         }
         return false;
     }
