@@ -352,6 +352,39 @@ app.post('/api/users/:id', async (request, response)=>{
         }
     }
 })
+app.post('/api/register', async (request, response) => {
+
+    let connection = null;
+
+    try {
+        connection = await connectToDB();
+
+        const { password, name, last_name, email } = request.body;
+
+        if (!password || !name || !last_name || !email) {
+            response.status(400);
+            response.json({ 'message': 'All fields are required.' });
+            return;
+        }
+
+        const insertQuery = 'INSERT INTO `chicasunicornio`.`users` (`password`, `name`, `last_name`, `email`) VALUES (?, ?, ?, ?)';
+        const [results, fields] = await connection.query(insertQuery, [password, name, last_name, email]);
+
+        response.json({ 'message': "Data inserted correctly." });
+    }
+    catch (error) {
+        response.status(500);
+        response.json(error);
+        console.log(error);
+    }
+    finally {
+        if (connection !== null) {
+            connection.end();
+            console.log("Connection closed succesfully!");
+        }
+    }
+});
+
 app.post('/api/gameinventory', async (request, response)=>{
 
     let connection = null
