@@ -56,6 +56,10 @@ public class ObstacleImplementation : MonoBehaviour
 
     private void CheckPlayerStats(Toby toby)
     {
+                    // batteryPlayer.ChangeAgility(0);
+                    // batteryPlayer.ChangeShield(0);
+                    // batteryPlayer.ChangeSpeed(0);
+                    // batteryPlayer.ChangeStrength(0);
         //THis function removes the most valuable item if the player doesn't have the stats.
         switch (triggerValueAssigner.triggerTag)
         {
@@ -68,15 +72,12 @@ public class ObstacleImplementation : MonoBehaviour
                     itemRemovedPanel.SetActive(true);  
                     equippableItem.Unequip(character);
                     equippableItem.RemoveItem(character);
-                    // batteryPlayer.ChangeAgility(0);
-                    // batteryPlayer.ChangeShield(0);
-                    // batteryPlayer.ChangeSpeed(0);
-                    // batteryPlayer.ChangeStrength(0);
+            
                     
                 }
                 else
                 {
-                    itemNotRemovedPanel.SetActive(true);s
+                    itemNotRemovedPanel.SetActive(true);
 
                 }
                 break;
