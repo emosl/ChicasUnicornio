@@ -71,7 +71,7 @@ public class gadgets : MonoBehaviour
     {
         inventory.AddItem(equippableItem);
         Debug.Log("Item added");
-        gameManager.GadgetCounter(equippableItem.ItemName);
+        //gameManager.GadgetCounter(equippableItem.ItemName);
         Destroy(gameObject);
 
     }
