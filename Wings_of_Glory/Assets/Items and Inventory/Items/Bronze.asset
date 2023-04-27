@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08befef23a7b4c17bee10b32c244ef6, type: 3}
   m_Name: Bronze
   m_EditorClassIdentifier: 
-  ItemName: 
+  ItemName: Bronze
   Icon: {fileID: -751941818, guid: a3fc34a4ba7a4418493697856f7ec92e, type: 3}
-  StrengthBonus: 3
-  AgilityBonus: 4
-  SpeedBonus: 5
-  ShieldBonus: 2
+  itemImage: {fileID: 0}
+  StrengthBonus: -1
+  AgilityBonus: 0
+  SpeedBonus: -1
+  ShieldBonus: 3
   EquipmentType: 3
+  batteryplayer: {fileID: 0}
+  pickupRange: 1.5
