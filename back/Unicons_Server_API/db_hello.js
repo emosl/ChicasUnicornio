@@ -41,6 +41,14 @@ app.get('/statistics.html', async (request, response) => {
         response.send(html)
     })
   });
+  app.get('/aboutus.html', async (request, response) => {
+    fs.readFile('./public/html/aboutus.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err)
+        console.log('Loading page...')
+        response.send(html)
+    })
+  });
+
 app.get('/api/users', async (request, response)=>{
     let connection = null
 
