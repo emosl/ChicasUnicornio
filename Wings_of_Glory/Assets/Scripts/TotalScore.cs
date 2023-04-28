@@ -6,7 +6,7 @@ using TMPro;
 
 public class TotalScore : MonoBehaviour
 {
-    private int score;
+    public int score;
 
     public TMP_Text scoreText;
     public GameManagerToby gameManagerToby;
@@ -26,7 +26,7 @@ public class TotalScore : MonoBehaviour
 
     public void UpdateScore(int points)
     {
+        Debug.Log("UpdateScore");
         SetScore(points);
-        gameManagerToby.SetScore(points);
     }
 }

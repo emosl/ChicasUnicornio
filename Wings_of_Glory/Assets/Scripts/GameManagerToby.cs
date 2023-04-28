@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerToby : MonoBehaviour
 {
-    public GameObject start_game;
-    public GameObject Toby;
+    // public GameObject start_game;
+    // public GameObject Toby;
     public List<int> gadgetlist = new List<int>();
     public List<int> killerspritelist = new List<int>();
     public Toby toby;
@@ -19,7 +19,12 @@ public class GameManagerToby : MonoBehaviour
     public static int agility;
     public static int lives;
     public TMP_Text scoreText;
-    public TotalScore score;
+    public int scoregamemanager;
+    public string armorchosengm;
+    public TotalScore totalScore;
+    public ArmorButton armorbutton;
+    
+    //public TotalScore score;
     public batteryplayer bp;
     //public image stats;
     private void Awake()
@@ -34,9 +39,17 @@ public class GameManagerToby : MonoBehaviour
     private void NewGame()
     {
         //gameOverMenu.SetActive(false);
-        SetScore(0);
-        SetLives(1);
-        //SetArmor(armor);
+        //SetLives(1);
+        SetArmor();
+    }
+    void Update()
+    {
+        //This line takes the score from TotalScore.cs and stores it in a variable. Will be used in API
+        scoregamemanager=totalScore.score;
+        getstats();
+
+        //Debug.Log(armorchosen);
+        
     }
 
     //Gets final stats for Toby used in DataBase.
@@ -45,49 +58,41 @@ public class GameManagerToby : MonoBehaviour
         shield = toby.shield;
         speed = toby.speed;
         agility = toby.agility;
-       // lives = toby.lives;
     }
     //armor string comes form script ArmorButton.cs
-    public void SetArmor(string armor){
+    public void SetArmor(){
+        armorchosengm=armorbutton.armorchosen;
+        Debug.Log(armorchosengm);
         //variable sent to the API.
         //api.UpdateData();
-        string chosenarmor=armor;
-        if(armor == "pink"){
+        if(armorchosengm == "pink"){
             bp.pink();
         }
-        if(armor == "blue"){
+        if(armorchosengm == "blue"){
             bp.blue();
         }
-        if(armor == "red"){
+        if(armorchosengm == "red"){
             bp.red();
         }
     }
 
     //Registers when Toby loses all of his lives.
-    private void GameOver()
-    {
-        // Save the current scene name to load it again after the game over
-        PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
-        toby.gameObject.SetActive(false);
-        StopAllCoroutines();
-        SceneManager.LoadScene("SampleScene");
-        //When gameover the finalscore is sent to API
-        //score= <TotalScore>().SetScore(0);
-    }
-
-    //Sets final score for Toby used in DataBase.
-    //function called on update() in script TotalScore.cs
-    private void SetScore(int score)
-    {
-        //this.score = score;
-        scoreText.text = score.ToString();
-    }
-    
-    private void SetLives(int lives)
-    {
-       // this.lives = lives;
-        // livesText.text = lives.ToString();
-    }
+    // private void GameOver()
+    // {
+    //     // Save the current scene name to load it again after the game over
+    //     PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
+    //     toby.gameObject.SetActive(false);
+    //     StopAllCoroutines();
+    //     SceneManager.LoadScene("SampleScene");
+    //     //When gameover the finalscore is sent to API
+    //     //score= <TotalScore>().SetScore(0);
+    // }
+ 
+    // private void SetLives(int lives)
+    // {
+    //    // this.lives = lives;
+    //     // livesText.text = lives.ToString();
+    // }
 
  //This function stores the gadget_id in a list for the API
  //THis function is  in ItemPickup PanelScript when an obstacle is added.
@@ -165,8 +170,9 @@ public class GameManagerToby : MonoBehaviour
         }
     }
 
-    void Update()
+    void Start()
     {
-        // Add code here to update the game state
+        // Add code here to initialize the game state
     }
+
 }
