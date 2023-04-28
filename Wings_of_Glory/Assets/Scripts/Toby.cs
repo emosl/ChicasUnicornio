@@ -13,6 +13,7 @@ public class Toby_stats
 {
     public Vector3 initialPosition;
     public Vector3 savedPosition;
+    public string chosenarmor;
 }
 
 
@@ -64,13 +65,15 @@ public class Toby : MonoBehaviour
     public Sprite leapSprite;
     public GameObject[] levels;
 
-    private Toby_stats toby_stats = new Toby_stats();
+    public Toby_stats toby_stats = new Toby_stats();
     //public Vector3 initialPosition; // added variable to store initial position
 
     public Vector3 initialPosition; // added variable to store initial position
-
+    public string chosenarmor;
     void Start()
     {
+        //Indicates the chosen armor. chosenarmor comes fromtoby_stats json.
+        //bp.armor(chosenarmor);
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         initialPosition = transform.position; // save the initial position of the sprite
@@ -79,6 +82,7 @@ public class Toby : MonoBehaviour
         toby_stats.savedPosition = transform.position;
         button = FindObjectOfType<Preguntas>();
         obstacleCollider = FindObjectOfType<Obstacle>();
+        toby_stats.chosenarmor=chosenarmor;
 
          // save the initial position of the sprite
         string jsonStats = PlayerPrefs.GetString("toby_stats", JsonUtility.ToJson(toby_stats));

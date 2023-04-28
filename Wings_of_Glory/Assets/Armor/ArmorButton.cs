@@ -17,6 +17,7 @@ public class ArmorButton : MonoBehaviour
     string username = MenuUser.UiD;
     public GameManagerToby gameManagerToby;
     public string armorchosen;
+    public Toby_stats toby_stats;
 
     public event Action<bool> ButtonPressed; 
     // Start is called before the first frame update
@@ -38,7 +39,11 @@ public class ArmorButton : MonoBehaviour
         ButtonPressed?.Invoke(decision);
         Audio.Play();
         Debug.Log("Play");
-        armorchosen="pink";
+        //StartCoroutine(WaitAndDoSomething());
+        toby_stats.chosenarmor = "pink"; // save the current armor of Toby
+        string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+        PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
+       // armorchosen="pink";
         // SceneManager.LoadScene(sceneName);
         StartCoroutine(WaitAndDoSomething());
         
@@ -50,7 +55,10 @@ public class ArmorButton : MonoBehaviour
         ButtonPressed?.Invoke(decision);
         Audio.Play();
         Debug.Log("Play");
-        armorchosen="blue";
+        toby_stats.chosenarmor = "blue"; // save the current armor of Toby
+        string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+        PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
+        //armorchosen="blue";
         // SceneManager.LoadScene(sceneName);
         StartCoroutine(WaitAndDoSomething());
         
@@ -61,8 +69,14 @@ public class ArmorButton : MonoBehaviour
         
         ButtonPressed?.Invoke(decision);
         Audio.Play();
+        //Debug.Log("Play");
+        //StartCoroutine(WaitAndDoSomething());
+        toby_stats.chosenarmor = "red"; // save the current armor of Toby
+        Debug.Log(toby_stats.chosenarmor);
+        string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+        PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
         Debug.Log("Play");
-        armorchosen="red";
+        //armorchosen="red";
         // SceneManager.LoadScene(sceneName);
         StartCoroutine(WaitAndDoSomething());
         
