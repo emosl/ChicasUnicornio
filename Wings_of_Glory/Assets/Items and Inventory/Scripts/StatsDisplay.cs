@@ -63,7 +63,30 @@ public class StatsDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         tooltip.HideTooltip();
     }
 
-    public void UpdateStatValue(){
+    // public void UpdateStatValue(){
+    //     valueText.text = _stat.Value.ToString();
+    // }
+   public void UpdateStatValue(int baseValue = 0, int currentValue = 0)
+{
+    if (baseValue == 0 && currentValue == 0)
+    {
         valueText.text = _stat.Value.ToString();
     }
+    else
+    {
+        if (currentValue < 0)
+        {
+            // Display just the currentValue when it's less than 0
+            valueText.text = $"{currentValue}";
+        }
+        else
+        {
+            // Display just the baseValue in all other cases
+            valueText.text = $"{baseValue}";
+        }
+    }
+}
+
+
+
 }
