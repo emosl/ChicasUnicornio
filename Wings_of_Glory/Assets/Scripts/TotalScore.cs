@@ -9,6 +9,7 @@ public class TotalScore : MonoBehaviour
     private int score;
 
     public TMP_Text scoreText;
+    public GameManagerToby gameManagerToby;
 
     void Start()
     {
@@ -19,12 +20,13 @@ public class TotalScore : MonoBehaviour
     public void SetScore(int points)
     {
         score += points;
-        this.score = score;
+        //this.score = score;
         scoreText.text = score.ToString();
     }
 
     public void UpdateScore(int points)
     {
         SetScore(points);
+        gameManagerToby.SetScore(points);
     }
 }

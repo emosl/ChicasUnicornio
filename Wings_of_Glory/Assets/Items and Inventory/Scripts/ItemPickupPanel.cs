@@ -16,6 +16,7 @@ public class ItemPickupPanel : MonoBehaviour
     [SerializeField] TMP_Text ItemStatsText;
 
     private Inventory inventory;
+    public GameManagerToby gameManagerToby;
     
 
     private void Start()
@@ -43,10 +44,10 @@ public void UpdatePanel(Item addedItem)
 {
     if (addedItem is EquippableItem equippableItem)
     {
+        //Debug.Log("gamemanager gadget");
+        //gameManagerToby.GadgetCounter(equippableItem.ToString());
         Item = addedItem;
         Show(equippableItem);
-
-
         StartCoroutine(HidePanelAfterDelay(0.7f));
     }
 }

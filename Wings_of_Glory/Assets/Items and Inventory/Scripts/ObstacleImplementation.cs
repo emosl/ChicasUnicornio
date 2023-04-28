@@ -8,7 +8,7 @@ public class ObstacleImplementation : MonoBehaviour
 {
     private TriggerValueAssigner triggerValueAssigner;
     public StatPanel statsPanel;
-
+    public GameManagerToby gameManagerToby;
     public GameObject itemNotRemovedPanel;
     public GameObject itemRemovedPanel;
     public GameObject blank;
@@ -76,6 +76,7 @@ public class ObstacleImplementation : MonoBehaviour
                 {
                     blank.SetActive(true);
                     itemNotRemovedPanel.SetActive(true);
+                    //gameManagerToby.KillerSpriteCounter("Ice");
 
                 }
                 break;
@@ -94,6 +95,7 @@ public class ObstacleImplementation : MonoBehaviour
                     {
                         blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
+                        //gameManagerToby.KillerSpriteCounter("Shield");
                     }
                 
                 break;
@@ -112,6 +114,7 @@ public class ObstacleImplementation : MonoBehaviour
                     {
                         blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
+                        //gameManagerToby.KillerSpriteCounter("Water");
                     }
                 
                 break;
@@ -129,6 +132,7 @@ public class ObstacleImplementation : MonoBehaviour
                     {
                         blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
+                        //gameManagerToby.KillerSpriteCounter("Rock");
                     }
                 
                 break;

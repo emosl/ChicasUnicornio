@@ -11,7 +11,86 @@ public class GameManagerToby : MonoBehaviour
     public GameObject Toby;
     public List<int> gadgetlist = new List<int>();
     public List<int> killerspritelist = new List<int>();
+    public Toby toby;
+    public static string armor;
+    public static int strength;
+    public static int shield;
+    public static int speed;
+    public static int agility;
+    public static int lives;
+    public TMP_Text scoreText;
+    public TotalScore score;
+    public batteryplayer bp;
+    //public image stats;
+    private void Awake()
+    {
+        //homes = FindObjectsOfType<Home>();
+        toby = FindObjectOfType<Toby>();
 
+    }
+    private void Start(){
+        NewGame();
+    }
+    private void NewGame()
+    {
+        //gameOverMenu.SetActive(false);
+        SetScore(0);
+        SetLives(1);
+        //SetArmor(armor);
+    }
+
+    //Gets final stats for Toby used in DataBase.
+    public void getstats(){
+        strength = toby.strength;
+        shield = toby.shield;
+        speed = toby.speed;
+        agility = toby.agility;
+       // lives = toby.lives;
+    }
+    //armor string comes form script ArmorButton.cs
+    public void SetArmor(string armor){
+        //variable sent to the API.
+        //api.UpdateData();
+        string chosenarmor=armor;
+        if(armor == "pink"){
+            bp.pink();
+        }
+        if(armor == "blue"){
+            bp.blue();
+        }
+        if(armor == "red"){
+            bp.red();
+        }
+    }
+
+    //Registers when Toby loses all of his lives.
+    private void GameOver()
+    {
+        // Save the current scene name to load it again after the game over
+        PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
+        toby.gameObject.SetActive(false);
+        StopAllCoroutines();
+        SceneManager.LoadScene("SampleScene");
+        //When gameover the finalscore is sent to API
+        //score= <TotalScore>().SetScore(0);
+    }
+
+    //Sets final score for Toby used in DataBase.
+    //function called on update() in script TotalScore.cs
+    private void SetScore(int score)
+    {
+        //this.score = score;
+        scoreText.text = score.ToString();
+    }
+    
+    private void SetLives(int lives)
+    {
+       // this.lives = lives;
+        // livesText.text = lives.ToString();
+    }
+
+ //This function stores the gadget_id in a list for the API
+ //THis function is  in ItemPickup PanelScript when an obstacle is added.
     public void GadgetCounter(string gadget)
     {
         if (gadget == "Carrot")
@@ -64,6 +143,8 @@ public class GameManagerToby : MonoBehaviour
         }
     }
 
+   //This function stores the killersprite_id in a list for the API
+// The string stored comes from ObstacleImplementation. When a killersprite is passed, the name is stored in the list.
     public void KillerSpriteCounter(string killersprite)
     {
         if (killersprite == "Bomb")
@@ -82,11 +163,6 @@ public class GameManagerToby : MonoBehaviour
         {
             killerspritelist.Add(134);
         }
-    }
-
-    void Start()
-    {
-        // Add code here to initialize the game state
     }
 
     void Update()
