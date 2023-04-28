@@ -31,6 +31,7 @@ public class Toby : MonoBehaviour
     private gadgets gadgetcollider;
     public ItemPickupPanel pickupPanel;
     public Inventory inventory;
+    public EquippableItem equippableItem;
 
     public AudioSource Audio;
     public GameObject canvasFlower;
@@ -193,7 +194,7 @@ public class Toby : MonoBehaviour
         {
             Debug.Log("Food");
             // other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
-            
+            pickupPanel.UpdatePanel(equippableItem);
             other.gameObject.GetComponent<gadgets>().disappeargadgets();
     
         }
@@ -299,8 +300,9 @@ public void RemoveItem(string statName)
     {
         Debug.Log("Removing item: " + itemToRemove.name);
         //equipmentPanel.RemoveItem(itemToRemove);
-        character.Unequip(itemToRemove);
+        
         inventory.RemoveItem(itemToRemove);
+        character.Unequip(itemToRemove);
 
         
     }

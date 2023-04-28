@@ -155,7 +155,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void UnequipFromEquipPanel(Item item)
+    public void UnequipFromEquipPanel(Item item)
     {
         if (item is EquippableItem)
         {

@@ -2653,6 +2653,7 @@ GameObject:
   - component: {fileID: 370204286}
   - component: {fileID: 370204290}
   - component: {fileID: 370204291}
+  - component: {fileID: 370204292}
   m_Layer: 0
   m_Name: Toby_caminando_0
   m_TagString: Player
@@ -2738,10 +2739,11 @@ MonoBehaviour:
   currentObstacle: {fileID: 0}
   player: {fileID: 0}
   pickupPanel: {fileID: 0}
-  inventory: {fileID: 0}
+  inventory: {fileID: 1354601470}
+  equippableItem: {fileID: 0}
   Audio: {fileID: 0}
   canvasFlower: {fileID: 1232486123}
-  character: {fileID: 0}
+  character: {fileID: 370204291}
   speed: 5
   strength: 8
   shield: 0
@@ -2855,6 +2857,20 @@ MonoBehaviour:
   toby: {fileID: 370204288}
   batteryPlayer: {fileID: 2071470849}
   equipmentPanel: {fileID: 657399705}
+--- !u!114 &370204292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370204284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f042833a98d74c66ba19c2744f70176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPickupPanel: {fileID: 1921551552}
+  gadget: {fileID: 0}
 --- !u!1 &379673736
 GameObject:
   m_ObjectHideFlags: 0
@@ -6665,11 +6681,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a597c74f3bd464eb6a6c76d1cf2493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statsPanel: {fileID: 0}
+  statsPanel: {fileID: 898054975}
   itemNotRemovedPanel: {fileID: 574972968}
   itemRemovedPanel: {fileID: 235020422}
   equippableItem: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
 --- !u!1 &845937396
 GameObject:
@@ -15283,6 +15299,9 @@ MonoBehaviour:
   player: {fileID: 370204284}
   inventory: {fileID: 1354601470}
   gameManager: {fileID: 0}
+  onItemPickedUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1921867680
 GameObject:
   m_ObjectHideFlags: 0
