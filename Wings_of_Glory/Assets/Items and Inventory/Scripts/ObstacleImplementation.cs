@@ -11,6 +11,7 @@ public class ObstacleImplementation : MonoBehaviour
 
     public GameObject itemNotRemovedPanel;
     public GameObject itemRemovedPanel;
+    public GameObject blank;
     public EquippableItem equippableItem;
     public Character character;
     public batteryplayer batteryPlayer;
@@ -24,6 +25,7 @@ public class ObstacleImplementation : MonoBehaviour
 
          itemRemovedPanel.SetActive(false);
          itemNotRemovedPanel.SetActive(false);
+         blank.SetActive(false);
        
         
     }
@@ -52,6 +54,7 @@ public class ObstacleImplementation : MonoBehaviour
     {
         itemRemovedPanel.SetActive(false);
         itemNotRemovedPanel.SetActive(false);
+        blank.SetActive(false);
     }
 
     private void CheckPlayerStats(Toby toby)
@@ -66,68 +69,72 @@ public class ObstacleImplementation : MonoBehaviour
             case TriggerValueAssigner.TriggerTag.Ice:
                 if (toby.agility < triggerValueAssigner.requiredValue)
                 {
-                    Debug.Log("Agility is less than required value");
                     toby.RemoveItem("Agility");
                     // gameManager.KillerSpriteCounter(triggerValueAssigner.triggerTag.ToString());
+                    blank.SetActive(true);
                     itemRemovedPanel.SetActive(true);  
-                    equippableItem.Unequip(character);
-                    equippableItem.RemoveItem(character);
             
                     
                 }
                 else
                 {
+                    blank.SetActive(true);
                     itemNotRemovedPanel.SetActive(true);
 
                 }
                 break;
+
             case TriggerValueAssigner.TriggerTag.Bomb:
                 if (toby.shield < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Shield");
 
-                    if (toby.shield < triggerValueAssigner.requiredValue)
-                    {
+                   
+                        blank.SetActive(true);
                         itemRemovedPanel.SetActive(true);
                         
-                    }
+                }
                     else
                     {
+                        blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
                     }
-                }
+                
                 break;
+
             case TriggerValueAssigner.TriggerTag.Water:
                 if (toby.speed < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Speed");
 
-                    if (toby.speed < triggerValueAssigner.requiredValue)
-                    {
+                    
+                        blank.SetActive(true);
                         itemRemovedPanel.SetActive(true);
                        
-                    }
+                }
                     else
                     {
+                        blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
                     }
-                }
+                
                 break;
             case TriggerValueAssigner.TriggerTag.Rock:
                 if (toby.strength < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Strength");
 
-                    if (toby.strength < triggerValueAssigner.requiredValue)
-                    {
+                    
+                        blank.SetActive(true);
                         itemRemovedPanel.SetActive(true);
                        
-                    }
+                }
                     else
                     {
+                        blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
                     }
-                }
+                
                 break;
         }
         

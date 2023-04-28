@@ -33,15 +33,6 @@ public class ItemPickupPanel : MonoBehaviour
         
     }
 
-//     public void UpdatePanel(Item addedItem)
-// {
-//     Debug.Log("UpdatePanel called with item: " + addedItem.ItemName);
-//     if (addedItem is EquippableItem equippableItem)
-//     {
-//         Item = addedItem;
-//         Show(equippableItem);
-//     }
-// }
 private IEnumerator HidePanelAfterDelay(float delay)
 {
     yield return new WaitForSeconds(delay);
@@ -55,8 +46,8 @@ public void UpdatePanel(Item addedItem)
         Item = addedItem;
         Show(equippableItem);
 
-        // Hide the panel after 3 seconds
-        StartCoroutine(HidePanelAfterDelay(1f));
+
+        StartCoroutine(HidePanelAfterDelay(0.7f));
     }
 }
 
