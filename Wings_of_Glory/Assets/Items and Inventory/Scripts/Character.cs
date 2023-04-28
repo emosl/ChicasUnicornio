@@ -155,7 +155,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void UnequipFromEquipPanel(Item item)
+    public void UnequipFromEquipPanel(Item item)
     {
         if (item is EquippableItem)
         {
@@ -200,6 +200,7 @@ public class Character : MonoBehaviour
                 batteryPlayer.ChangeShield(Shield.Value);
                 batteryPlayer.ChangeSpeed(Speed.Value);
                 batteryPlayer.ChangeStrength(Strength.Value);
+                batteryPlayer.ChangeLife(Shield.Value,Strength.Value,Agility.Value,Speed.Value);
             }
             else
             {
@@ -221,6 +222,7 @@ public class Character : MonoBehaviour
             batteryPlayer.ChangeShield(Shield.Value);
             batteryPlayer.ChangeSpeed(Speed.Value);
             batteryPlayer.ChangeStrength(Strength.Value);
+            batteryPlayer.ChangeLife(Shield.Value,Strength.Value,Agility.Value,Speed.Value);
         }
     }
 }

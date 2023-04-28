@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class batteryplayer : MonoBehaviour
 {
-    public int maxHealth=10;
+    public int maxHealth=53;
     public int minHealth=0;
     public int currentHealth;
 
@@ -149,17 +149,33 @@ public class batteryplayer : MonoBehaviour
    
     }
 
-    public void ChangeLife(int points)
-    {
-        currentHealth=points;
-        shieldhealthbar.SetHealth(currentHealth);
-        if(points>0){
-            //Changes the TotalScore of the game by the amount specified.
-            Debug.Log("Strength increased by "+points);
-            totalscore.SetScore(points);
-        }
-        else{
-            Debug.Log("Strength decreased by "+points);
-        }
+    // public void ChangeLife(int shield, int strength, int agility, int speed)
+    // {
+        
+    //     currentHealth=points;
+    //     if (currentHealth < 0){
+    //        lifehealthbar.SetHealth(minHealth);
+    //     }
+    //     else
+    //     {
+    //        lifehealthbar.SetHealth(currentHealth);
+    //     }
+    // }
+    public void ChangeLife(int shield, int strength, int agility, int speed)
+{
+    int positiveShield = Mathf.Max(0, shield);
+    int positiveStrength = Mathf.Max(0, strength);
+    int positiveAgility = Mathf.Max(0, agility);
+    int positiveSpeed = Mathf.Max(0, speed);
+    
+    currentHealth = positiveShield + positiveStrength + positiveAgility + positiveSpeed;
+    
+    if (currentHealth < 0) {
+        lifehealthbar.SetHealth(minHealth);
     }
+    else {
+        lifehealthbar.SetHealth(currentHealth);
+    }
+}
+
 }
