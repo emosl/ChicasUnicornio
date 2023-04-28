@@ -279,6 +279,7 @@ public class APITest : MonoBehaviour
                 // string jsonString = www.downloadHandler.text;
                 Debug.Log(jsonString);
                 allTimesPlayed = JsonUtility.FromJson<TimesPlayed>(jsonString); //nuevo objeto con la lista de usuarios
+                allTimesPlayed.times_played = allTimesPlayed.times_played + 1;
                 Debug.Log(allTimesPlayed.times_played);
                 // Debug.Log("Response: " + www.downloadHandler.text);
                 // DisplayUser();
