@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: enemy_walking
+  m_Name: Enenmy_walking
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -28,7 +28,7 @@ AnimationClip:
     - time: 0.3
       value: {fileID: 1908035692, guid: 41b06ea10f5644b45a52571e81da8b6c, type: 3}
     attribute: m_Sprite
-    path: enemy_sprites
+    path: Enenmy_sprite
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 10
@@ -39,7 +39,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2578907710
+      path: 3479801534
       attribute: 0
       script: {fileID: 0}
       typeID: 212
