@@ -57,7 +57,7 @@ public class batteryplayer : MonoBehaviour
         speedhealthbar.SetMinHealth(minSpeedHealth);
     }
     //The following function will be called when the player choses their armor.
-    void blue(){
+    public void blue(){
         currentHealth=minHealth;
         strengthhealthbar.SetMinHealth(minHealth);
         agilityhealthbar.SetMinHealth(minHealth);
@@ -66,7 +66,7 @@ public class batteryplayer : MonoBehaviour
         shieldhealthbar.SetMinHealth(minHealth);
     }
 
-    void red(){
+    public void red(){
         currentHealth=minHealth;
         strengthhealthbar.SetMinHealth(minHealth);
         agilityhealthbar.SetMinHealth(minHealth);
@@ -75,7 +75,7 @@ public class batteryplayer : MonoBehaviour
         shieldhealthbar.SetMinHealth(minHealth);
     }
 
-    void pink(){
+    public void pink(){
         currentHealth=minHealth;
         strengthhealthbar.SetMinHealth(minHealth);
         agilityhealthbar.SetMinHealth(minHealth);
