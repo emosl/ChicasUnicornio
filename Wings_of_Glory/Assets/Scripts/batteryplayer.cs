@@ -34,6 +34,7 @@ public class batteryplayer : MonoBehaviour
     public Healthbar lifehealthbar;
     public Healthbar shieldhealthbar;
     public TotalScore totalscore;
+    public Toby_stats toby_stats;
     
 
     // Start is called before the first frame update
@@ -52,8 +53,8 @@ public class batteryplayer : MonoBehaviour
 
         currentSpeedHealth = minSpeedHealth;
         speedhealthbar.SetMinHealth(minSpeedHealth);
-
-        //armor("blue");
+        Debug.Log("Calling chosen armor");
+        armor(toby_stats.chosenarmor);
     }
     //The following function will be called when the player choses their armor.
 
@@ -62,7 +63,9 @@ public class batteryplayer : MonoBehaviour
             blue();
         }
         if(chosenarmor=="red"){
+            Debug.Log("Chose red");
             red();
+            Debug.Log("Chosen red");
         }
         if(chosenarmor=="pink"){
             pink();
@@ -78,12 +81,10 @@ public class batteryplayer : MonoBehaviour
     }
 
     public void red(){
-        currentHealth=minHealth;
-        strengthhealthbar.SetMinHealth(minHealth);
-        agilityhealthbar.SetMinHealth(minHealth);
-        speedhealthbar.SetMinHealth(minHealth);
-        lifehealthbar.SetMinHealth(minHealth);
-        shieldhealthbar.SetMinHealth(minHealth);
+        ChangeStrength(4);
+        ChangeAgility(4);
+        ChangeSpeed(4);
+        ChangeShield(4); 
     }
 
     public void pink(){

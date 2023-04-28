@@ -35,49 +35,37 @@ public class ArmorButton : MonoBehaviour
     }
     private void OnButtonPressPink(bool decision)
     {
-        
         ButtonPressed?.Invoke(decision);
         Audio.Play();
         Debug.Log("Play");
-        //StartCoroutine(WaitAndDoSomething());
         toby_stats.chosenarmor = "pink"; // save the current armor of Toby
+        Debug.Log(toby_stats.chosenarmor);
         string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
         PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
-       // armorchosen="pink";
-        // SceneManager.LoadScene(sceneName);
         StartCoroutine(WaitAndDoSomething());
         
     
     }
     private void OnButtonPressBlue(bool decision)
     {
-        
         ButtonPressed?.Invoke(decision);
         Audio.Play();
         Debug.Log("Play");
         toby_stats.chosenarmor = "blue"; // save the current armor of Toby
+        Debug.Log(toby_stats.chosenarmor);
         string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
         PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
-        //armorchosen="blue";
-        // SceneManager.LoadScene(sceneName);
         StartCoroutine(WaitAndDoSomething());
-        
-    
     }
     private void OnButtonPressRed(bool decision)
     {
-        
         ButtonPressed?.Invoke(decision);
         Audio.Play();
-        //Debug.Log("Play");
-        //StartCoroutine(WaitAndDoSomething());
         toby_stats.chosenarmor = "red"; // save the current armor of Toby
         Debug.Log(toby_stats.chosenarmor);
         string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
         PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
         Debug.Log("Play");
-        //armorchosen="red";
-        // SceneManager.LoadScene(sceneName);
         StartCoroutine(WaitAndDoSomething());
         
     }

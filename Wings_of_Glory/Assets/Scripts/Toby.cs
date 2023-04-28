@@ -92,13 +92,12 @@ public class Toby : MonoBehaviour
         PlayerPrefs.DeleteAll();
 
         pickupPanel = FindObjectOfType<ItemPickupPanel>();
-
-
-        
-        
-
+    
         player = GameObject.FindGameObjectWithTag("Player");
         canvasFlower.SetActive(false);
+
+        // Debug.Log("Choosing armor");
+        // bp.armor(chosenarmor);
         // player.GetComponent<CamerMove>().Start();
     }
 
