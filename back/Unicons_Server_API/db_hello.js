@@ -502,6 +502,7 @@ app.put('/api/save_data', async (request, response)=>{
         const [results, fields] = await connection.query('update final_score set total_score = ? where username_ID = ?', [request.body['total_score'], request.body['username_ID']])
         const [results02, fields02] = await connection.query('update game_history set times_played = ? where username_ID = ?', [request.body['times_played'], request.body['username_ID']])
         // const [results03, fields03] = await connection.query('insert gadgetinventory set  = ? where username_ID = ?', [request.body['gadgetid'], request.body['username_ID']])
+        const [results03, fields03] = await connection.query('update final_score set score_agility = ? where username_ID = ?', [request.body['score_agility'], request.body['username_ID']])
 
         
         response.json({'message': "Data updated correctly."})
@@ -649,7 +650,36 @@ app.get('/api/user', async (request, response) => {
         }
     }
 
-  });
+});
+
+app.get('/api/timesplayed', async (request, response) => {
+    let connection = await connectToDB()
+    try
+    {
+        const { usernameID } = request.query;
+        const [results, fields] = await connection.execute('SELECT times_played FROM `game_history` WHERE `username_ID` = ?', [usernameID]);
+
+        console.log(results[0])
+        response.json(results[0])
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+
+});
+
+  
 
 
   

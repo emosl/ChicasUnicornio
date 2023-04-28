@@ -75,5 +75,6 @@ public class ArmorButton : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sceneName);
     }   
+    
 
 }
