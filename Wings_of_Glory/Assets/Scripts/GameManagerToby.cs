@@ -27,6 +27,7 @@ public class GameManagerToby : MonoBehaviour
     [SerializeField] APITest api;
     public batteryplayer bp;
     string UN = MenuUser.UiD;
+    public static int times_played = 0;
     //public image stats;
     private void Awake()
     {
@@ -36,6 +37,8 @@ public class GameManagerToby : MonoBehaviour
     }
     private void Start(){
         NewGame();
+        TimesPlayed();
+        times_played++;
     }
     private void NewGame()
     {
@@ -50,6 +53,7 @@ public class GameManagerToby : MonoBehaviour
         scoregamemanager=totalScore.score;
         getstats();
         //Debug.Log(scoregamemanager);
+        
         UpdateDataUnity();
         // Debug.Log(UN);
         getstats();
@@ -179,5 +183,9 @@ public class GameManagerToby : MonoBehaviour
     public void UpdateDataUnity()
     {
         api.UpdateDataUnity(scoregamemanager, UN, agility);
+    }
+    public void TimesPlayed()
+    {
+        api.TimesPlayed(UN);
     }
 }

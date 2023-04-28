@@ -54,6 +54,11 @@ public class SavedData
     public int score_agility;
 }
 
+public class TimesPlayed
+{
+    public int times_played;
+}
+
 // Allow the class to be extracted from Unity
 [System.Serializable]
 public class UserList
@@ -68,6 +73,10 @@ public class UsernameList
 {
     public List<Username> names;
 }
+public class TimesPlayedList
+{
+    public List<TimesPlayed> times_played;
+}
 
 
 public class APITest : MonoBehaviour
@@ -79,12 +88,14 @@ public class APITest : MonoBehaviour
     [SerializeField] string getScoresEP;
     [SerializeField] string putScoresEP;
     [SerializeField] string putSavedDataEP;
+    [SerializeField] string getTimesPlayedEP;
     [SerializeField] Text errorText;
     string UN = MenuUser.UiD;
     string UN2;
     int TS = GameManagerToby.scoregamemanager;
     int TS2;
     int ag_score;
+    int tp;
     // int TP = GameManagerToby.timesPlayed;
 
     private GameManagerToby gameManager;
@@ -93,6 +104,7 @@ public class APITest : MonoBehaviour
     public UserList allUsers; //variable con la lista de usuarios
     public ScoreList allScores; //variable con la lista de scores
     public Username allUsername; 
+    public TimesPlayed allTimesPlayed;
 
      void Start()
     {
@@ -158,6 +170,11 @@ public class APITest : MonoBehaviour
         Debug.Log(UN2);
         // Debug.Log("QueryUser");
         //corre un metodo en paralelo y espera a que termine
+    }
+    public void TimesPlayed(string UiD)
+    {
+        UN2 = UiD;
+        StartCoroutine(GetTimesPlayed());
     }
     public void UpdateData()
     {
@@ -244,6 +261,35 @@ public class APITest : MonoBehaviour
         }
         Debug.Log("GetUser");
     }
+
+
+    IEnumerator GetTimesPlayed()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get(url + getTimesPlayedEP + UN2))
+        //crea un request de tipo get, y le pasa la url
+        {
+            yield return www.SendWebRequest();
+            //espera a que termine el request (await)
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                //Debug.Log("Response: " + www.downloadHandler.text);
+                // Compose the response to look like the object we want to extract
+                // https://answers.unity.com/questions/1503047/json-must-represent-an-object-type.html
+                string jsonString =  www.downloadHandler.text;
+                // string jsonString = www.downloadHandler.text;
+                Debug.Log(jsonString);
+                allTimesPlayed = JsonUtility.FromJson<TimesPlayed>(jsonString); //nuevo objeto con la lista de usuarios
+                Debug.Log(allTimesPlayed.times_played);
+                // Debug.Log("Response: " + www.downloadHandler.text);
+                // DisplayUser();
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+        Debug.Log("GetUser");
+    }    
 
     IEnumerator GetScores()
     {
@@ -348,12 +394,12 @@ public class APITest : MonoBehaviour
         SavedData testData = new SavedData();
         testData.username_ID = UN2;
         testData.total_score = TS2;
-        testData.times_played= Random.Range(1000, 9000);
+        testData.times_played= allTimesPlayed.times_played;
         testData.score_agility = ag_score;
 
         // Debug.Log("DATA: " + testData.total_score);
         string jsonData = JsonUtility.ToJson(testData);
-        // Debug.Log("BODY: " + jsonData);
+        Debug.Log("BODY: " + jsonData);
 
         // Send using the Put method:
         // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body

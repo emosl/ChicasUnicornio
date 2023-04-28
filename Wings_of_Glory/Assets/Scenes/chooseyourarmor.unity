@@ -1486,6 +1486,7 @@ MonoBehaviour:
   getScoresEP: 
   putScoresEP: 
   putSavedDataEP: /api/save_data
+  getTimesPlayedEP: /api/timesplayed?usernameID=
   errorText: {fileID: 0}
   allUsers:
     users: []

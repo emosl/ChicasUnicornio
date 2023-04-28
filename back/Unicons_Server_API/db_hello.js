@@ -650,7 +650,34 @@ app.get('/api/user', async (request, response) => {
         }
     }
 
-  });
+});
+
+app.get('/api/timesplayed', async (request, response) => {
+    let connection = await connectToDB()
+    try
+    {
+        const { usernameID } = request.query;
+        const [results, fields] = await connection.execute('SELECT times_played FROM `game_history` WHERE `username_ID` = ?', [usernameID]);
+
+        console.log(results[0])
+        response.json(results[0])
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+
+});
 
   
 
