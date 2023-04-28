@@ -5241,6 +5241,10 @@ MonoBehaviour:
   lifehealthbar: {fileID: 138301835}
   shieldhealthbar: {fileID: 966617379}
   totalscore: {fileID: 0}
+  toby_stats:
+    initialPosition: {x: 0, y: 0, z: 0}
+    savedPosition: {x: 0, y: 0, z: 0}
+    chosenarmor: 
 --- !u!4 &655197852
 Transform:
   m_ObjectHideFlags: 0
@@ -6168,6 +6172,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750963699}
   m_CullTransparentMesh: 1
+--- !u!1 &753405919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 753405922}
+  - component: {fileID: 753405921}
+  - component: {fileID: 753405920}
+  m_Layer: 0
+  m_Name: API_U
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &753405920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753405919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b3e3939658cd2edb55f40266b91181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  textPrefab: {fileID: 8059259429740111422, guid: 5ec3c03037bd53c5887de30f4188683b, type: 3}
+  buttonPrefab: {fileID: 6223435412183791049, guid: cf7c05a390d5a258588b5aad649ef090, type: 3}
+  contentTransform: {fileID: 0}
+  greetField: {fileID: 0}
+--- !u!114 &753405921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753405919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7bed14fb077ad52792d2c01282f65f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: localhost:8000
+  getUsersEP: /api/users
+  getUserEP: /api/user?usernameID=
+  putUsersEP: /api/users/:id
+  getScoresEP: 
+  putScoresEP: 
+  putSavedDataEP: /api/save_data
+  errorText: {fileID: 0}
+  allUsers:
+    users: []
+--- !u!4 &753405922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753405919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1, y: -0.1, z: -13.475837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763318359
 GameObject:
   m_ObjectHideFlags: 0
@@ -16296,11 +16372,15 @@ MonoBehaviour:
   gadgetlist: 
   killerspritelist: 
   toby: {fileID: 370204288}
-  scoreText: {fileID: 0}
-  scoregamemanager: 0
+  toby_stats:
+    initialPosition: {x: 0, y: 0, z: 0}
+    savedPosition: {x: 0, y: 0, z: 0}
+    chosenarmor: 
+  scoreText: {fileID: 557324081}
   armorchosengm: 
   totalScore: {fileID: 557324083}
   armorbutton: {fileID: 0}
+  api: {fileID: 753405921}
   bp: {fileID: 655197851}
 --- !u!4 &2007031441
 Transform:
@@ -16959,6 +17039,10 @@ MonoBehaviour:
   lifehealthbar: {fileID: 138301835}
   shieldhealthbar: {fileID: 966617379}
   totalscore: {fileID: 0}
+  toby_stats:
+    initialPosition: {x: 0, y: 0, z: 0}
+    savedPosition: {x: 0, y: 0, z: 0}
+    chosenarmor: 
 --- !u!1 &2076586179
 GameObject:
   m_ObjectHideFlags: 0

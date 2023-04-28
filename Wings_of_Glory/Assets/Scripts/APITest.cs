@@ -348,7 +348,7 @@ public class APITest : MonoBehaviour
 
         // Debug.Log("DATA: " + testData.total_score);
         string jsonData = JsonUtility.ToJson(testData);
-        Debug.Log("BODY: " + jsonData);
+        //Debug.Log("BODY: " + jsonData);
 
         // Send using the Put method:
         // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body

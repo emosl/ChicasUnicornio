@@ -46,12 +46,11 @@ public class GameManagerToby : MonoBehaviour
     {
         //This line takes the score from TotalScore.cs and stores it in a variable. Will be used in API
         //debug
-        //scoregamemanager=totalScore.score;
+        scoregamemanager=totalScore.score;
         getstats();
-        Debug.Log(scoregamemanager);
-
-        UpdateDataUnity();
-
+        //Debug.Log(scoregamemanager);
+        //UpdateDataUnity();
+        getstats();
         //Debug.Log(armorchosen);
         
     }
