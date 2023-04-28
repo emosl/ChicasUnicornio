@@ -39,10 +39,7 @@ public class batteryplayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
         currentHealth=minHealth;
-
 
         currentShieldHealth = minShieldHealth;
         shieldhealthbar.SetMinHealth(minShieldHealth);
@@ -55,8 +52,22 @@ public class batteryplayer : MonoBehaviour
 
         currentSpeedHealth = minSpeedHealth;
         speedhealthbar.SetMinHealth(minSpeedHealth);
+
+        //armor("blue");
     }
     //The following function will be called when the player choses their armor.
+
+    public void armor(string chosenarmor){
+        if(chosenarmor=="blue"){
+            blue();
+        }
+        if(chosenarmor=="red"){
+            red();
+        }
+        if(chosenarmor=="pink"){
+            pink();
+        }
+    }
     public void blue(){
         currentHealth=minHealth;
         strengthhealthbar.SetMinHealth(minHealth);

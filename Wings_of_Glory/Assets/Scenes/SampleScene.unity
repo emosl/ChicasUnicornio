@@ -2761,7 +2761,12 @@ MonoBehaviour:
   - {fileID: 1893351635}
   - {fileID: 726820306}
   - {fileID: 1770891611}
+  toby_stats:
+    initialPosition: {x: 0, y: 0, z: 0}
+    savedPosition: {x: 0, y: 0, z: 0}
+    chosenarmor: 
   initialPosition: {x: 0, y: 0, z: 0}
+  chosenarmor: 
 --- !u!212 &370204289
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6700,6 +6705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsPanel: {fileID: 898054975}
+  gameManagerToby: {fileID: 0}
   itemNotRemovedPanel: {fileID: 574972968}
   itemRemovedPanel: {fileID: 235020422}
   blank: {fileID: 1251415333}
@@ -15593,6 +15599,7 @@ MonoBehaviour:
   itemImage: {fileID: 279385782}
   ItemNameText: {fileID: 1003443715}
   ItemStatsText: {fileID: 1112050189}
+  gameManagerToby: {fileID: 0}
 --- !u!114 &1921551553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16288,10 +16295,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gadgetlist: 
   killerspritelist: 
-  toby: {fileID: 0}
+  toby: {fileID: 370204288}
   scoreText: {fileID: 0}
   scoregamemanager: 0
-  armorchosen: 
+  armorchosengm: 
   totalScore: {fileID: 557324083}
   armorbutton: {fileID: 0}
   bp: {fileID: 655197851}

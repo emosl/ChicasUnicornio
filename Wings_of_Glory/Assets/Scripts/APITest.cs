@@ -48,7 +48,7 @@ public class Username
 
 public class SavedData
 {
-    public int username_ID;
+    public string username_ID;
     public int total_score;
     public int times_played;
 }
@@ -81,6 +81,9 @@ public class APITest : MonoBehaviour
     [SerializeField] Text errorText;
     string UN = MenuUser.UiD;
     string UN2;
+    int TS = GameManagerToby.scoregamemanager;
+    int TS2;
+    // int TP = GameManagerToby.timesPlayed;
 
     private GameManagerToby gameManager;
 
@@ -157,6 +160,12 @@ public class APITest : MonoBehaviour
     public void UpdateData()
     {
         StartCoroutine(UpdateSavedData());
+    }
+    public void UpdateDataUnity(int totalScore)
+    {
+        TS2 = totalScore;
+        StartCoroutine(UpdateSavedDataUnity());
+        Debug.Log(TS2);
     }
 
     public void QueryScores()
@@ -301,7 +310,7 @@ public class APITest : MonoBehaviour
     {
         // Create the object to be sent as json
         SavedData testData = new SavedData();
-        testData.username_ID = Random.Range(1, 8);
+        testData.username_ID = UN2;
         testData.total_score =Random.Range(1000, 9000);
         testData.times_played= Random.Range(1000, 9000);
 
@@ -329,6 +338,37 @@ public class APITest : MonoBehaviour
         }
     }
     
+    IEnumerator UpdateSavedDataUnity()
+    {
+        // Create the object to be sent as json
+        SavedData testData = new SavedData();
+        testData.username_ID = UN2;
+        testData.total_score = TS2;
+        testData.times_played= Random.Range(1000, 9000);
+
+        // Debug.Log("DATA: " + testData.total_score);
+        string jsonData = JsonUtility.ToJson(testData);
+        Debug.Log("BODY: " + jsonData);
+
+        // Send using the Put method:
+        // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
+        using (UnityWebRequest www = UnityWebRequest.Put(url + putSavedDataEP, jsonData))
+        {
+            //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
+            // Set the method later, and indicate the encoding is JSON
+            www.method = "PUT";
+            www.SetRequestHeader("Content-Type", "application/json");
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                Debug.Log("Response: " + www.downloadHandler.text);
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }
 
     IEnumerator AddScore()
     {
