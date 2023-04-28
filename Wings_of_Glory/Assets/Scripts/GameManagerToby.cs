@@ -26,6 +26,7 @@ public class GameManagerToby : MonoBehaviour
     public ArmorButton armorbutton;
     [SerializeField] APITest api;
     public batteryplayer bp;
+    string UN = MenuUser.UiD;
     //public image stats;
     private void Awake()
     {
@@ -49,8 +50,10 @@ public class GameManagerToby : MonoBehaviour
         scoregamemanager=totalScore.score;
         getstats();
         //Debug.Log(scoregamemanager);
-        //UpdateDataUnity();
+        UpdateDataUnity();
+        // Debug.Log(UN);
         getstats();
+        // Debug.Log(gadgetlist[2]);
         //Debug.Log(armorchosen);
         
     }
@@ -175,6 +178,6 @@ public class GameManagerToby : MonoBehaviour
     }
     public void UpdateDataUnity()
     {
-        api.UpdateDataUnity(scoregamemanager);
+        api.UpdateDataUnity(scoregamemanager, UN, agility);
     }
 }

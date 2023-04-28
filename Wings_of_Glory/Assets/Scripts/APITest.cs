@@ -51,6 +51,7 @@ public class SavedData
     public string username_ID;
     public int total_score;
     public int times_played;
+    public int score_agility;
 }
 
 // Allow the class to be extracted from Unity
@@ -83,6 +84,7 @@ public class APITest : MonoBehaviour
     string UN2;
     int TS = GameManagerToby.scoregamemanager;
     int TS2;
+    int ag_score;
     // int TP = GameManagerToby.timesPlayed;
 
     private GameManagerToby gameManager;
@@ -161,9 +163,11 @@ public class APITest : MonoBehaviour
     {
         StartCoroutine(UpdateSavedData());
     }
-    public void UpdateDataUnity(int totalScore)
+    public void UpdateDataUnity(int totalScore, string UiD, int agility)
     {
+        UN2 = UiD;
         TS2 = totalScore;
+        ag_score = agility;
         StartCoroutine(UpdateSavedDataUnity());
         Debug.Log(TS2);
     }
@@ -316,7 +320,7 @@ public class APITest : MonoBehaviour
 
         // Debug.Log("DATA: " + testData.total_score);
         string jsonData = JsonUtility.ToJson(testData);
-        Debug.Log("BODY: " + jsonData);
+        // Debug.Log("BODY: " + jsonData);
 
         // Send using the Put method:
         // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
@@ -345,10 +349,11 @@ public class APITest : MonoBehaviour
         testData.username_ID = UN2;
         testData.total_score = TS2;
         testData.times_played= Random.Range(1000, 9000);
+        testData.score_agility = ag_score;
 
         // Debug.Log("DATA: " + testData.total_score);
         string jsonData = JsonUtility.ToJson(testData);
-        //Debug.Log("BODY: " + jsonData);
+        // Debug.Log("BODY: " + jsonData);
 
         // Send using the Put method:
         // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
