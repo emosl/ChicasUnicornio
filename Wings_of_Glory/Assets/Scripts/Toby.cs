@@ -106,6 +106,7 @@ public class Toby : MonoBehaviour
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 offset = new Vector2(0f, -bounds.extents.y);
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
+        // canvasFlower.SetActive(false);
 
     // Collider2D barrier = Physics2D.Overlapbox(destination, Vector2.zero, 0f, LayerMask.GetMask("Barrier"));
     // Collider2D barrier = Physics2D.OverlapArea(destination - Vector3.one * 0.5f, destination + Vector3.one * 0.5f, LayerMask.GetMask("Barrier"));
@@ -214,9 +215,22 @@ public class Toby : MonoBehaviour
         {
             
             canvasFlower.SetActive(true);
+            StartCoroutine(Wait());
         }
+        else if (other.gameObject.CompareTag("fight")) //This option is activated when Toby gets a strength gadget.
+        {
+            
+            SceneManager.LoadScene("FightSceen");
+        }
+
       
         
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(38f);
+        canvasFlower.SetActive(false);
     }
 
    
