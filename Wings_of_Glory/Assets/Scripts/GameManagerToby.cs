@@ -45,6 +45,7 @@ public class GameManagerToby : MonoBehaviour
     void Update()
     {
         //This line takes the score from TotalScore.cs and stores it in a variable. Will be used in API
+        //debug
         scoregamemanager=totalScore.score;
         getstats();
 
@@ -54,6 +55,7 @@ public class GameManagerToby : MonoBehaviour
 
     //Gets final stats for Toby used in DataBase.
     public void getstats(){
+        //DEBUGS
         strength = toby.strength;
         shield = toby.shield;
         speed = toby.speed;
@@ -169,10 +171,4 @@ public class GameManagerToby : MonoBehaviour
             killerspritelist.Add(134);
         }
     }
-
-    void Start()
-    {
-        // Add code here to initialize the game state
-    }
-
 }
