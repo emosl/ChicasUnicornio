@@ -32,6 +32,8 @@ public class Toby : MonoBehaviour
     public ItemPickupPanel pickupPanel;
     public Inventory inventory;
     public EquippableItem equippableItem;
+    public TotalScore totalScore;
+
 
     public AudioSource Audio;
     public GameObject canvasFlower;
@@ -192,24 +194,25 @@ public class Toby : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Food")) //This option is activated when Toby gets a strength gadget.
         {
-            Debug.Log("Food");
+           
             // other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
-            pickupPanel.UpdatePanel(equippableItem);
+            totalScore.UpdateScore(5);
             other.gameObject.GetComponent<gadgets>().disappeargadgets();
     
         }
         else if (other.gameObject.CompareTag("HeadBand")) //This option is activated when Toby gets a strength gadget.
         {
+            totalScore.UpdateScore(5);
             other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
         else if (other.gameObject.CompareTag("Horseshoe")) //This option is activated when Toby gets a strength gadget.
         {
-            
+            totalScore.UpdateScore(5);
             other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
         else if (other.gameObject.CompareTag("Metal")) //This option is activated when Toby gets a strength gadget.
         {
-            
+            totalScore.UpdateScore(5);
             other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
         else if (other.gameObject.CompareTag("Flower")) //This option is activated when Toby gets a strength gadget.
@@ -303,8 +306,13 @@ public void RemoveItem(string statName)
         
         inventory.RemoveItem(itemToRemove);
         character.Unequip(itemToRemove);
+        totalScore.UpdateScore(-15);
 
         
+    }
+    else
+    {
+        totalScore.UpdateScore(10);
     }
 }
 
