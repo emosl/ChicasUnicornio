@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Physics2D;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using UnityEngine.Video;
 
 [System.Serializable]
 
@@ -29,6 +31,9 @@ public class Toby : MonoBehaviour
     private gadgets gadgetcollider;
     public ItemPickupPanel pickupPanel;
     public Inventory inventory;
+
+    public AudioSource Audio;
+    public GameObject canvasFlower;
 
     
 
@@ -86,6 +91,7 @@ public class Toby : MonoBehaviour
         
 
         player = GameObject.FindGameObjectWithTag("Player");
+        canvasFlower.SetActive(false);
         // player.GetComponent<CamerMove>().Start();
     }
 
@@ -100,6 +106,7 @@ public class Toby : MonoBehaviour
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 offset = new Vector2(0f, -bounds.extents.y);
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
+        // canvasFlower.SetActive(false);
 
     // Collider2D barrier = Physics2D.Overlapbox(destination, Vector2.zero, 0f, LayerMask.GetMask("Barrier"));
     // Collider2D barrier = Physics2D.OverlapArea(destination - Vector3.one * 0.5f, destination + Vector3.one * 0.5f, LayerMask.GetMask("Barrier"));
@@ -204,8 +211,26 @@ public class Toby : MonoBehaviour
             
             other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
+        else if (other.gameObject.CompareTag("Flower")) //This option is activated when Toby gets a strength gadget.
+        {
+            
+            canvasFlower.SetActive(true);
+            StartCoroutine(Wait());
+        }
+        else if (other.gameObject.CompareTag("fight")) //This option is activated when Toby gets a strength gadget.
+        {
+            
+            SceneManager.LoadScene("FightSceen");
+        }
+
       
         
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(38f);
+        canvasFlower.SetActive(false);
     }
 
    

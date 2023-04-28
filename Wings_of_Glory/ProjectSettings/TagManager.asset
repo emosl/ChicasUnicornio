@@ -30,6 +30,8 @@ TagManager:
   - Obstacle_Dungeon
   - Diamond
   - Ice
+  - Flower
+  - fight
   layers:
   - Default
   - TransparentFX
