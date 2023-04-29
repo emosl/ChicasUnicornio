@@ -522,12 +522,12 @@ app.put('/api/save_data', async (request, response)=>{
     }
 })
 // VIEWS
-app.get('/api/highscores', async (request, response)=>{
+app.get('/api/highscores_users', async (request, response)=>{
     let connection = await connectToDB()
 
     try{
 
-        const[results, fields] = await connection.query('select * from highscores')
+        const[results, fields] = await connection.query('select * from high_scores_users')
 
         response.json(results)
 
@@ -540,12 +540,12 @@ app.get('/api/highscores', async (request, response)=>{
         console.log(error)
     }
 })
-app.get('/api/mostplayed', async (request, response)=>{
+app.get('/api/mostplayed_users', async (request, response)=>{
     let connection = await connectToDB()
 
     try{
 
-        const[results, fields] = await connection.query('select * from mostplayed')
+        const[results, fields] = await connection.query('select * from mostplayed_users')
 
         response.json(results)
 
@@ -563,7 +563,7 @@ app.get('/api/gadget_count_view', async (request, response)=>{
 
     try{
 
-        const[results, fields] = await connection.query('select * from gadget_count_view')
+        const[results, fields] = await connection.query('select * from gadget_name_count_view')
 
         response.json(results)
 
@@ -581,7 +581,7 @@ app.get('/api/killersprite_count_view', async (request, response)=>{
 
     try{
 
-        const[results, fields] = await connection.query('select * from killersprite_count_view')
+        const[results, fields] = await connection.query('select * from killersprite_name_count_view')
 
         response.json(results)
 
