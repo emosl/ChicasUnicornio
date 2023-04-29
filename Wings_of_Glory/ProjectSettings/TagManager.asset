@@ -32,6 +32,9 @@ TagManager:
   - Ice
   - Flower
   - fight
+  - Rock
+  - Water
+  - Bomb
   layers:
   - Default
   - TransparentFX
