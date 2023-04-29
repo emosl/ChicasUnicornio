@@ -61,17 +61,17 @@ catch(error)
 // GRAFICA MOST PLAYED
 try
 {
-    const highscores_response = await fetch('http://127.0.1:8000/api/mostplayed',{
+    const mostplayed_response = await fetch('http://127.0.1:8000/api/mostplayed_users',{
         method: 'GET'
     })
 
     console.log('Got a response correctly')
 
-    if(highscores_response.ok)
+    if(mostplayed_response.ok)
     {
         console.log('Response is ok. Converting to JSON.')
 
-        let results = await highscores_response.json()
+        let results = await mostplayed_response.json()
 
         console.log(results)
         console.log('Data converted correctly. Plotting chart.')
@@ -79,17 +79,17 @@ try
         const values = Object.values(results)
 
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
-        const mostplayed_unsername_ID = values.map(e => e['username_ID'])
+        const mostplayed_unsername = values.map(e => e['name'])
         const mostplayed_colors = values.map(e => random_color(0.8))
         const mostplayed_borders = values.map(e => 'rgba(0, 0, 0, 1.0)')
         const mostplayed_total_score = values.map(e => e['times_played'])
 
-        const ctx_mostplayed = document.getElementById('mostplayed').getContext('2d');
-        const levelmostplayed = new Chart(ctx_mostplayed,
+        const ctx_mostplayed = document.getElementById('mostplayed_users').getContext('2d');
+        const mostplayed = new Chart(ctx_mostplayed,
             {
                 type: 'bar',
                 data: {
-                    labels: mostplayed_unsername_ID,
+                    labels: mostplayed_unsername,
                     datasets: [
                         {
                             label: 'times_played',
