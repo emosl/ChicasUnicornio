@@ -47,8 +47,8 @@ TagManager:
   - groundLayerMask
   - Barrier
   - Background
-  - 
-  - 
+  - player
+  - enemy
   - 
   - 
   - 
