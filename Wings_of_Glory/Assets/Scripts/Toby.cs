@@ -304,11 +304,11 @@ public void RemoveItem(string statName)
 
     if (itemToRemove != null)
     {
-        //equipmentPanel.RemoveItem(itemToRemove);
+        totalScore.UpdateScore(-15);
         character.Unequip(itemToRemove);
         inventory.RemoveItem(itemToRemove);
         
-        totalScore.UpdateScore(-15);
+        
 
         
     }
