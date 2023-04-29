@@ -12,7 +12,7 @@ Chart.defaults.font.size = 16;
 // GRAFICA HIGHEST SCORES
 try
 {
-    const highscores_response = await fetch('http://127.0.1:8000/api/highscores',{
+    const highscores_response = await fetch('http://127.0.1:8000/api/highscores_users',{
         method: 'GET'
     })
 
@@ -30,7 +30,7 @@ try
         const values = Object.values(results)
 
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
-        const highscores_unsername_ID = values.map(e => e['username_ID'])
+        const highscores_unsername = values.map(e => e['name'])
         const highscores_colors = values.map(e => random_color(0.8))
         const highscores_borders = values.map(e => 'rgba(0, 0, 0, 1.0)')
         const highscores_total_score = values.map(e => e['total_score'])
@@ -40,7 +40,7 @@ try
             {
                 type: 'bar',
                 data: {
-                    labels: highscores_unsername_ID,
+                    labels: highscores_unsername,
                     datasets: [
                         {
                             label: 'Users_Score',
