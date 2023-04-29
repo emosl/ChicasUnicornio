@@ -30,10 +30,17 @@ public class Combat : MonoBehaviour
 
         Collider2D[] hitenemey = Physics2D.OverlapCircleAll(attackPoint.position,attackRange,enemyLayers);
 
-        foreach(Collider2D enemey in hitenemey)
-        {
-            enemey.GetComponent<enemyStats>().TakeDamage(attackDamage);
-        }
+    foreach(Collider2D enemey in hitenemey)
+{
+    enemyStats enemyStats = enemey.GetComponent<enemyStats>();
+    if (enemyStats != null) {
+        enemyStats.TakeDamage(attackDamage);
+    }
+    else
+    {
+        Debug.Log("EnemyStats is null");
+    }
+}
     }
 void OnDrawGizmosSelected()
     {

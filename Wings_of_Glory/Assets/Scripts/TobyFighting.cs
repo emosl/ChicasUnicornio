@@ -1,4 +1,4 @@
-// Toby movements and animation in during the fight
+// joleping
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,13 +16,24 @@ public class Toby_stats2
 public class TobyFighting : MonoBehaviour
 {
     private Rigidbody2D rb;
+    //private Preguntas ButtonPressed;
+    //private Preguntas button;
+    //private Obstacle obstacleCollider;
+    //private Obstacle obstacle;
     private SpriteRenderer spriteRenderer;
     public Animator animator;
+    //public Obstacle currentObstacle;
     public GameObject player;  
-    public Transform objectToFollow;
-    
 
 public float speed = 20f;
+
+    //public float jumpForce = 10f;
+
+    //public float shield=0f;
+
+    //public float agility=0f;
+
+
     public float groundCheckRadius = 1f;
     public LayerMask groundLayerMask;
 
@@ -34,6 +45,7 @@ public float speed = 20f;
     //public GameObject[] levels;
 
     private Toby_stats2 toby_stats2 = new Toby_stats2();
+    //public Vector3 initialPosition2; // added variable to store initial position
 
     public Vector3 initialPosition2; // added variable to store initial position
 
@@ -45,6 +57,10 @@ public float speed = 20f;
         animator.Play("idle");
         toby_stats2.initialPosition2 = transform.position;
         toby_stats2.savedPosition2 = transform.position;
+        //button = FindObjectOfType<Preguntas>();
+        //obstacleCollider = FindObjectOfType<Obstacle>();
+
+         // save the initial position of the sprite
         string jsonStats = PlayerPrefs.GetString("toby_stats", JsonUtility.ToJson(toby_stats2));
         Debug.Log(jsonStats);
         toby_stats2 = JsonUtility.FromJson<Toby_stats2>(jsonStats);
@@ -63,6 +79,9 @@ public float speed = 20f;
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 offset = new Vector2(0f, -bounds.extents.y);
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
+
+    // Collider2D barrier = Physics2D.Overlapbox(destination, Vector2.zero, 0f, LayerMask.GetMask("Barrier"));
+    // Collider2D barrier = Physics2D.OverlapArea(destination - Vector3.one * 0.5f, destination + Vector3.one * 0.5f, LayerMask.GetMask("Barrier"));
 
         // Move left or right based on user input
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -103,5 +122,91 @@ public float speed = 20f;
         }
     }
 
+
+    // //OnTriggerEnter2D is called when the Collider2D other enters the trigger;
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+        
+    //      if (isGrounded && other.gameObject.CompareTag("Obstacle"))
+    //     {
+    //         Debug.Log("Obstacle");
+    //         other.gameObject.GetComponent<Obstacle>().AskPermission();
+            
+    //     }
+    //     else if (other.gameObject.CompareTag("LevelChange"))
+    //     {
+    //         int rand = Random.Range(0, levels.Length);
+    //         transform.position = levels[rand].transform.position;
+    //         Destroy(levels[rand]); // remove the selected level from the levels array
+    //     }
+    //     else if (other.gameObject.CompareTag("Dungeon"))
+    //     {
+    //         // SceneManager.LoadScene("frogger_dungeon");
+    //         toby_stats.savedPosition = transform.position; // save the current position of the sprite
+    //         string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+    //         PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
+    //         other.gameObject.GetComponent<Dungeon>().AskPermissionD();
+    //     }
+    //     //aqui escribir si toby encuentra strength hacer tal y asi. Debe mandar al script de gadgets.
+    //     else if (other.gameObject.CompareTag("spike")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementStrength1();
+    //     }
+    //     else if (other.gameObject.CompareTag("fireshoe")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementStrength2();
+    //     }
+    //     else if (other.gameObject.CompareTag("roller")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementStrength3();
+    //     }
+    //     else if (other.gameObject.CompareTag("Carrot")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementAgility1();
+    //     }
+    //     else if (other.gameObject.CompareTag("Cake")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementAgility2();
+    //     }
+    //     else if (other.gameObject.CompareTag("Apple")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementAgility3();
+    //     }
+    //     else if (other.gameObject.CompareTag("gold")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementShield1();
+    //     }
+    //     else if (other.gameObject.CompareTag("silver")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementShield2();
+    //     }
+    //     else if (other.gameObject.CompareTag("bronze")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementShield3();
+    //     }
+    //     else if (other.gameObject.CompareTag("crown")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementSpeed1();
+    //     }
+    //     else if (other.gameObject.CompareTag("hat")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementSpeed2();
+    //     }
+    //     else if (other.gameObject.CompareTag("hairband")) //This option is activated when Toby gets a strength gadget.
+    //     {
+    //         other.gameObject.GetComponent<gadgets>().IncrementSpeed3();
+    //     }
+        
+    // }
     
+   
+
+    // public void PermissionGranted()
+    // {
+    //     if (currentObstacle != null)
+    //     {
+    //         // currentObstacle.gameObject.GetComponent<Obstacle>().MakeTriggersForObstacleColliders();
+    //         currentObstacle = null;
+    //     }
+    // }
 }

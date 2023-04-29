@@ -113,6 +113,7 @@ public class enemyBehavior : MonoBehaviour
          // Sets the animation to attack and to stop walking
          anim.SetBool("canWalk", false);
          anim.SetBool("Attack", true);
+         GetComponent<TobyStats>().TakeDamage(10);
    }
 
     void Cooldown()
