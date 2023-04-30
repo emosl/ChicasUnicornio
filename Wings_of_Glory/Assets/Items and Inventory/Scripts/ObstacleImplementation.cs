@@ -17,6 +17,8 @@ public class ObstacleImplementation : MonoBehaviour
     public batteryplayer batteryPlayer;
     public List<int> killerspritelist = new List<int>();
 
+    [SerializeField] APITest api;
+
     
 
 
@@ -147,21 +149,25 @@ public class ObstacleImplementation : MonoBehaviour
         if (killersprite == "Bomb")
         {
             killerspritelist.Add(131);
+            api.UpdateKillSprite(131);
             Debug.Log("added "+killersprite);
         }
         else if (killersprite == "Water")
         {
-            killerspritelist.Add(132);
+            killerspritelist.Add(133);
+            api.UpdateKillSprite(133);
             Debug.Log("added "+killersprite);
         }
         else if (killersprite == "Ice")
         {
-            killerspritelist.Add(133);
+            killerspritelist.Add(132);
+            api.UpdateKillSprite(132);
             Debug.Log("added "+killersprite);
         }
         else if (killersprite == "Rock")
         {
             killerspritelist.Add(134);
+            api.UpdateKillSprite(134);
             Debug.Log("added "+killersprite);
         }
         else{

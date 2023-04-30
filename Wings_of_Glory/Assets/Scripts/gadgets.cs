@@ -13,6 +13,8 @@ public class gadgets : MonoBehaviour
     public UnityEngine.Events.UnityEvent onItemPickedUp;
     public List<int> gadgetlist = new List<int>();
 
+    [SerializeField] APITest api;
+
 
     void Start()
     {
@@ -36,62 +38,81 @@ public class gadgets : MonoBehaviour
         Debug.Log(gadget);
         if (gadget == "Carrot (EquippableItem)")
         {
-            gadgetlist.Add(121);
+            api.UpdateGadget(121);
             Debug.Log("Added gadget" + gadget);
+            gadgetlist.Add(121);
+            
         }
         else if (gadget == "Fire Shoe (EquippableItem)")
         {
             gadgetlist.Add(122);
+            api.UpdateGadget(122);
             Debug.Log("Added gadget" + gadget);
         }
         else if (gadget == "Plata (EquippableItem)")
         {
             gadgetlist.Add(123);
+            api.UpdateGadget(123);
             Debug.Log("Added gadget" + gadget);
         }
         else if (gadget == "Spike Shoe (EquippableItem)")
         {
             gadgetlist.Add(124);
+            api.UpdateGadget(124);
             Debug.Log("Added gadget" + gadget);
         }
         else if (gadget == "Hairband (EquippableItem)")
         {
             gadgetlist.Add(125);
+            api.UpdateGadget(125);
             Debug.Log("Added gadget" + gadget);
         }
         else if (gadget == "Manzana (EquippableItem)")
         {
-            gadgetlist.Add(126);
+            api.UpdateGadget(126);
             Debug.Log("Added gadget" + gadget);
+            gadgetlist.Add(126);
         }
         else if (gadget == "Oro (EquippableItem)")
         {
             gadgetlist.Add(127);
+            api.UpdateGadget(127);
             Debug.Log("Added gadget" + gadget);
         }
         else if (gadget == "Crown (EquippableItem)")
         {
             gadgetlist.Add(128);
+            api.UpdateGadget(128);
             Debug.Log("Added gadget" + gadget);
         }
         else if (gadget == "Hat (EquippableItem)")
         {
             gadgetlist.Add(129);
+            api.UpdateGadget(129);
             Debug.Log("Added gadget" + gadget);
         }
         else if (gadget == "Headband (EquippableItem)")
         {
             gadgetlist.Add(1201);
+            api.UpdateGadget(1201);
             Debug.Log("Added gadget" + gadget);
         }
         else if (gadget == "Roller Shoe (EquippableItem)")
         {
             gadgetlist.Add(1202);
+            api.UpdateGadget(1202);
             Debug.Log("Added gadget" + gadget);
         }
         else if (gadget == "Bronze (EquippableItem)")
         {
             gadgetlist.Add(1203);
+            api.UpdateGadget(1203);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Pastel (EquippableItem)")
+        {
+            gadgetlist.Add(1204);
+            api.UpdateGadget(1204);
             Debug.Log("Added gadget" + gadget);
         }
         else{
@@ -99,5 +120,9 @@ public class gadgets : MonoBehaviour
         }
     }
 
+    // public UpdateGadget()
+    // {
+    //     api.UpdateGadget(int gadget);
+    // }
    
 }

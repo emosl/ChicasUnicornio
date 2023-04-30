@@ -503,7 +503,7 @@ app.put('/api/save_data', async (request, response)=>{
         const [results02, fields02] = await connection.query('update game_history set times_played = ? where username_ID = ?', [request.body['times_played'], request.body['username_ID']])
         // const [results03, fields03] = await connection.query('insert gadgetinventory set  = ? where username_ID = ?', [request.body['gadgetid'], request.body['username_ID']])
         const [results03, fields03] = await connection.query('update final_score set score_agility = ? where username_ID = ?', [request.body['score_agility'], request.body['username_ID']])
-        const [results04, fields04] = await connection.query('update gadgetinventory set gadgetid = ?', [request.body['gadgetid']])
+        // const [results04, fields04] = await connection.query('update gadgetinventory set gadgetid = ?', [request.body['gadgetid']])
 
 
         
@@ -524,6 +524,69 @@ app.put('/api/save_data', async (request, response)=>{
         }
     }
 })
+
+
+app.post('/api/save_gadget', async (request, response)=>{
+
+    let connection = null
+
+    try{
+        connection = await connectToDB()
+        console.log(request.body)
+        const [results, fields] = await connection.query('insert into gadgetinventory set gadgetid = ?', [request.body['gadgetid']])
+
+
+        
+        response.json({'message': "Data updated correctly."})
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+})
+
+
+app.post('/api/save_kill', async (request, response)=>{
+
+    let connection = null
+
+    try{
+        connection = await connectToDB()
+        console.log(request.body)
+        const [results, fields] = await connection.query('insert into killerspriteinventory set killersprite_Id = ?', [request.body['killersprite_Id']])
+
+
+        
+        response.json({'message': "Data updated correctly."})
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+})
+
+
+
 // VIEWS
 app.get('/api/highscores_users', async (request, response)=>{
     let connection = await connectToDB()
