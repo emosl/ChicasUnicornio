@@ -9,8 +9,6 @@ public class GameManagerToby : MonoBehaviour
 {
     // public GameObject start_game;
     // public GameObject Toby;
-    public List<int> gadgetlist = new List<int>();
-    public List<int> killerspritelist = new List<int>();
     public Toby toby;
     public Toby_stats toby_stats;
     public static string armor;
@@ -105,81 +103,7 @@ public class GameManagerToby : MonoBehaviour
     //     // livesText.text = lives.ToString();
     // }
 
- //This function stores the gadget_id in a list for the API
- //THis function is  in ItemPickup PanelScript when an obstacle is added.
-    public void GadgetCounter(string gadget)
-    {
-        if (gadget == "Carrot")
-        {
-            gadgetlist.Add(121);
-        }
-        else if (gadget == "FireShoe")
-        {
-            gadgetlist.Add(122);
-        }
-        else if (gadget == "Silver")
-        {
-            gadgetlist.Add(123);
-        }
-        else if (gadget == "SpikeShoe")
-        {
-            gadgetlist.Add(124);
-        }
-        else if (gadget == "Hairband")
-        {
-            gadgetlist.Add(125);
-        }
-        else if (gadget == "Manzana")
-        {
-            gadgetlist.Add(126);
-        }
-        else if (gadget == "Oro")
-        {
-            gadgetlist.Add(127);
-        }
-        else if (gadget == "Crown")
-        {
-            gadgetlist.Add(128);
-        }
-        else if (gadget == "Hat")
-        {
-            gadgetlist.Add(129);
-        }
-        else if (gadget == "Headband")
-        {
-            gadgetlist.Add(1201);
-        }
-        else if (gadget == "RollerShoe")
-        {
-            gadgetlist.Add(1202);
-        }
-        else if (gadget == "Bronze")
-        {
-            gadgetlist.Add(1203);
-        }
-    }
 
-   //This function stores the killersprite_id in a list for the API
-// The string stored comes from ObstacleImplementation. When a killersprite is passed, the name is stored in the list.
-    public void KillerSpriteCounter(string killersprite)
-    {
-        if (killersprite == "Bomb")
-        {
-            killerspritelist.Add(131);
-        }
-        else if (killersprite == "Water")
-        {
-            killerspritelist.Add(132);
-        }
-        else if (killersprite == "Ice")
-        {
-            killerspritelist.Add(133);
-        }
-        else if (killersprite == "Rock")
-        {
-            killerspritelist.Add(134);
-        }
-    }
     public void UpdateDataUnity()
     {
         api.UpdateDataUnity(scoregamemanager, UN, agility);
