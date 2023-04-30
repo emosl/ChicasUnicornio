@@ -59,23 +59,8 @@ $(function() {
   }
 });
 
-// Document ready function
-$(document).ready(function () {
-  // ... (other existing code, if any)
-
+$(function () {
   redirectToIndex();
 });
 
-// Existing code from index.js (if any)
-// ...
-//Boton login
-document.getElementById("bot").onclick = function(){
-  document.getElementById("idOfYourForm").submit();
-};
-
-$(function(){
-  $("#button").bind("click",function(){
-      $("#idOfYourForm").submit();  // consider idOfYourForm `id` of your form which you are going to submit
-  });
-});
 
