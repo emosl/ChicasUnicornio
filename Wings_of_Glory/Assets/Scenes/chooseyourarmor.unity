@@ -493,8 +493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72925b225b484acb854cf96069f7220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gadgetlist: 
-  killerspritelist: 
   toby: {fileID: 1090477139}
   toby_stats:
     initialPosition: {x: 0, y: 0, z: 0}
@@ -1486,6 +1484,8 @@ MonoBehaviour:
   getScoresEP: 
   putScoresEP: 
   putSavedDataEP: /api/save_data
+  insertGadgetEP: /api/save_gadget
+  insertKillSpriteEP: /api/save_kill
   getTimesPlayedEP: /api/timesplayed?usernameID=
   errorText: {fileID: 0}
   allUsers:
@@ -1926,6 +1926,7 @@ MonoBehaviour:
   toby: {fileID: 1863770189}
   batteryPlayer: {fileID: 0}
   equipmentPanel: {fileID: 0}
+  gameManagerToby: {fileID: 0}
 --- !u!95 &1863770186
 Animator:
   serializedVersion: 5

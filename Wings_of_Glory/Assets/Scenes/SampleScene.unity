@@ -968,6 +968,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &75131837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1914,6 +1916,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &163733861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2928,6 +2932,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &236226956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4560,6 +4566,7 @@ MonoBehaviour:
   toby: {fileID: 370204288}
   batteryPlayer: {fileID: 2071470849}
   equipmentPanel: {fileID: 657399705}
+  gameManagerToby: {fileID: 0}
 --- !u!114 &370204292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5584,6 +5591,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &454599882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6075,6 +6084,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &510032344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6169,6 +6180,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &514141039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6819,6 +6832,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &558720905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7743,6 +7758,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &603781026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8696,16 +8713,17 @@ MonoBehaviour:
   maxSpeedHealth: 15
   minSpeedHealth: 5
   currentSpeedHealth: 0
+  shieldchosen: 
+  toby_stats:
+    initialPosition: {x: 0, y: 0, z: 0}
+    savedPosition: {x: 0, y: 0, z: 0}
+    chosenarmor: 
   strengthhealthbar: {fileID: 552507077}
   agilityhealthbar: {fileID: 667707980}
   speedhealthbar: {fileID: 339323998}
   lifehealthbar: {fileID: 138301835}
   shieldhealthbar: {fileID: 966617379}
   totalscore: {fileID: 0}
-  toby_stats:
-    initialPosition: {x: 0, y: 0, z: 0}
-    savedPosition: {x: 0, y: 0, z: 0}
-    chosenarmor: 
 --- !u!4 &655197852
 Transform:
   m_ObjectHideFlags: 0
@@ -9394,6 +9412,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &716981366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9810,6 +9830,8 @@ MonoBehaviour:
   getScoresEP: 
   putScoresEP: 
   putSavedDataEP: /api/save_data
+  insertGadgetEP: /api/save_gadget
+  insertKillSpriteEP: /api/save_kill
   getTimesPlayedEP: /api/timesplayed?usernameID=
   errorText: {fileID: 0}
   allUsers:
@@ -10786,6 +10808,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!1001 &833691370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11080,6 +11104,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &849270362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11174,6 +11200,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &855183644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11268,6 +11296,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &855498398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12195,6 +12225,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &888875378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13233,6 +13265,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &951055614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16147,6 +16181,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1107430253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16915,6 +16951,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &1148065335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19176,6 +19214,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1253477896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20029,6 +20069,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1338270179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20711,6 +20753,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &1360256374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20862,6 +20906,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1368140336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21095,6 +21141,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &1380423284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21599,6 +21647,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1419107418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22230,6 +22280,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &1447304843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22324,6 +22376,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &1452418514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22827,6 +22881,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1472240549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23352,6 +23408,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &1505094003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23557,6 +23615,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1520017488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24210,6 +24270,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &1589957180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24909,6 +24971,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &1639060263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25757,6 +25821,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &1681719709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26324,6 +26390,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1729428845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27858,6 +27926,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1802867678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28195,6 +28265,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1829078330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28863,6 +28935,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &1859523578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29947,6 +30021,8 @@ MonoBehaviour:
   onItemPickedUp:
     m_PersistentCalls:
       m_Calls: []
+  gadgetlist: 
+  api: {fileID: 0}
 --- !u!1 &1921867680
 GameObject:
   m_ObjectHideFlags: 0
@@ -30271,6 +30347,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 753405921}
 --- !u!114 &1941240254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31890,8 +31968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72925b225b484acb854cf96069f7220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gadgetlist: 
-  killerspritelist: 
   toby: {fileID: 370204288}
   toby_stats:
     initialPosition: {x: 0, y: 0, z: 0}
@@ -32221,6 +32297,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &2030385459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33064,16 +33142,17 @@ MonoBehaviour:
   maxSpeedHealth: 15
   minSpeedHealth: 5
   currentSpeedHealth: 0
+  shieldchosen: 
+  toby_stats:
+    initialPosition: {x: 0, y: 0, z: 0}
+    savedPosition: {x: 0, y: 0, z: 0}
+    chosenarmor: 
   strengthhealthbar: {fileID: 552507077}
   agilityhealthbar: {fileID: 667707980}
   speedhealthbar: {fileID: 339323998}
   lifehealthbar: {fileID: 138301835}
   shieldhealthbar: {fileID: 966617379}
   totalscore: {fileID: 0}
-  toby_stats:
-    initialPosition: {x: 0, y: 0, z: 0}
-    savedPosition: {x: 0, y: 0, z: 0}
-    chosenarmor: 
 --- !u!1 &2074365780
 GameObject:
   m_ObjectHideFlags: 0
@@ -33128,6 +33207,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &2074365783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33609,6 +33690,8 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   character: {fileID: 370204291}
   batteryPlayer: {fileID: 0}
+  killerspritelist: 
+  api: {fileID: 0}
 --- !u!114 &2110199953
 MonoBehaviour:
   m_ObjectHideFlags: 0

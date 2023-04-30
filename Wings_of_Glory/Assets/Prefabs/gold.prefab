@@ -1,5 +1,79 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4913992398141122308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9019914805993521120}
+  - component: {fileID: 3454789770834944451}
+  - component: {fileID: 2024804087021127754}
+  m_Layer: 0
+  m_Name: API_U
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9019914805993521120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913992398141122308}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 40.4, y: 9, z: -18.530315}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5392848586325690422}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3454789770834944451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913992398141122308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7bed14fb077ad52792d2c01282f65f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: localhost:8000
+  getUsersEP: /api/users
+  getUserEP: /api/user?usernameID=
+  putUsersEP: /api/users/:id
+  getScoresEP: 
+  putScoresEP: 
+  putSavedDataEP: /api/save_data
+  insertGadgetEP: /api/save_gadget
+  getTimesPlayedEP: /api/timesplayed?usernameID=
+  errorText: {fileID: 0}
+  allUsers:
+    users: []
+--- !u!114 &2024804087021127754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913992398141122308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b3e3939658cd2edb55f40266b91181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  textPrefab: {fileID: 8059259429740111422, guid: 5ec3c03037bd53c5887de30f4188683b, type: 3}
+  buttonPrefab: {fileID: 6223435412183791049, guid: cf7c05a390d5a258588b5aad649ef090, type: 3}
+  contentTransform: {fileID: 0}
+  greetField: {fileID: 0}
 --- !u!1 &5392848586325690423
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +104,8 @@ Transform:
   m_LocalPosition: {x: -40.5, y: -9.1, z: 5.0544796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 9019914805993521120}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,7 +175,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equippableItem: {fileID: 11400000, guid: 2deb1c894e1774292a574829dc7077f2, type: 2}
   player: {fileID: 0}
-  invisible: []
+  inventory: {fileID: 0}
+  gameManager: {fileID: 0}
+  onItemPickedUp:
+    m_PersistentCalls:
+      m_Calls: []
+  gadgetlist: 
+  api: {fileID: 3454789770834944451}
 --- !u!61 &-7559202427168841199
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -52,7 +52,15 @@ public class SavedData
     public int total_score;
     public int times_played;
     public int score_agility;
-    public int gadget_id;
+    
+}
+public class Gadget
+{
+    public int gadgetid;
+}
+public class KillSprite
+{
+    public int killersprite_Id;
 }
 
 public class TimesPlayed
@@ -89,6 +97,8 @@ public class APITest : MonoBehaviour
     [SerializeField] string getScoresEP;
     [SerializeField] string putScoresEP;
     [SerializeField] string putSavedDataEP;
+    [SerializeField] string insertGadgetEP;
+    [SerializeField] string insertKillSpriteEP;
     [SerializeField] string getTimesPlayedEP;
     [SerializeField] Text errorText;
     string UN = MenuUser.UiD;
@@ -97,7 +107,8 @@ public class APITest : MonoBehaviour
     int TS2;
     int ag_score;
     int tp;
-    int gadget;
+    int gadget2;
+    int killer2;
     // int TP = GameManagerToby.timesPlayed;
 
     private GameManagerToby gameManager;
@@ -182,14 +193,26 @@ public class APITest : MonoBehaviour
     {
         StartCoroutine(UpdateSavedData());
     }
-    public void UpdateDataUnity(int totalScore, string UiD, int agility, int gadget)
+    public void UpdateDataUnity(int totalScore, string UiD, int agility)
     {
         UN2 = UiD;
         TS2 = totalScore;
         ag_score = agility;
-        gadget = gadget;
+        
         StartCoroutine(UpdateSavedDataUnity());
         // Debug.Log(TS2);
+    }
+    public void UpdateGadget(int gadget)
+    {
+        gadget2 = gadget;
+        Debug.Log(gadget);
+        StartCoroutine(UpdateGadgetData());
+    }
+    public void UpdateKillSprite(int killer)
+    {
+        killer2 = killer;
+        Debug.Log(killer);
+        StartCoroutine(UpdateKillSpriteData());
     }
 
     public void QueryScores()
@@ -400,11 +423,9 @@ public class APITest : MonoBehaviour
         testData.total_score = TS2;
         testData.times_played= allTimesPlayed.times_played;
         testData.score_agility = ag_score;
-        testData.gadget_id = gadget;
-
         // Debug.Log("DATA: " + testData.total_score);
         string jsonData = JsonUtility.ToJson(testData);
-        Debug.Log("BODY: " + jsonData);
+        // Debug.Log("BODY: " + jsonData);
 
         // Send using the Put method:
         // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
@@ -417,6 +438,39 @@ public class APITest : MonoBehaviour
             yield return www.SendWebRequest();
 
             if (www.result == UnityWebRequest.Result.Success) {
+                // Debug.Log("Response: " + www.downloadHandler.text);
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }
+
+
+    IEnumerator UpdateGadgetData()
+    {
+        // Create the object to be sent as json
+        Gadget testData = new Gadget();
+        Debug.Log("DATA1: " + gadget2);
+        testData.gadgetid = gadget2;
+
+        Debug.Log("DATA: " + testData.gadgetid);
+        string jsonData = JsonUtility.ToJson(testData);
+        Debug.Log("BODY: " + jsonData);
+
+        // Send using the Put method:
+        // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
+        using (UnityWebRequest www = UnityWebRequest.Put(url + insertGadgetEP, jsonData))
+        {
+            //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
+            // Set the method later, and indicate the encoding is JSON
+            www.method = "POST";
+            www.SetRequestHeader("Content-Type", "application/json");
+            yield return www.SendWebRequest();
+            Debug.Log("DATA3: " + testData.gadgetid);
+
+            if (www.result == UnityWebRequest.Result.Success) {
                 Debug.Log("Response: " + www.downloadHandler.text);
                 if (errorText != null) errorText.text = "";
             } else {
@@ -425,6 +479,41 @@ public class APITest : MonoBehaviour
             }
         }
     }
+
+
+
+    IEnumerator UpdateKillSpriteData()
+    {
+        // Create the object to be sent as json
+        KillSprite testData = new KillSprite();
+        Debug.Log("KILL1: " + killer2);
+        testData.killersprite_Id = killer2;
+
+        Debug.Log("KILL: " + testData.killersprite_Id);
+        string jsonData = JsonUtility.ToJson(testData);
+        Debug.Log("BODY: " + jsonData);
+
+        // Send using the Put method:
+        // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
+        using (UnityWebRequest www = UnityWebRequest.Put(url + insertKillSpriteEP, jsonData))
+        {
+            //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
+            // Set the method later, and indicate the encoding is JSON
+            www.method = "POST";
+            www.SetRequestHeader("Content-Type", "application/json");
+            yield return www.SendWebRequest();
+            Debug.Log("DATA3: " + testData.killersprite_Id);
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                Debug.Log("Response: " + www.downloadHandler.text);
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }
+
 
     IEnumerator AddScore()
     {
