@@ -4,8 +4,10 @@ import express from 'express'
 import mysql from 'mysql2/promise'
 import fs from 'fs'
 
+
 const app = express()
 const port = 8000
+
 
 app.use(express.json())
 app.use(express.static('./public'));
@@ -18,6 +20,14 @@ async function connectToDB()
 
 /////END POINTS FOR WEB
 app.get('/', (request,response)=>{
+    fs.readFile('/landing.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err)
+        console.log('Loading page...')
+        response.send(html)
+    })
+    
+})
+app.get('/index.html', (request,response)=>{
     fs.readFile('./public/html/index.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err)
         console.log('Loading page...')
@@ -48,6 +58,13 @@ app.get('/statistics.html', async (request, response) => {
   });
   app.get('/register.html', async (request, response) => {
     fs.readFile('./public/html/register.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err)
+        console.log('Loading page...')
+        response.send(html)
+    })
+  });
+   app.get('/game.html', async (request, response) => {
+    fs.readFile('./public/html/game.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err)
         console.log('Loading page...')
         response.send(html)
