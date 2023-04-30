@@ -42,7 +42,7 @@ public class MenuUser : MonoBehaviour
         ButtonPressed?.Invoke(decision);
         Audio.Play();
         OnPlayButtonClicked();
-        Debug.Log(UiD);
+        // Debug.Log(UiD);
         GetUser();
         StartCoroutine(WaitAndDoSomething());
         

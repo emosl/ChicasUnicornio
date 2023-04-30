@@ -503,6 +503,8 @@ app.put('/api/save_data', async (request, response)=>{
         const [results02, fields02] = await connection.query('update game_history set times_played = ? where username_ID = ?', [request.body['times_played'], request.body['username_ID']])
         // const [results03, fields03] = await connection.query('insert gadgetinventory set  = ? where username_ID = ?', [request.body['gadgetid'], request.body['username_ID']])
         const [results03, fields03] = await connection.query('update final_score set score_agility = ? where username_ID = ?', [request.body['score_agility'], request.body['username_ID']])
+        const [results04, fields04] = await connection.query('update gadgetinventory set gadgetid = ?', [request.body['gadgetid']])
+
 
         
         response.json({'message': "Data updated correctly."})

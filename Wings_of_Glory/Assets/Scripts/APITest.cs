@@ -52,6 +52,7 @@ public class SavedData
     public int total_score;
     public int times_played;
     public int score_agility;
+    public int gadget_id;
 }
 
 public class TimesPlayed
@@ -96,6 +97,7 @@ public class APITest : MonoBehaviour
     int TS2;
     int ag_score;
     int tp;
+    int gadget;
     // int TP = GameManagerToby.timesPlayed;
 
     private GameManagerToby gameManager;
@@ -167,7 +169,7 @@ public class APITest : MonoBehaviour
     {
         UN2 = UiD;
         StartCoroutine(GetUser());
-        Debug.Log(UN2);
+        // Debug.Log(UN2);
         // Debug.Log("QueryUser");
         //corre un metodo en paralelo y espera a que termine
     }
@@ -180,13 +182,14 @@ public class APITest : MonoBehaviour
     {
         StartCoroutine(UpdateSavedData());
     }
-    public void UpdateDataUnity(int totalScore, string UiD, int agility)
+    public void UpdateDataUnity(int totalScore, string UiD, int agility, int gadget)
     {
         UN2 = UiD;
         TS2 = totalScore;
         ag_score = agility;
+        gadget = gadget;
         StartCoroutine(UpdateSavedDataUnity());
-        Debug.Log(TS2);
+        // Debug.Log(TS2);
     }
 
     public void QueryScores()
@@ -289,7 +292,7 @@ public class APITest : MonoBehaviour
                 if (errorText != null) errorText.text = "Error: " + www.error;
             }
         }
-        Debug.Log("GetUser");
+        // Debug.Log("GetUser");
     }    
 
     IEnumerator GetScores()
@@ -397,6 +400,7 @@ public class APITest : MonoBehaviour
         testData.total_score = TS2;
         testData.times_played= allTimesPlayed.times_played;
         testData.score_agility = ag_score;
+        testData.gadget_id = gadget;
 
         // Debug.Log("DATA: " + testData.total_score);
         string jsonData = JsonUtility.ToJson(testData);
