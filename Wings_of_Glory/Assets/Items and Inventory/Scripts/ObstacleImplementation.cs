@@ -15,7 +15,8 @@ public class ObstacleImplementation : MonoBehaviour
     public EquippableItem equippableItem;
     public Character character;
     public batteryplayer batteryPlayer;
-    // public GameManagerToby gameManager;
+    public List<int> killerspritelist = new List<int>();
+
     
 
 
@@ -66,9 +67,9 @@ public class ObstacleImplementation : MonoBehaviour
                 if (toby.agility < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Agility");
-                    // gameManager.KillerSpriteCounter(triggerValueAssigner.triggerTag.ToString());
                     blank.SetActive(true);
                     itemRemovedPanel.SetActive(true);  
+                    KillerSpriteCounter("Ice");
             
                     
                 }
@@ -76,7 +77,7 @@ public class ObstacleImplementation : MonoBehaviour
                 {
                     blank.SetActive(true);
                     itemNotRemovedPanel.SetActive(true);
-                    //gameManagerToby.KillerSpriteCounter("Ice");
+                    KillerSpriteCounter("Ice");
 
                 }
                 break;
@@ -95,7 +96,7 @@ public class ObstacleImplementation : MonoBehaviour
                     {
                         blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
-                        //gameManagerToby.KillerSpriteCounter("Shield");
+                        KillerSpriteCounter("Shield");
                     }
                 
                 break;
@@ -114,7 +115,7 @@ public class ObstacleImplementation : MonoBehaviour
                     {
                         blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
-                        //gameManagerToby.KillerSpriteCounter("Water");
+                        KillerSpriteCounter("Water");
                     }
                 
                 break;
@@ -132,12 +133,40 @@ public class ObstacleImplementation : MonoBehaviour
                     {
                         blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
-                        //gameManagerToby.KillerSpriteCounter("Rock");
+                        KillerSpriteCounter("Rock");
                     }
                 
                 break;
         }
-        
+    }
+    //This function stores the killersprite_id in a list for the API.
+    //When the player accepts the challenge of a killersprite, the id is added to the list.
+    public void KillerSpriteCounter(string killersprite)
+    {
+        Debug.Log(killersprite);
+        if (killersprite == "Bomb")
+        {
+            killerspritelist.Add(131);
+            Debug.Log("added "+killersprite);
+        }
+        else if (killersprite == "Water")
+        {
+            killerspritelist.Add(132);
+            Debug.Log("added "+killersprite);
+        }
+        else if (killersprite == "Ice")
+        {
+            killerspritelist.Add(133);
+            Debug.Log("added "+killersprite);
+        }
+        else if (killersprite == "Rock")
+        {
+            killerspritelist.Add(134);
+            Debug.Log("added "+killersprite);
+        }
+        else{
+            Debug.Log("Error in syntax could not add "+killersprite);
+        }
     }
 }
 

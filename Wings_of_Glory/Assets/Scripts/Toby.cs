@@ -82,7 +82,7 @@ public class Toby : MonoBehaviour
         toby_stats.savedPosition = transform.position;
         button = FindObjectOfType<Preguntas>();
         obstacleCollider = FindObjectOfType<Obstacle>();
-        toby_stats.chosenarmor=chosenarmor;
+        //toby_stats.chosenarmor=chosenarmor;
 
          // save the initial position of the sprite
         string jsonStats = PlayerPrefs.GetString("toby_stats", JsonUtility.ToJson(toby_stats));
@@ -95,10 +95,17 @@ public class Toby : MonoBehaviour
     
         player = GameObject.FindGameObjectWithTag("Player");
         canvasFlower.SetActive(false);
-
-        // Debug.Log("Choosing armor");
-        // bp.armor(chosenarmor);
+        //Debug.Log(chosenarmor);
+        //Debug.Log("prueba armor");
+        //Debug.Log(toby_stats.chosenarmor);
+        bp.armor();
         // player.GetComponent<CamerMove>().Start();
+    }
+
+    public void armorchosen(string chosenarmor){
+        if(chosenarmor=="blue"){
+            bp.ChangeSpeed(15);
+        }
     }
 
     void Update()

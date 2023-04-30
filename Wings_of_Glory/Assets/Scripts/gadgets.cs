@@ -10,7 +10,8 @@ public class gadgets : MonoBehaviour
     public GameObject player;
     public Inventory inventory;
     public GameManagerToby gameManager;
-     public UnityEngine.Events.UnityEvent onItemPickedUp;
+    public UnityEngine.Events.UnityEvent onItemPickedUp;
+    public List<int> gadgetlist = new List<int>();
 
 
     void Start()
@@ -19,15 +20,83 @@ public class gadgets : MonoBehaviour
         inventory = player.GetComponent<Character>().inventory;
         equippableItem.RandomizeBonuses(equippableItem.ItemName);
     }
-
+//Makes gadgets dissapear and equips them on contact. This function also calls gadgetmanager for the API
     public void disappeargadgets()
     {
         inventory.AddItem(equippableItem);
         Debug.Log("Item added");
-        //gameManager.GadgetCounter(equippableItem.ItemName);
+        string gadgetname=equippableItem.ToString();
         onItemPickedUp?.Invoke();
         Destroy(gameObject);
+        gadgetmanager(gadgetname);
+    }
 
+    //This function stores the gadget_id in a list for the API
+    public void gadgetmanager(string gadget){
+        Debug.Log(gadget);
+        if (gadget == "Carrot (EquippableItem)")
+        {
+            gadgetlist.Add(121);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Fire Shoe (EquippableItem)")
+        {
+            gadgetlist.Add(122);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Plata (EquippableItem)")
+        {
+            gadgetlist.Add(123);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Spike Shoe (EquippableItem)")
+        {
+            gadgetlist.Add(124);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Hairband (EquippableItem)")
+        {
+            gadgetlist.Add(125);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Manzana (EquippableItem)")
+        {
+            gadgetlist.Add(126);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Oro (EquippableItem)")
+        {
+            gadgetlist.Add(127);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Crown (EquippableItem)")
+        {
+            gadgetlist.Add(128);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Hat (EquippableItem)")
+        {
+            gadgetlist.Add(129);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Headband (EquippableItem)")
+        {
+            gadgetlist.Add(1201);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Roller Shoe (EquippableItem)")
+        {
+            gadgetlist.Add(1202);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else if (gadget == "Bronze (EquippableItem)")
+        {
+            gadgetlist.Add(1203);
+            Debug.Log("Added gadget" + gadget);
+        }
+        else{
+            Debug.Log("Could not add gadget" + gadget+ "Check for errors in syntax");
+        }
     }
 
    

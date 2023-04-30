@@ -18,6 +18,7 @@ public class ArmorButton : MonoBehaviour
     public GameManagerToby gameManagerToby;
     public string armorchosen;
     public Toby_stats toby_stats;
+    
 
     public event Action<bool> ButtonPressed; 
     // Start is called before the first frame update

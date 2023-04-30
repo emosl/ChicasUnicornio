@@ -23,7 +23,8 @@ public class batteryplayer : MonoBehaviour
     public int maxSpeedHealth = 15;
     public int minSpeedHealth = 5;
     public int currentSpeedHealth;
-
+    public string shieldchosen;
+    public Toby_stats toby_stats;
 
      
     
@@ -34,7 +35,7 @@ public class batteryplayer : MonoBehaviour
     public Healthbar lifehealthbar;
     public Healthbar shieldhealthbar;
     public TotalScore totalscore;
-    public Toby_stats toby_stats;
+    //public Toby_stats toby_stats;
     
 
     // Start is called before the first frame update
@@ -54,46 +55,47 @@ public class batteryplayer : MonoBehaviour
         currentSpeedHealth = minSpeedHealth;
         speedhealthbar.SetMinHealth(minSpeedHealth);
         Debug.Log("Calling chosen armor");
-        armor(toby_stats.chosenarmor);
+        Debug.Log(toby_stats.chosenarmor);
+        Debug.Log("Called chosen armor");
+        toby_stats.chosenarmor=shieldchosen;
+        armor();
+        //red();
     }
     //The following function will be called when the player choses their armor.
 
-    public void armor(string chosenarmor){
-        if(chosenarmor=="blue"){
+    public void armor(){
+        string initialarmor=toby_stats.chosenarmor;
+        int number=Random.Range(1,3);
+        Debug.Log(number);
+        if(number==1){
             blue();
         }
-        if(chosenarmor=="red"){
-            Debug.Log("Chose red");
+        if(number==2){
             red();
-            Debug.Log("Chosen red");
         }
-        if(chosenarmor=="pink"){
+        if(number==3){
             pink();
         }
     }
     public void blue(){
-        currentHealth=minHealth;
-        strengthhealthbar.SetMinHealth(minHealth);
-        agilityhealthbar.SetMinHealth(minHealth);
-        speedhealthbar.SetMinHealth(minHealth);
-        lifehealthbar.SetMinHealth(minHealth);
-        shieldhealthbar.SetMinHealth(minHealth);
+        ChangeStrength(Random.Range(8,11));
+        ChangeAgility(Random.Range(0,5));
+        ChangeSpeed(Random.Range(4,7));
+        ChangeShield(Random.Range(0,3)); 
     }
 
     public void red(){
-        ChangeStrength(4);
-        ChangeAgility(4);
-        ChangeSpeed(4);
-        ChangeShield(4); 
+        ChangeStrength(0);
+        ChangeAgility(Random.Range(0,3));
+        ChangeSpeed(Random.Range(4,8));
+        ChangeShield(Random.Range(0,2)); 
     }
 
     public void pink(){
-        currentHealth=minHealth;
-        strengthhealthbar.SetMinHealth(minHealth);
-        agilityhealthbar.SetMinHealth(minHealth);
-        speedhealthbar.SetMinHealth(minHealth);
-        lifehealthbar.SetMinHealth(minHealth);
-        shieldhealthbar.SetMinHealth(minHealth);
+        ChangeStrength(Random.Range(8,10));
+        ChangeAgility(Random.Range(1,3));
+        ChangeSpeed(Random.Range(5,8));
+        ChangeShield(Random.Range(0,5)); 
     }
 
     

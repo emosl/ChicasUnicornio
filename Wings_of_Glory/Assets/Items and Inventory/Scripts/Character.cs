@@ -125,6 +125,7 @@ public class Character : MonoBehaviour
     [SerializeField] private Toby toby;
     [SerializeField] private batteryplayer batteryPlayer;
     public EquipmentPanel equipmentPanel;
+    public GameManagerToby gameManagerToby;
 
 
     private void Awake()
