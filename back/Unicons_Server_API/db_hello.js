@@ -20,7 +20,7 @@ async function connectToDB()
 
 /////END POINTS FOR WEB
 app.get('/', (request,response)=>{
-    fs.readFile('/landing.html', 'utf8', (err, html)=>{
+    fs.readFile('./public/html/landing.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err)
         console.log('Loading page...')
         response.send(html)
@@ -63,8 +63,8 @@ app.get('/statistics.html', async (request, response) => {
         response.send(html)
     })
   });
-   app.get('/game.html', async (request, response) => {
-    fs.readFile('./public/html/game.html', 'utf8', (err, html)=>{
+   app.get('/Game.html', async (request, response) => {
+    fs.readFile('./public/WingsOfGlory/GameIndex.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err)
         console.log('Loading page...')
         response.send(html)
