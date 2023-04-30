@@ -4,11 +4,15 @@
  */
 function random_color(alpha=1.0)
 {
-    const r_c = () => Math.round(Math.random() * 255)
-    return `rgba(${r_c()}, ${r_c()}, ${r_c()}, ${alpha}`;
+    const hex_colors = ["#f72585", "#7209b7", "#3a0ca3", "#4361ee", "#4cc9f0", "#b5179e", "#3f37c9", "#4895ef","#0077b6","#8338ec"];
+    const random_hex = hex_colors[Math.floor(Math.random() * hex_colors.length)];
+    const r = parseInt(random_hex.slice(1, 3), 16);
+    const g = parseInt(random_hex.slice(3, 5), 16);
+    const b = parseInt(random_hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
-Chart.defaults.font.size = 16;
+Chart.defaults.font.size = 20;
 // GRAFICA HIGHEST SCORES
 try
 {
@@ -32,7 +36,7 @@ try
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
         const highscores_unsername = values.map(e => e['name'])
         const highscores_colors = values.map(e => random_color(0.8))
-        const highscores_borders = values.map(e => 'rgba(0, 0, 0, 1.0)')
+        const highscores_borders = values.map(e => 'rgba(255,255,255,1.0)')
         const highscores_total_score = values.map(e => e['total_score'])
 
         const ctx_highscores = document.getElementById('highscores').getContext('2d');
@@ -81,7 +85,7 @@ try
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
         const mostplayed_unsername = values.map(e => e['name'])
         const mostplayed_colors = values.map(e => random_color(0.8))
-        const mostplayed_borders = values.map(e => 'rgba(0, 0, 0, 1.0)')
+        const mostplayed_borders = values.map(e => 'rgba(255,255,255,1.0)')
         const mostplayed_total_score = values.map(e => e['times_played'])
 
         const ctx_mostplayed = document.getElementById('mostplayed_users').getContext('2d');
@@ -130,7 +134,7 @@ try
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
         const fav_gadgets_name = values.map(e => e['gadgetname'])
         const fav_gadgets_colors = values.map(e => random_color(0.8))
-        const fav_gadgets_borders = values.map(e => 'rgba(0, 0, 0, 1.0)')
+        const fav_gadgets_borders = values.map(e => 'rgba(255,255,255,1.0)')
         const fav_gadgets_score = values.map(e => e['gadget_count'])
 
         const ctx_fav_gadgets = document.getElementById('fav_gadgets').getContext('2d');
@@ -179,7 +183,7 @@ try
         // In this case, we just separate the data into different arrays using the map method of the values array. This creates new arrays that hold only the data that we need.
         const fav_killersprite_name = values.map(e => e['name'])
         const fav_killersprite_colors = values.map(e => random_color(0.8))
-        const fav_killersprite_borders = values.map(e => 'rgba(0, 0, 0, 1.0)')
+        const fav_killersprite_borders = values.map(e => 'rgba(255,255,255,1.0)')
         const fav_killersprite_score = values.map(e => e['killersprite_count'])
 
         const ctx_fav_killersprite = document.getElementById('fav_killersprite').getContext('2d');
