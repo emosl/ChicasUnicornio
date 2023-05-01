@@ -51,7 +51,9 @@ try
                             backgroundColor: highscores_colors,
                             borderColor: highscores_borders,
                             borderWidth: 2,
-                            data: highscores_total_score
+                            data: highscores_total_score,
+                            responsive: false,
+                            maintainAspectRatio: false
                         }
                     ]
                 }
@@ -140,12 +142,12 @@ try
         const ctx_fav_gadgets = document.getElementById('fav_gadgets').getContext('2d');
         const fav_gadgets = new Chart(ctx_fav_gadgets,
             {
-                type: 'bar',
+                type: 'pie',
                 data: {
                     labels: fav_gadgets_name,
                     datasets: [
                         {
-                            label: 'times_chosen',
+                            label: "times_chosen",
                             backgroundColor: fav_gadgets_colors,
                             borderColor: fav_gadgets_borders,
                             borderWidth: 2,
@@ -189,7 +191,7 @@ try
         const ctx_fav_killersprite = document.getElementById('fav_killersprite').getContext('2d');
         const fav_killersprite = new Chart(ctx_fav_killersprite,
             {
-                type: 'bar',
+                type: 'pie',
                 data: {
                     labels: fav_killersprite_name,
                     datasets: [
