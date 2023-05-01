@@ -26,17 +26,36 @@ public class GameManagerToby : MonoBehaviour
     public batteryplayer bp;
     string UN = MenuUser.UiD;
     public static int times_played = 0;
+    public GameObject canvasFight;
     //public image stats;
+    public class Final_Stats
+    {
+        // public string chosenarmor;
+        public int strength;
+        public int shield;
+        public int speed;
+        public int agility;
+    }
+    
     private void Awake()
     {
         //homes = FindObjectsOfType<Home>();
         toby = FindObjectOfType<Toby>();
 
     }
+    public Final_Stats final_stats = new Final_Stats();
+
     private void Start(){
+        canvasFight.SetActive(false);
         NewGame();
         TimesPlayed();
         times_played++;
+        
+
+        // strength = final_stats.strength;
+        // shield = final_stats.shield;
+        // speed = final_stats.speed;
+        // agility = final_stats.agility;
     }
     private void NewGame()
     {
@@ -67,7 +86,11 @@ public class GameManagerToby : MonoBehaviour
         shield = toby.shield;
         speed = toby.speed;
         agility = toby.agility;
+
+
     }
+
+    
     //armor string comes form script ArmorButton.cs
     // public void SetArmor(){
     //     armorchosengm=armorbutton.armorchosen;

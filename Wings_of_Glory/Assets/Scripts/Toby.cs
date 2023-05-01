@@ -16,6 +16,15 @@ public class Toby_stats
     public string chosenarmor;
 }
 
+public class Final_Stats
+{
+    // public string chosenarmor;
+    public int strength;
+    public int shield;
+    public int speed;
+    public int agility;
+}
+
 
 public class Toby : MonoBehaviour
 {
@@ -38,7 +47,7 @@ public class Toby : MonoBehaviour
 
     public AudioSource Audio;
     public GameObject canvasFlower;
-
+    public GameObject canvasFight;
     
 
 
@@ -66,6 +75,7 @@ public class Toby : MonoBehaviour
     public GameObject[] levels;
 
     public Toby_stats toby_stats = new Toby_stats();
+    public Final_Stats final_stats = new Final_Stats();
     //public Vector3 initialPosition; // added variable to store initial position
 
     public Vector3 initialPosition; // added variable to store initial position
@@ -95,6 +105,18 @@ public class Toby : MonoBehaviour
     
         player = GameObject.FindGameObjectWithTag("Player");
         canvasFlower.SetActive(false);
+        canvasFight.SetActive(false);
+
+        
+        final_stats.strength = strength;
+        final_stats.shield = shield;
+        final_stats.speed = speed;
+        final_stats.agility = agility;
+        // string jsonStats2 = PlayerPrefs.GetString("final_stats", JsonUtility.ToJson(final_stats));
+        string jsonStats2 = JsonUtility.ToJson(final_stats);
+        PlayerPrefs.SetString("final_stats", JsonUtility.ToJson(final_stats));
+        Debug.Log(jsonStats2);
+        final_stats = JsonUtility.FromJson<Final_Stats>(jsonStats2);
         //Debug.Log(chosenarmor);
         //Debug.Log("prueba armor");
         //Debug.Log(toby_stats.chosenarmor);
@@ -114,8 +136,19 @@ public class Toby : MonoBehaviour
         shield = Mathf.Clamp(shield, 0, 10);
         agility = Mathf.Clamp(agility, 0, 10);
         strength = Mathf.Clamp(strength, 8, 18);
+
+        final_stats.strength = strength;
+        final_stats.shield = shield;
+        final_stats.speed = speed;
+        final_stats.agility = agility;
+        // string jsonStats2 = PlayerPrefs.SetString("final_stats", JsonUtility.ToJson(final_stats));
+        string jsonStats2 = JsonUtility.ToJson(final_stats);
+         PlayerPrefs.SetString("final_stats", JsonUtility.ToJson(final_stats));
+        Debug.Log(jsonStats2);
+        final_stats = JsonUtility.FromJson<Final_Stats>(jsonStats2);
+
         // Check if sprite is grounded
-        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 offset = new Vector2(0f, -bounds.extents.y);
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
@@ -234,11 +267,27 @@ public class Toby : MonoBehaviour
         else if (other.gameObject.CompareTag("fight")) //This option is activated when Toby gets a strength gadget.
         {
             
-            SceneManager.LoadScene("FightSceen");
+            canvasFight.SetActive(true);
+            Debug.Log("Obstaccle");
+            final_stats.strength = strength;
+            final_stats.shield = shield;
+            final_stats.speed = speed;
+            final_stats.agility = agility;
+            string jsonStats2 = JsonUtility.ToJson(final_stats);
+            PlayerPrefs.SetString("final_stats", JsonUtility.ToJson(final_stats));
+            Debug.Log(jsonStats2);
+            final_stats = JsonUtility.FromJson<Final_Stats>(jsonStats2);
+            StartCoroutine(WaitAndDo());
         }
 
       
         
+    }
+
+     IEnumerator WaitAndDo()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("FinalBattle");
     }
 
     IEnumerator Wait()

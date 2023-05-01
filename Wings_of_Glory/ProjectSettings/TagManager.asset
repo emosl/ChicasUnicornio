@@ -35,6 +35,7 @@ TagManager:
   - Rock
   - Water
   - Bomb
+  - Enemy
   layers:
   - Default
   - TransparentFX
