@@ -11,9 +11,9 @@
     align-items: center;
     flex-direction: row;
     color: aliceblue;
-    font-size: 9vw;
+    font-size: 100px;
     font-family: 'VT323', monospace;
-    text-shadow: 2px 2px 2px #f2caf5;
+    text-shadow: 2px 2px 2px #5F2E7E;
   }
 
 .head{
@@ -24,8 +24,8 @@
 body, html{
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E);
+    /* color: aliceblue;
+    background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E); */
 }
 
 .background {
@@ -33,7 +33,13 @@ body, html{
     left: 0;
     width: 100%;
     height: 100vh;
+    background: linear-gradient(to bottom, rgb(255, 178, 225), #5F2E7E);
     z-index: -1;
+  }
+  
+ 
+  body {
+    background-color: #5F2E7E;
   }
   
   @media (min-width: 768px) {
@@ -62,6 +68,19 @@ body, html{
     align-content: start;
     padding: 10px;
   }
+  
+#title{
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: aliceblue;
+    font-size: 100px;
+    font-family: 'VT323', monospace;
+    text-shadow: 2px 2px 2px #f2caf5;
+    
+  }
 
   #menu{
     grid-area: menu;
@@ -85,7 +104,7 @@ body, html{
     padding: 0;
     overflow: hidden;
     position: sticky;
-  
+    /* top: 0; */
   }
 
   li {
@@ -118,10 +137,31 @@ body, html{
     font-size: 24px; 
     font-weight: bold; 
   }
+
+  
+  .subtitle {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+    #sub{
+    font-family: 'VT323', monospace;
+    color: #ffc4fd;
+    text-shadow: 2px 2px 2px #eb8b24;
+    font-size: 50px;
+    }
+
+  
+  .subtitle img {
+    max-width: 100%; /* ensure image doesn't overflow container */
+  }
   
   #logo{
-    width: 15vw;
-    height: auto;
+    width: 200px;
+    height: 200px;
     margin-right: 10px;
   }
 
@@ -140,7 +180,7 @@ body, html{
 }
 
 h1, h2, p{
-  font-family: 'Palatino', 'URW Palladio L', serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 p{
@@ -151,12 +191,9 @@ h1{
   margin: 0;
 }
 
- canvas{
+.container, canvas{
   padding: 1%;
-  border: 1px solid grey;
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 100%;
-  height:100%;
+  border: 1px solid black;
 }
 
 #creatingChart{
@@ -175,17 +212,26 @@ h1{
   overflow-x: hidden;
 }
 
-table {
+.chartContainer1{
+  border: 0;
+  justify-content: center;
+  display: flex;
   width: 100%;
-  border-collapse: collapse;
-  margin: 10px;
-  overflow-x: auto;
-
+}
+.chartContainer2{
+  border: 0;
+  justify-content: center;
+  display: flex;
+  width: 100%;
 }
 
-td {
-  padding: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.chartContainer1 canvas{
+  flex-grow: 1;
+  max-width: 30%; 
+  max-height: 600px;
+}
+.chartContainer2 canvas{
+  flex-grow: 1;
+  max-width: 30%; 
+  max-height: 600px;
 }
