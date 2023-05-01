@@ -160,7 +160,7 @@ catch(error)
 {
     console.log(error)
 }
-// GRAFICA FAVORITE killersprite
+// GRAFICA favorite killersprite
 try
 {
     const fav_killersprite_response = await fetch('http://127.0.1:8000/api/killersprite_count_view',{
