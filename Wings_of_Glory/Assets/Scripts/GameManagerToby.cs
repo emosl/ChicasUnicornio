@@ -26,6 +26,7 @@ public class GameManagerToby : MonoBehaviour
     public batteryplayer bp;
     string UN = MenuUser.UiD;
     public static int times_played = 0;
+    public GameObject canvasFight;
     //public image stats;
     public class Final_Stats
     {
@@ -45,17 +46,12 @@ public class GameManagerToby : MonoBehaviour
     public Final_Stats final_stats = new Final_Stats();
 
     private void Start(){
+        canvasFight.SetActive(false);
         NewGame();
         TimesPlayed();
         times_played++;
-        final_stats.strength = strength;
-        final_stats.shield = shield;
-        final_stats.speed = speed;
-        final_stats.agility = agility;
+        
 
-        string jsonStats = PlayerPrefs.GetString("final_stats", JsonUtility.ToJson(final_stats));
-        Debug.Log(jsonStats);
-        final_stats = JsonUtility.FromJson<Final_Stats>(jsonStats);
         // strength = final_stats.strength;
         // shield = final_stats.shield;
         // speed = final_stats.speed;
@@ -91,13 +87,10 @@ public class GameManagerToby : MonoBehaviour
         speed = toby.speed;
         agility = toby.agility;
 
-        final_stats.strength = strength;
-        Debug.Log("strenght" + final_stats.strength);
-        final_stats.shield = shield;
-        final_stats.speed = speed;
-        final_stats.agility = agility;
 
     }
+
+    
     //armor string comes form script ArmorButton.cs
     // public void SetArmor(){
     //     armorchosengm=armorbutton.armorchosen;
