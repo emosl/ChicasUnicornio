@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 09a3b519b910b4697ba80b06adc4a854
+=======
+guid: d6930f9fc22e644f99315cad02dea6df
+>>>>>>> 216d9c0 (prefabs en mundo)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
