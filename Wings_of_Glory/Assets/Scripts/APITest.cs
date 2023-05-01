@@ -1,3 +1,6 @@
+//Wings of Glory script. This script is used in the implementation of Wings of Glory
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+//May 1, 2023
 /*
 Test for the connection to an API
 Able to use the Get method to read data and "Post" to send data
