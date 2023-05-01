@@ -23,7 +23,6 @@
 - ability_agility (attribute)
 - ability_shield (attribute)
 
-
 #### Puntuaje Usuario (Instance)
 - register_ID (atributo PK)
 - username_ID (atributo)

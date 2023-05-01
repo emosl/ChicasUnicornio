@@ -1,3 +1,6 @@
+//Wings of Glory script. This script is used in the implementation of Wings of Glory
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+//May 1, 2023
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,6 +42,7 @@ public class batteryplayer : MonoBehaviour
     
 
     // Start is called before the first frame update
+    //Sets all the health bars to their minimum value
     void Start()
     {
         currentHealth=minHealth;
@@ -61,7 +65,7 @@ public class batteryplayer : MonoBehaviour
         armor();
         //red();
     }
-    //The following function will be called when the player choses their armor.
+    //The following function will be called when the player chooses their armor.
 
     public void armor(){
         string initialarmor=toby_stats.chosenarmor;
@@ -77,20 +81,21 @@ public class batteryplayer : MonoBehaviour
             pink();
         }
     }
+    //sets values for initial blue shield
     public void blue(){
         ChangeStrength(Random.Range(8,11));
         ChangeAgility(Random.Range(0,5));
         ChangeSpeed(Random.Range(4,7));
         ChangeShield(Random.Range(0,3)); 
     }
-
+    //sets values for initial red shield
     public void red(){
         ChangeStrength(0);
         ChangeAgility(Random.Range(0,3));
         ChangeSpeed(Random.Range(4,8));
         ChangeShield(Random.Range(0,2)); 
     }
-
+    //sets values for initial pink shield
     public void pink(){
         ChangeStrength(Random.Range(8,10));
         ChangeAgility(Random.Range(1,3));
@@ -102,7 +107,7 @@ public class batteryplayer : MonoBehaviour
 //Function that updates mentioned ability score by the amount specified.
     public void ChangeStrength(int points)
     {
-        currentStrengthHealth = points;
+        currentStrengthHealth += points;
         if (currentStrengthHealth < 0){
             strengthhealthbar.SetHealth(minStrengthHealth);
         }
@@ -118,7 +123,7 @@ public class batteryplayer : MonoBehaviour
     //Function that updates mentioned ability score by the amount specified.
    public void ChangeAgility(int points)
     {
-        currentAgilityHealth = points;
+        currentAgilityHealth += points;
         
 
         if (currentAgilityHealth < 0){
@@ -130,10 +135,10 @@ public class batteryplayer : MonoBehaviour
         }
 
     }
-
+//Function that updates mentioned ability score by the amount specified.
      public void ChangeSpeed(int points)
     {
-        currentSpeedHealth=points;
+        currentSpeedHealth+=points;
         
        
         if (currentSpeedHealth < 0){
@@ -146,10 +151,10 @@ public class batteryplayer : MonoBehaviour
 
 
     }
-
+//Function that updates mentioned ability score by the amount specified.
     public void ChangeShield(int points)
     {
-        currentShieldHealth=points;
+        currentShieldHealth+=points;
         
         
 
@@ -163,18 +168,7 @@ public class batteryplayer : MonoBehaviour
    
     }
 
-    // public void ChangeLife(int shield, int strength, int agility, int speed)
-    // {
-        
-    //     currentHealth=points;
-    //     if (currentHealth < 0){
-    //        lifehealthbar.SetHealth(minHealth);
-    //     }
-    //     else
-    //     {
-    //        lifehealthbar.SetHealth(currentHealth);
-    //     }
-    // }
+    //This functions handles how toby's life will be calculated.
     public void ChangeLife(int shield, int strength, int agility, int speed)
 {
     int positiveShield = Mathf.Max(0, shield);
