@@ -234,7 +234,7 @@ public class Toby : MonoBehaviour
         else if (other.gameObject.CompareTag("fight")) //This option is activated when Toby gets a strength gadget.
         {
             
-            SceneManager.LoadScene("FightSceen");
+            SceneManager.LoadScene("FinalBattle");
         }
 
       
