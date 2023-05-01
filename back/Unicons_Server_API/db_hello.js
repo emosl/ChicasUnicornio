@@ -3,6 +3,7 @@
 import express from 'express'
 import mysql from 'mysql2/promise'
 import fs from 'fs'
+import cors from 'cors'
 
 
 const app = express()
@@ -11,6 +12,7 @@ const port = 8000
 
 app.use(express.json())
 app.use(express.static('./public'));
+app.use(cors())
 
 
 async function connectToDB()
@@ -63,8 +65,8 @@ app.get('/statistics.html', async (request, response) => {
         response.send(html)
     })
   });
-   app.get('/Game.html', async (request, response) => {
-    fs.readFile('./public/WingsOfGlory/GameIndex.html', 'utf8', (err, html)=>{
+   app.get('/Game', async (request, response) => {
+    fs.readFile('./public/WingsOfGlory/index.html', 'utf8', (err, html)=>{
         if(err) response.status(500).send('There was an error: ' + err)
         console.log('Loading page...')
         response.send(html)

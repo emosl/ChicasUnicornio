@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const responseData = await response.json();
                 console.log(responseData.message);
                 alert("Registration successful!");
-                window.location.href = "../html/index.html";
+                window.location.href = "../WingsOfGlory/index.html";
             } else if (response.status === 400) {
                 const responseData = await response.json();
                 alert(responseData.message);
