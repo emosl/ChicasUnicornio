@@ -70,6 +70,7 @@ h1 {
     margin: 0;
     padding: 0;
     font-family: 'VT323', monospace;
+    position: relative;
   }
 
 @media (min-width: 768px) {

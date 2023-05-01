@@ -15,6 +15,9 @@ https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/HOWTO-UICreateFromSc
 
 Gilberto Echeverria
 */
+//Wings of Glory script. This script is used in the implementation of Wings of Glory
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+//May 1, 2023
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -50,6 +53,7 @@ public class TMPro_Test : MonoBehaviour
 
             // Extract the text from the argument object
             Users us = allUsers.users[i];
+            Debug.Log("ID: " + us.username_ID + " | " + us.name + " " + us.last_name);
             //Debug.Log("ID: " + us.username_ID + " | " + us.name + " " + us.last_name);
 
             if (type == PrefabType.Button) {
@@ -66,42 +70,77 @@ public class TMPro_Test : MonoBehaviour
         }
     }
 
-
-    public void LoadScores(final_score allScores)
+    public void LoadUsername(Username allUsernames)
     {
         ClearContents();
         GameObject uiItem;
-        for (int i=0; i<allScores.highscores.Count; i++) {
-            // Create new GUI objects
-            if (type == PrefabType.Button) {
-                uiItem = Instantiate(buttonPrefab);
-            } else {
-                uiItem = Instantiate(textPrefab);
-            }
-            // Add them to the ScollView content
-            uiItem.transform.SetParent(contentTransform);
+        uiItem = Instantiate(textPrefab);
+        Debug.Log(allUsernames.name);
+        Username us = allUsernames;
+        TextMeshProUGUI field = uiItem.GetComponent<TextMeshProUGUI>();
+        field.text = "Welcome: " + us.name;
+        greetField.text = "Welcome " + us.name + "!";
+        Debug.Log("Welcome: " + us.name);
 
-            // Set the position of each element
-            RectTransform rectTransform = uiItem.GetComponent<RectTransform>();
-            rectTransform.anchoredPosition = new Vector2 (0, -50 * i);
+    //     if (allUsernames.name != null) {
+    //         if (type == PrefabType.Button) {
+    //             uiItem = Instantiate(buttonPrefab);
+    //         } else {
+    //             uiItem = Instantiate(textPrefab);
+    //         }
 
-            // Extract the text from the argument object
-            highscores hs = allScores.highscores[i];
-            //Debug.Log("ID: " + us.username_ID + " | " + us.name + " " + us.last_name);
+    //         uiItem.transform.SetParent(contentTransform);
+    //         RectTransform rectTransform = uiItem.GetComponent<RectTransform>();
+    //         rectTransform.anchoredPosition = new Vector2(0, 0);
 
-            if (type == PrefabType.Button) {
-                // Set the text
-                TextMeshProUGUI field = uiItem.GetComponentInChildren<TextMeshProUGUI>();
-                field.text = "ID: " + hs.username_ID + " | " + hs.total_score;
-                // Set the callback
-                Button btn = uiItem.GetComponent<Button>();
-		        // btn.onClick.AddListener(delegate {GreetName(us.name + " " + us.last_name); });
-            } else if (type == PrefabType.Text) {
-                TextMeshProUGUI field = uiItem.GetComponent<TextMeshProUGUI>();
-                field.text = "ID: " + hs.username_ID + " | " + hs.total_score;
-            }
-        }
+    //         Username us = allUsernames;
+    //         if (type == PrefabType.Button) {
+    //             TextMeshProUGUI field = uiItem.GetComponentInChildren<TextMeshProUGUI>();
+    //             field.text = "Welcome: " + us.name;
+    //             Button btn = uiItem.GetComponent<Button>();
+    //         }
+    // }
+
+
     }
+
+
+
+    // public void LoadScores(final_score allScores)
+    // {
+    //     ClearContents();
+    //     GameObject uiItem;
+    //     for (int i=0; i<allScores.highscores.Count; i++) {
+    //         // Create new GUI objects
+    //         if (type == PrefabType.Button) {
+    //             uiItem = Instantiate(buttonPrefab);
+    //         } else {
+    //             uiItem = Instantiate(textPrefab);
+    //         }
+    //         // Add them to the ScollView content
+    //         uiItem.transform.SetParent(contentTransform);
+
+    //         // Set the position of each element
+    //         RectTransform rectTransform = uiItem.GetComponent<RectTransform>();
+    //         rectTransform.anchoredPosition = new Vector2 (0, -50 * i);
+
+    //         // Extract the text from the argument object
+    //         highscores hs = allScores.highscores[i];
+    //         //Debug.Log("ID: " + us.username_ID + " | " + us.name + " " + us.last_name);
+
+    //         if (type == PrefabType.Button) {
+    //             // Set the text
+    //             TextMeshProUGUI field = uiItem.GetComponentInChildren<TextMeshProUGUI>();
+    //             field.text = "ID: " + hs.username_ID + " | " + hs.total_score;
+    //             // Set the callback
+    //             Button btn = uiItem.GetComponent<Button>();
+	// 	        // btn.onClick.AddListener(delegate {GreetName(us.name + " " + us.last_name); });
+    //         } else if (type == PrefabType.Text) {
+    //             TextMeshProUGUI field = uiItem.GetComponent<TextMeshProUGUI>();
+    //             field.text = "ID: " + hs.username_ID + " | " + hs.total_score;
+    //         }
+    //     }
+    // }
 
     // Delete any child objects
     void ClearContents()

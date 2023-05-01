@@ -29,6 +29,13 @@ TagManager:
   - Dungeon
   - Obstacle_Dungeon
   - Diamond
+  - Ice
+  - Flower
+  - fight
+  - Rock
+  - Water
+  - Bomb
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -41,8 +48,8 @@ TagManager:
   - groundLayerMask
   - Barrier
   - Background
-  - 
-  - 
+  - player
+  - enemy
   - 
   - 
   - 

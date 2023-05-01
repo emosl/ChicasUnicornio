@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08befef23a7b4c17bee10b32c244ef6, type: 3}
   m_Name: Oro
   m_EditorClassIdentifier: 
-  ItemName: 
+  ItemName: Gold
   Icon: {fileID: -2033842128, guid: a3fc34a4ba7a4418493697856f7ec92e, type: 3}
-  StrengthBonus: 2
-  AgilityBonus: 3
-  SpeedBonus: 4
-  ShieldBonus: 1
+  itemImage: {fileID: 0}
+  StrengthBonus: 1
+  AgilityBonus: -1
+  SpeedBonus: -5
+  ShieldBonus: 7
   EquipmentType: 3
+  batteryplayer: {fileID: 0}
+  pickupRange: 1.5

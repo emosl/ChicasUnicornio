@@ -37,57 +37,12 @@ public class StatTooltip : MonoBehaviour
         sb.Length = 0;
         sb.Append(statNames);
         sb.Append(" ");
-        sb.Append(stat.Value);
-
-
-        if (stat.Value != stat.BaseValue)
-        {
-            sb.Append(" ( ");
-            sb.Append(stat.BaseValue);
-
-            if (stat.Value > stat.BaseValue)
-                sb.Append("+");
-            
-            sb.Append(stat.Value - stat.BaseValue);
-            sb.Append(" ( ");
-        }
-        sb.Append(System.Math.Round(stat.Value - stat.BaseValue, 4));
 
         return sb.ToString();
 
 
     }
 
-    // private string GetStatModifierText(Stats stat)
-    // {
-    //     sb.Length = 0;
-    //     foreach (StatModifier mod  in stat.StatModifiers)
-    //     {
-    //         if (sb.Length > 0)
-    //             sb.AppendLine();
-
-    //         if (mod.Value > 0)
-    //             sb.Append("+");
-
-    //         sb.Append(mod.Value);
-
-    //         EquippableItem item = mod.Source as EquippableItem;
-
-    //         if (item != null)
-    //         {
-    //             sb.Append(" ");
-    //             sb.Append(item.ItemName);
-    //         }
-    //         else 
-    //         {
-    //             Debug.LogError("Modifier is not an EquippableItem");
-    //         }
-            
-    //     }
-    //     return sb.ToString();
-
-
-    // }
 
     private string GetStatModifierText(Stats stat)
 {

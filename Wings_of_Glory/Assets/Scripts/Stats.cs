@@ -1,4 +1,6 @@
-
+//Wings of Glory script. This script is used in the implementation of Wings of Glory
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+//May 1, 2023
 using System.Collections.Generic;
 using System;
 using System.Collections.ObjectModel;
@@ -8,11 +10,11 @@ using System.Collections.ObjectModel;
 
 public class Stats 
 {
-    public float BaseValue;
+    public int BaseValue;
 
 
 
-    public virtual float Value { 
+    public virtual int Value { 
         get { 
             if (isDirty || BaseValue != lastBaseValue)
             {
@@ -28,9 +30,9 @@ public class Stats
 
     protected bool isDirty = true;
 
-    protected float _value;
+    protected int _value;
 
-    protected float lastBaseValue = float.MinValue;
+    protected int lastBaseValue = int.MinValue;
  
     protected readonly List<StatModifier> statModifiers;
     public readonly ReadOnlyCollection<StatModifier> StatModifiers;
@@ -41,7 +43,7 @@ public class Stats
     StatModifiers = statModifiers.AsReadOnly();
 }
  
-public Stats(float baseValue) : this()
+public Stats(int baseValue) : this()
 {
     BaseValue = baseValue;
 }
@@ -87,22 +89,22 @@ public Stats(float baseValue) : this()
         return didRemove;
     }
 
-    protected float CalculateFinalValue()
+    protected int CalculateFinalValue()
     {
-        float finalValue = BaseValue;
+        int finalValue = BaseValue;
 
         for (int i = 0; i< statModifiers.Count; i++)
         {
             StatModifier mod = statModifiers[i];
             if (mod.Type == StatModType.Flat)
             {
-                finalValue += mod.Value;
+                finalValue += (int)mod.Value;
 
             }
             
         }
 
-        return (float)Math.Round(finalValue,4);
+        return finalValue;
     }
  
 

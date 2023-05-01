@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08befef23a7b4c17bee10b32c244ef6, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
-  ItemName: 
+  ItemName: Carrot
   Icon: {fileID: -210843070, guid: a3fc34a4ba7a4418493697856f7ec92e, type: 3}
-  StrengthBonus: 2
-  AgilityBonus: 5
-  SpeedBonus: 7
-  ShieldBonus: 3
+  itemImage: {fileID: 0}
+  StrengthBonus: 1
+  AgilityBonus: 7
+  SpeedBonus: 1
+  ShieldBonus: -5
   EquipmentType: 2
+  batteryplayer: {fileID: 0}
+  pickupRange: 1.5

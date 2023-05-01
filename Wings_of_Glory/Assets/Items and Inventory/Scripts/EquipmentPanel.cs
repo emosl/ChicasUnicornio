@@ -7,6 +7,10 @@ public class EquipmentPanel : MonoBehaviour
 {
     [SerializeField] Transform equipmentSlotsParent;
     [SerializeField] EquipmentSlot[] equipmentSlots;
+    [SerializeField] StatPanel statsPanel;
+    [SerializeField] private Toby toby;
+    [SerializeField] private batteryplayer batteryPlayer;
+    public Character character;
 
     public event Action<Item> OnItemRightClickEvent;
 
@@ -19,6 +23,24 @@ public class EquipmentPanel : MonoBehaviour
         equipmentSlots[i].OnRightClickEvent += OnItemRightClickEvent;
     }
 }
+
+public List<EquippableItem> EquippedItems
+{
+    get
+    {
+        List<EquippableItem> equippedItems = new List<EquippableItem>();
+        foreach (EquipmentSlot slot in equipmentSlots)
+        {
+            if (slot.Item != null)
+            {
+                Debug.Log("Equpped item" + slot.Item.name);
+                equippedItems.Add((EquippableItem)slot.Item);
+            }
+        }
+        return equippedItems;
+    }
+}
+
 
 private void HandleRightClick(Item item)
     {
@@ -65,8 +87,12 @@ private void OnDestroy()
             if (equipmentSlots[i].Item == item)
             {
                 equipmentSlots[i].Item = null;
+                //item.Unequip(character);
+                statsPanel.UpdateStatValues();
+                
                 return true;
             }
+
         }
         return false;
     }
