@@ -12,7 +12,7 @@ body, html{
     margin: 0;
     padding: 0;
     color: aliceblue;
-    background-image: linear-gradient(rgb(255, 178, 225), #5F2E7E);
+    background-image: linear-gradient( #C874D9,#5F2E7E, #230535);
   }
 
 
@@ -59,7 +59,7 @@ h1 {
       }
       
       button {
-        background-color: #facf7b;
+        background-color: #F9C784;
         color: rgb(255, 255, 255);
         padding: 14px 20px;
         margin: 8px 0;
@@ -165,18 +165,10 @@ h1 {
     }
 
     .my-label{
-        color: #5b0758;
-        text-shadow: #ffffff;
+        
+        text-shadow: 2px 2px 2px#1d72a0;
         font-size: 30px;
         font-family: 'VT323', monospace;
     }
 
-    a{
-        color: rgb(249, 186, 245);
-    }
-
-    .remember{
-        font-family: 'VT323', monospace;
-        font-size: 20px;
-        text-shadow: #5b0758;
-    }
+  

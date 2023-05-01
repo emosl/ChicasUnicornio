@@ -3,46 +3,47 @@
 *{
     box-sizing: border-box;
 }
-
+#logo{
+  width: 300px;
+  height: 200px;
+  margin-right: 10px;
+}
 #title{
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  color: aliceblue;
+  font-size:100px;
+  font-family: 'VT323', monospace;
+  text-shadow: 2px 2px 2px #5F2E7E;
+  text-align: center;
+}
+
+  .intro {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    color: aliceblue;
-    font-size: 100px;
+  }
+
+
+
+
+body, html {
+    padding: 20px;
     font-family: 'VT323', monospace;
-    text-shadow: 2px 2px 2px #5F2E7E;
-  }
-
-.head{
-    display: flex;
-  
-}
-
-body, html{
-    margin: 0;
-    padding: 0;
-    
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.background {
-    top: 0;
-    left: 0;
+    background: linear-gradient(#d2a2dc,#C874D9, #5F2E7E, #25013c);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    text-shadow: 2px 2px 2px #C874D9;
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(to bottom, rgb(255, 178, 225), #5F2E7E);
-    z-index: -1; /* ensure the background stays behind the content */
-  }
-  
-  /* adjust the opacity of the background based on scroll position */
-  body {
-    background-color: #5F2E7E;
-  }
+    height: 3000px;
+    margin-bottom: 50px;
+
+    
+}
   
   @media (min-width: 768px) {
     /* adjust the height of the background for larger screens */
@@ -72,18 +73,7 @@ body, html{
     padding: 10px;
   }
   
-#title{
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    color: aliceblue;
-    font-size: 100px;
-    font-family: 'VT323', monospace;
-    text-shadow: 2px 2px 2px #f2caf5;
-    
-  }
+
 
   #menu{
     grid-area: menu;
@@ -99,6 +89,7 @@ body, html{
     left: 0;
     right: 0;
     font-size: larger;
+
   } 
 
   ul {
@@ -117,56 +108,45 @@ body, html{
   
   li a {
     display: block;
-    color: #6f1182;
+    color: #ffffff;
     text-align: center;
     padding: 20px 20px;
     text-decoration: none;
   }
   
   li a:hover {
-    color: rgb(255, 254, 253);
+    color: #F9C784;
   }
 
-  .grid-container {
+  .grid-container{
+    height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 2fr; /* 1 column for title, 2 columns for menu and subtitles */
-    grid-template-rows: auto auto auto; /* auto rows for content height */
-    grid-gap: 10px; /* spacing between grid items */
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
   }
-  
-  .title {
-    grid-column: 1 / 3; /* span 2 columns */
-    text-align: center; /* center text */
-    font-size: 24px; /* adjust as needed */
-    font-weight: bold; /* adjust as needed */
-  }
-
   
   .subtitle {
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 10px;
+    font-family: 'VT323', monospace;
+    text-shadow: 2px 2px 2px #F9C784;
+    font-size: 50px;
   }
 
     #sub{
     font-family: 'VT323', monospace;
-    color: #ffc4fd;
-    text-shadow: 2px 2px 2px #eb8b24;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px #5F2E7E;
     font-size: 50px;
+    text-align: center;
     }
 
   
-  .subtitle img {
-    max-width: 100%; /* ensure image doesn't overflow container */
-  }
-  
-  #logo{
-    width: 200px;
-    height: 200px;
-    margin-right: 10px;
-  }
+
+ 
 
   p{
     font-family: 'Palatino', 'URW Palladio L', serif;
@@ -175,16 +155,20 @@ body, html{
     text-align: justify;
     color: #fff;
     text-shadow: #cb6dcd 2px 2px 2px;
+    margin: auto;
+    padding: auto;
 }
 
 img {
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-    height: 100%;
-  }
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+  margin: auto; /* Add this line to center the image horizontally */
+}
+
 
  
