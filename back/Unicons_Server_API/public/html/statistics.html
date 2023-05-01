@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <script type="module" defer src="../js/user_charts.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.umd.js" integrity="sha512-vCUbejtS+HcWYtDHRF2T5B0BKwVG/CLeuew5uT2AiX4SJ2Wff52+kfgONvtdATqkqQMC9Ye5K+Td0OTaz+P7cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -22,21 +24,20 @@
                 <img src="../images/logoNB.png" id="logo">  </img>
                 <h1 id="title"> Game Statistics </h1>
             </div>
-        <!-- </div>
-            
-        <canvas id="highscores" width="600" height="600" style="max-width: 600px; max-height: 600px;"></canvas>
-    </div>
-</div>
-        <canvas id="mostplayed" width="600" height="600" style="max-width: 600px; max-height: 600px;"></canvas>
-</div> -->
-
-    <div class="chartContainer1">
-         <canvas id="highscores" width="600" height="600"></canvas> 
-         <canvas id="mostplayed_users" width="600" height="600"></canvas>
-    </div>
-    <div class="chartContainer2">
-        <canvas id="fav_gadgets" width="600" height="600"></canvas> 
-        <canvas id="fav_killersprite" width="600" height="600"></canvas>
+    <div style="margin-right: 60px;">
+        <table>
+            <tr>
+                 <td rowspan="3" colspan="2" title="Top 5 Highest Scores">
+                    <canvas id="highscores" width="600" height="460"></canvas></canvas></td>
+                 <td rowspan="2" colspan="2" title="Top players">
+                    <canvas id="mostplayed_users"></canvas></td>
+            </tr>
+        <tr></tr>
+         <tr>
+                 <td><canvas title="Most Popular gadgets" id="fav_gadgets"></canvas></td>
+                <td><canvas title="Most chosen killer sprites" id="fav_killersprite"></canvas></td>
+             </tr>
+         </table>
     </div>
     
 </body>
