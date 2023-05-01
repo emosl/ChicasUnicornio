@@ -1,6 +1,3 @@
-//Wings of Glory script. This script is used in the implementation of Wings of Glory
-//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
-//May 1, 2023
 // This script controls the movement and actions of a character 
 //in a 2D game and handles collisions with different objects in 
 //the game world. 
