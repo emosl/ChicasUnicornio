@@ -14,7 +14,7 @@ public class TobyBattle : MonoBehaviour
     // public GameObject tobyObject;
     // public GameManagerToby gameManagerToby;
     public Transform objectToFollow;
-     public float speed;
+    //  public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +73,7 @@ public class TobyBattle : MonoBehaviour
             // spriteRenderer.sprite = idleSprite;
         }
     }
-    public void PushEnemy()
+    public void PushEnemy(float speed)
     {
         transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, speed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(0f, 180f, 0f);

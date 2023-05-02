@@ -35,7 +35,7 @@ public class GameManagerFight : MonoBehaviour
 
     private void Start()
     {
-        api.GetDataUnity("2");
+        api.GetDataUnity("1");
         TobyStats();
         MuleStats();
         
@@ -91,18 +91,26 @@ public class GameManagerFight : MonoBehaviour
 
         if (TobySum > MuleSum)
         {
+            TobySum = TobySum - 20;
+            int myInt = APITest.speed;
+            float myFloat = (float)myInt;
             pushingObject = GameObject.Find("Toby");
             receivingObject = GameObject.FindGameObjectWithTag("Enemy");
-            tobyBattle.PushEnemy();
+            tobyBattle.PushEnemy(myFloat);
             mulaBattle.Start();
             isPushing = true;
+            
         }
         else
         {
+            
+            int myInt = mule_speed;
+            float myFloat = (float)myInt;
             pushingObject = GameObject.FindGameObjectWithTag("Enemy");
             receivingObject = GameObject.Find("Toby");
-            mulaBattle.PushMule();
+            mulaBattle.PushMule(myFloat);
             isPushing = true;
+            
         }
     }
 

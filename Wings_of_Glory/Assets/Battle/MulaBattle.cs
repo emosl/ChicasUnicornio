@@ -13,7 +13,7 @@ public class MulaBattle : MonoBehaviour
     private bool isMoving;
 
     public Transform objectToFollow;
-    public float speed;
+    // public float speed;
 
     public GameManagerFight muleFight;
     // Start is called before the first frame update
@@ -32,12 +32,13 @@ public class MulaBattle : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
         // transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, speed * Time.deltaTime);
     }
-    public void PushMule()
+    public void PushMule(float speed)
     {
-    //    Debug.Log("mule speed: " + muleFight.mule_speed);
+        //  Debug.Log("mule speed: " + muleFight.mule_speed);
        transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, speed * Time.deltaTime);
        transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         animator.Play("mula_atack");
+        // muleFight.MuleSum = muleFight.MuleSum - 20;
     }
     
 }

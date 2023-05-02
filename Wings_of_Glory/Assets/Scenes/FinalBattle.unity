@@ -3825,7 +3825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258124404}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.5662, y: -22.797, z: -0.5607}
+  m_LocalPosition: {x: -9.7, y: -22.88, z: -0.5607}
   m_LocalScale: {x: 2.2182975, y: 2.04423, z: 1.3788}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4054,7 +4054,6 @@ MonoBehaviour:
     m_Bits: 256
   toby: {fileID: 258124411}
   objectToFollow: {fileID: 842177610}
-  speed: 3
 --- !u!1 &273779989
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,7 +4657,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.4538, y: -1.007, z: -10.000027}
+  m_LocalPosition: {x: 24.32, y: -1.0899982, z: -10.000027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5955,7 +5954,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   objectToFollow: {fileID: 258124405}
-  speed: 0
   muleFight: {fileID: 0}
 --- !u!61 &842177615
 BoxCollider2D:
@@ -14039,7 +14037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146079580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.4538, y: -1.007, z: -10.000027}
+  m_LocalPosition: {x: 24.32, y: -1.0899982, z: -10.000027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
