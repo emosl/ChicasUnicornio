@@ -242,23 +242,23 @@ public class Toby : MonoBehaviour
         {
            
             // other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
-            totalScore.UpdateScore(5);
+            totalScore.UpdateScore(3);
             other.gameObject.GetComponent<gadgets>().disappeargadgets();
     
         }
         else if (other.gameObject.CompareTag("HeadBand")) //This option is activated when Toby gets a strength gadget.
         {
-            totalScore.UpdateScore(5);
+            totalScore.UpdateScore(3);
             other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
         else if (other.gameObject.CompareTag("Horseshoe")) //This option is activated when Toby gets a strength gadget.
         {
-            totalScore.UpdateScore(5);
+            totalScore.UpdateScore(3);
             other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
         else if (other.gameObject.CompareTag("Metal")) //This option is activated when Toby gets a strength gadget.
         {
-            totalScore.UpdateScore(5);
+            totalScore.UpdateScore(3);
             other.gameObject.GetComponent<gadgets>().disappeargadgets(); 
         }
         else if (other.gameObject.CompareTag("Flower")) //This option is activated when Toby gets a strength gadget.
@@ -361,20 +361,6 @@ public void RemoveItem(string statName)
         }
     }
 
-    if (itemToRemove != null)
-    {
-        totalScore.UpdateScore(-15);
-        character.Unequip(itemToRemove);
-        inventory.RemoveItem(itemToRemove);
-        
-        
-
-        
-    }
-    else
-    {
-        totalScore.UpdateScore(10);
-    }
 }
 
 

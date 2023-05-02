@@ -15,6 +15,7 @@ public class ObstacleImplementation : MonoBehaviour
     public EquippableItem equippableItem;
     public Character character;
     public batteryplayer batteryPlayer;
+    public TotalScore totalScore;
     
 
     public List<int> killerspritelist = new List<int>();
@@ -38,6 +39,7 @@ public class ObstacleImplementation : MonoBehaviour
           gameManagerToby = FindObjectOfType<GameManagerToby>();
 
           batteryPlayer = FindObjectOfType<batteryplayer>();
+          totalScore = FindObjectOfType<TotalScore>();
 
 
     if (gameManagerToby == null)
@@ -85,7 +87,8 @@ public class ObstacleImplementation : MonoBehaviour
                 {
                     toby.RemoveItem("Agility");
                     itemsRemoved++;
-                    batteryPlayer.ChangeLife(5);
+                    batteryPlayer.ChangeLife(20);
+                    totalScore.UpdateScore(-15);
                    
                     if (itemsRemoved >= 5)
                     {
@@ -114,6 +117,8 @@ public class ObstacleImplementation : MonoBehaviour
                 {
                     toby.RemoveItem("Shield");
                     itemsRemoved++;
+                    batteryPlayer.ChangeLife(20);
+                    totalScore.UpdateScore(-15);
                     if (itemsRemoved >= 5)
                     {
                         Debug.Log("Items removed reached 5. Calling GameOver.");
@@ -129,6 +134,7 @@ public class ObstacleImplementation : MonoBehaviour
                     {
                         blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
+                         totalScore.UpdateScore(10);
                         KillerSpriteCounter("Shield");
                     }
                 
@@ -139,6 +145,8 @@ public class ObstacleImplementation : MonoBehaviour
                 {
                     toby.RemoveItem("Speed");
                     itemsRemoved++;
+                    totalScore.UpdateScore(-15);
+                    batteryPlayer.ChangeLife(20);
                     if (itemsRemoved >= 5)
                     {
                         Debug.Log("Items removed reached 5. Calling GameOver.");
@@ -163,6 +171,8 @@ public class ObstacleImplementation : MonoBehaviour
                 {
                     toby.RemoveItem("Strength");
                     itemsRemoved++;
+                    totalScore.UpdateScore(-15);
+                    batteryPlayer.ChangeLife(20);
                     if (itemsRemoved >= 5)
                     {
                         Debug.Log("Items removed reached 5. Calling GameOver.");

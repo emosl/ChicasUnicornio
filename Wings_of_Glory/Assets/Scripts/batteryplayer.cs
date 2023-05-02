@@ -45,6 +45,8 @@ public class batteryplayer : MonoBehaviour
     //Sets all the health bars to their minimum value
     void Start()
     {
+        Debug.Log("current healtg" + maxHealth);
+         Debug.Log("current strengtg" + maxStrengthHealth);
         currentHealth = maxHealth;
         lifehealthbar.SetMaxHealth(maxHealth);
 
