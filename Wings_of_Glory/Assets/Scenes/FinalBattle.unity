@@ -4182,9 +4182,9 @@ GameObject:
   - component: {fileID: 258124410}
   - component: {fileID: 258124409}
   - component: {fileID: 258124408}
-  - component: {fileID: 258124407}
   - component: {fileID: 258124406}
   - component: {fileID: 258124413}
+  - component: {fileID: 258124414}
   m_Layer: 0
   m_Name: Toby_caminando_0
   m_TagString: Player
@@ -4221,32 +4221,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPickupPanel: {fileID: 0}
   gadget: {fileID: 0}
---- !u!114 &258124407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258124404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff2810b03f9240358af90ef47623f37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Strength:
-    BaseValue: 0
-  Agility:
-    BaseValue: 0
-  Shield:
-    BaseValue: 0
-  Speed:
-    BaseValue: 0
-  inventory: {fileID: 0}
-  statsPanel: {fileID: 0}
-  toby: {fileID: 258124411}
-  batteryPlayer: {fileID: 0}
-  equipmentPanel: {fileID: 0}
-  gameManagerToby: {fileID: 0}
 --- !u!95 &258124408
 Animator:
   serializedVersion: 5
@@ -4336,7 +4310,7 @@ MonoBehaviour:
   Audio: {fileID: 0}
   canvasFlower: {fileID: 0}
   canvasFight: {fileID: 1085957705}
-  character: {fileID: 258124407}
+  character: {fileID: 0}
   speed: 5
   strength: 8
   shield: 0
@@ -4428,9 +4402,33 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   toby: {fileID: 258124411}
+  batteryplayerfight: {fileID: 0}
   gameManagerFight: {fileID: 1827006882}
   objectToFollow: {fileID: 842177610}
   mulaBattle: {fileID: 842177614}
+--- !u!114 &258124414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258124404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef332be08e3174f82a6d07a7d1826156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Strength:
+    BaseValue: 0
+  Agility:
+    BaseValue: 0
+  Shield:
+    BaseValue: 0
+  Speed:
+    BaseValue: 0
+  toby: {fileID: 258124413}
+  batteryPlayerfight: {fileID: 1724843121}
+  gameManagerFight: {fileID: 1827006882}
 --- !u!1 &273779989
 GameObject:
   m_ObjectHideFlags: 0
@@ -13903,21 +13901,13 @@ MonoBehaviour:
   currentAgilityHealth: 0
   maxSpeedHealth: 15
   minSpeedHealth: 5
-  rand1: 0
-  rand2: 0
-  rand3: 0
   currentSpeedHealth: 0
   shieldchosen: 
-  toby_stats:
-    initialPosition: {x: 0, y: 0, z: 0}
-    savedPosition: {x: 0, y: 0, z: 0}
-    chosenarmor: 
   strengthhealthbar: {fileID: 416521202}
   agilityhealthbar: {fileID: 1012093046}
   speedhealthbar: {fileID: 1574486544}
   lifehealthbar: {fileID: 1049453948}
   shieldhealthbar: {fileID: 1104387766}
-  totalscore: {fileID: 0}
 --- !u!1 &1763722883
 GameObject:
   m_ObjectHideFlags: 0
@@ -14189,7 +14179,7 @@ MonoBehaviour:
   mule_speed: 0
   mule_agility: 0
   api: {fileID: 841625370}
-  bpf: {fileID: 0}
+  bpf: {fileID: 1724843121}
   GameOverMenu: {fileID: 34331697}
   WinMenu: {fileID: 1229876021}
   tobyBattle: {fileID: 258124413}
