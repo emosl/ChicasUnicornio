@@ -140,7 +140,7 @@ try
         const ctx_fav_gadgets = document.getElementById('fav_gadgets').getContext('2d');
         const fav_gadgets = new Chart(ctx_fav_gadgets,
             {
-                type: 'bar',
+                type: 'pie',
                 data: {
                     labels: fav_gadgets_name,
                     datasets: [
@@ -189,7 +189,7 @@ try
         const ctx_fav_killersprite = document.getElementById('fav_killersprite').getContext('2d');
         const fav_killersprite = new Chart(ctx_fav_killersprite,
             {
-                type: 'bar',
+                type: 'pie',
                 data: {
                     labels: fav_killersprite_name,
                     datasets: [
