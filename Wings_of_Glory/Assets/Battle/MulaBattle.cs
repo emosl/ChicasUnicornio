@@ -20,11 +20,13 @@ public class MulaBattle : MonoBehaviour
     public GameManagerFight gameManagerFight;
     // public GameManagerFight muleFight;
     public TobyBattle tobyBattle;
+    public bool dead;
     // Start is called before the first frame update
     public void Start()
     {
         transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         animator.Play("mula_caminando");
+         dead = false;
         
     }
 
@@ -41,7 +43,15 @@ public class MulaBattle : MonoBehaviour
         //  Debug.Log("mule speed: " + muleFight.mule_speed);
        transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, speed * Time.deltaTime);
        transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-        animator.Play("mula_atack");
+        // animator.Play("mula_atack");
+        if(dead!=true)
+            {
+                animator.Play("attack");
+            }
+            else
+            {
+                animator.Play("dead");
+            }
         // muleFight.MuleSum = muleFight.MuleSum - 20;
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,10 +61,12 @@ public class MulaBattle : MonoBehaviour
          if (isGrounded && other.gameObject.CompareTag("win"))
         {
             Debug.Log("win");
-            animator.Play("mula_muerta");
+            // animator.Play("mula_muerta");
             animator.Play("mula_bien_muerta");
+            dead = true;
+            StartCoroutine(WaitTransform());
             tobyBattle.animator.Play("transform");
-            StopAllCoroutines();
+            // StopAllCoroutines();
             StartCoroutine(WaitWin());
             // other.gameObject.GetComponent<Obstacle>().AskPermission();
             
@@ -70,6 +82,12 @@ public class MulaBattle : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         gameManagerFight.GameOver();
+    }
+    IEnumerator WaitTransform()
+    {
+        yield return new WaitForSeconds(3f);
+        tobyBattle.animator.Play("transform");
+        animator.Play("mula_muerta");
     }
 
     

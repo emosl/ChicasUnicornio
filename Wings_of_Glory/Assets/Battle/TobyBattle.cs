@@ -20,6 +20,7 @@ public class TobyBattle : MonoBehaviour
     public GameManagerFight gameManagerFight;
     public Transform objectToFollow;
     public MulaBattle mulaBattle;
+    public bool dead;
     //  public float speed;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class TobyBattle : MonoBehaviour
         // toby = GameObject.Find("Toby");
         animator.Play("walking");
         rb = GetComponent<Rigidbody2D>();
+        dead = false;
     }
 
     // Update is called once per frame
@@ -45,16 +47,34 @@ public class TobyBattle : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-APITest.speed, rb.velocity.y);
-            animator.Play("attack");
+            // animator.Play("attack");
             isMoving = true;
+            if(dead!=true)
+            {
+                animator.Play("attack");
+            }
+            else
+            {
+                animator.Play("dead");
+            }
+            
             
             transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip sprite when moving left
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(APITest.speed, rb.velocity.y);
-            animator.Play("attack");
+            // animator.Play("attack");
             isMoving = true;
+            if(dead!=true)
+            {
+                animator.Play("attack");
+            }
+            else
+            {
+                animator.Play("dead");
+            }
+            
             
             transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Reset sprite rotation when moving right
         }
@@ -75,7 +95,15 @@ public class TobyBattle : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             // rb.velocity = new Vector2(-speed, rb.velocity.y);
-            animator.Play("attack");
+            if(dead!=true)
+            {
+                animator.Play("attack");
+            }
+            else
+            {
+                animator.Play("dead");
+            }
+            
             // isMoving = true;
             // spriteRenderer.sprite = leapSprite;
             transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip sprite when moving left
@@ -84,14 +112,28 @@ public class TobyBattle : MonoBehaviour
         {
             // rb.velocity = new Vector2(0f, rb.velocity.y);
             // isMoving = false;
-            animator.Play("walking");
+            if(dead!=true)
+            {
+                animator.Play("attack");
+            }
+            else
+            {
+                animator.Play("dead");
+            }
             // spriteRenderer.sprite = idleSprite;
         }
          if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)|| Input.GetKeyUp(KeyCode.Space))
         {
             // rb.velocity = new Vector2(0f, rb.velocity.y);
             // isMoving = false;
-            animator.Play("walking");
+            if(dead!=true)
+            {
+                animator.Play("attack");
+            }
+            else
+            {
+                animator.Play("dead");
+            }
             // spriteRenderer.sprite = idleSprite;
         }
     }
@@ -111,7 +153,9 @@ public class TobyBattle : MonoBehaviour
             Debug.Log("loose");
             animator.Play("die");
             animator.Play("dead");
-            StopAllCoroutines();
+            dead = true;
+            StartCoroutine(WaitTransform());
+            // StopAllCoroutines();
             StartCoroutine(WaitLose());
             // other.gameObject.GetComponent<Obstacle>().AskPermission();
             
@@ -127,6 +171,12 @@ public class TobyBattle : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         gameManagerFight.GameOver();
+    }
+    IEnumerator WaitTransform()
+    {
+        yield return new WaitForSeconds(4f);
+        mulaBattle.animator.Play("mula_idle");
+        animator.Play("dead");
     }
 
 }
