@@ -400,7 +400,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.00025177002, y: -0.0000038146973}
-  m_SizeDelta: {x: -0.00050354, y: 0.0000076294}
+  m_SizeDelta: {x: -0.00050354004, y: 0.000015258789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &50389282
 MonoBehaviour:
@@ -4946,6 +4946,7 @@ GameObject:
   - component: {fileID: 416521199}
   - component: {fileID: 416521200}
   - component: {fileID: 416521201}
+  - component: {fileID: 416521202}
   m_Layer: 5
   m_Name: 'Strength_Healthbar '
   m_TagString: Untagged
@@ -5036,7 +5037,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 416521198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848746f9c08bb460d80716f8a46c5e68, type: 3}
+  m_Script: {fileID: 11500000, guid: 22ee66f7c70ad4ee6aa245bf55997ed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &416521202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416521198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58562f87e73e146e5ba407c22883591c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 416521200}
@@ -7009,7 +7022,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1012093043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848746f9c08bb460d80716f8a46c5e68, type: 3}
+  m_Script: {fileID: 11500000, guid: 58562f87e73e146e5ba407c22883591c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1012093045}
@@ -7114,7 +7127,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1049453945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848746f9c08bb460d80716f8a46c5e68, type: 3}
+  m_Script: {fileID: 11500000, guid: 58562f87e73e146e5ba407c22883591c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1049453947}
@@ -7263,7 +7276,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1104387764}
   - component: {fileID: 1104387763}
-  - component: {fileID: 1104387762}
+  - component: {fileID: 1104387765}
+  - component: {fileID: 1104387766}
   m_Layer: 5
   m_Name: 'Shield_Healthbar '
   m_TagString: Untagged
@@ -7271,19 +7285,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1104387762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104387761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848746f9c08bb460d80716f8a46c5e68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1104387763}
 --- !u!114 &1104387763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7358,6 +7359,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00000011921, y: 21}
   m_SizeDelta: {x: 128.76, y: 12.9767}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1104387765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104387761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ee66f7c70ad4ee6aa245bf55997ed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1104387766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104387761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58562f87e73e146e5ba407c22883591c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1104387763}
 --- !u!1 &1142772000
 GameObject:
   m_ObjectHideFlags: 0
@@ -11359,17 +11385,20 @@ MonoBehaviour:
   currentAgilityHealth: 0
   maxSpeedHealth: 15
   minSpeedHealth: 5
+  rand1: 0
+  rand2: 0
+  rand3: 0
   currentSpeedHealth: 0
   shieldchosen: 
   toby_stats:
     initialPosition: {x: 0, y: 0, z: 0}
     savedPosition: {x: 0, y: 0, z: 0}
     chosenarmor: 
-  strengthhealthbar: {fileID: 416521201}
-  agilityhealthbar: {fileID: 1012093046}
-  speedhealthbar: {fileID: 1574486543}
-  lifehealthbar: {fileID: 1049453948}
-  shieldhealthbar: {fileID: 1104387762}
+  strengthhealthbar: {fileID: 0}
+  agilityhealthbar: {fileID: 0}
+  speedhealthbar: {fileID: 0}
+  lifehealthbar: {fileID: 0}
+  shieldhealthbar: {fileID: 0}
   totalscore: {fileID: 0}
 --- !u!1 &1430604311
 GameObject:
@@ -11641,6 +11670,7 @@ GameObject:
   - component: {fileID: 1574486541}
   - component: {fileID: 1574486542}
   - component: {fileID: 1574486543}
+  - component: {fileID: 1574486544}
   m_Layer: 5
   m_Name: 'Speed_Healthbar '
   m_TagString: Untagged
@@ -11731,7 +11761,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1574486540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848746f9c08bb460d80716f8a46c5e68, type: 3}
+  m_Script: {fileID: 11500000, guid: 22ee66f7c70ad4ee6aa245bf55997ed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1574486544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574486540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58562f87e73e146e5ba407c22883591c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1574486542}
@@ -13627,7 +13669,7 @@ GameObject:
   - component: {fileID: 1724843120}
   - component: {fileID: 1724843119}
   - component: {fileID: 1724843118}
-  - component: {fileID: 1724843117}
+  - component: {fileID: 1724843121}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -13656,44 +13698,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1724843117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724843115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a74fbb286bbe347e7be455d815d0412c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  minHealth: 0
-  currentHealth: 0
-  maxShieldHealth: 10
-  minShieldHealth: 0
-  currentShieldHealth: 0
-  maxStrengthHealth: 18
-  minStrengthHealth: 8
-  currentStrengthHealth: 0
-  maxAgilityHealth: 10
-  minAgilityHealth: 0
-  currentAgilityHealth: 0
-  maxSpeedHealth: 15
-  minSpeedHealth: 5
-  currentSpeedHealth: 0
-  shieldchosen: 
-  toby_stats:
-    initialPosition: {x: 0, y: 0, z: 0}
-    savedPosition: {x: 0, y: 0, z: 0}
-    chosenarmor: 
-  strengthhealthbar: {fileID: 416521201}
-  agilityhealthbar: {fileID: 1012093046}
-  speedhealthbar: {fileID: 1574486543}
-  lifehealthbar: {fileID: 1049453948}
-  shieldhealthbar: {fileID: 1104387762}
-  totalscore: {fileID: 0}
 --- !u!114 &1724843118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13755,6 +13759,47 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1724843121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724843115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365818c728410496380af39b9d459b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 53
+  minHealth: 0
+  currentHealth: 0
+  maxShieldHealth: 10
+  minShieldHealth: 0
+  currentShieldHealth: 0
+  maxStrengthHealth: 18
+  minStrengthHealth: 8
+  currentStrengthHealth: 0
+  maxAgilityHealth: 10
+  minAgilityHealth: 0
+  currentAgilityHealth: 0
+  maxSpeedHealth: 15
+  minSpeedHealth: 5
+  rand1: 0
+  rand2: 0
+  rand3: 0
+  currentSpeedHealth: 0
+  shieldchosen: 
+  toby_stats:
+    initialPosition: {x: 0, y: 0, z: 0}
+    savedPosition: {x: 0, y: 0, z: 0}
+    chosenarmor: 
+  strengthhealthbar: {fileID: 416521202}
+  agilityhealthbar: {fileID: 1012093046}
+  speedhealthbar: {fileID: 1574486544}
+  lifehealthbar: {fileID: 1049453948}
+  shieldhealthbar: {fileID: 1104387766}
+  totalscore: {fileID: 0}
 --- !u!1 &1763722883
 GameObject:
   m_ObjectHideFlags: 0
@@ -14034,6 +14079,7 @@ MonoBehaviour:
   canvasFight: {fileID: 1085957705}
   TobySum: 0
   MuleSum: 0
+  batteryplayer: {fileID: 0}
   pushingObject: {fileID: 0}
   receivingObject: {fileID: 0}
   pushForce: 10
