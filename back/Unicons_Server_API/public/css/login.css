@@ -11,9 +11,10 @@
 body, html{
     margin: 0;
     padding: 0;
-    color: aliceblue;
-    background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E);
+    color: #F7F7F2;
+    background-image: linear-gradient(to right, #F1E3E4, #A88FAC);
   }
+  /* rgb(255, 178, 225) */
 
 
 #logo{
@@ -30,10 +31,10 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    color: aliceblue;
+    color: #29274C; 
     font-size: 100px;
     font-family: 'VT323', monospace;
-    text-shadow: 2px 2px 2px #5F2E7E;
+    /* text-shadow: 2px 2px 2px #5F2E7E; */
   }
   
   .grid-container{
@@ -54,13 +55,13 @@ h1 {
         padding: 12px 20px;
         margin: 8px 0;
         display: inline-block;
-        border: 1px solid #5b0758;
+        border: 1px solid #29274C;
         box-sizing: border-box;
       }
       
       button {
-        background-color: #facf7b;
-        color: rgb(255, 255, 255);
+        background-color: #29274C;
+        color: #F7F7F2;
         padding: 14px 20px;
         margin: 8px 0;
         border: none;
@@ -92,23 +93,23 @@ h1 {
       }
     
       li {
-        float: left;
+        float: right;
       }
       
       li a {
         display: block;
-        color: #ffffff;
+        color: #29274C;
         text-align: center;
         padding: 20px 20px;
         text-decoration: none;
       }
       
       li a:hover {
-        color: rgb(65, 13, 75);
+        color: #AF1B3F;
       }
 
     button:hover {
-        background-color:#fbbc3f;
+        background-color:#AF1B3F;
     }
 
     .imgcontainer {
@@ -145,8 +146,10 @@ h1 {
 
 
     .container {
-        padding: 16px;
-
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 25px;
+        background-color: #29274C;
     }
 
     .psw {
@@ -165,8 +168,8 @@ h1 {
     }
 
     .my-label{
-        color: #5b0758;
-        text-shadow: #ffffff;
+        color: #29274C;
+        text-shadow: #F7F7F2;
         font-size: 30px;
         font-family: 'VT323', monospace;
     }
@@ -179,4 +182,22 @@ h1 {
         font-family: 'VT323', monospace;
         font-size: 20px;
         text-shadow: #5b0758;
+    }
+    #sub{
+      font-family: 'VT323', monospace;
+      color: #E6BCCD;
+      text-shadow: 2px 2px 2px #AF1B3F;
+      font-size: 50px;
+      }
+    #subtopic{
+      background-color: #29274C;
+    }
+    .background {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      margin-bottom: 10px;
+      /* background: linear-gradient(to bottom, rgb(255, 178, 225), #5F2E7E); */
+      z-index: -1; /* ensure the background stays behind the content */
     }
