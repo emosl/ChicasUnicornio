@@ -1,3 +1,6 @@
+//Wings of Glory script. This script is used in the implementation of Wings of Glory
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+//May 1, 2023
 /*
 Test for the connection to an API
 Able to use the Get method to read data and "Post" to send data
@@ -52,6 +55,9 @@ public class SavedData
     public int total_score;
     public int times_played;
     public int score_agility;
+    public int score_strength;
+    public int score_shield;
+    public int score_speed;
     
 }
 public class Gadget
@@ -100,12 +106,22 @@ public class APITest : MonoBehaviour
     [SerializeField] string insertGadgetEP;
     [SerializeField] string insertKillSpriteEP;
     [SerializeField] string getTimesPlayedEP;
+    [SerializeField] string getSavedDataEP;
     [SerializeField] Text errorText;
+
+    public static int strength;
+    public static int shield;
+    public static int speed;
+    public static int agility;
+    public static int total_score; 
     string UN = MenuUser.UiD;
     string UN2;
     int TS = GameManagerToby.scoregamemanager;
     int TS2;
     int ag_score;
+    int st_score;
+    int sh_score;
+    int sp_score;
     int tp;
     int gadget2;
     int killer2;
@@ -118,6 +134,7 @@ public class APITest : MonoBehaviour
     public ScoreList allScores; //variable con la lista de scores
     public Username allUsername; 
     public TimesPlayed allTimesPlayed;
+    public SavedData allSavedData;
 
      void Start()
     {
@@ -193,11 +210,14 @@ public class APITest : MonoBehaviour
     {
         StartCoroutine(UpdateSavedData());
     }
-    public void UpdateDataUnity(int totalScore, string UiD, int agility)
+    public void UpdateDataUnity(int totalScore, string UiD, int agility, int strength, int shield, int speed)
     {
         UN2 = UiD;
         TS2 = totalScore;
         ag_score = agility;
+        st_score = strength;
+        sh_score = shield;
+        sp_score = speed;
         
         StartCoroutine(UpdateSavedDataUnity());
         // Debug.Log(TS2);
@@ -213,6 +233,12 @@ public class APITest : MonoBehaviour
         killer2 = killer;
         Debug.Log(killer);
         StartCoroutine(UpdateKillSpriteData());
+    }
+    public void GetDataUnity(string UiD)
+    {
+        UN2 = UiD;
+        Debug.Log("USERID: " + UN2);
+        StartCoroutine(GetDataFinal());
     }
 
     public void QueryScores()
@@ -316,6 +342,38 @@ public class APITest : MonoBehaviour
             }
         }
         // Debug.Log("GetUser");
+    }
+
+    IEnumerator GetDataFinal()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get(url + getSavedDataEP + UN2))
+        //crea un request de tipo get, y le pasa la url
+        {
+            yield return www.SendWebRequest();
+            //espera a que termine el request (await)
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                //Debug.Log("Response: " + www.downloadHandler.text);
+                // Compose the response to look like the object we want to extract
+                // https://answers.unity.com/questions/1503047/json-must-represent-an-object-type.html
+                string jsonString =  www.downloadHandler.text;
+                // string jsonString = www.downloadHandler.text;
+                Debug.Log("JSON" + jsonString);
+                allSavedData= JsonUtility.FromJson<SavedData>(jsonString); //nuevo objeto con la lista de usuarios
+                // allSavedData.score_agility = allTimesPlayed.score_agility;
+                strength = allSavedData.score_strength;
+                agility = allSavedData.score_agility;
+                speed = allSavedData.score_speed;
+                shield = allSavedData.score_shield;
+                Debug.Log("agility " + allSavedData.score_agility);
+                // Debug.Log("Response: " + www.downloadHandler.text);
+                // DisplayUser();
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
     }    
 
     IEnumerator GetScores()
@@ -423,9 +481,13 @@ public class APITest : MonoBehaviour
         testData.total_score = TS2;
         testData.times_played= allTimesPlayed.times_played;
         testData.score_agility = ag_score;
+        testData.score_shield = sh_score;
+        testData.score_speed = sp_score;
+        testData.score_strength = st_score;
+
         // Debug.Log("DATA: " + testData.total_score);
         string jsonData = JsonUtility.ToJson(testData);
-        // Debug.Log("BODY: " + jsonData);
+        Debug.Log("BODY: " + jsonData);
 
         // Send using the Put method:
         // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body

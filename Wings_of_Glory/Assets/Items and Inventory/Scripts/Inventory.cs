@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     public ItemSlot[] itemSlots;
     public EquippableItem equippableItem;
     public GameManagerToby gameManagerToby;
+     public GameObject fullInventoryPanel;
 
     public event Action<Item> OnItemRightClickEvent;
     public event Action<Item> OnItemDoubleClickEvent;
@@ -19,6 +20,7 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
 {
+     fullInventoryPanel.SetActive(false);
     for (int i = 0; i < itemSlots.Length; i++)
     {
         itemSlots[i].OnRightClickEvent += HandleRightClick;
@@ -81,19 +83,43 @@ private void OnDestroy()
 }
 
 
+    // public bool AddItem(Item item)
+    // {
+    //     Debug.Log("item added");
+    //     if (IsFull())
+    //     {
+    //         return false;
+    //     }
+    //     //gameManagerToby.GadgetCounter(item.ItemName);
+    //     items.Add(item);
+    //     OnItemAdded?.Invoke(item);
+    //     RefreshUI();
+    //     return true;
+    // }
+
     public bool AddItem(Item item)
+{
+    if (IsFull())
     {
-        Debug.Log("item added");
-        if (IsFull())
-        {
-            return false;
-        }
-        //gameManagerToby.GadgetCounter(item.ItemName);
-        items.Add(item);
-        OnItemAdded?.Invoke(item);
-        RefreshUI();
-        return true;
+        fullInventoryPanel.SetActive(true);
+        Invoke("HideFullInventoryPanel", 2f);
+        return false;
     }
+
+    items.Add(item);
+    OnItemAdded?.Invoke(item);
+    RefreshUI();
+    return true;
+}
+
+// Add a Coroutine to show the panel and hide it after 2 seconds
+private void HideFullInventoryPanel()
+{
+    fullInventoryPanel.SetActive(false);
+}
+
+
+
 
     public bool RemoveItem(Item item)
     {

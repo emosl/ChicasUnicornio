@@ -1,3 +1,6 @@
+//Wings of Glory script. This script is used in the implementation of Wings of Glory
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+//May 1, 2023
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
@@ -46,9 +49,11 @@ public class GameManagerToby : MonoBehaviour
     public Final_Stats final_stats = new Final_Stats();
 
     private void Start(){
-        canvasFight.SetActive(false);
+
+        
         NewGame();
         TimesPlayed();
+        Debug.Log("Times played: " + times_played);
         times_played++;
         
 
@@ -129,7 +134,7 @@ public class GameManagerToby : MonoBehaviour
 
     public void UpdateDataUnity()
     {
-        api.UpdateDataUnity(scoregamemanager, UN, agility);
+        api.UpdateDataUnity(scoregamemanager, UN, agility, strength, shield, speed);
     }
     public void TimesPlayed()
     {
