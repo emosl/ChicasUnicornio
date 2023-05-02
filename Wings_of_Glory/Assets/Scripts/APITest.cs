@@ -237,6 +237,7 @@ public class APITest : MonoBehaviour
     public void GetDataUnity(string UiD)
     {
         UN2 = UiD;
+        Debug.Log("USERID: " + UN2);
         StartCoroutine(GetDataFinal());
     }
 
@@ -357,7 +358,7 @@ public class APITest : MonoBehaviour
                 // https://answers.unity.com/questions/1503047/json-must-represent-an-object-type.html
                 string jsonString =  www.downloadHandler.text;
                 // string jsonString = www.downloadHandler.text;
-                Debug.Log(jsonString);
+                Debug.Log("JSON" + jsonString);
                 allSavedData= JsonUtility.FromJson<SavedData>(jsonString); //nuevo objeto con la lista de usuarios
                 // allSavedData.score_agility = allTimesPlayed.score_agility;
                 strength = allSavedData.score_strength;

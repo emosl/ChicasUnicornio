@@ -8,18 +8,18 @@ using UnityEngine.SceneManagement;
 public class GameManagerFight : MonoBehaviour
 {
     public Toby toby;
-    public Toby_stats toby_stats;
-    public static string armor;
-    public  int strength = APITest.strength;
-    public  int shield = APITest.shield;
-    public  int speed = APITest.speed;
-    public  int agility = APITest.agility;
-    public static int lives;
-    public TMP_Text scoreText;
-    public static int scoregamemanager;
-    public string armorchosengm;
-    public int totalScore;
-    public ArmorButton armorbutton;
+    // public Toby_stats toby_stats;
+    // public static string armor;
+    public int strength2 = APITest.strength;
+    public int shield2 = APITest.shield;
+    public int speed2 = APITest.speed;
+    public int agility2 = APITest.agility;
+    // public static int lives;
+    // public TMP_Text scoreText;
+    // public static int scoregamemanager;
+    // public string armorchosengm;
+    // public int totalScore;
+    // public ArmorButton armorbutton;
     [SerializeField] APITest api;
     public batteryplayer bp;
     string UN = MenuUser.UiD;
@@ -63,24 +63,25 @@ public class GameManagerFight : MonoBehaviour
         // getstats();
         //Debug.Log(scoregamemanager);
         
-        Debug.Log(UN);
+        Debug.Log("User" + UN);
         api.GetDataUnity(UN);
-        Debug.Log("Strength: " + strength);
+        Debug.Log("Strength: " + APITest.strength);
+        Debug.Log("Speed: " + APITest.speed);
         // Debug.Log(gadgetlist[2]);
         //Debug.Log(armorchosen);
         
     }
 
     //Gets final stats for Toby used in DataBase.
-    public void getstats(){
-        //DEBUGS
-        strength = toby.strength;
-        shield = toby.shield;
-        speed = toby.speed;
-        agility = toby.agility;
+    // public void getstats(){
+    //     //DEBUGS
+    //     strength = toby.strength;
+    //     shield = toby.shield;
+    //     speed = toby.speed;
+    //     agility = toby.agility;
 
 
-    }
+    // }
 
     
     public void GetDataUnity()
@@ -89,12 +90,12 @@ public class GameManagerFight : MonoBehaviour
     }
 
 
-    public void UpdateDataUnity()
-    {
-        api.UpdateDataUnity(scoregamemanager, UN, agility, strength, shield, speed);
-    }
-    public void TimesPlayed()
-    {
-        api.TimesPlayed(UN);
-    }
+    // public void UpdateDataUnity()
+    // {
+    //     api.UpdateDataUnity(scoregamemanager, UN, agility, strength, shield, speed);
+    // }
+    // public void TimesPlayed()
+    // {
+    //     api.TimesPlayed(UN);
+    // }
 }
