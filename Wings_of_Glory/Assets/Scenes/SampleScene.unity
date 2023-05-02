@@ -60523,7 +60523,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Oh no!
 
-    Toby has been defeated!
+    Toby has lost in 5 obstacles!
 
     Press "ENTER" to play again!'
   m_isRightToLeft: 0
@@ -94813,7 +94813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74fbb286bbe347e7be455d815d0412c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 25
   minHealth: 0
   currentHealth: 0
   maxShieldHealth: 10

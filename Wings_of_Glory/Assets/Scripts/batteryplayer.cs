@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class batteryplayer : MonoBehaviour
 {
-    public int maxHealth=53;
+    public int maxHealth=25;
     public int minHealth=0;
     public int currentHealth;
 
@@ -45,7 +45,8 @@ public class batteryplayer : MonoBehaviour
     //Sets all the health bars to their minimum value
     void Start()
     {
-        currentHealth=minHealth;
+        currentHealth = maxHealth;
+        lifehealthbar.SetMaxHealth(maxHealth);
 
         currentShieldHealth = minShieldHealth;
         shieldhealthbar.SetMinHealth(minShieldHealth);
@@ -169,21 +170,12 @@ public class batteryplayer : MonoBehaviour
     }
 
     //This functions handles how toby's life will be calculated.
-    public void ChangeLife(int shield, int strength, int agility, int speed)
+    public void ChangeLife(int obst)
 {
-    int positiveShield = Mathf.Max(0, shield);
-    int positiveStrength = Mathf.Max(0, strength);
-    int positiveAgility = Mathf.Max(0, agility);
-    int positiveSpeed = Mathf.Max(0, speed);
     
-    currentHealth = positiveShield + positiveStrength + positiveAgility + positiveSpeed;
-    
-    if (currentHealth < 0) {
-        lifehealthbar.SetHealth(minHealth);
-    }
-    else {
-        lifehealthbar.SetHealth(currentHealth);
-    }
+    currentHealth -= obst;
+    Debug.Log("current health" + currentHealth);
+    lifehealthbar.SetHealth(currentHealth);
 }
 
 }

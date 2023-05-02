@@ -37,6 +37,9 @@ public class ObstacleImplementation : MonoBehaviour
 
           gameManagerToby = FindObjectOfType<GameManagerToby>();
 
+          batteryPlayer = FindObjectOfType<batteryplayer>();
+
+
     if (gameManagerToby == null)
     {
         Debug.LogError("GameManagerToby instance not found in the scene.");
@@ -82,6 +85,8 @@ public class ObstacleImplementation : MonoBehaviour
                 {
                     toby.RemoveItem("Agility");
                     itemsRemoved++;
+                    batteryPlayer.ChangeLife(5);
+                   
                     if (itemsRemoved >= 5)
                     {
                         Debug.Log("Items removed reached 5. Calling GameOver.");
@@ -90,6 +95,8 @@ public class ObstacleImplementation : MonoBehaviour
                     blank.SetActive(true);
                     itemRemovedPanel.SetActive(true);  
                     KillerSpriteCounter("Ice");
+
+                     
             
                     
                 }
