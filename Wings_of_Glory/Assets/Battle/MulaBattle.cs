@@ -34,7 +34,8 @@ public class MulaBattle : MonoBehaviour
     }
     public void PushMule()
     {
-       transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, muleFight.mule_speed * Time.deltaTime);
+    //    Debug.Log("mule speed: " + muleFight.mule_speed);
+       transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, speed * Time.deltaTime);
        transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         animator.Play("mula_atack");
     }

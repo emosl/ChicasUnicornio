@@ -49,6 +49,7 @@ public class GameManagerFight : MonoBehaviour
         {
             Debug.Log("TobySum-40: " + TobySum);
             Debug.Log("Mule-40: " + MuleSum);
+            Debug.Log("MULESPEED:"+ mule_speed);
         }
         DeterminePushWinner();
     }
