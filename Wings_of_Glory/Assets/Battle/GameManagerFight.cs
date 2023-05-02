@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerFight : MonoBehaviour
 {
-    public Toby toby;
+    // public Toby toby;
     public int mule_strength;
     public int mule_shield;
     public int mule_speed;
@@ -35,7 +35,7 @@ public class GameManagerFight : MonoBehaviour
 
     private void Awake()
     {
-        toby = FindObjectOfType<Toby>();
+        // toby = FindObjectOfType<Toby>();
     }
 
     private void Start()
@@ -44,8 +44,11 @@ public class GameManagerFight : MonoBehaviour
         WinMenu.SetActive(false);
         api.GetDataUnity("2");
         MuleStats();
+        bpf.ChangeSpeed(APITest.speed);
+        bpf.ChangeStrength(APITest.strength);
+        bpf.ChangeShield(8);
         TobyStats();
-        
+        // toby = FindRigidbody2D("Toby");
         
     }
 
@@ -80,10 +83,10 @@ public class GameManagerFight : MonoBehaviour
     }
     public void TobyStats()
     {
-        toby.agility = APITest.agility;
-        toby.strength = APITest.strength;
-        toby.shield = APITest.shield;
-        toby.speed = APITest.speed;
+        // toby.agility = APITest.agility;
+        // toby.strength = APITest.strength;
+        // toby.shield = APITest.shield;
+        // toby.speed = APITest.speed;
         TobySum = 0 + APITest.strength + APITest.shield + APITest.speed + APITest.agility;
         //Changes health bars of Toby.
         bpf.ChangeStrength(APITest.strength);
@@ -98,7 +101,7 @@ public class GameManagerFight : MonoBehaviour
         if (isPushing)
         {
             Vector3 pushDirection = (receivingObject.transform.position - pushingObject.transform.position).normalized;
-            receivingObject.GetComponent<Rigidbody>().AddForce(pushDirection * pushForce, ForceMode.Force);
+            receivingObject.GetComponent<Rigidbody2D>().AddForce(pushDirection * pushForce, ForceMode2D.Force);
         }
     }
 
@@ -135,7 +138,7 @@ public class GameManagerFight : MonoBehaviour
         tobyBattle.gameObject.SetActive(false);
         mulaBattle.gameObject.SetActive(false);
         Debug.Log("Game Over");
-        toby.gameObject.SetActive(false);
+        tobyBattle.gameObject.SetActive(false);
         GameOverMenu.SetActive(true);
         StopAllCoroutines();
         StartCoroutine(RestartGame());
@@ -162,7 +165,7 @@ public class GameManagerFight : MonoBehaviour
         tobyBattle.gameObject.SetActive(false);
         mulaBattle.gameObject.SetActive(false);
         Debug.Log("Game Over");
-        toby.gameObject.SetActive(false);
+        tobyBattle.gameObject.SetActive(false);
         WinMenu.SetActive(true);
         StopAllCoroutines();
         StartCoroutine(RestartGame());

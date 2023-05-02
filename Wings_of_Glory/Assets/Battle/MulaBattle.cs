@@ -46,11 +46,11 @@ public class MulaBattle : MonoBehaviour
         // animator.Play("mula_atack");
         if(dead!=true)
             {
-                animator.Play("attack");
+                animator.Play("mula_atack");
             }
             else
             {
-                animator.Play("dead");
+                animator.Play("mula_bien_muerta");
             }
         // muleFight.MuleSum = muleFight.MuleSum - 20;
     }
