@@ -313,6 +313,7 @@ MonoBehaviour:
   insertGadgetEP: /api/save_gadget
   insertKillSpriteEP: /api/save_kill
   getTimesPlayedEP: /api/timesplayed?usernameID=
+  getSavedDataEP: /api/save_data?usernameID=
   errorText: {fileID: 971263453}
   allUsers:
     users: []

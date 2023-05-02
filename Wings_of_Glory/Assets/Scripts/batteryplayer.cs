@@ -107,7 +107,7 @@ public class batteryplayer : MonoBehaviour
 //Function that updates mentioned ability score by the amount specified.
     public void ChangeStrength(int points)
     {
-        currentStrengthHealth += points;
+        currentStrengthHealth = points;
         if (currentStrengthHealth < 0){
             strengthhealthbar.SetHealth(minStrengthHealth);
         }
@@ -123,7 +123,7 @@ public class batteryplayer : MonoBehaviour
     //Function that updates mentioned ability score by the amount specified.
    public void ChangeAgility(int points)
     {
-        currentAgilityHealth += points;
+        currentAgilityHealth = points;
         
 
         if (currentAgilityHealth < 0){
@@ -138,7 +138,7 @@ public class batteryplayer : MonoBehaviour
 //Function that updates mentioned ability score by the amount specified.
      public void ChangeSpeed(int points)
     {
-        currentSpeedHealth+=points;
+        currentSpeedHealth=points;
         
        
         if (currentSpeedHealth < 0){
@@ -154,7 +154,7 @@ public class batteryplayer : MonoBehaviour
 //Function that updates mentioned ability score by the amount specified.
     public void ChangeShield(int points)
     {
-        currentShieldHealth+=points;
+        currentShieldHealth=points;
         
         
 
