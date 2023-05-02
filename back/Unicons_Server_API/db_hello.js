@@ -466,11 +466,12 @@ app.post('/api/game_history', async (request, response)=>{
     try {
       connection = await connectToDB();
   
-      const [results, fields] = await connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password]);
+      const [results, fields] = await connection.query('SELECT username_ID FROM users WHERE email = ? AND password = ?', [email, password]);
   
       if (results.length > 0) {
         // The username and password are correct
-        response.json({ message: 'Login successful!' });
+        const username_ID = results[0].username_ID;
+        response.json({ message: 'Login successful! This is your ID',username_ID: username_ID });
       } else {
         // The username and/or password are incorrect
         response.status(401).json({ error: 'Incorrect email and/or password' });

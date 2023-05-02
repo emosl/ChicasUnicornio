@@ -19,7 +19,7 @@ loginForm.addEventListener('submit', async (event) => {
     if (response.ok) {
       const responseData = await response.json();
         console.log(responseData.message);
-        alert("Registration successful!");
+        alert(`Welcome, your id is:${responseData.username_ID}!`);
         window.location.href = "../html/index.html"; // REDIRECT TO VIDEOGAME
     }else if(response.status === 400){
       const responseData = await response.json();
