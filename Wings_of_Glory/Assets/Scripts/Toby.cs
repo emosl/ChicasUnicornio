@@ -147,7 +147,7 @@ public class Toby : MonoBehaviour
         // string jsonStats2 = PlayerPrefs.SetString("final_stats", JsonUtility.ToJson(final_stats));
         string jsonStats2 = JsonUtility.ToJson(final_stats);
          PlayerPrefs.SetString("final_stats", JsonUtility.ToJson(final_stats));
-        Debug.Log(jsonStats2);
+        // Debug.Log(jsonStats2);
         final_stats = JsonUtility.FromJson<Final_Stats>(jsonStats2);
 
         // Check if sprite is grounded
@@ -272,14 +272,14 @@ public class Toby : MonoBehaviour
             
             canvasFight.SetActive(true);
             Debug.Log("Obstaccle");
-            final_stats.strength = strength;
-            final_stats.shield = shield;
-            final_stats.speed = speed;
-            final_stats.agility = agility;
-            string jsonStats2 = JsonUtility.ToJson(final_stats);
-            PlayerPrefs.SetString("final_stats", JsonUtility.ToJson(final_stats));
-            Debug.Log(jsonStats2);
-            final_stats = JsonUtility.FromJson<Final_Stats>(jsonStats2);
+            // final_stats.strength = strength;
+            // final_stats.shield = shield;
+            // final_stats.speed = speed;
+            // final_stats.agility = agility;
+            // string jsonStats2 = JsonUtility.ToJson(final_stats);
+            // PlayerPrefs.SetString("final_stats", JsonUtility.ToJson(final_stats));
+            // Debug.Log(jsonStats2);
+            // final_stats = JsonUtility.FromJson<Final_Stats>(jsonStats2);
             StartCoroutine(WaitAndDo());
         }
 

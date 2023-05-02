@@ -135,7 +135,7 @@ app.get('/api/gadgets', async (request, response)=>{
     try
     {
         connection = await connectToDB()
-        const [results, fields] = await connection.execute('select * from gadget_count_view')
+        const [results, fields] = await connection.execute('select * from gadget_name_count_view')
 
         response.json(results)
     }
@@ -764,6 +764,48 @@ app.get('/api/timesplayed', async (request, response) => {
         }
     }
 
+});
+
+app.get('/api/save_data', async (request, response)=>{
+
+    let connection = await connectToDB()
+
+    try{
+        const { usernameID } = request.query;
+        const [result1] = await connection.query('SELECT total_score FROM `final_score` WHERE `username_ID` = ?', [usernameID]);
+        const [result2] = await connection.query('SELECT times_played FROM `game_history` WHERE `username_ID` = ?', [usernameID]);
+        const [result3] = await connection.query('SELECT score_agility FROM `final_score` WHERE `username_ID` = ?', [usernameID]);
+        const [result4] = await connection.query('SELECT score_speed FROM `final_score` WHERE `username_ID` = ?', [usernameID]);
+        const [result5] = await connection.query('SELECT score_strength FROM `final_score` WHERE `username_ID` = ?', [usernameID]);
+        const [result6] = await connection.query('SELECT score_shield FROM `final_score` WHERE `username_ID` = ?', [usernameID]);
+
+        const data = {
+          "username_ID": usernameID,
+          "times_played": result2[0].times_played,
+          "total_score": result1[0].total_score,
+          "score_shield": result6[0].score_shield,
+          "score_agility": result3[0].score_agility,
+          "score_speed": result4[0].score_speed,
+          "score_strength": result5[0].score_strength
+        }
+
+        response.json(data);
+        
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
 });
 
   

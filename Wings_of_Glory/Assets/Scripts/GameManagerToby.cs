@@ -49,9 +49,11 @@ public class GameManagerToby : MonoBehaviour
     public Final_Stats final_stats = new Final_Stats();
 
     private void Start(){
-        canvasFight.SetActive(false);
+
+        
         NewGame();
         TimesPlayed();
+        Debug.Log("Times played: " + times_played);
         times_played++;
         
 
@@ -132,7 +134,7 @@ public class GameManagerToby : MonoBehaviour
 
     public void UpdateDataUnity()
     {
-        api.UpdateDataUnity(scoregamemanager, UN, agility);
+        api.UpdateDataUnity(scoregamemanager, UN, agility, strength, shield, speed);
     }
     public void TimesPlayed()
     {
