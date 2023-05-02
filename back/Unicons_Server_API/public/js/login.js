@@ -20,7 +20,7 @@ loginForm.addEventListener('submit', async (event) => {
       const responseData = await response.json();
         console.log(responseData.message);
         alert(`Welcome, your id is:${responseData.username_ID}!`);
-        window.location.href = "../html/index.html"; // REDIRECT TO VIDEOGAME
+        window.location.href = "../WingsOfGlory/index.html";
     }else if(response.status === 400){
       const responseData = await response.json();
                 alert(responseData.message);
