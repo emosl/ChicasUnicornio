@@ -4,6 +4,7 @@
 	<title>Login V3</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link stylesheet rel="stylesheet" href="../css/bootstrap.css">
 	<link stylesheet rel="stylesheet" href="../css/login.css"> 
 	<script src="../js/login.js"></script>	
 </head>
@@ -21,8 +22,9 @@
 			<img src="../images/tobyfly.gif" alt="Avatar" class="avatar" >
 			<h1> Login </h1>
 		</div>
-		
-		<div class="container">
+		<section class="col-md-4 col-md-6 col-md-12 "></section>
+		<section class="col-md-4 col-md-6 col-md-12 ">
+		<div class="container-fluid">
 			<label for="username_ID" class="my-label"><b>Username ID</b></label>
 			<input type="text" placeholder="Enter Username ID" id="username_ID" name="username_ID" required>
 
@@ -31,11 +33,9 @@
 
 			<button type="submit"> Login</button>
 
-
-			<input type="password" placeholder="Enter Password" name="psw" required>
-
-			<button type="button" onclick="login()">Login</button>
 		</div>
+		</section>
+		<section class="col-md-4 col-md-6 col-md-12 "></section>
 	</form>
 </body>
 </html>
