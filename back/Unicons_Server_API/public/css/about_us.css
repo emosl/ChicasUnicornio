@@ -3,11 +3,18 @@
 *{
     box-sizing: border-box;
 }
+
 #logo{
   width: 300px;
   height: 200px;
   margin-right: 10px;
 }
+
+.head{
+  display: flex;
+
+}
+
 #title{
   grid-column: 1 / -1;
   display: flex;
@@ -28,11 +35,10 @@
 
 
 
-
 body, html {
     padding: 20px;
     font-family: 'VT323', monospace;
-    background: linear-gradient(#d2a2dc,#C874D9, #5F2E7E, #25013c);
+    background: #c874d9;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -154,7 +160,7 @@ body, html {
     margin-top: 0;
     text-align: justify;
     color: #fff;
-    text-shadow: #cb6dcd 2px 2px 2px;
+    text-shadow: #5F2E7E 2px 2px 2px;
     margin: auto;
     padding: auto;
 }
@@ -168,6 +174,10 @@ img {
   width: 300px;
   height: 300px;
   margin: auto; /* Add this line to center the image horizontally */
+}
+
+#video{
+  align-items: center;
 }
 
 
