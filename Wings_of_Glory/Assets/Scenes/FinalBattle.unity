@@ -4449,6 +4449,7 @@ MonoBehaviour:
   gameManagerFight: {fileID: 1827006882}
   objectToFollow: {fileID: 842177610}
   mulaBattle: {fileID: 842177614}
+  dead: 0
 --- !u!114 &258124414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7110,6 +7111,7 @@ MonoBehaviour:
   objectToFollow: {fileID: 258124405}
   gameManagerFight: {fileID: 1827006882}
   tobyBattle: {fileID: 258124413}
+  dead: 0
 --- !u!61 &842177615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11872,7 +11874,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1327730036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a74fbb286bbe347e7be455d815d0412c, type: 3}
+  m_Script: {fileID: 11500000, guid: 365818c728410496380af39b9d459b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
@@ -11889,21 +11891,13 @@ MonoBehaviour:
   currentAgilityHealth: 0
   maxSpeedHealth: 15
   minSpeedHealth: 5
-  rand1: 0
-  rand2: 0
-  rand3: 0
   currentSpeedHealth: 0
   shieldchosen: 
-  toby_stats:
-    initialPosition: {x: 0, y: 0, z: 0}
-    savedPosition: {x: 0, y: 0, z: 0}
-    chosenarmor: 
-  strengthhealthbar: {fileID: 0}
-  agilityhealthbar: {fileID: 0}
-  speedhealthbar: {fileID: 0}
-  lifehealthbar: {fileID: 0}
-  shieldhealthbar: {fileID: 0}
-  totalscore: {fileID: 0}
+  strengthhealthbar: {fileID: 416521202}
+  agilityhealthbar: {fileID: 1012093046}
+  speedhealthbar: {fileID: 1574486544}
+  lifehealthbar: {fileID: 1049453948}
+  shieldhealthbar: {fileID: 1104387766}
 --- !u!1 &1430604311
 GameObject:
   m_ObjectHideFlags: 0
