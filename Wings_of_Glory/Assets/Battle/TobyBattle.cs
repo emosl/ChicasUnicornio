@@ -26,7 +26,16 @@ public class TobyBattle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+         if (!isMoving)
+        {
+            rb.drag = 5f;
+        }
+        else
+        {
+            rb.drag = 3f;
+        }
+
+        rb.gravityScale = 3f;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-APITest.speed, rb.velocity.y);
@@ -80,5 +89,16 @@ public class TobyBattle : MonoBehaviour
         animator.Play("attack");
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+         Debug.Log("OnTriggerEnter2D called with other: " + other.name);
+        
+         if (isGrounded && other.gameObject.CompareTag("loose"))
+        {
+            Debug.Log("loose");
+            // other.gameObject.GetComponent<Obstacle>().AskPermission();
+            
+        }
+    }
 
 }

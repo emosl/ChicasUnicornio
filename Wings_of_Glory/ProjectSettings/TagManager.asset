@@ -36,6 +36,7 @@ TagManager:
   - Water
   - Bomb
   - Enemy
+  - loose
   layers:
   - Default
   - TransparentFX
