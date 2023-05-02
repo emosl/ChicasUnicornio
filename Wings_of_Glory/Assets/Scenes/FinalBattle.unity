@@ -4182,7 +4182,6 @@ GameObject:
   - component: {fileID: 258124410}
   - component: {fileID: 258124409}
   - component: {fileID: 258124408}
-  - component: {fileID: 258124406}
   - component: {fileID: 258124413}
   - component: {fileID: 258124414}
   m_Layer: 0
@@ -4207,20 +4206,6 @@ Transform:
   m_Father: {fileID: 2104514480}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &258124406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258124404}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f042833a98d74c66ba19c2744f70176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemPickupPanel: {fileID: 0}
-  gadget: {fileID: 0}
 --- !u!95 &258124408
 Animator:
   serializedVersion: 5
@@ -4944,7 +4929,6 @@ GameObject:
   m_Component:
   - component: {fileID: 416521199}
   - component: {fileID: 416521200}
-  - component: {fileID: 416521201}
   - component: {fileID: 416521202}
   m_Layer: 5
   m_Name: 'Strength_Healthbar '
@@ -5027,18 +5011,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &416521201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416521198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ee66f7c70ad4ee6aa245bf55997ed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &416521202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7391,7 +7363,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1104387764}
   - component: {fileID: 1104387763}
-  - component: {fileID: 1104387765}
   - component: {fileID: 1104387766}
   m_Layer: 5
   m_Name: 'Shield_Healthbar '
@@ -7474,18 +7445,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00000011921, y: 21}
   m_SizeDelta: {x: 128.76, y: 12.9767}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1104387765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104387761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ee66f7c70ad4ee6aa245bf55997ed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1104387766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11785,7 +11744,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1574486541}
   - component: {fileID: 1574486542}
-  - component: {fileID: 1574486543}
   - component: {fileID: 1574486544}
   m_Layer: 5
   m_Name: 'Speed_Healthbar '
@@ -11868,18 +11826,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1574486543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574486540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ee66f7c70ad4ee6aa245bf55997ed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1574486544
 MonoBehaviour:
   m_ObjectHideFlags: 0
