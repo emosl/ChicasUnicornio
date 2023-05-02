@@ -54,6 +54,7 @@ public class MulaBattle : MonoBehaviour
             animator.Play("mula_muerta");
             animator.Play("mula_bien_muerta");
             tobyBattle.animator.Play("transform");
+            StopAllCoroutines();
             StartCoroutine(WaitWin());
             // other.gameObject.GetComponent<Obstacle>().AskPermission();
             

@@ -14,6 +14,7 @@ public class TobyBattle : MonoBehaviour
     private bool isGrounded;
     private bool isMoving;
     public Toby toby;
+    public batteryplayerfight batteryplayerfight;
     // public GameObject tobyObject;
     // public GameManagerToby gameManagerToby;
     public GameManagerFight gameManagerFight;
@@ -110,6 +111,7 @@ public class TobyBattle : MonoBehaviour
             Debug.Log("loose");
             animator.Play("die");
             animator.Play("dead");
+            StopAllCoroutines();
             StartCoroutine(WaitLose());
             // other.gameObject.GetComponent<Obstacle>().AskPermission();
             
