@@ -42,7 +42,7 @@ public class GameManagerFight : MonoBehaviour
     {
         GameOverMenu.SetActive(false);
         WinMenu.SetActive(false);
-        api.GetDataUnity("1");
+        api.GetDataUnity("2");
         MuleStats();
         TobyStats();
         
@@ -59,6 +59,7 @@ public class GameManagerFight : MonoBehaviour
             Debug.Log("Mule-40: " + MuleSum);
             Debug.Log("MULESPEED:"+ mule_speed);
             Debug.Log("TobySpeed:" + APITest.speed);
+            Debug.Log("TobyAgility:" + APITest.agility);
         }
         DeterminePushWinner();
     }
