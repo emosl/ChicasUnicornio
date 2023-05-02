@@ -16,6 +16,8 @@ public class GameManagerFight : MonoBehaviour
     public batteryplayer bp;
     string UN = MenuUser.UiD;
 
+    public GameObject GameOverMenu;
+
     public TobyBattle tobyBattle;
     public MulaBattle mulaBattle;
     public static int times_played = 0;
@@ -35,7 +37,8 @@ public class GameManagerFight : MonoBehaviour
 
     private void Start()
     {
-        api.GetDataUnity("1");
+        GameOverMenu.SetActive(false);
+        api.GetDataUnity(UN);
         TobyStats();
         MuleStats();
         
@@ -112,6 +115,33 @@ public class GameManagerFight : MonoBehaviour
             isPushing = true;
             
         }
+    }
+
+    public void GameOver()
+    {
+        tobyBattle.gameObject.SetActive(false);
+        mulaBattle.gameObject.SetActive(false);
+        Debug.Log("Game Over");
+        toby.gameObject.SetActive(false);
+        GameOverMenu.SetActive(true);
+        StopAllCoroutines();
+        StartCoroutine(RestartGame());
+    }
+
+    private IEnumerator RestartGame()
+    {
+        bool playAgain = false;
+        while (!playAgain)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                playAgain = true;
+                
+            }
+            yield return null;
+        }
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Start_Scene");
     }
 
 }

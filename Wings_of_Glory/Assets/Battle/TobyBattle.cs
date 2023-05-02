@@ -13,6 +13,7 @@ public class TobyBattle : MonoBehaviour
     public Toby toby;
     // public GameObject tobyObject;
     // public GameManagerToby gameManagerToby;
+    public GameManagerFight gameManagerFight;
     public Transform objectToFollow;
     //  public float speed;
     // Start is called before the first frame update
@@ -96,6 +97,7 @@ public class TobyBattle : MonoBehaviour
          if (isGrounded && other.gameObject.CompareTag("loose"))
         {
             Debug.Log("loose");
+            gameManagerFight.GameOver();
             // other.gameObject.GetComponent<Obstacle>().AskPermission();
             
         }
