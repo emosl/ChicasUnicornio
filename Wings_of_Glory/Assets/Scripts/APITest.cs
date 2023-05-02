@@ -55,6 +55,8 @@ public class SavedData
     public int total_score;
     public int times_played;
     public int score_agility;
+    public int score_strength;
+    public int score_shield;
     
 }
 public class Gadget
