@@ -25,6 +25,9 @@ public class batteryplayer : MonoBehaviour
 
     public int maxSpeedHealth = 15;
     public int minSpeedHealth = 5;
+    public int rand1;
+    public int rand2;
+    public int rand3;
     public int currentSpeedHealth;
     public string shieldchosen;
     public Toby_stats toby_stats;
@@ -115,10 +118,6 @@ public class batteryplayer : MonoBehaviour
         {
             strengthhealthbar.SetHealth(currentStrengthHealth);
         }
-        
-        
-
-
     }
     //Function that updates mentioned ability score by the amount specified.
    public void ChangeAgility(int points)

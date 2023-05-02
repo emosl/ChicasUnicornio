@@ -72,6 +72,7 @@ public class ObstacleImplementation : MonoBehaviour
                     blank.SetActive(true);
                     itemRemovedPanel.SetActive(true);  
                     KillerSpriteCounter("Ice");
+                    //batteryPlayer.ChangeAgility();
             
                     
                 }
@@ -92,6 +93,8 @@ public class ObstacleImplementation : MonoBehaviour
                    
                         blank.SetActive(true);
                         itemRemovedPanel.SetActive(true);
+                        KillerSpriteCounter("Shield");
+                        //batteryPlayer.ChangeShield();
                         
                 }
                     else
@@ -111,6 +114,8 @@ public class ObstacleImplementation : MonoBehaviour
                     
                         blank.SetActive(true);
                         itemRemovedPanel.SetActive(true);
+                        KillerSpriteCounter("Water");
+                       // batteryPlayer.ChangeSpeed();
                        
                 }
                     else
@@ -129,6 +134,8 @@ public class ObstacleImplementation : MonoBehaviour
                     
                         blank.SetActive(true);
                         itemRemovedPanel.SetActive(true);
+                        KillerSpriteCounter("Rock");
+                        //batteryPlayer.ChangeStrength();
                        
                 }
                     else

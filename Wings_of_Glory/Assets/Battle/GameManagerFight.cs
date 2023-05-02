@@ -1,3 +1,6 @@
+//Wings of Glory script. This script is used in the implementation of Wings of Glory
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+//May 1, 2023
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +28,7 @@ public class GameManagerFight : MonoBehaviour
     public GameObject canvasFight;
     public int TobySum;
     public int MuleSum;
+    public batteryplayer batteryplayer;
 
     public GameObject pushingObject;
     public GameObject receivingObject;
@@ -80,6 +84,12 @@ public class GameManagerFight : MonoBehaviour
         toby.shield = APITest.shield;
         toby.speed = APITest.speed;
         TobySum = 0 + APITest.strength + APITest.shield + APITest.speed + APITest.agility;
+        //Changes health bars of Toby.
+        batteryplayer.ChangeStrength(APITest.strength);
+        batteryplayer.ChangeShield(APITest.shield);
+        batteryplayer.ChangeSpeed(APITest.speed);
+        batteryplayer.ChangeAgility(APITest.agility);
+
     }
 
     private void FixedUpdate()
