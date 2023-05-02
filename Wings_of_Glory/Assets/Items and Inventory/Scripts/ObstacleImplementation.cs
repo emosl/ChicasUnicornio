@@ -15,9 +15,14 @@ public class ObstacleImplementation : MonoBehaviour
     public EquippableItem equippableItem;
     public Character character;
     public batteryplayer batteryPlayer;
+    
+
     public List<int> killerspritelist = new List<int>();
 
     [SerializeField] APITest api;
+
+     private static int itemsRemoved = 0;
+
 
     
 
@@ -29,6 +34,13 @@ public class ObstacleImplementation : MonoBehaviour
          itemRemovedPanel.SetActive(false);
          itemNotRemovedPanel.SetActive(false);
          blank.SetActive(false);
+
+          gameManagerToby = FindObjectOfType<GameManagerToby>();
+
+    if (gameManagerToby == null)
+    {
+        Debug.LogError("GameManagerToby instance not found in the scene.");
+    }
        
         
     }
@@ -69,6 +81,12 @@ public class ObstacleImplementation : MonoBehaviour
                 if (toby.agility < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Agility");
+                    itemsRemoved++;
+                    if (itemsRemoved >= 5)
+                    {
+                        Debug.Log("Items removed reached 5. Calling GameOver.");
+                        gameManagerToby.GameOver();
+                    }
                     blank.SetActive(true);
                     itemRemovedPanel.SetActive(true);  
                     KillerSpriteCounter("Ice");
@@ -88,6 +106,12 @@ public class ObstacleImplementation : MonoBehaviour
                 if (toby.shield < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Shield");
+                    itemsRemoved++;
+                    if (itemsRemoved >= 5)
+                    {
+                        Debug.Log("Items removed reached 5. Calling GameOver.");
+                        gameManagerToby.GameOver();
+                    }
 
                    
                         blank.SetActive(true);
@@ -107,6 +131,12 @@ public class ObstacleImplementation : MonoBehaviour
                 if (toby.speed < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Speed");
+                    itemsRemoved++;
+                    if (itemsRemoved >= 5)
+                    {
+                        Debug.Log("Items removed reached 5. Calling GameOver.");
+                        gameManagerToby.GameOver();
+                    }
 
                     
                         blank.SetActive(true);
@@ -125,6 +155,12 @@ public class ObstacleImplementation : MonoBehaviour
                 if (toby.strength < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Strength");
+                    itemsRemoved++;
+                    if (itemsRemoved >= 5)
+                    {
+                        Debug.Log("Items removed reached 5. Calling GameOver.");
+                        gameManagerToby.GameOver();
+                    }
 
                     
                         blank.SetActive(true);
