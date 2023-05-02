@@ -4445,7 +4445,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   toby: {fileID: 258124411}
-  batteryplayerfight: {fileID: 0}
+  batteryplayerfight: {fileID: 1327730038}
   gameManagerFight: {fileID: 1827006882}
   objectToFollow: {fileID: 842177610}
   mulaBattle: {fileID: 842177614}
