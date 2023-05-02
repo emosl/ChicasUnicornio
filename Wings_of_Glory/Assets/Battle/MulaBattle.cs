@@ -14,8 +14,9 @@ public class MulaBattle : MonoBehaviour
 
     public Transform objectToFollow;
     // public float speed;
-
-    public GameManagerFight muleFight;
+    public GameManagerFight gameManagerFight;
+    // public GameManagerFight muleFight;
+    public TobyBattle tobyBattle;
     // Start is called before the first frame update
     public void Start()
     {
@@ -40,5 +41,32 @@ public class MulaBattle : MonoBehaviour
         animator.Play("mula_atack");
         // muleFight.MuleSum = muleFight.MuleSum - 20;
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+         Debug.Log("OnTriggerEnter2D called with other: " + other.name);
+        
+         if (isGrounded && other.gameObject.CompareTag("win"))
+        {
+            Debug.Log("win");
+            animator.Play("mula_muerta");
+            animator.Play("mula_bien_muerta");
+            tobyBattle.animator.Play("transform");
+            StartCoroutine(WaitWin());
+            // other.gameObject.GetComponent<Obstacle>().AskPermission();
+            
+        }
+    }
+
+    IEnumerator WaitWin()
+    {
+        yield return new WaitForSeconds(6f);
+        gameManagerFight.WinGame();
+    }
+    IEnumerator WaitLose()
+    {
+        yield return new WaitForSeconds(2f);
+        gameManagerFight.GameOver();
+    }
+
     
 }

@@ -17,6 +17,7 @@ public class GameManagerFight : MonoBehaviour
     string UN = MenuUser.UiD;
 
     public GameObject GameOverMenu;
+    public GameObject WinMenu;
 
     public TobyBattle tobyBattle;
     public MulaBattle mulaBattle;
@@ -38,7 +39,8 @@ public class GameManagerFight : MonoBehaviour
     private void Start()
     {
         GameOverMenu.SetActive(false);
-        api.GetDataUnity(UN);
+        WinMenu.SetActive(false);
+        api.GetDataUnity("2");
         TobyStats();
         MuleStats();
         
@@ -64,7 +66,7 @@ public class GameManagerFight : MonoBehaviour
 
     public void MuleStats()
     {
-        int rand = Random.Range(5, 12);
+        int rand = Random.Range(10, 25);
         mule_agility = APITest.agility + rand;
         mule_strength = APITest.strength + rand;
         mule_shield = APITest.shield + rand;
@@ -142,6 +144,17 @@ public class GameManagerFight : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Start_Scene");
+    }
+
+    public void WinGame()
+    {
+        tobyBattle.gameObject.SetActive(false);
+        mulaBattle.gameObject.SetActive(false);
+        Debug.Log("Game Over");
+        toby.gameObject.SetActive(false);
+        WinMenu.SetActive(true);
+        StopAllCoroutines();
+        StartCoroutine(RestartGame());
     }
 
 }

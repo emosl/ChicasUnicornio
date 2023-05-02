@@ -15,6 +15,7 @@ public class TobyBattle : MonoBehaviour
     // public GameManagerToby gameManagerToby;
     public GameManagerFight gameManagerFight;
     public Transform objectToFollow;
+    public MulaBattle mulaBattle;
     //  public float speed;
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class TobyBattle : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-APITest.speed, rb.velocity.y);
-            animator.Play("walking");
+            animator.Play("attack");
             isMoving = true;
             
             transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip sprite when moving left
@@ -48,7 +49,7 @@ public class TobyBattle : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(APITest.speed, rb.velocity.y);
-            animator.Play("walking");
+            animator.Play("attack");
             isMoving = true;
             
             transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Reset sprite rotation when moving right
@@ -82,6 +83,13 @@ public class TobyBattle : MonoBehaviour
             animator.Play("walking");
             // spriteRenderer.sprite = idleSprite;
         }
+         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)|| Input.GetKeyUp(KeyCode.Space))
+        {
+            // rb.velocity = new Vector2(0f, rb.velocity.y);
+            // isMoving = false;
+            animator.Play("walking");
+            // spriteRenderer.sprite = idleSprite;
+        }
     }
     public void PushEnemy(float speed)
     {
@@ -97,10 +105,23 @@ public class TobyBattle : MonoBehaviour
          if (isGrounded && other.gameObject.CompareTag("loose"))
         {
             Debug.Log("loose");
-            gameManagerFight.GameOver();
+            animator.Play("die");
+            animator.Play("dead");
+            StartCoroutine(WaitLose());
             // other.gameObject.GetComponent<Obstacle>().AskPermission();
             
         }
+    }
+
+    IEnumerator WaitWin()
+    {
+        yield return new WaitForSeconds(6f);
+        gameManagerFight.WinGame();
+    }
+    IEnumerator WaitLose()
+    {
+        yield return new WaitForSeconds(2f);
+        gameManagerFight.GameOver();
     }
 
 }
