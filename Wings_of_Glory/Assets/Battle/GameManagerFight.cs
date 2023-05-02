@@ -8,94 +8,101 @@ using UnityEngine.SceneManagement;
 public class GameManagerFight : MonoBehaviour
 {
     public Toby toby;
-    // public Toby_stats toby_stats;
-    // public static string armor;
-    public int strength2 = APITest.strength;
-    public int shield2 = APITest.shield;
-    public int speed2 = APITest.speed;
-    public int agility2 = APITest.agility;
-    // public static int lives;
-    // public TMP_Text scoreText;
-    // public static int scoregamemanager;
-    // public string armorchosengm;
-    // public int totalScore;
-    // public ArmorButton armorbutton;
+    public int mule_strength;
+    public int mule_shield;
+    public int mule_speed;
+    public int mule_agility;
     [SerializeField] APITest api;
     public batteryplayer bp;
     string UN = MenuUser.UiD;
+
+    public TobyBattle tobyBattle;
+    public MulaBattle mulaBattle;
     public static int times_played = 0;
     public GameObject canvasFight;
-    //public image stats;
-    
+    public int TobySum;
+    public int MuleSum;
+
+    public GameObject pushingObject;
+    public GameObject receivingObject;
+    public float pushForce = 10f;
+    private bool isPushing = false;
+
     private void Awake()
     {
-        //homes = FindObjectsOfType<Home>();
         toby = FindObjectOfType<Toby>();
-
     }
-    public Final_Stats final_stats = new Final_Stats();
 
-    private void Start(){
-
-        
-        NewGame();
-        // TimesPlayed();
-        // Debug.Log("Times played: " + times_played);
-        // times_played++;
-        
-
-        // strength = final_stats.strength;
-        // shield = final_stats.shield;
-        // speed = final_stats.speed;
-        // agility = final_stats.agility;
-    }
-    private void NewGame()
+    private void Start()
     {
-        //gameOverMenu.SetActive(false);
-        //SetLives(1);
-        //SetArmor();
+        api.GetDataUnity("2");
+        TobyStats();
+        MuleStats();
+        
     }
+
     void Update()
     {
-        //This line takes the score from TotalScore.cs and stores it in a variable. Will be used in API
-        //debug
-        // scoregamemanager=totalScore.score;
-        // getstats();
-        //Debug.Log(scoregamemanager);
-        
-        Debug.Log("User" + UN);
-        api.GetDataUnity(UN);
-        Debug.Log("Strength: " + APITest.strength);
-        Debug.Log("Speed: " + APITest.speed);
-        // Debug.Log(gadgetlist[2]);
-        //Debug.Log(armorchosen);
-        
+        TobySum = 0 + APITest.strength + APITest.shield + APITest.speed + APITest.agility;
+
+        if (TobySum < 40)
+        {
+            Debug.Log("TobySum-40: " + TobySum);
+            Debug.Log("Mule-40: " + MuleSum);
+        }
+        DeterminePushWinner();
     }
 
-    //Gets final stats for Toby used in DataBase.
-    // public void getstats(){
-    //     //DEBUGS
-    //     strength = toby.strength;
-    //     shield = toby.shield;
-    //     speed = toby.speed;
-    //     agility = toby.agility;
-
-
-    // }
-
-    
     public void GetDataUnity()
     {
         api.GetDataUnity(UN);
     }
 
+    public void MuleStats()
+    {
+        int rand = Random.Range(5, 12);
+        mule_agility = APITest.agility + rand;
+        mule_strength = APITest.strength + rand;
+        mule_shield = APITest.shield + rand;
+        mule_speed = APITest.speed + rand;
+        MuleSum = mule_agility + mule_strength + mule_shield + mule_speed;
+    }
+    public void TobyStats()
+    {
+        toby.agility = APITest.agility;
+        toby.strength = APITest.strength;
+        toby.shield = APITest.shield;
+        toby.speed = APITest.speed;
+        TobySum = 0 + APITest.strength + APITest.shield + APITest.speed + APITest.agility;
+    }
 
-    // public void UpdateDataUnity()
-    // {
-    //     api.UpdateDataUnity(scoregamemanager, UN, agility, strength, shield, speed);
-    // }
-    // public void TimesPlayed()
-    // {
-    //     api.TimesPlayed(UN);
-    // }
+    private void FixedUpdate()
+    {
+        if (isPushing)
+        {
+            Vector3 pushDirection = (receivingObject.transform.position - pushingObject.transform.position).normalized;
+            receivingObject.GetComponent<Rigidbody>().AddForce(pushDirection * pushForce, ForceMode.Force);
+        }
+    }
+
+    public void DeterminePushWinner()
+    {
+
+        if (TobySum > MuleSum)
+        {
+            pushingObject = GameObject.Find("Toby");
+            receivingObject = GameObject.FindGameObjectWithTag("Enemy");
+            tobyBattle.PushEnemy();
+            mulaBattle.Start();
+            isPushing = true;
+        }
+        else
+        {
+            pushingObject = GameObject.FindGameObjectWithTag("Enemy");
+            receivingObject = GameObject.Find("Toby");
+            mulaBattle.PushMule();
+            isPushing = true;
+        }
+    }
+
 }

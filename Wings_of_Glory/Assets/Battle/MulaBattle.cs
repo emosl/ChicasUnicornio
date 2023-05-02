@@ -14,10 +14,14 @@ public class MulaBattle : MonoBehaviour
 
     public Transform objectToFollow;
     public float speed;
+
+    public GameManagerFight muleFight;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        animator.Play("mula_idle");
+        transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        animator.Play("mula_caminando");
+        
     }
 
     // Update is called once per frame
@@ -26,7 +30,13 @@ public class MulaBattle : MonoBehaviour
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 offset = new Vector2(0f, -bounds.extents.y);
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
-        transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, speed * Time.deltaTime);
+        // transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, speed * Time.deltaTime);
+    }
+    public void PushMule()
+    {
+       transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, muleFight.mule_speed * Time.deltaTime);
+       transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        animator.Play("mula_atack");
     }
     
 }

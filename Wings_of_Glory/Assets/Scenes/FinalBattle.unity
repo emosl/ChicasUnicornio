@@ -3946,7 +3946,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258124404}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bd99c449bf3d450fb6dbbafec78e24c, type: 3}
   m_Name: 
@@ -4048,9 +4048,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 258124408}
+  groundCheckRadius: 1
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
   toby: {fileID: 258124411}
-  tobyObject: {fileID: 0}
-  gameManagerToby: {fileID: 0}
+  objectToFollow: {fileID: 842177610}
+  speed: 3
 --- !u!1 &273779989
 GameObject:
   m_ObjectHideFlags: 0
@@ -5833,7 +5837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842177609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.002016, y: 0.65681493, z: -3.9456544}
+  m_LocalPosition: {x: -8.15, y: 0.71, z: -3.9456544}
   m_LocalScale: {x: 2.0087, y: 2.0087, z: 2.0087}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5951,7 +5955,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   objectToFollow: {fileID: 258124405}
-  speed: 2
+  speed: 3
 --- !u!61 &842177615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7259,7 +7263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1190036895
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13199,21 +13203,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toby: {fileID: 0}
-  toby_stats:
-    initialPosition: {x: 0, y: 0, z: 0}
-    savedPosition: {x: 0, y: 0, z: 0}
-    chosenarmor: 
-  strength: 0
-  shield: 0
-  speed: 0
-  agility: 0
-  scoreText: {fileID: 0}
-  armorchosengm: 
-  totalScore: 0
-  armorbutton: {fileID: 0}
+  mule_strength: 0
+  mule_shield: 0
+  mule_speed: 0
+  mule_agility: 0
   api: {fileID: 841625370}
   bp: {fileID: 0}
-  canvasFight: {fileID: 0}
+  tobyBattle: {fileID: 258124413}
+  mulaBattle: {fileID: 842177614}
+  canvasFight: {fileID: 1085957705}
+  TobySum: 0
+  MuleSum: 0
+  pushingObject: {fileID: 0}
+  receivingObject: {fileID: 0}
+  pushForce: 10
 --- !u!4 &1827006883
 Transform:
   m_ObjectHideFlags: 0
