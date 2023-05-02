@@ -4,37 +4,31 @@
 	<title>Login V3</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link stylesheet rel="stylesheet" href="../css/login.css"> 
+	<link rel="stylesheet" href="../css/login.css"> 
 	<script src="../js/login.js"></script>	
 </head>
 <body>
 	<header>
-		<ul id = "menu">
-            <li> <a href="../html/index.html">Home </a></li>
-			<li> <a href="../html/register.html">Register </a></li>
+		<ul id="menu">
+            <li><a href="../html/index.html">Home</a></li>
+			<li><a href="../html/register.html">Register</a></li>
+		</ul>
 	</header>
 	
+	<div class="imgcontainer">
+		<img src="../images/tobyfly.gif" alt="Avatar" class="avatar">
+		<h1>Login</h1>
+	</div>
 	
-	<form>
-
-		<div class="imgcontainer">
-			<img src="../images/tobyfly.gif" alt="Avatar" class="avatar" >
-			<h1> Login </h1>
-		</div>
-		
+	<form id="login-form">
 		<div class="container">
-			<label for="username_ID" class="my-label"><b>Username ID</b></label>
-			<input type="text" placeholder="Enter Username ID" id="username_ID" name="username_ID" required>
+			<label for="email" class="my-label"><b>MAIL</b></label>
+			<input type="text" placeholder="Enter mail" id="email" name="email" required>
 
 			<label for="password" class="my-label"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" id="password" name="password" required>
 
-			<button type="submit"> Login</button>
-
-
-			<input type="password" placeholder="Enter Password" name="psw" required>
-
-			<button type="button" onclick="login()">Login</button>
+			<button type="submit">Login</button>
 		</div>
 	</form>
 </body>

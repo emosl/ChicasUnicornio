@@ -458,6 +458,33 @@ app.post('/api/game_history', async (request, response)=>{
         }
     }
  })
+ app.post('/api/login', async (request, response) => {
+    const { email, password } = request.body;
+  
+    let connection = null;
+  
+    try {
+      connection = await connectToDB();
+  
+      const [results, fields] = await connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password]);
+  
+      if (results.length > 0) {
+        // The username and password are correct
+        response.json({ message: 'Login successful!' });
+      } else {
+        // The username and/or password are incorrect
+        response.status(401).json({ error: 'Incorrect email and/or password' });
+      }
+    } catch (error) {
+      response.status(500).json(error);
+      console.log(error);
+    } finally {
+      if (connection !== null) {
+        connection.end();
+        console.log('Connection closed successfully!');
+      }
+    }
+  });
  // PUT REQUESTS
 app.put('/api/users', async (request, response)=>{
 
@@ -466,7 +493,7 @@ app.put('/api/users', async (request, response)=>{
     try{
         connection = await connectToDB()
 
-        const [results, fields] = await connection.query('update users set name = ?, surname = ? where id_users= ?', [request.body['name'], request.body['surname'], request.body['userID']])
+        const [results, fields] = await connection.query('update users set name = ?, password = ? where id_users= ?', [request.body['name'], request.body['surname'], request.body['userID']])
         
         response.json({'message': "Data updated correctly."})
     }
