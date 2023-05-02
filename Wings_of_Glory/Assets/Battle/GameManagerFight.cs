@@ -16,7 +16,7 @@ public class GameManagerFight : MonoBehaviour
     public int mule_speed;
     public int mule_agility;
     [SerializeField] APITest api;
-    public batteryplayer bp;
+    public batteryplayerfight bpf;
     string UN = MenuUser.UiD;
 
     public GameObject GameOverMenu;
@@ -28,8 +28,6 @@ public class GameManagerFight : MonoBehaviour
     public GameObject canvasFight;
     public int TobySum;
     public int MuleSum;
-    public batteryplayer batteryplayer;
-
     public GameObject pushingObject;
     public GameObject receivingObject;
     public float pushForce = 10f;
@@ -87,10 +85,10 @@ public class GameManagerFight : MonoBehaviour
         toby.speed = APITest.speed;
         TobySum = 0 + APITest.strength + APITest.shield + APITest.speed + APITest.agility;
         //Changes health bars of Toby.
-        batteryplayer.ChangeStrength(APITest.strength);
-        batteryplayer.ChangeShield(APITest.shield);
-        batteryplayer.ChangeSpeed(APITest.speed);
-        batteryplayer.ChangeAgility(APITest.agility);
+        bpf.ChangeStrength(APITest.strength);
+        bpf.ChangeShield(APITest.shield);
+        bpf.ChangeSpeed(APITest.speed);
+        bpf.ChangeAgility(APITest.agility);
 
     }
 
