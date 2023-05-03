@@ -4857,7 +4857,7 @@ GameObject:
   - component: {fileID: 138201326}
   - component: {fileID: 138201327}
   m_Layer: 0
-  m_Name: pos_1
+  m_Name: pos1
   m_TagString: Position
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9661,7 +9661,7 @@ GameObject:
   - component: {fileID: 248947346}
   - component: {fileID: 248947347}
   m_Layer: 0
-  m_Name: pos_2 (1)
+  m_Name: pos3
   m_TagString: Position
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49017,6 +49017,7 @@ MonoBehaviour:
   - {fileID: 1893351637}
   - {fileID: 248947347}
   - {fileID: 1387677404}
+  gameManagerToby: {fileID: 0}
   toby: {fileID: 370204284}
 --- !u!4 &1084218592
 Transform:
@@ -63914,7 +63915,7 @@ GameObject:
   - component: {fileID: 1387677403}
   - component: {fileID: 1387677404}
   m_Layer: 0
-  m_Name: pos_2 (2)
+  m_Name: pos4
   m_TagString: Position
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86021,7 +86022,7 @@ GameObject:
   - component: {fileID: 1893351636}
   - component: {fileID: 1893351637}
   m_Layer: 0
-  m_Name: pos_2
+  m_Name: pos2
   m_TagString: Position
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

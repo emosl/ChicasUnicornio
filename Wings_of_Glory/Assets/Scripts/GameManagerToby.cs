@@ -30,6 +30,12 @@ public class GameManagerToby : MonoBehaviour
     string UN = MenuUser.UiD;
     public static int times_played = 0;
     public GameObject canvasFight;
+
+    public static int currentMapIndex = 0;
+    public static bool gameJustStarted = true;
+
+    private Dictionary<string, int> spriteNameToMapIndex;
+
     //public image stats;
     public class Final_Stats
     {
@@ -44,6 +50,14 @@ public class GameManagerToby : MonoBehaviour
     {
         //homes = FindObjectsOfType<Home>();
         toby = FindObjectOfType<Toby>();
+
+        spriteNameToMapIndex = new Dictionary<string, int>
+        {
+            { "pos1", 1 },
+            { "pos2", 2 },
+            { "pos3", 3 },
+            { "pos4", 4 }
+        };
 
     }
     public Final_Stats final_stats = new Final_Stats();
@@ -93,6 +107,20 @@ public class GameManagerToby : MonoBehaviour
         agility = toby.agility;
 
 
+    }
+
+    public void SetCurrentMapIndexFromSpriteName(string spriteName)
+    {
+        if (spriteNameToMapIndex.ContainsKey(spriteName))
+        {
+            currentMapIndex = spriteNameToMapIndex[spriteName];
+            Debug.Log("Current map index set to: " + currentMapIndex + " for sprite name: " + spriteName);
+        }
+        
+        else
+        {
+            Debug.LogError("Invalid sprite name: " + spriteName);
+        }
     }
 
     
