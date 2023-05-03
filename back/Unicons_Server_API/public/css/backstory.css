@@ -126,15 +126,6 @@ sub{
     background-color: #29274C;
   }
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position: sticky;
-    /* top: 0; */
-  }
-
   li {
     float: left;
   }
@@ -162,6 +153,7 @@ sub{
   .uservideo{
     width: 1400px;
     height: auto;
+    object-fit: cover;
 
   }
 
@@ -182,9 +174,20 @@ img{
   margin-bottom: 50px;
 }
 
-video{
-  width: 650px;
-  height: auto;
-  border-radius: 10px;
-  border-radius: 10px;
+.margin{
+    /* margin-left: 100px; */
+    margin-right: 100px;
+    margin-top: 0px;
 }
+#menu{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-family: 'VT323', monospace;
+        font-size: 30px;
+        color:#423f7b;
+
+  }
