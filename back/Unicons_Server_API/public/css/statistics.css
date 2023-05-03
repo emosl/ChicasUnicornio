@@ -25,7 +25,7 @@ body, html{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-image: linear-gradient(to right, rgb(255, 178, 225), #5F2E7E);
+    background-image: linear-gradient(to right, #E6BCCD, #D295BF);
 }
 
 .background {
@@ -115,8 +115,10 @@ body, html{
   .title {
     grid-column: 1 / 3; /* span 2 columns */
     text-align: center; /* center text */
-    font-size: 24px; /* adjust as needed */
+    font-size: 15px; /* adjust as needed */
     font-weight: bold; /* adjust as needed */
+    color:#29274C;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   #logo{
@@ -152,11 +154,11 @@ h1{
 }
 
  canvas{
-  padding: 1%;
+  /* padding: 1%; */
   border: 1px solid grey;
   background-color: rgba(255, 255, 255, 0.5);
-  width: 100%;
-  height:100%;
+  /* width: 100%;
+  height:100%; */
 }
 
 #creatingChart{
@@ -185,7 +187,7 @@ table {
 }
 
 td {
-  padding: 5px;
+  padding: 2px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

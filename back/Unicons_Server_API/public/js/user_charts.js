@@ -4,7 +4,7 @@
  */
 function random_color(alpha=1.0)
 {
-    const hex_colors = ["#f72585", "#7209b7", "#3a0ca3", "#4361ee", "#4cc9f0", "#b5179e", "#3f37c9", "#4895ef","#0077b6","#8338ec"];
+    const hex_colors = ["#AF1B3F", "#29274C", "#656256", "#D295BF", "#E6BCCD","#C8C6AF","#BB6B00","#EF8354","#759FBC","#6E9887","#5D5F71","#721121"]; 
     const random_hex = hex_colors[Math.floor(Math.random() * hex_colors.length)];
     const r = parseInt(random_hex.slice(1, 3), 16);
     const g = parseInt(random_hex.slice(3, 5), 16);
@@ -54,10 +54,26 @@ try
                             data: highscores_total_score
                         }
                     ]
+                },
+                options:{
+                    scales:{
+                        x:{
+                            title:{
+                                display: true,
+                                text: "Username"
+                            }
+                        },
+                        y:{
+                            title:{
+                                display:true,
+                                text:"Total Score"
+                            }
+                        }
+                    }
                 }
-            })
+            });
+         }
     }
-}
 catch(error)
 {
     console.log(error)
@@ -103,10 +119,26 @@ try
                             data: mostplayed_total_score
                         }
                     ]
+                },
+                options:{
+                    scales:{
+                        x:{
+                            title:{
+                                display: true,
+                                text: "Username"
+                            }
+                        },
+                        y:{
+                            title:{
+                                display:true,
+                                text:"Total Score"
+                            }
+                        }
+                    }
                 }
-            })
+            });
+         }
     }
-}
 catch(error)
 {
     console.log(error)
