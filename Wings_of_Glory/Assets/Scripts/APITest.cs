@@ -120,6 +120,7 @@ public class APITest : MonoBehaviour
     public static int speed;
     public static int agility;
     public static int total_score; 
+    public static int position_checkpoint;
     string UN = MenuUser.UiD;
     string UN2;
     int TS = GameManagerToby.scoregamemanager;
@@ -391,6 +392,7 @@ public class APITest : MonoBehaviour
                 Debug.Log("JSON" + jsonString);
                 allCheckpoint= JsonUtility.FromJson<Checkpoint>(jsonString); //nuevo objeto con la lista de usuarios
                 // allSavedData.score_agility = allTimesPlayed.score_agility;
+                position_checkpoint = allCheckpoint.checkpoint;
                 Debug.Log("checkpoint " + allCheckpoint.checkpoint);
                 // Debug.Log("Response: " + www.downloadHandler.text);
                 // DisplayUser();
