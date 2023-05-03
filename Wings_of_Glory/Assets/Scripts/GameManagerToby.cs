@@ -50,6 +50,8 @@ public class GameManagerToby : MonoBehaviour
     public Final_Stats final_stats = new Final_Stats();
 
     private void Start(){
+         times_played = PlayerPrefs.GetInt("times_played", 0);
+
 
 
         
@@ -58,6 +60,8 @@ public class GameManagerToby : MonoBehaviour
         GameOverMenu.SetActive(false);
         Debug.Log("Times played: " + times_played);
         times_played++;
+
+         PlayerPrefs.SetInt("times_played", times_played);
         
 
         // strength = final_stats.strength;
@@ -115,6 +119,8 @@ public class GameManagerToby : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 playAgain = true;
+
+                PlayerPrefs.SetInt("GameJustStarted", 1);
                 
             }
             yield return null;
