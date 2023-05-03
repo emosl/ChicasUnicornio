@@ -51,7 +51,11 @@ public class Toby : MonoBehaviour
 
 
     public AudioSource Audio;
-    public GameObject canvasFlower;
+  
+    public Animator Flower;
+    public Animator Flower2;
+    public Animator Flower3;
+    public Animator Flower4;
     public GameObject canvasFight;
     
 
@@ -111,7 +115,7 @@ public class Toby : MonoBehaviour
         pickupPanel = FindObjectOfType<ItemPickupPanel>();
     
         player = GameObject.FindGameObjectWithTag("Player");
-        canvasFlower.SetActive(false);
+       
         canvasFight.SetActive(false);
 
         
@@ -119,6 +123,8 @@ public class Toby : MonoBehaviour
         final_stats.shield = shield;
         final_stats.speed = speed;
         final_stats.agility = agility;
+
+        Flower.Play("dance_flower");
         // string jsonStats2 = PlayerPrefs.GetString("final_stats", JsonUtility.ToJson(final_stats));
         string jsonStats2 = JsonUtility.ToJson(final_stats);
         PlayerPrefs.SetString("final_stats", JsonUtility.ToJson(final_stats));
@@ -237,16 +243,17 @@ public class Toby : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Dungeon"))
         {
+            
             // SceneManager.LoadScene("frogger_dungeon");
-            // toby_stats.savedPosition = transform.position; // save the current position of the sprite
-            // string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
-            // PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
-            int pos_dun = TobyStartPosition.selectedStartIndex;
-            int index = tobyStartPosition.startDungeonOptions.IndexOf(tobyStartPosition.startDungeonOptions[pos_dun]);
-            Debug.Log("Dungeon");
+            toby_stats.savedPosition = transform.position; // save the current position of the sprite
+            string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+            PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
+            // int pos_dun = TobyStartPosition.selectedStartIndex;
+            // int index = tobyStartPosition.startDungeonOptions.IndexOf(tobyStartPosition.startDungeonOptions[pos_dun]);
+            // Debug.Log("Dungeon");
 
     
-            api.SetCheckpoint(UN, index);
+            // api.SetCheckpoint(UN, index);
 
             other.gameObject.GetComponent<Dungeon>().AskPermissionD();
         }
@@ -276,8 +283,30 @@ public class Toby : MonoBehaviour
         else if (other.gameObject.CompareTag("Flower")) //This option is activated when Toby gets a strength gadget.
         {
             
-            canvasFlower.SetActive(true);
-            StartCoroutine(Wait());
+            Flower.Play("chat");
+            Flower.Play("dance_flower");
+    
+        }
+        else if (other.gameObject.CompareTag("Flower2")) //This option is activated when Toby gets a strength gadget.
+        {
+            
+            Flower2.Play("chat");
+            Flower2.Play("dance_flower");
+    
+        }
+        else if (other.gameObject.CompareTag("Flower3")) //This option is activated when Toby gets a strength gadget.
+        {
+            
+            Flower3.Play("chat");
+            Flower3.Play("dance_flower");
+    
+        }
+        else if (other.gameObject.CompareTag("Flower4")) //This option is activated when Toby gets a strength gadget.
+        {
+            
+            Flower4.Play("chat");
+            Flower4.Play("dance_flower");
+    
         }
         else if (other.gameObject.CompareTag("fight")) //This option is activated when Toby gets a strength gadget.
         {
@@ -303,12 +332,6 @@ public class Toby : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("FinalBattle");
-    }
-
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(38f);
-        canvasFlower.SetActive(false);
     }
 
    
@@ -371,6 +394,11 @@ public void RemoveItem(string statName)
             highestBonus = bonus;
             itemToRemove = item;
         }
+    }
+    if (itemToRemove != null)
+    {
+        Debug.Log("Removing item: " + itemToRemove.name);
+        equipmentPanel.RemoveItem(itemToRemove);
     }
 
 }
