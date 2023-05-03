@@ -205,7 +205,7 @@ public class Dungeon : MonoBehaviour
     private IEnumerator ShowPanelAndQuestion()
     {
         panel.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(7f);
         preguntas.ShowQuestionD("Do you want to go into Dungeon?", OnTriggerDecision);
         panel.SetActive(false);
     }
