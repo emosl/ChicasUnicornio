@@ -47,7 +47,7 @@ public class Toby : MonoBehaviour
     public EquippableItem equippableItem;
     public TotalScore totalScore;
     [SerializeField] APITest api;
-    public string UN = MenuUser.UiD;
+    string UN = MenuUser.UiD;
 
 
     public AudioSource Audio;
@@ -139,6 +139,7 @@ public class Toby : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("UN: " + UN);
         speed = Mathf.Clamp(speed, 5, 15);
         shield = Mathf.Clamp(shield, 0, 10);
         agility = Mathf.Clamp(agility, 0, 10);
@@ -237,11 +238,12 @@ public class Toby : MonoBehaviour
         else if (other.gameObject.CompareTag("Dungeon"))
         {
             // SceneManager.LoadScene("frogger_dungeon");
-            toby_stats.savedPosition = transform.position; // save the current position of the sprite
-            string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
-            PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
+            // toby_stats.savedPosition = transform.position; // save the current position of the sprite
+            // string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+            // PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
             int pos_dun = TobyStartPosition.selectedStartIndex;
             int index = tobyStartPosition.startDungeonOptions.IndexOf(tobyStartPosition.startDungeonOptions[pos_dun]);
+            Debug.Log("Dungeon");
 
     
             api.SetCheckpoint(UN, index);
