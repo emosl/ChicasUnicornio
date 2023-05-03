@@ -30,6 +30,7 @@ public class GameManagerToby : MonoBehaviour
     string UN = MenuUser.UiD;
     public static int times_played = 0;
     public GameObject canvasFight;
+    public GameObject GameOverMenu;
     //public image stats;
     public class Final_Stats
     {
@@ -49,12 +50,18 @@ public class GameManagerToby : MonoBehaviour
     public Final_Stats final_stats = new Final_Stats();
 
     private void Start(){
+         times_played = PlayerPrefs.GetInt("times_played", 0);
+
+
 
         
         NewGame();
         TimesPlayed();
+        GameOverMenu.SetActive(false);
         Debug.Log("Times played: " + times_played);
         times_played++;
+
+         PlayerPrefs.SetInt("times_played", times_played);
         
 
         // strength = final_stats.strength;
@@ -93,6 +100,33 @@ public class GameManagerToby : MonoBehaviour
         agility = toby.agility;
 
 
+    }
+
+
+        public void GameOver()
+    {
+        Debug.Log("Game Over");
+        GameOverMenu.SetActive(true);
+        StopAllCoroutines();
+        StartCoroutine(RestartGame());
+    }
+
+    private IEnumerator RestartGame()
+    {
+        bool playAgain = false;
+        while (!playAgain)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                playAgain = true;
+
+                PlayerPrefs.SetInt("GameJustStarted", 1);
+                
+            }
+            yield return null;
+        }
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Start_Scene");
     }
 
     
