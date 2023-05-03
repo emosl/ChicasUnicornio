@@ -16,11 +16,11 @@ public class CharacterFight : MonoBehaviour
     public GameManagerFight gameManagerFight;
 
 public void start(){
-            batteryPlayerfight.ChangeAgility(Agility.Value);
-            batteryPlayerfight.ChangeShield(Shield.Value);
-            batteryPlayerfight.ChangeSpeed(Speed.Value);
-            batteryPlayerfight.ChangeStrength(Strength.Value);
-            batteryPlayerfight.ChangeLife(Shield.Value,Strength.Value,Agility.Value,Speed.Value);
+            // batteryPlayerfight.ChangeAgility();
+            // batteryPlayerfight.ChangeShield();
+            // batteryPlayerfight.ChangeSpeed();
+            // batteryPlayerfight.ChangeStrength();
+            // batteryPlayerfight.ChangeLife(Shield.Value,Strength.Value,Agility.Value,Speed.Value);
 }
 
 

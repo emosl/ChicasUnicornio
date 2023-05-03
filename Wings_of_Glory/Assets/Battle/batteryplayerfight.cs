@@ -39,7 +39,7 @@ public class batteryplayerfight : MonoBehaviour
     //Sets all the health bars to their minimum value
     void Start()
     {
-        currentHealth=maxHealth;
+        currentHealth=minHealth;
 
         currentShieldHealth = minShieldHealth;
         shieldhealthbar.SetMinHealth(minShieldHealth);
@@ -53,14 +53,15 @@ public class batteryplayerfight : MonoBehaviour
         currentSpeedHealth = minSpeedHealth;
         speedhealthbar.SetMinHealth(minSpeedHealth);
 
-        ChangeStrength(APITest.strength);
-        ChangeSpeed(APITest.speed);
-        ChangeAgility(APITest.agility);
-        ChangeShield(APITest.shield);
+        ChangeStrength();
+        ChangeSpeed();
+        ChangeAgility();
+        ChangeShield();
     }
     //The following function will be called when the player chooses their armor.
 
     void Update(){
+        ChangeStrength();
         if (Input.GetKeyDown(KeyCode.U)){
             TakeDamage(10);
         }
@@ -72,16 +73,12 @@ public class batteryplayerfight : MonoBehaviour
 
     
 //Function that updates mentioned ability score by the amount specified.
-    public void ChangeStrength(int points)
+    public void ChangeStrength()
     {
-        currentStrengthHealth = points;
-        if (currentStrengthHealth < 0){
-            strengthhealthbar.SetHealth(minStrengthHealth);
-        }
-        else
-        {
-            strengthhealthbar.SetHealth(currentStrengthHealth);
-        }
+        Debug.Log("Strength: " + APITest.strength);
+        strengthhealthbar.SetHealth(APITest.strength);
+        Debug.Log("Strength?: " + APITest.strength);
+        
     }
     //Function that updates mentioned ability score by the amount specified.
    public void ChangeAgility(int points)

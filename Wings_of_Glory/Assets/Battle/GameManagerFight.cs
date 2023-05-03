@@ -44,9 +44,9 @@ public class GameManagerFight : MonoBehaviour
         WinMenu.SetActive(false);
         api.GetDataUnity("2");
         MuleStats();
-        bpf.ChangeSpeed(APITest.speed);
-        bpf.ChangeStrength(APITest.strength);
-        bpf.ChangeShield(8);
+        // bpf.ChangeSpeed(APITest.speed);
+        // bpf.ChangeStrength(APITest.strength);
+        // bpf.ChangeShield(8);
         TobyStats();
         // toby = FindRigidbody2D("Toby");
         
@@ -89,10 +89,10 @@ public class GameManagerFight : MonoBehaviour
         // toby.speed = APITest.speed;
         TobySum = 0 + APITest.strength + APITest.shield + APITest.speed + APITest.agility;
         //Changes health bars of Toby.
-        bpf.ChangeStrength(APITest.strength);
-        bpf.ChangeShield(APITest.shield);
-        bpf.ChangeSpeed(APITest.speed);
-        bpf.ChangeAgility(APITest.agility);
+        // bpf.ChangeStrength(APITest.strength);
+        // bpf.ChangeShield(APITest.shield);
+        // bpf.ChangeSpeed(APITest.speed);
+        // bpf.ChangeAgility(APITest.agility);
 
     }
 
