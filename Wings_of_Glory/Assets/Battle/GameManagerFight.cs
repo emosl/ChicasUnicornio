@@ -1,3 +1,6 @@
+//Wings of Glory script. This script is used in the implementation of Wings of Glory
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+//May 1, 2023
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +10,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerFight : MonoBehaviour
 {
-    public Toby toby;
+    // public Toby toby;
     public int mule_strength;
     public int mule_shield;
     public int mule_speed;
     public int mule_agility;
     [SerializeField] APITest api;
-    public batteryplayer bp;
+    public batteryplayerfight bpf;
     string UN = MenuUser.UiD;
 
     public GameObject GameOverMenu;
@@ -25,7 +28,6 @@ public class GameManagerFight : MonoBehaviour
     public GameObject canvasFight;
     public int TobySum;
     public int MuleSum;
-
     public GameObject pushingObject;
     public GameObject receivingObject;
     public float pushForce = 10f;
@@ -33,16 +35,20 @@ public class GameManagerFight : MonoBehaviour
 
     private void Awake()
     {
-        toby = FindObjectOfType<Toby>();
+        // toby = FindObjectOfType<Toby>();
     }
 
     private void Start()
     {
         GameOverMenu.SetActive(false);
         WinMenu.SetActive(false);
-        api.GetDataUnity("2");
-        TobyStats();
+        api.GetDataUnity("3");
         MuleStats();
+        // bpf.ChangeSpeed(APITest.speed);
+        // bpf.ChangeStrength(APITest.strength);
+        // bpf.ChangeShield(8);
+        TobyStats();
+        // toby = FindRigidbody2D("Toby");
         
     }
 
@@ -55,6 +61,8 @@ public class GameManagerFight : MonoBehaviour
             Debug.Log("TobySum-40: " + TobySum);
             Debug.Log("Mule-40: " + MuleSum);
             Debug.Log("MULESPEED:"+ mule_speed);
+            Debug.Log("TobySpeed:" + APITest.speed);
+            Debug.Log("TobyAgility:" + APITest.agility);
         }
         DeterminePushWinner();
     }
@@ -75,11 +83,17 @@ public class GameManagerFight : MonoBehaviour
     }
     public void TobyStats()
     {
-        toby.agility = APITest.agility;
-        toby.strength = APITest.strength;
-        toby.shield = APITest.shield;
-        toby.speed = APITest.speed;
+        // toby.agility = APITest.agility;
+        // toby.strength = APITest.strength;
+        // toby.shield = APITest.shield;
+        // toby.speed = APITest.speed;
         TobySum = 0 + APITest.strength + APITest.shield + APITest.speed + APITest.agility;
+        //Changes health bars of Toby.
+        // bpf.ChangeStrength(APITest.strength);
+        // bpf.ChangeShield(APITest.shield);
+        // bpf.ChangeSpeed(APITest.speed);
+        // bpf.ChangeAgility(APITest.agility);
+
     }
 
     private void FixedUpdate()
@@ -87,7 +101,7 @@ public class GameManagerFight : MonoBehaviour
         if (isPushing)
         {
             Vector3 pushDirection = (receivingObject.transform.position - pushingObject.transform.position).normalized;
-            receivingObject.GetComponent<Rigidbody>().AddForce(pushDirection * pushForce, ForceMode.Force);
+            receivingObject.GetComponent<Rigidbody2D>().AddForce(pushDirection * pushForce, ForceMode2D.Force);
         }
     }
 
@@ -124,7 +138,7 @@ public class GameManagerFight : MonoBehaviour
         tobyBattle.gameObject.SetActive(false);
         mulaBattle.gameObject.SetActive(false);
         Debug.Log("Game Over");
-        toby.gameObject.SetActive(false);
+        tobyBattle.gameObject.SetActive(false);
         GameOverMenu.SetActive(true);
         StopAllCoroutines();
         StartCoroutine(RestartGame());
@@ -151,7 +165,7 @@ public class GameManagerFight : MonoBehaviour
         tobyBattle.gameObject.SetActive(false);
         mulaBattle.gameObject.SetActive(false);
         Debug.Log("Game Over");
-        toby.gameObject.SetActive(false);
+        tobyBattle.gameObject.SetActive(false);
         WinMenu.SetActive(true);
         StopAllCoroutines();
         StartCoroutine(RestartGame());
