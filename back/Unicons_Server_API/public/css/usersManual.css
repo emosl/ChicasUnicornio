@@ -159,6 +159,11 @@ sub{
     display: flex;
     justify-content: center;
   }
+  .uservideo{
+    width: 1400px;
+    height: auto;
+
+  }
 
 p{
     font-family: 'Palatino', 'URW Palladio L', serif;
