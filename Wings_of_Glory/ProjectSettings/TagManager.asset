@@ -38,6 +38,9 @@ TagManager:
   - Enemy
   - loose
   - win
+  - Flower2
+  - Flower3
+  - Flower4
   layers:
   - Default
   - TransparentFX

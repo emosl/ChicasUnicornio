@@ -15026,6 +15026,9 @@ MonoBehaviour:
   api: {fileID: 753405921}
   Audio: {fileID: 0}
   Flower: {fileID: 1585500589}
+  Flower2: {fileID: 2118231998}
+  Flower3: {fileID: 845568482}
+  Flower4: {fileID: 976005107}
   canvasFight: {fileID: 483216836}
   character: {fileID: 370204291}
   speed: 5
@@ -53477,7 +53480,7 @@ GameObject:
   - component: {fileID: 1194829138}
   m_Layer: 0
   m_Name: Flower_Collider
-  m_TagString: Flower
+  m_TagString: Flower2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53535,7 +53538,7 @@ GameObject:
   - component: {fileID: 1195163635}
   m_Layer: 0
   m_Name: Flower_Collider
-  m_TagString: Flower
+  m_TagString: Flower3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

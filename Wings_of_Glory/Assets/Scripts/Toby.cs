@@ -53,6 +53,9 @@ public class Toby : MonoBehaviour
     public AudioSource Audio;
   
     public Animator Flower;
+    public Animator Flower2;
+    public Animator Flower3;
+    public Animator Flower4;
     public GameObject canvasFight;
     
 
@@ -282,6 +285,27 @@ public class Toby : MonoBehaviour
             
             Flower.Play("chat");
             Flower.Play("dance_flower");
+    
+        }
+        else if (other.gameObject.CompareTag("Flower2")) //This option is activated when Toby gets a strength gadget.
+        {
+            
+            Flower2.Play("chat");
+            Flower2.Play("dance_flower");
+    
+        }
+        else if (other.gameObject.CompareTag("Flower3")) //This option is activated when Toby gets a strength gadget.
+        {
+            
+            Flower3.Play("chat");
+            Flower3.Play("dance_flower");
+    
+        }
+        else if (other.gameObject.CompareTag("Flower4")) //This option is activated when Toby gets a strength gadget.
+        {
+            
+            Flower4.Play("chat");
+            Flower4.Play("dance_flower");
     
         }
         else if (other.gameObject.CompareTag("fight")) //This option is activated when Toby gets a strength gadget.
