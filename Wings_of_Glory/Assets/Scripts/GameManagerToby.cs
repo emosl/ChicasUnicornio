@@ -32,9 +32,11 @@ public class GameManagerToby : MonoBehaviour
     public GameObject canvasFight;
 
     public static int currentMapIndex = 0;
-    public static bool gameJustStarted = true;
+    public static bool gameJustStarted = false;
 
     private Dictionary<string, int> spriteNameToMapIndex;
+
+    
 
     //public image stats;
     public class Final_Stats
@@ -51,6 +53,7 @@ public class GameManagerToby : MonoBehaviour
         //homes = FindObjectsOfType<Home>();
         toby = FindObjectOfType<Toby>();
 
+
         spriteNameToMapIndex = new Dictionary<string, int>
         {
             { "pos1", 1 },
@@ -58,6 +61,10 @@ public class GameManagerToby : MonoBehaviour
             { "pos3", 3 },
             { "pos4", 4 }
         };
+
+        gameJustStarted = true;
+
+
 
     }
     public Final_Stats final_stats = new Final_Stats();
