@@ -46,6 +46,7 @@ public class Toby : MonoBehaviour
     public Inventory inventory;
     public EquippableItem equippableItem;
     public TotalScore totalScore;
+    [SerializeField] APITest api;
 
 
     public AudioSource Audio;
@@ -76,6 +77,8 @@ public class Toby : MonoBehaviour
     public Sprite idleSprite;
     public Sprite leapSprite;
     public GameObject[] levels;
+
+    public TobyStartPosition tobyStartPosition;
 
     public Toby_stats toby_stats = new Toby_stats();
     public Final_Stats final_stats = new Final_Stats();
@@ -236,6 +239,12 @@ public class Toby : MonoBehaviour
             toby_stats.savedPosition = transform.position; // save the current position of the sprite
             string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
             PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
+            int pos_dun = TobyStartPosition.selectedStartIndex;
+            int index = tobyStartPosition.startDungeonOptions.IndexOf(tobyStartPosition.startDungeonOptions[pos_dun]);
+
+    
+            api.SetCheckpoint(index);
+
             other.gameObject.GetComponent<Dungeon>().AskPermissionD();
         }
         else if (other.gameObject.CompareTag("Food")) //This option is activated when Toby gets a strength gadget.
