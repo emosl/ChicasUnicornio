@@ -42,7 +42,7 @@ public class GameManagerFight : MonoBehaviour
     {
         GameOverMenu.SetActive(false);
         WinMenu.SetActive(false);
-        api.GetDataUnity("3");
+        api.GetDataUnity(UN);
         MuleStats();
         // bpf.ChangeSpeed(APITest.speed);
         // bpf.ChangeStrength(APITest.strength);
