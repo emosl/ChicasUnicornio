@@ -75,6 +75,7 @@ public class TimesPlayed
 }
 public class Checkpoint
 {
+    public string username_ID;
     public int checkpoint;
 }
 
@@ -234,8 +235,9 @@ public class APITest : MonoBehaviour
         UN2 = UiD;
         StartCoroutine(GetCheckpointData());
     }
-    public void SetCheckpoint(int checkpoint)
+    public void SetCheckpoint(string UiD, int checkpoint)
     {
+        UN2 = UiD;
         checkpoint2 = checkpoint;
         StartCoroutine(SetCheckpointData());
     }
@@ -505,6 +507,7 @@ public class APITest : MonoBehaviour
     {
         Checkpoint testData = new Checkpoint();
         testData.checkpoint = checkpoint2;
+        testData.username_ID = UN2;
 
         // Debug.Log("DATA: " + testData.total_score);
         string jsonData = JsonUtility.ToJson(testData);
