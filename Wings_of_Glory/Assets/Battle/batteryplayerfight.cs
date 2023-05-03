@@ -64,6 +64,9 @@ public class batteryplayerfight : MonoBehaviour
 
     void Update(){
         ChangeStrength();
+        // ChangeSpeed();
+        // ChangeAgility();
+        // ChangeShield();
         // ChangeAgility();
         if (Input.GetKeyDown(KeyCode.U)){
             TakeDamage(10);
@@ -81,7 +84,7 @@ public class batteryplayerfight : MonoBehaviour
         Debug.Log("Strength: " + APITest.strength);
         currentStrengthHealth = APITest.strength;
         Debug.Log("Strength: " + currentStrengthHealth);
-        strengthhealthbar.SetHealth(currentStrengthHealth);
+        strengthhealthbar.SetHealth((10));
         Debug.Log("Strength?: " + APITest.strength);
         
     }
@@ -91,7 +94,7 @@ public class batteryplayerfight : MonoBehaviour
         Debug.Log("Agility: " + APITest.agility);
         currentAgilityHealth = APITest.agility;
         Debug.Log("Agility: " + currentAgilityHealth);
-        strengthhealthbar.SetHealth((currentAgilityHealth));
+        strengthhealthbar.SetHealth(62);
         Debug.Log("Strength?: " + APITest.agility);
 
     }
@@ -101,7 +104,7 @@ public class batteryplayerfight : MonoBehaviour
         Debug.Log("Speed: " + APITest.speed);
         currentSpeedHealth = APITest.speed;
         Debug.Log("Speed: " + currentSpeedHealth);
-        strengthhealthbar.SetHealth((currentSpeedHealth));
+        strengthhealthbar.SetHealth((5 + 5));
         Debug.Log("Speed?: " + APITest.speed);
 
 
@@ -112,7 +115,7 @@ public class batteryplayerfight : MonoBehaviour
         Debug.Log("Shield: " + APITest.shield);
         currentShieldHealth = APITest.shield;
         Debug.Log("Shield: " + currentShieldHealth);
-        strengthhealthbar.SetHealth((currentShieldHealth));
+        strengthhealthbar.SetHealth(6);
         Debug.Log("Shield?: " + APITest.shield);
    
     }

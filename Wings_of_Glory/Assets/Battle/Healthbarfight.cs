@@ -17,7 +17,7 @@ public class Healthbarfight : MonoBehaviour
     public void SetHealth(int health)
     {
         
-        slider.value = health * 2;
+        slider.value = health ;
         Debug.Log("Health: " + health);
     }
 
