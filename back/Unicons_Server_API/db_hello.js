@@ -72,6 +72,13 @@ app.get('/statistics.html', async (request, response) => {
         response.send(html)
     })
   });
+  app.get('/login.html', async (request, response) => {
+    fs.readFile('./public/html/login.html', 'utf8', (err, html)=>{
+        if(err) response.status(500).send('There was an error: ' + err)
+        console.log('Loading page...')
+        response.send(html)
+    })
+  });
 
 
 ////BASE DE DATOS
@@ -459,32 +466,36 @@ app.post('/api/game_history', async (request, response)=>{
     }
  })
  // PUT REQUESTS
-app.put('/api/users', async (request, response)=>{
-
-    let connection = null
-
-    try{
-        connection = await connectToDB()
-
-        const [results, fields] = await connection.query('update users set name = ?, surname = ? where id_users= ?', [request.body['name'], request.body['surname'], request.body['userID']])
-        
-        response.json({'message': "Data updated correctly."})
+ app.post('/api/login', async (request, response) => {
+    const { email, password } = request.body;
+  
+    let connection = null;
+  
+    try {
+      connection = await connectToDB();
+  
+      const [results, fields] = await connection.query('SELECT username_ID, name FROM users WHERE email = ? AND password = ?', [email, password]);
+  
+      if (results.length > 0) {
+        // The username and password are correct
+        const username_ID = results[0].username_ID;
+        const name=results[0].name;
+        response.json({ message: 'Login successful! This is your ID',username_ID: username_ID,
+            name:name});
+      } else {
+        // The username and/or password are incorrect
+        response.status(401).json({ error: 'Incorrect mail and/or password' });
+      }
+    } catch (error) {
+      response.status(500).json(error);
+      console.log(error);
+    } finally {
+      if (connection !== null) {
+        connection.end();
+        console.log('Connection closed successfully!');
+      }
     }
-    catch(error)
-    {
-        response.status(500)
-        response.json(error)
-        console.log(error)
-    }
-    finally
-    {
-        if(connection!==null) 
-        {
-            connection.end()
-            console.log("Connection closed succesfully!")
-        }
-    }
-})
+  });
 app.put('/api/', async (request, response)=>{
 
     let connection = null

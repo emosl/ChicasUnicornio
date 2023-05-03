@@ -22,6 +22,7 @@ public class TotalScore : MonoBehaviour
 
     public void SetScore(int points)
     {
+        Debug.Log("score points" + points);
         score += points;
         //this.score = score;
         scoreText.text = score.ToString();

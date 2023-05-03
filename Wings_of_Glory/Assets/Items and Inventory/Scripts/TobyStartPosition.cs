@@ -15,4 +15,6 @@ public class TobyStartPosition : MonoBehaviour
         // Set Toby's position to the position of the selected SpriteRenderer
         toby.transform.position = startPosition.transform.position;
     }
+        
 }
+
