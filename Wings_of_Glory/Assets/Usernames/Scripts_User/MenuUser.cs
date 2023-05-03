@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
 using UnityEngine.Video;
 using TMPro;
 
@@ -13,7 +12,6 @@ public class MenuUser : MonoBehaviour
     public Button PlayButton;
     public Button UpdateBotton;
     public string sceneName;
-    public AudioSource Audio;
     public static string UiD; // The global variable to store the username ID
     private string input;
 
@@ -40,7 +38,6 @@ public class MenuUser : MonoBehaviour
     {
         
         ButtonPressed?.Invoke(decision);
-        Audio.Play();
         OnPlayButtonClicked();
         // Debug.Log(UiD);
         GetUser();
@@ -52,7 +49,6 @@ public class MenuUser : MonoBehaviour
     {
         
         ButtonPressed?.Invoke(decision);
-        Audio.Play();
         UpdateData();
         
     
