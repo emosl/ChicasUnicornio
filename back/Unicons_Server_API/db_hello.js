@@ -819,7 +819,63 @@ app.get('/api/save_data', async (request, response)=>{
     }
 });
 
-  
+app.get('/api/checkpoint_id', async (request, response)=>{
+
+    let connection = await connectToDB()
+
+    try{
+        const { usernameID } = request.query;
+        const [result, fields] = await connection.query('SELECT checkpoint FROM `checkpoint` WHERE `username_ID` = ?', [usernameID]);
+        
+        console.log(result)
+        response.json({ "checkpoint": result[0].checkpoint })
+        
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+});
+
+app.put('/api/checkpoint_id', async (request, response)=>{
+
+    let connection = null
+
+    try{
+        connection = await connectToDB()
+        console.log(request.body)
+        // const [results, fields] = await connection.query('update final_score set total_score = ? where username_ID = ?', [request.body['total_score'], request.body['username_ID']])
+        const [results, fields] = await connection.query('update checkpoint set checkpoint = ? where username_ID = ?', [request.body['checkpoint'], request.body['username_ID']])
+
+        
+        response.json({'message': "Data updated correctly."})
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+});
+
 
 
   
