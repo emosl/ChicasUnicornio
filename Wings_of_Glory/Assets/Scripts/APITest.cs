@@ -73,6 +73,11 @@ public class TimesPlayed
 {
     public int times_played;
 }
+public class Checkpoint
+{
+    public string username_ID;
+    public int checkpoint;
+}
 
 // Allow the class to be extracted from Unity
 [System.Serializable]
@@ -107,6 +112,8 @@ public class APITest : MonoBehaviour
     [SerializeField] string insertKillSpriteEP;
     [SerializeField] string getTimesPlayedEP;
     [SerializeField] string getSavedDataEP;
+    [SerializeField] string getCheckpointEP;
+    [SerializeField] string putCheckpointEP;
     [SerializeField] Text errorText;
 
     public static int strength;
@@ -114,6 +121,7 @@ public class APITest : MonoBehaviour
     public static int speed;
     public static int agility;
     public static int total_score; 
+    public static int position_checkpoint;
     string UN = MenuUser.UiD;
     string UN2;
     int TS = GameManagerToby.scoregamemanager;
@@ -125,6 +133,7 @@ public class APITest : MonoBehaviour
     int tp;
     int gadget2;
     int killer2;
+    int checkpoint2;
     // int TP = GameManagerToby.timesPlayed;
 
     private GameManagerToby gameManager;
@@ -135,6 +144,7 @@ public class APITest : MonoBehaviour
     public Username allUsername; 
     public TimesPlayed allTimesPlayed;
     public SavedData allSavedData;
+    public Checkpoint allCheckpoint;
 
      void Start()
     {
@@ -144,27 +154,7 @@ public class APITest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            QueryUsers();
-        }
-        if (Input.GetKeyDown(KeyCode.N)) {
-            InsertNewUser();
-        }
-        */
-        //para checarlo
-        // if (gameManager != null)
-        // {
-        //     Debug.Log("Gadget list count: ");
-        //     // Debug.Log("Killer sprite list count: " + gameManager.killerspritelist.Count);
-        // }
-        // Access the gadget list and killer sprite list
-        // List<int> gadgetList = gameManager.gadgetlist;
-        // List<int> killerSpriteList = gameManager.killerspritelist;
-
-        // // Use the lists as needed
-        // Debug.Log("Gadget list count: " + gadgetList.Count);
-        // Debug.Log("Killer sprite list count: " + killerSpriteList.Count);
+        
     }
 
     // Show the results of the Query in the Unity UI elements,
@@ -239,6 +229,17 @@ public class APITest : MonoBehaviour
         UN2 = UiD;
         Debug.Log("USERID: " + UN2);
         StartCoroutine(GetDataFinal());
+    }
+    public void GetCheckpoint(string UiD)
+    {
+        UN2 = UiD;
+        StartCoroutine(GetCheckpointData());
+    }
+    public void SetCheckpoint(string UiD, int checkpoint)
+    {
+        UN2 = UiD;
+        checkpoint2 = checkpoint;
+        StartCoroutine(SetCheckpointData());
     }
 
     public void QueryScores()
@@ -376,6 +377,35 @@ public class APITest : MonoBehaviour
         }
     }    
 
+    IEnumerator GetCheckpointData()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get(url + getCheckpointEP + UN2))
+        //crea un request de tipo get, y le pasa la url
+        {
+            yield return www.SendWebRequest();
+            //espera a que termine el request (await)
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                //Debug.Log("Response: " + www.downloadHandler.text);
+                // Compose the response to look like the object we want to extract
+                // https://answers.unity.com/questions/1503047/json-must-represent-an-object-type.html
+                string jsonString =  www.downloadHandler.text;
+                // string jsonString = www.downloadHandler.text;
+                Debug.Log("JSON" + jsonString);
+                allCheckpoint= JsonUtility.FromJson<Checkpoint>(jsonString); //nuevo objeto con la lista de usuarios
+                // allSavedData.score_agility = allTimesPlayed.score_agility;
+                position_checkpoint = allCheckpoint.checkpoint;
+                Debug.Log("checkpoint " + allCheckpoint.checkpoint);
+                // Debug.Log("Response: " + www.downloadHandler.text);
+                // DisplayUser();
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }    
+
     IEnumerator GetScores()
     {
         using (UnityWebRequest www = UnityWebRequest.Get(url + getUsersEP))
@@ -465,6 +495,36 @@ public class APITest : MonoBehaviour
 
             if (www.result == UnityWebRequest.Result.Success) {
                 Debug.Log("Response: " + www.downloadHandler.text);
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }
+
+    IEnumerator SetCheckpointData()
+    {
+        Checkpoint testData = new Checkpoint();
+        testData.checkpoint = checkpoint2;
+        testData.username_ID = UN2;
+
+        // Debug.Log("DATA: " + testData.total_score);
+        string jsonData = JsonUtility.ToJson(testData);
+        Debug.Log("BODY: " + jsonData);
+
+        // Send using the Put method:
+        // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
+        using (UnityWebRequest www = UnityWebRequest.Put(url + putCheckpointEP, jsonData))
+        {
+            //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
+            // Set the method later, and indicate the encoding is JSON
+            www.method = "PUT";
+            www.SetRequestHeader("Content-Type", "application/json");
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                // Debug.Log("Response: " + www.downloadHandler.text);
                 if (errorText != null) errorText.text = "";
             } else {
                 Debug.Log("Error: " + www.error);
