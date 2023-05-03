@@ -47,6 +47,7 @@ public class Toby : MonoBehaviour
     public EquippableItem equippableItem;
     public TotalScore totalScore;
     [SerializeField] APITest api;
+    public string UN = MenuUser.UiD;
 
 
     public AudioSource Audio;
@@ -243,7 +244,7 @@ public class Toby : MonoBehaviour
             int index = tobyStartPosition.startDungeonOptions.IndexOf(tobyStartPosition.startDungeonOptions[pos_dun]);
 
     
-            api.SetCheckpoint(index);
+            api.SetCheckpoint(UN, index);
 
             other.gameObject.GetComponent<Dungeon>().AskPermissionD();
         }
