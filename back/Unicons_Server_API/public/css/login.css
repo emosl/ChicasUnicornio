@@ -11,13 +11,18 @@
 body, html{
     margin: 0;
     padding: 0;
-    color: #F7F7F2;
-    font-size: 20px;
-    background-image: linear-gradient(to right, #E6BCCD, #A88FAC);
+    background:#E6BCCD;
     text-align: justify;
     margin-bottom: 5%;
+    
   }
-  /* rgb(255, 178, 225) */
+
+p{
+  font-family: 'Palatino', 'URW Palladio L', serif;
+  color: #F7F7F2;
+  font-size: 20px;
+}
+
 
 
 #logo{
@@ -34,10 +39,10 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    color: #29274C; 
+    color: #ffffff; 
     font-size: 100px;
     font-family: 'VT323', monospace;
-    /* text-shadow: 2px 2px 2px #5F2E7E; */
+    text-shadow: 2px 2px 2px #29274C; 
   }
   
   .grid-container{
@@ -58,7 +63,7 @@ h1 {
         padding: 12px 20px;
         margin: 8px 0;
         display: inline-block;
-        border: 1px solid #29274C;
+        border: 1px solid #B392AC;
         box-sizing: border-box;
       }
       
@@ -101,18 +106,18 @@ h1 {
       
       li a {
         display: block;
-        color: #29274C;
+        color: #ffffff;
         text-align: center;
         padding: 20px 20px;
         text-decoration: none;
       }
       
       li a:hover {
-        color: #AF1B3F;
+        color: #E68EB0;
       }
 
     button:hover {
-        background-color:#AF1B3F;
+        background-color: #423f7b;
     }
 
     .imgcontainer {
@@ -151,8 +156,7 @@ h1 {
     .container {
         padding-left: 50px;
         padding-right: 50px;
-        /* padding-top: 25px; */
-        /* background-color: #29274C; */
+        
         margin-bottom: 100px;
         /* height: 50px;; */
     }
@@ -166,7 +170,6 @@ h1 {
       /* height: 50px;; */
   }
     .title{
-      /* background-color:#E6BCCD ; */
       margin-bottom:0px;
     }
 
@@ -196,17 +199,12 @@ h1 {
         color: #C874D9;
     }
 
-    .remember{
-        font-family: 'VT323', monospace;
-        font-size: 20px;
-        text-shadow: #5b0758;
-    }
 
     #sub{
       font-family: 'VT323', monospace;
       color: #ffffff;
-      text-shadow: 2px 2px 2px #5F2E7E;
+      text-shadow: 2px 2px 2px #423f7b;
       font-size: 50px;
-      /* text-align: center; */
       }
     
+      
