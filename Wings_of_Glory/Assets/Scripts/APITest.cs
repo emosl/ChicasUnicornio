@@ -232,6 +232,11 @@ public class APITest : MonoBehaviour
         UN2 = UiD;
         StartCoroutine(GetCheckpointData());
     }
+    public void SetCheckpoint(int checkpoint)
+    {
+        checkpoint2 = checkpoint;
+        StartCoroutine(SetCheckpointData());
+    }
 
     public void QueryScores()
     {
@@ -485,6 +490,35 @@ public class APITest : MonoBehaviour
 
             if (www.result == UnityWebRequest.Result.Success) {
                 Debug.Log("Response: " + www.downloadHandler.text);
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }
+
+    IEnumerator SetCheckpointData()
+    {
+        Checkpoint testData = new Checkpoint();
+        testData.checkpoint = checkpoint2;
+
+        // Debug.Log("DATA: " + testData.total_score);
+        string jsonData = JsonUtility.ToJson(testData);
+        Debug.Log("BODY: " + jsonData);
+
+        // Send using the Put method:
+        // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
+        using (UnityWebRequest www = UnityWebRequest.Put(url + getCheckpointEP, jsonData))
+        {
+            //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
+            // Set the method later, and indicate the encoding is JSON
+            www.method = "PUT";
+            www.SetRequestHeader("Content-Type", "application/json");
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                // Debug.Log("Response: " + www.downloadHandler.text);
                 if (errorText != null) errorText.text = "";
             } else {
                 Debug.Log("Error: " + www.error);
