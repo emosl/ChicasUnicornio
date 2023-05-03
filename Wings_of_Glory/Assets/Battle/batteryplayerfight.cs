@@ -32,6 +32,8 @@ public class batteryplayerfight : MonoBehaviour
     public Healthbarfight speedhealthbar;
     public Healthbarfight lifehealthbar;
     public Healthbarfight shieldhealthbar;
+
+    [SerializeField] APITest api;
     //public Toby_stats toby_stats;
     
 
@@ -52,7 +54,7 @@ public class batteryplayerfight : MonoBehaviour
 
         currentSpeedHealth = minSpeedHealth;
         speedhealthbar.SetMinHealth(minSpeedHealth);
-
+        strengthhealthbar.SetHealth(APITest.strength);
         ChangeStrength();
         ChangeSpeed();
         ChangeAgility();
@@ -62,6 +64,7 @@ public class batteryplayerfight : MonoBehaviour
 
     void Update(){
         ChangeStrength();
+        // ChangeAgility();
         if (Input.GetKeyDown(KeyCode.U)){
             TakeDamage(10);
         }
@@ -76,55 +79,41 @@ public class batteryplayerfight : MonoBehaviour
     public void ChangeStrength()
     {
         Debug.Log("Strength: " + APITest.strength);
-        strengthhealthbar.SetHealth(APITest.strength);
+        currentStrengthHealth = APITest.strength;
+        Debug.Log("Strength: " + currentStrengthHealth);
+        strengthhealthbar.SetHealth(currentStrengthHealth);
         Debug.Log("Strength?: " + APITest.strength);
         
     }
     //Function that updates mentioned ability score by the amount specified.
-   public void ChangeAgility(int points)
+   public void ChangeAgility()
     {
-        currentAgilityHealth = points;
-        
-
-        if (currentAgilityHealth < 0){
-            agilityhealthbar.SetHealth(minAgilityHealth);
-        }
-        else
-        {
-            agilityhealthbar.SetHealth(currentAgilityHealth);
-        }
+        Debug.Log("Agility: " + APITest.agility);
+        currentAgilityHealth = APITest.agility;
+        Debug.Log("Agility: " + currentAgilityHealth);
+        strengthhealthbar.SetHealth((currentAgilityHealth));
+        Debug.Log("Strength?: " + APITest.agility);
 
     }
 //Function that updates mentioned ability score by the amount specified.
-     public void ChangeSpeed(int points)
+     public void ChangeSpeed()
     {
-        currentSpeedHealth=points;
-        
-       
-        if (currentSpeedHealth < 0){
-             speedhealthbar.SetHealth(minSpeedHealth);
-        }
-        else
-        {
-             speedhealthbar.SetHealth(currentSpeedHealth);
-        }
+        Debug.Log("Speed: " + APITest.speed);
+        currentSpeedHealth = APITest.speed;
+        Debug.Log("Speed: " + currentSpeedHealth);
+        strengthhealthbar.SetHealth((currentSpeedHealth));
+        Debug.Log("Speed?: " + APITest.speed);
 
 
     }
 //Function that updates mentioned ability score by the amount specified.
-    public void ChangeShield(int points)
+    public void ChangeShield()
     {
-        currentShieldHealth=points;
-        
-        
-
-        if (currentShieldHealth < 0){
-            shieldhealthbar.SetHealth(minShieldHealth);
-        }
-        else
-        {
-            shieldhealthbar.SetHealth(currentShieldHealth);
-        }
+        Debug.Log("Shield: " + APITest.shield);
+        currentShieldHealth = APITest.shield;
+        Debug.Log("Shield: " + currentShieldHealth);
+        strengthhealthbar.SetHealth((currentShieldHealth));
+        Debug.Log("Shield?: " + APITest.shield);
    
     }
 

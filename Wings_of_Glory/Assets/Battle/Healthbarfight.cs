@@ -10,12 +10,15 @@ using UnityEngine.UI;
 public class Healthbarfight : MonoBehaviour
 {
     public Slider slider;
+     [SerializeField] APITest api;
     // Start is called before the first frame update
     
     //THis function is the one that is called when a change is made.
     public void SetHealth(int health)
     {
-        slider.value = health;
+        
+        slider.value = health * 2;
+        Debug.Log("Health: " + health);
     }
 
     public void SetMaxHealth(int health)
