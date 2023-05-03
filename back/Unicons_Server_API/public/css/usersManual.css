@@ -3,6 +3,22 @@
 *{
     box-sizing: border-box;
 }
+body, html{
+  margin: 0;
+  padding: 0;
+  background:#E6BCCD;
+  text-align: justify;
+  margin-bottom: 5%;
+  
+}
+p{
+  font-family: 'Palatino', 'URW Palladio L', serif;
+  color: #29274C;
+  font-size: 10px;
+}
+h2{
+  font-size: 50px;
+}
 
 .head{
   display: flex;
@@ -31,7 +47,6 @@ h1 {
 
   header {
     color: #fff;
-    padding: 10px;
   }
 
   main {
@@ -48,10 +63,10 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    color: aliceblue;
+    color: #29274C;
     font-size: 100px;
     font-family: 'VT323', monospace;
-    text-shadow: 2px 2px 2px #29274C;
+    text-shadow: 2px 2px 2px aliceblue;
     text-align: center;
   }
 
@@ -83,8 +98,8 @@ h1 {
 sub{
   font-family: 'VT323', monospace;
   color: #ffffff;
-  
-  font-size: 5px;
+  text-shadow: 2px 2px 2px #423f7b;
+  font-size: 50px;
 }
 
   .subtopic {
@@ -96,7 +111,7 @@ sub{
     font-family: 'VT323', monospace;
     color: #ffff;
     text-shadow: #29274C 2px 2px 2px;
-    font-size: 35px;
+    font-size: 50px;
   }
   
 #menu{
@@ -108,6 +123,7 @@ sub{
     margin: 0;
     padding: 0;
     font-family: 'VT323', monospace;
+    background-color: #29274C;
   }
 
   ul {
@@ -149,23 +165,22 @@ p{
     font-size: 20px;
     margin-top: 0;
     text-align: justify;
-    color: #ffffff;
+    color: #29274C;
     padding: 5px;
     text-shadow: none;
-    
-    
 }
 
 img{
-  width: auto;
-  height: 300px;
+  width:650px;
+  height: auto;
   border-radius: 10px;
   margin-bottom: 50px;
 }
 
 video{
-  width: auto;
-  height: 300px;
+  width: 650px;
+  height: auto;
+  /* height: auto; */
   border-radius: 10px;
   border-radius: 10px;
 }
