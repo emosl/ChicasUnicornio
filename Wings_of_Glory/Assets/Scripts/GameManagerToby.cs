@@ -1,6 +1,6 @@
-//Wings of Glory script. This script is used in the implementation of Wings of Glory
-//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
-//May 1, 2023
+// //Wings of Glory script. This script is used in the implementation of Wings of Glory
+// //Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+// //May 1, 2023
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
@@ -31,6 +31,7 @@ public class GameManagerToby : MonoBehaviour
     public static int times_played = 0;
     public GameObject canvasFight;
     public GameObject GameOverMenu;
+    public TobyStartPosition tobyStartPosition;
     //public image stats;
     public class Final_Stats
     {
@@ -45,12 +46,18 @@ public class GameManagerToby : MonoBehaviour
     {
         //homes = FindObjectsOfType<Home>();
         toby = FindObjectOfType<Toby>();
+        
 
     }
+
+
     public Final_Stats final_stats = new Final_Stats();
 
     private void Start(){
-         times_played = PlayerPrefs.GetInt("times_played", 0);
+     
+        times_played = PlayerPrefs.GetInt("times_played", 0);
+       
+    
 
 
 
@@ -69,6 +76,8 @@ public class GameManagerToby : MonoBehaviour
         // speed = final_stats.speed;
         // agility = final_stats.agility;
     }
+
+
     private void NewGame()
     {
         //gameOverMenu.SetActive(false);

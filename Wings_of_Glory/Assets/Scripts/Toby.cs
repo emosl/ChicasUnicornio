@@ -237,16 +237,17 @@ public class Toby : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Dungeon"))
         {
+            
             // SceneManager.LoadScene("frogger_dungeon");
-            // toby_stats.savedPosition = transform.position; // save the current position of the sprite
-            // string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
-            // PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
-            int pos_dun = TobyStartPosition.selectedStartIndex;
-            int index = tobyStartPosition.startDungeonOptions.IndexOf(tobyStartPosition.startDungeonOptions[pos_dun]);
-            Debug.Log("Dungeon");
+            toby_stats.savedPosition = transform.position; // save the current position of the sprite
+            string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+            PlayerPrefs.SetString("toby_stats", jsonStats); //guarda posición
+            // int pos_dun = TobyStartPosition.selectedStartIndex;
+            // int index = tobyStartPosition.startDungeonOptions.IndexOf(tobyStartPosition.startDungeonOptions[pos_dun]);
+            // Debug.Log("Dungeon");
 
     
-            api.SetCheckpoint(UN, index);
+            // api.SetCheckpoint(UN, index);
 
             other.gameObject.GetComponent<Dungeon>().AskPermissionD();
         }
@@ -371,6 +372,11 @@ public void RemoveItem(string statName)
             highestBonus = bonus;
             itemToRemove = item;
         }
+    }
+    if (itemToRemove != null)
+    {
+        Debug.Log("Removing item: " + itemToRemove.name);
+        equipmentPanel.RemoveItem(itemToRemove);
     }
 
 }

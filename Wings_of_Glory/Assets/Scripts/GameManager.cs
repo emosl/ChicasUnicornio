@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
     public TMP_Text timeText;
     private Vector3 lastPlayerPos; 
     public string sceneName;
+    public GameObject panel;
+    public TobyStartPosition tobyStartPosition;
+    public float delayTime = 5.0f;
+    public int gameJustStarted;
 
     private void Awake()
     {
@@ -31,7 +35,10 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        panel.SetActive(false);
         NewGame();
+        
+    
         // if (PlayerPrefs.GetInt("FirstTime", 1) == 1) {
         //     PlayerPrefs.SetInt("FirstTime", 0);
         //     SceneManager.LoadScene("SampleScene");
@@ -68,7 +75,8 @@ public class GameManager : MonoBehaviour
             homes[i].enabled = false;
         }
         Respwan();
-    //    SceneManager.LoadScene("SampleScene");
+        
+       
        
     }
 
@@ -78,6 +86,8 @@ public class GameManager : MonoBehaviour
         frogger.Respwan();
         StopAllCoroutines();
         StartCoroutine(Timer(30));
+        
+
     }
 
     private IEnumerator Timer(int duration)
@@ -123,6 +133,7 @@ public class GameManager : MonoBehaviour
         frogger.gameObject.SetActive(false);
         StopAllCoroutines();
         //toby.GetComponent<CamerMove>().Start();
+
         SceneManager.LoadScene("SampleScene");
         // toby.GetComponent<Dungeon>().Scene();
         // Debug.Log("Game Over");
@@ -149,27 +160,30 @@ public class GameManager : MonoBehaviour
     }
 
     public void HomeOccupied()
-    {
-        frogger.gameObject.SetActive(false);
-        int bonusPoints = time * 20;
-        SetScore(score + 50);
-        
-        if(Cleared())
-        {
-            // SetLives(lives + 1);
-            // SetScore(score + 1000);
-            // Invoke(nameof(Newlevel), 1f);
-            PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
-            SceneManager.LoadScene("SampleScene");
-        }
-        else
-        {
-            // Invoke(nameof(Respwan), 1f);
-            PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
-            SceneManager.LoadScene("SampleScene");
-        }
-    }
+{
+    frogger.gameObject.SetActive(false);
+    int bonusPoints = time * 20;
+    SetScore(score + 50);
 
+    if (Cleared())
+    {
+        PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
+        StartCoroutine(WaitAndLoadScene("FinalBattle"));
+    }
+    else
+    {
+        PlayerPrefs.SetString("lastScene", SceneManager.GetActiveScene().name);
+        StartCoroutine(WaitAndLoadScene("FinalBattle"));
+    }
+}
+
+private IEnumerator WaitAndLoadScene(string sceneName)
+{
+    panel.SetActive(true);
+    yield return new WaitForSeconds(delayTime);
+    panel.SetActive(false);
+    SceneManager.LoadScene(sceneName);
+}
     private bool Cleared()
     {
         for(int i = 0; i < homes.Length; i++)
