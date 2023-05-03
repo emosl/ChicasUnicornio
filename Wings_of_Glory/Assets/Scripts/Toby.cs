@@ -51,7 +51,8 @@ public class Toby : MonoBehaviour
 
 
     public AudioSource Audio;
-    public GameObject canvasFlower;
+  
+    public Animator Flower;
     public GameObject canvasFight;
     
 
@@ -111,7 +112,7 @@ public class Toby : MonoBehaviour
         pickupPanel = FindObjectOfType<ItemPickupPanel>();
     
         player = GameObject.FindGameObjectWithTag("Player");
-        canvasFlower.SetActive(false);
+       
         canvasFight.SetActive(false);
 
         
@@ -119,6 +120,8 @@ public class Toby : MonoBehaviour
         final_stats.shield = shield;
         final_stats.speed = speed;
         final_stats.agility = agility;
+
+        Flower.Play("dance_flower");
         // string jsonStats2 = PlayerPrefs.GetString("final_stats", JsonUtility.ToJson(final_stats));
         string jsonStats2 = JsonUtility.ToJson(final_stats);
         PlayerPrefs.SetString("final_stats", JsonUtility.ToJson(final_stats));
@@ -277,8 +280,9 @@ public class Toby : MonoBehaviour
         else if (other.gameObject.CompareTag("Flower")) //This option is activated when Toby gets a strength gadget.
         {
             
-            canvasFlower.SetActive(true);
-            StartCoroutine(Wait());
+            Flower.Play("chat");
+            Flower.Play("dance_flower");
+    
         }
         else if (other.gameObject.CompareTag("fight")) //This option is activated when Toby gets a strength gadget.
         {
@@ -304,12 +308,6 @@ public class Toby : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("FinalBattle");
-    }
-
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(38f);
-        canvasFlower.SetActive(false);
     }
 
    
