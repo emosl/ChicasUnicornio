@@ -112,6 +112,7 @@ public class APITest : MonoBehaviour
     [SerializeField] string getTimesPlayedEP;
     [SerializeField] string getSavedDataEP;
     [SerializeField] string getCheckpointEP;
+    [SerializeField] string putCheckpointEP;
     [SerializeField] Text errorText;
 
     public static int strength;
@@ -388,7 +389,7 @@ public class APITest : MonoBehaviour
                 string jsonString =  www.downloadHandler.text;
                 // string jsonString = www.downloadHandler.text;
                 Debug.Log("JSON" + jsonString);
-                allCheckpoint= JsonUtility.FromJson<SavedData>(jsonString); //nuevo objeto con la lista de usuarios
+                allCheckpoint= JsonUtility.FromJson<Checkpoint>(jsonString); //nuevo objeto con la lista de usuarios
                 // allSavedData.score_agility = allTimesPlayed.score_agility;
                 Debug.Log("checkpoint " + allCheckpoint.checkpoint);
                 // Debug.Log("Response: " + www.downloadHandler.text);
@@ -509,7 +510,7 @@ public class APITest : MonoBehaviour
 
         // Send using the Put method:
         // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
-        using (UnityWebRequest www = UnityWebRequest.Put(url + getCheckpointEP, jsonData))
+        using (UnityWebRequest www = UnityWebRequest.Put(url + putCheckpointEP, jsonData))
         {
             //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
             // Set the method later, and indicate the encoding is JSON
