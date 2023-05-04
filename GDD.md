@@ -80,7 +80,7 @@ While on his quest Toby will face 5 different stages, the first being a mule. Na
 The game  genre is RPG which means it is a role playing game. The player will have a series of choices to make along the game which will determine the final outcome. The game is not linear.
 
 ### **RPG Elements**
-At the beginning of the game the player will have the choice to choose their shield. Each shield will give the player different abilities and weaknesses which will determine the way the player plays the game. The gadgets will give extra abilities and will increase or decrease the initial abilities given to the player. Inside the game the player will find a non-player character called “flower”. The flower will explain certain aspects of the game and it will hint the weaknesses of the enemy to the player. The player will now have to create a strategy that will lead to his victory. 
+At the beginning of the game the player will have the choice to choose their shield. Each shield will give the player different abilities and weaknesses which will determine the way the player plays the game. The items will give extra abilities, will increase or decrease the initial abilities given to the player and will help him get through the obstacles. Inside the game the player will find a non-player character called “Happy flower”. The flower will give him advice about which items to use in every obstacle. The player will now have to create a strategy that will lead to his victory. 
 
 ### **List of stats that will be compiled during the game**
 Databases will partake in our video game development. Data such as user_scores, gadget history, killer sprite history and user data will be not only useful but necessary. 
@@ -104,17 +104,18 @@ In this game, you play as Toby, a pegasus who fell for a trick and was transform
 
 ### **Gameplay**
 
-- The goal of the game is for Toby, the protagonist, to make his way back to his family of pegasus; starting from a mule. In order to do this he must navigate through five different levels and defeat an enemy at the end of each. If he succeeds, he will evolve into a new character as he levels up. He must transform from a mule to a donkey, to a horse, to a unicorn, and finally to a pegasus. While navigating through each level, the player must collect items such as gems, fruit and weapons, as well as overcome obstacles such as spikes, lava and pools and rocks, in order to gather enough materials to eventually defeat the enemy. The player must create a strategy to succesfully use the items collected and the path taken to achieve the most points at the end of the level, in order to be ranked as a top pegasus. 
+- The goal of the game is for Toby, the protagonist, to make his way back to his family of pegasus; starting from a mule. In order to do this he must navigate through five different levels and defeat an enemy at the end of each. If he succeeds, he will evolve into a new character as he levels up. He must transform from a mule to a donkey, to a horse, to a unicorn, and finally to a pegasus. While navigating through each level, the player must collect items such as headpieces, fruit and weapons, that will help him overcome obstacles such as spikes, lava and pools and rocks and help him win the final boss. The player must create a strategy to succesfully use the items collected and the path taken to achieve the most points at the end of the level, in order to be ranked as a top pegasus. 
 
-- There will be a dungeon on each level where the player can obtain special items that will increase their chance at defeating the enemy. The player can decide if they go in or not. If the player loses in the dungeon, they will lose the items they had previously collected and they will be sent back to a checkpoint in the normal world. The player should also be strategic in their use of Toby's limited lives and resources to ensure they make it through the level.
-The items play a crucial role in the game since the combination of said items can improve the possibilities for the player to defeat the enemy. If the player is not strategic with the combination he made, he will lose the fight against the enemy. Each item will have different advantages and disadvantages. The player must consider what he needs to overcome the challenges presented in the game.
+- There will be a dungeon on each level where the player can obtain special items that will increase their chance at defeating the enemy. The player can decide if they go in or not. If the player loses in the dungeon, they will loose all the progress they had in the level and will have to start again. The player should also be strategic in their use of Toby's limited lives.
 
-- At the final step of the game, Toby will have to confront his enemy. He will be faced with a fight that he can only win if he collected enough valuable gadgets. In order for Toby to win the fight he must be strong enough. To achieve this he must collect gadgets that will give him specific abilities that will help him beat his enemy. 
+The items play a crucial role in the game since they are the ones that let you get past the obstacles that are blocking the roads. They are also key since the combination of said items can improve the possibilities for the player to defeat the enemy in the final battle. If the player is not strategic with the combination he made, he will lose the fight against the enemy. Each item will have different advantages and disadvantages. The player must consider what he needs to overcome the challenges presented in the game.
+
+- At the final step of the game, Toby will have to confront his enemy. He will be faced with a fight that he can only win if he collected enough valuable items. In order for Toby to win the fight he must be strong enough. To achieve this he must collect items that will give him specific abilities that will help him beat his enemy. 
  
  
 ### **Mindset**
 
-- The mindset we want to create for the players is for them to have a sense of need to reunite Toby with his family. As they level up and unlock new features, we want them to feel like they are becoming stronger and more capable of overcoming challenges. As the player increases the level, we want to challenge them with tough enemies and obstacles that will require them to think carefully about their tactics and strategies. The player will have to weight cons and pros of each gadget to get the best combination possible. He will be presented with a series of decisions that will change the outcome of the game. This will give the player the sense that he is in control of his destiny, Overall, the goal is to create a game that is engaging and immersive, that will make the player want to keep coming back for more. Always keeping the game balanced between the sense of achievement and the need to win challenges.
+- The mindset we want to create for the players is for them to have a sense of need to reunite Toby with his family. As they level up and unlock new features, we want them to feel like they are becoming stronger and more capable of overcoming challenges. As the player increases the level, we want to challenge them with tough enemies and obstacles that will require them to think carefully about their tactics and strategies. One of the elements to keep most in mind is the use of the items to get though the osbtacles. If Toby does not equips himself correctly before passing through them, he will loose a item. But, he can choose what obstacles he passes and which he does not. This will give the player the sense that he is in control of his destiny, Overall, the goal is to create a game that is engaging and immersive, that will make the player want to keep coming back for more. Always keeping the game balanced between the sense of achievement and the need to win challenges.
 
 
 ### **Screens**
@@ -139,12 +140,12 @@ The items play a crucial role in the game since the combination of said items ca
 ![Items](./img/Killer_Sprites.png)
 
 ## **Mechanics**
-While playing the game, the player will be ranked on a point basis, each obstacle winned will increase their points on the other hand each life lost and the way it was lost will decrease points. When reaching the final stage of the quest and becoming the pegasus, Toby will evolve into one of the five ranks of pegasus, depending the points accumulated by the player. Thus, making the game scalable and leaving the player with the need to keep playing and changing their strategy each time in order to play a perfect game and become the Supreme Pegasus. 
+While playing the game, the player will be ranked on a point basis, each obstacle winned will increase their points on the other hand each item lost or equipped wrong  will decrease points. When reaching the final stage of the quest and becoming the pegasus, Toby will evolve into one of the five ranks of pegasus, depending the points accumulated by the player. Thus, making the game scalable and leaving the player with the need to keep playing and changing their strategy each time in order to play a perfect game and become the Supreme Pegasus. 
 
-The main objective of the game is for Toby to eventually reach his family. To do this he must travel through 5 different worlds (levels). At the beginning of each level Toby will have the opportunity to choose from 3 different shields which will give him different abilities. At the end of each level Toby will have to fight his enemy. To do this he will have to use the gadgets collected throughout the level. Toby will also be able to use the gadgets in the level to facilitate the game. There are 4 types of gadgets that give different abilities to the player.The player will have 3 lives throughout each level. If the player loses them all it’s game over. The player will face different possible paths to reach the final battle. Here, the player must use his strategy to determine which of his abilities (strength, speed, agility and shield) he will use during the game or which he will save for the final battle. The player must analyze each path and weight the pros and cons that each specific path holds. Some may have more gadgets but a more difficult killer sprite (obstcale) on the way or some may have less gadgets but an easier killer sprite to overcome. The player will navigate the world moving either right, left or up. The viewpoint will follow the player using a determined area which will limit the view of the world to the player.
+The main objective of the game is for Toby to eventually reach his family. To do this he must travel through 5 different worlds (levels). At the beginning of each level Toby will have the opportunity to choose from 3 different shields which will give him different abilities. At the end of each level Toby will have to fight his enemy. To do this he will have to use the items collected throughout the level. Toby will also be able to use the items in the level to facilitate the game. There are 4 types of items that give different abilities to the player.The player will have 1 live throughout each level. If the player loses 5 times while getting through the obstacles, he will loose his life. The player will face different possible paths to reach the final battle. Here, the player must use his strategy to determine which of his abilities (strength, speed, agility and shield) he will use during the game or which he will save for the final battle. The player must analyze each path and weight the pros and cons that each specific path holds. Some may have more gadgets but a more difficult killer sprite (obstcale) on the way or some may have less gadgets but an easier killer sprite to overcome. The player will navigate the world moving either right, left or up. The viewpoint will follow the player using a determined area which will limit the view of the world to the player.
 
 ### **Controls**
-- The player will interact with the game using standard platformer controls, such as moving left and right, jumping, tapping, and attacking. In-game events can be triggered by the player through various actions such as attacking enemies, collecting items, and reaching specific points in the level. Additionally, the player will have to use his strategies to find the most valuable path. The controls used throughout the game will be the right arrow, the left arrow, the up arrow and the space bar. To access the game invenotry the player must press the "i" key. To equip an item, the player must double click the item they want. To unequip the item the player must double click on the item.
+- The player will interact with the game using standard platformer controls, such as moving left and right, jumping and attacking. In-game events can be triggered by the player through various actions such as attacking enemies, collecting items, getting through obstacles and reaching specific points in the level. Additionally, the player will have to use his strategies to find the most valuable path. The controls used throughout the game will be the right arrow, the left arrow, the up arrow and the space bar. To access the game invenotry the player must press the "i" key. To equip an item, the player must double click the item they want. To unequip the item the player must double click on the item.
 
 ### **Abilities**
 In the game Toby will have 4 different abilities that will help him reach his objective.
@@ -200,22 +201,24 @@ Name|How to overcome|Message Displayed
 
 
 ### **The Dungeon**
-In the dungeon better gadgets will exist. Inside the dungeon, Toby will have to cross through a series of obstacles to reach a powerful gadget. If Toby gets a special gadget, he will be rewarded. There is one thing that the player must take into consideration, if he loses a life inside the dungeon, he will also lose all of the gadgets he has collected. Each dungeon can only be accessed once by the player.
+In the dungeon better gadgets will exist. Inside the dungeon, Toby will have to cross through a series of obstacles to reach a powerful gadget. If Toby gets a special gadget, he will be rewarded. There is one thing that the player must take into consideration, if he loses a life inside the dungeon, he will also lose all the progress he had in the game, including the gadgets collected. Each dungeon can only be accessed once by the player.
 
 ### **How to Lose a Life**
-It is important that the player understands that they have 3 lives through each level. if they lose all 3, they will start from the beginning with nothing.
+It is important that the player understands that they have a single life through each level. If they lose this life, they will start from the beginning with nothing.
     There are 3 possibilities for the player to lose a life in the game. These are the following:
-1. If one of the abilities tanks is empty, the life tank will start to decrease.
-2. If you get caught inside the dungeon, you will lose a life and you will lose all of the gadgets collected. The player will reappear next to the dungeon.
+1. If he tries to pass a obstacle 5 times without the correct equipment
+2. If you get caught inside the dungeon, you will lose a life and you will lose all of the gadgets collected. 
 3. If you don’t have the necessary gadgets to beat Toby's enemy at the final stage of the game, you will lose a life and the gadgets you used trying to win. If you have extra lives and extra gadgets, you can fight once again.   
 
 ### **The Final Battle**
-The final battle is the most important aspect of the game. Here, Toby will confront his enemy in an epic battle. He will have to put to use all of the gadgets that he collected along the level as well as his strategies. Toby will have to create gadget combinations that will uncover the enemies weakness. The player will have to strategize the best way to defeat the enemy. The player will have hints of the enemies weakness in the level. Whoever loses his life first, either Toby or the enemy, will loose the battle.
+The final battle is the most important aspect of the game. Here, Toby will confront his enemy in an epic battle. He will have to put to use all of the gadgets that he collected along the level as well as his strategies. Toby will have to equip himeself to upgrade all his stats. The player will have to strategize the best way to defeat the enemy. The player will also need some ability to fight during the sceen by pressing the keys and dodding the enemy. Whoever loses his life first, either Toby or the enemy, will loose the battle. 
+
 #### **How will the battle work?**
 The fight will work the following way:
-1. The fight will work with turns. Toby will attack first and later the enemy.
-2. Toby's attack: The player will use the gadgets collected as well as his strategy to combat the enemy. The player must use the enemies weaknesses against him. After the player chooses his attack, he will have a time limit to build up his energy. He will have to press on the spacebar. The greater the presses, the greater the energy. Toby will punch the enemy. His atack will lower the enemies life.
-3. Enemies attack: The enemy will attack Toby with a series of punches. This will lower toby's life.
+1. The fight will work as a close melee taking into consideration the abbilities of the player.
+2. Toby's attack: The player will use the gadgets collected as well as his strategy to combat the enemy. The player must use his abbities as well as strategy to win. After the player equips himself, he will start fighting. He will have to press on the spacebar to fight. The greater the presses, the fastest the kick. Toby will punch the enemy. 
+3. Enemies attack: The enemy will attack Toby with a series of punches. 
+4. They loose if they are pushed by the other player to the spike wall that is located at each side of the fight ring. The fist player to touch the wall, looses.
 
 ## _Technical_
 ### How will point accumulation work?
@@ -298,7 +301,7 @@ The point accumulation will be based on a range basis. As shown previously, depe
 Characters|Details
  -|-
   Toby Mule| Toby will be in the form of a mule during the level.
-  Enemy Mule| The enemy will be in the form of a mule. His main weakness will be  based around Shield and his strength will be stregth.
+  Enemy Mule| The enemy will be in the form of a mule. His main weakness will be based around Shield and his strength will be stregth.
 
 #### Level 2
 Characters|Details
@@ -585,11 +588,17 @@ _(define the main activities and the expected dates when they should be finished
 2. Create videoGame tilesets (sprint 1) 
 3. Design Level 1 (sprint 2)
 4. Develop base classes
-5. Develop player Movement
+5. Create data base
+6. Develop player Movement
 7. Create backstory graphics.
 8. Develop derived classes
 9. Design music and sounds.
-10. Test-run finished videogame.
+10. Design statistics about the game
+11. Create web page for the videogame
+12. Test-run finished videogame.
+13. Emmbeded videogame in web page
+
+
 
 
 
