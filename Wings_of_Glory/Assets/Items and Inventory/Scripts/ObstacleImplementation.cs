@@ -1,3 +1,5 @@
+//This script is attached to the obstacle gameobject. It checks the player's stats and compares them to the obstacle's required value. If the player's stats are higher than the obstacle's required value, the player can pass through the obstacle. If the player's stats are lower than the obstacle's required value, the player cannot pass through the obstacle. The player's stats are decreased by the obstacle's required value.
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 
 using System.Collections;
 using System.Collections.Generic;

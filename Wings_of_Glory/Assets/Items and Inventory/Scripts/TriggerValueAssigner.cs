@@ -1,4 +1,4 @@
-
+// This script is used to assign a value to the trigger based on the tag. The value is used to determine the number of items that the player needs to collect to activate the trigger.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,5 @@
+// This script is used to display the tooltip for the stats of the items in the inventory
+// Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

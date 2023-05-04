@@ -1,3 +1,5 @@
+//This script is used to manage the inventory of the character, to add and remove items, and to show the full inventory panel when the inventory is full.
+// Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -82,20 +84,6 @@ private void OnDestroy()
     }
 }
 
-
-    // public bool AddItem(Item item)
-    // {
-    //     Debug.Log("item added");
-    //     if (IsFull())
-    //     {
-    //         return false;
-    //     }
-    //     //gameManagerToby.GadgetCounter(item.ItemName);
-    //     items.Add(item);
-    //     OnItemAdded?.Invoke(item);
-    //     RefreshUI();
-    //     return true;
-    // }
 
     public bool AddItem(Item item)
 {

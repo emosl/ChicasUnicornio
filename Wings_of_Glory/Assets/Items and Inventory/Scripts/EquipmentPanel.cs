@@ -1,3 +1,5 @@
+// This scrip handles the equipment panel, which is the panel that shows the equipped items. It has different functions such as adding and removing items from the equipment panel as well.
+// Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,4 +1,5 @@
-
+// This script is used to create the item slots in the inventory and the equipment slots in the equipment panel.
+// Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
