@@ -38,6 +38,7 @@ public class MulaBattle : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + offset, groundCheckRadius, groundLayerMask);
         // transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, speed * Time.deltaTime);
     }
+    //This function is used to move the mule towards an object that is set during the battle using stats from the API
     public void PushMule(float speed)
     {
         //  Debug.Log("mule speed: " + muleFight.mule_speed);
@@ -54,6 +55,7 @@ public class MulaBattle : MonoBehaviour
             }
         // muleFight.MuleSum = muleFight.MuleSum - 20;
     }
+    //This function lets the mule lose the battle and calls a coroutine to wait for the animation to finish
     private void OnTriggerEnter2D(Collider2D other)
     {
          Debug.Log("OnTriggerEnter2D called with other: " + other.name);
