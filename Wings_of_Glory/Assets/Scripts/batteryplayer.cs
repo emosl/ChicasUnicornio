@@ -31,6 +31,7 @@ public class batteryplayer : MonoBehaviour
     public int currentSpeedHealth;
     public string shieldchosen;
     public Toby_stats toby_stats;
+    public GameManagerToby gameManagerToby;
 
      
     
@@ -177,6 +178,11 @@ public class batteryplayer : MonoBehaviour
     currentHealth -= obst;
     Debug.Log("current health" + currentHealth);
     lifehealthbar.SetHealth(currentHealth);
+    if (currentHealth == 0)
+    {
+        Debug.Log("calling game over");
+        gameManagerToby.GameOver();
+    }
 }
 
 }

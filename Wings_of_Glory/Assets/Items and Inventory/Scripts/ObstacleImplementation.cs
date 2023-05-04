@@ -1,6 +1,3 @@
-//This script is attached to the obstacle gameobject. It checks the player's stats and compares them to the obstacle's required value. If the player's stats are higher than the obstacle's required value, the player can pass through the obstacle. If the player's stats are lower than the obstacle's required value, the player cannot pass through the obstacle. The player's stats are decreased by the obstacle's required value.
-//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +21,7 @@ public class ObstacleImplementation : MonoBehaviour
 
     [SerializeField] APITest api;
 
-     private static int itemsRemoved = 0;
+    //  public static int itemsRemoved;
 
 
     
@@ -42,6 +39,8 @@ public class ObstacleImplementation : MonoBehaviour
 
           batteryPlayer = FindObjectOfType<batteryplayer>();
           totalScore = FindObjectOfType<TotalScore>();
+
+         
 
 
     if (gameManagerToby == null)
@@ -88,16 +87,7 @@ public class ObstacleImplementation : MonoBehaviour
                 if (toby.agility < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Agility");
-                    itemsRemoved++;
                     batteryPlayer.ChangeLife(20);
-                    
-                   
-                    if (itemsRemoved >= 5)
-                    {
-                        Debug.Log("Items removed reached 5. Calling GameOver.");
-                        gameManagerToby.GameOver();
-                    }
-                    blank.SetActive(true);
                     itemRemovedPanel.SetActive(true);  
                     KillerSpriteCounter("Ice");
             
@@ -105,7 +95,7 @@ public class ObstacleImplementation : MonoBehaviour
                 }
                 else
                 {
-                    blank.SetActive(true);
+                    // blank.SetActive(true);
                     itemNotRemovedPanel.SetActive(true);
                     KillerSpriteCounter("Ice");
 
@@ -116,25 +106,15 @@ public class ObstacleImplementation : MonoBehaviour
                 if (toby.shield < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Shield");
-                    itemsRemoved++;
                     batteryPlayer.ChangeLife(20);
-                    
-                    if (itemsRemoved >= 5)
-                    {
-                        Debug.Log("Items removed reached 5. Calling GameOver.");
-                        gameManagerToby.GameOver();
-                    }
-
-                   
-                        blank.SetActive(true);
                         itemRemovedPanel.SetActive(true);
                         KillerSpriteCounter("Shield");
-                        //batteryPlayer.ChangeShield();
+
                         
                 }
                     else
                     {
-                        blank.SetActive(true);
+
                         itemNotRemovedPanel.SetActive(true);
                          totalScore.UpdateScore(10);
                         KillerSpriteCounter("Shield");
@@ -146,25 +126,14 @@ public class ObstacleImplementation : MonoBehaviour
                 if (toby.speed < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Speed");
-                    itemsRemoved++;
-                    
                     batteryPlayer.ChangeLife(20);
-                    if (itemsRemoved >= 5)
-                    {
-                        Debug.Log("Items removed reached 5. Calling GameOver.");
-                        gameManagerToby.GameOver();
-                    }
 
-                    
-                        blank.SetActive(true);
                         itemRemovedPanel.SetActive(true);
                         KillerSpriteCounter("Water");
-                       // batteryPlayer.ChangeSpeed();
                        
                 }
                     else
                     {
-                        blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
                         KillerSpriteCounter("Water");
                     }
@@ -174,25 +143,15 @@ public class ObstacleImplementation : MonoBehaviour
                 if (toby.strength < triggerValueAssigner.requiredValue)
                 {
                     toby.RemoveItem("Strength");
-                    itemsRemoved++;
                     
                     batteryPlayer.ChangeLife(20);
-                    if (itemsRemoved >= 5)
-                    {
-                        Debug.Log("Items removed reached 5. Calling GameOver.");
-                        gameManagerToby.GameOver();
-                    }
-
-                    
-                        blank.SetActive(true);
                         itemRemovedPanel.SetActive(true);
                         KillerSpriteCounter("Rock");
-                        //batteryPlayer.ChangeStrength();
                        
                 }
                     else
                     {
-                        blank.SetActive(true);
+                        // blank.SetActive(true);
                         itemNotRemovedPanel.SetActive(true);
                         KillerSpriteCounter("Rock");
                     }
@@ -234,4 +193,3 @@ public class ObstacleImplementation : MonoBehaviour
         }
     }
 }
-
