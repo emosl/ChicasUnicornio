@@ -1,3 +1,6 @@
+//Wings of Glory script. This script is used in the implementation of Wings of Glory
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+//May 3, 2023
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,22 +31,20 @@ public class MenuStream : MonoBehaviour
         
     }
 
-    private void OnButtonPress(bool decision)
-    {
-        
-        ButtonPressed?.Invoke(decision);
-        Debug.Log("Play");
-        // SceneManager.LoadScene(sceneName);
-        StartCoroutine(WaitAndDoSomething());
-        
-    
-    }
-
-    IEnumerator WaitAndDoSomething()
-    {
-        yield return new WaitForSeconds(2.3f);
-        SceneManager.LoadScene(sceneName);
-    }   
+  private void OnButtonPress(bool decision)
+  {
+      ButtonPressed?.Invoke(decision); // Invoke an event called "ButtonPressed" passing the "decision" boolean parameter
+      Debug.Log("Play"); // Print "Play" to the Console
+      // SceneManager.LoadScene(sceneName); // Load a scene (commented out for now)
+      StartCoroutine(WaitAndDoSomething()); // Start a coroutine called "WaitAndDoSomething"
+  }
+  
+  IEnumerator WaitAndDoSomething()
+  {
+      yield return new WaitForSeconds(2.3f); // Wait for 2.3 seconds
+      SceneManager.LoadScene(sceneName); // Load a scene called "sceneName" after the wait time
+  }
+   
 
    
 }

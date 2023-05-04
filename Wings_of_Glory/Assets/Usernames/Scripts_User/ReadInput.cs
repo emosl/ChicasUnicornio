@@ -1,3 +1,6 @@
+//Wings of Glory script. This script is used in the implementation of Wings of Glory
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
+//May 3, 2023
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,10 +21,11 @@ public class ReadInput : MonoBehaviour
         
     }
 
-    public void ReadStringInput(string s)
-    {
-        input = s;
-        username_ID = input;
-        // Debug.Log(username_ID);
-    }
+   public void ReadStringInput(string s)
+   {
+       input = s; // Assign the passed string argument to a variable called "input"
+       username_ID = input; // Assign the value of "input" to a variable named "username_ID"
+       // Debug.Log(username_ID); // Print the value of "username_ID" in the Console (commented out for now)
+   }
+   
 }

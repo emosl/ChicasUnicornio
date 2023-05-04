@@ -31,7 +31,7 @@ public class TobyBattle : MonoBehaviour
         dead = false;
     }
 
-    // Update is called once per frame
+    // Update is called once per frame and it is used to move Toby and to check if he is grounded
     void Update()
     {
          if (!isMoving)
@@ -90,6 +90,7 @@ public class TobyBattle : MonoBehaviour
         // Debug.Log("Toby's health is " + toby.agility);
     }
 
+    //This function is what allows Toby to attack the enemy
     public void Attack()
     {
         if (Input.GetKey(KeyCode.A))
@@ -137,13 +138,16 @@ public class TobyBattle : MonoBehaviour
             // spriteRenderer.sprite = idleSprite;
         }
     }
+
+     //This function is used to move toby towards an object that is set during the battle using stats from the API
     public void PushEnemy(float speed)
     {
         transform.position = Vector3.MoveTowards(transform.position, objectToFollow.position, speed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         animator.Play("attack");
     }
-
+    
+    //This function lets toby lose the battle and calls a coroutine to wait for the animation to finish
     private void OnTriggerEnter2D(Collider2D other)
     {
          Debug.Log("OnTriggerEnter2D called with other: " + other.name);
