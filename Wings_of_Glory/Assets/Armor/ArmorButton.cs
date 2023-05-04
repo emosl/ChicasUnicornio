@@ -42,10 +42,10 @@ public class ArmorButton : MonoBehaviour
         ButtonPressed?.Invoke(decision);
         Audio.Play();
         Debug.Log("Play");
-        toby_stats.chosenarmor = "pink"; // save the current armor of Toby
-        Debug.Log(toby_stats.chosenarmor);
-        string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
-        PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
+        // toby_stats.chosenarmor = "pink"; // save the current armor of Toby
+        // Debug.Log(toby_stats.chosenarmor);
+        // string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+        // PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
         StartCoroutine(WaitAndDoSomething());
         
     
@@ -56,10 +56,10 @@ public class ArmorButton : MonoBehaviour
         ButtonPressed?.Invoke(decision);
         Audio.Play();
         Debug.Log("Play");
-        toby_stats.chosenarmor = "blue"; // save the current armor of Toby
-        Debug.Log(toby_stats.chosenarmor);
-        string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
-        PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
+        // toby_stats.chosenarmor = "blue"; // save the current armor of Toby
+        // Debug.Log(toby_stats.chosenarmor);
+        // string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+        // PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
         StartCoroutine(WaitAndDoSomething());
     }
     //If the player chooses red the following function is calles
@@ -67,10 +67,10 @@ public class ArmorButton : MonoBehaviour
     {
         ButtonPressed?.Invoke(decision);
         Audio.Play();
-        toby_stats.chosenarmor = "red"; // save the current armor of Toby
-        Debug.Log(toby_stats.chosenarmor);
-        string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
-        PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
+        // toby_stats.chosenarmor = "red"; // save the current armor of Toby
+        // Debug.Log(toby_stats.chosenarmor);
+        // string jsonStats = JsonUtility.ToJson(toby_stats); //convertir a json
+        // PlayerPrefs.SetString("toby_stats", jsonStats); //save current armor of Toby
         Debug.Log("Play");
         StartCoroutine(WaitAndDoSomething());
         

@@ -8,16 +8,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using UnityEngine.Audio;
 using TMPro;
 
 public class MenuUser : MonoBehaviour
 {
     // Declaring public variables for Unity objects
     public Button PlayButton;
-    public Button UpdateBotton;
     public string sceneName;
     public static string UiD; // The global variable to store the username ID
     private string input;
+    public AudioSource Audio;
 
     [SerializeField] APITest api; // SerializeField attribute allows private fields to be shown in the Inspector
     [SerializeField] public TMP_InputField usernameIDInputField; // Input field displayed in the UI
@@ -43,6 +44,7 @@ public class MenuUser : MonoBehaviour
     {
         ButtonPressed?.Invoke(decision); // Invoking the ButtonPressed event
         OnPlayButtonClicked(); // Calling method to assign username ID from the input field to global variable
+        Audio.Play(); // Playing the audio source
         GetUser(); // Calling method to query user data from API
         StartCoroutine(WaitAndDoSomething()); // Calling coroutine to wait for 5.3 seconds and then load next scene
     
