@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -4351,13 +4351,13 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   totalScore: {fileID: 0}
   api: {fileID: 0}
-  Audio: {fileID: 0}
   Flower: {fileID: 0}
   Flower2: {fileID: 0}
   Flower3: {fileID: 0}
   Flower4: {fileID: 0}
   canvasFight: {fileID: 1085957705}
   character: {fileID: 0}
+  bp: {fileID: 0}
   speed: 5
   strength: 8
   shield: 0
@@ -11697,7 +11697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
