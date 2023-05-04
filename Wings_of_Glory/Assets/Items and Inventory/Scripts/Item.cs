@@ -1,3 +1,5 @@
+// This script is used to create a new item in the inventory
+// Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 using UnityEngine;
 using UnityEngine.UI;
 

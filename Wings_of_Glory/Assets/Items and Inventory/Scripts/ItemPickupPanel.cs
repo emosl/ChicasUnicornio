@@ -1,3 +1,5 @@
+//This script is used to display the item pickup panel when the player picks up an item. It also displays the item's name and stats.
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +13,7 @@ public class ItemPickupPanel : MonoBehaviour
     public Image itemImage;
 
 
-    [SerializeField] TMP_Text ItemNameText; // Change this to TMP_Text // Change this to TMP_Text
+    [SerializeField] TMP_Text ItemNameText; 
     [SerializeField] TMP_Text ItemStatsText;
 
     private Inventory inventory;

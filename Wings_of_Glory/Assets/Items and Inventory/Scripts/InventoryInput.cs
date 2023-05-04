@@ -1,4 +1,5 @@
-
+// Purpose: Handles the input for the inventory system.
+// Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 
 using UnityEngine;
 

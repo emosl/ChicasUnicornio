@@ -1,4 +1,5 @@
-
+// This script is used to display the stats of the items in the inventory
+// Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;

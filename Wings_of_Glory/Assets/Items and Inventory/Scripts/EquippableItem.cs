@@ -1,3 +1,5 @@
+// This script is used to state the type of equipment that the character can use and to generate the random items that will be used in the game, as well as to add the bonus to the character's stats.
+// Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

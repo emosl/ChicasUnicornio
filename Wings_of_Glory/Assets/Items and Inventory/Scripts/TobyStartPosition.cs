@@ -1,3 +1,5 @@
+//This script is used to randomly select a starting position for Toby in the world;
+//Authors: Lucía Barrenechea, Fernanda Osorio, Emilia Salazar, Arantza Parra, Fernanda Cortes
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
