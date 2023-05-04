@@ -1840,7 +1840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayButton: {fileID: 1882600338}
-  sceneName: Chooseyourarmor
+  sceneName: chooseyourarmor
   Audio: {fileID: 1882600334}
   api: {fileID: 274333633}
   usernameIDInputField: {fileID: 500679692}

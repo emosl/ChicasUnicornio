@@ -49,8 +49,6 @@ public class Toby : MonoBehaviour
     [SerializeField] APITest api;
     string UN = MenuUser.UiD;
 
-
-    public AudioSource Audio;
   
     public Animator Flower;
     public Animator Flower2;
@@ -61,7 +59,7 @@ public class Toby : MonoBehaviour
 
 
    [SerializeField] private Character character;
-   private batteryplayer bp;
+   public batteryplayer bp;
 
 
     public int speed = 5;
