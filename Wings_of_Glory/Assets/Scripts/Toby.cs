@@ -398,6 +398,7 @@ public void RemoveItem(string statName)
     if (itemToRemove != null)
     {
         Debug.Log("Removing item: " + itemToRemove.name);
+        character.Unequip(itemToRemove);
         equipmentPanel.RemoveItem(itemToRemove);
     }
 

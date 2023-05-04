@@ -3163,7 +3163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.58835554, a: 0.5686275}
+  m_Color: {r: 1, g: 0, b: 0.58835554, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15163,8 +15163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f042833a98d74c66ba19c2744f70176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPickupPanel: {fileID: 1921551552}
-  gadget: {fileID: 0}
 --- !u!1 &370868419
 GameObject:
   m_ObjectHideFlags: 0
@@ -28099,6 +28097,7 @@ MonoBehaviour:
     initialPosition: {x: 0, y: 0, z: 0}
     savedPosition: {x: 0, y: 0, z: 0}
     chosenarmor: 
+  gameManagerToby: {fileID: 2007031440}
   strengthhealthbar: {fileID: 552507077}
   agilityhealthbar: {fileID: 667707980}
   speedhealthbar: {fileID: 339323998}
@@ -66176,7 +66175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.5882353, a: 0.49019608}
+  m_Color: {r: 1, g: 0, b: 0.5882353, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -94856,6 +94855,7 @@ MonoBehaviour:
     initialPosition: {x: 0, y: 0, z: 0}
     savedPosition: {x: 0, y: 0, z: 0}
     chosenarmor: 
+  gameManagerToby: {fileID: 2007031440}
   strengthhealthbar: {fileID: 552507077}
   agilityhealthbar: {fileID: 667707980}
   speedhealthbar: {fileID: 339323998}

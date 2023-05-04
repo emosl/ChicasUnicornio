@@ -148,14 +148,6 @@ private int CalculateStrengthBaseValue(int strength)
 }
 
 
-
-// public void UpdateStatValues()
-// {
-//     for (int i = 0; i < stats.Length; i++)
-//     {
-//        statsDisplays[i].UpdateStatValue();
-//     }
-// }
   public void UpdateStatValues()
     {
         for (int i = 0; i < stats.Length; i++)
