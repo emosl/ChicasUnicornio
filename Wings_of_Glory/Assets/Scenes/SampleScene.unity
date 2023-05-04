@@ -1041,7 +1041,7 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1977969018}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
   rock: {fileID: 775365675}
 --- !u!61 &25802780
 BoxCollider2D:
@@ -1653,8 +1653,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1137790467}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 1995409063}
 --- !u!61 &34228601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2729,8 +2729,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1438309154}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 1995409063}
 --- !u!61 &65240122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3941,8 +3941,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1164907126}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 1995409063}
 --- !u!61 &113757506
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4584,7 +4584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -5156,7 +5156,7 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1744050742}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
   rock: {fileID: 1081437070}
 --- !u!61 &144177085
 BoxCollider2D:
@@ -5396,8 +5396,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 184826062}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 1995409063}
 --- !u!61 &147227720
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5758,7 +5758,7 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1977969018}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
   rock: {fileID: 293527012}
 --- !u!61 &160941833
 BoxCollider2D:
@@ -8793,8 +8793,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 7785024434585368558}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 1950781835}
+  rock: {fileID: 712370423}
 --- !u!61 &229728221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9163,7 +9163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -14934,7 +14934,6 @@ GameObject:
   - component: {fileID: 370204286}
   - component: {fileID: 370204290}
   - component: {fileID: 370204291}
-  - component: {fileID: 370204292}
   m_Layer: 0
   m_Name: Toby_caminando_0
   m_TagString: Player
@@ -15024,13 +15023,13 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   totalScore: {fileID: 557324083}
   api: {fileID: 753405921}
-  Audio: {fileID: 0}
   Flower: {fileID: 1585500589}
   Flower2: {fileID: 2118231998}
   Flower3: {fileID: 845568482}
   Flower4: {fileID: 976005107}
   canvasFight: {fileID: 483216836}
   character: {fileID: 370204291}
+  bp: {fileID: 655197851}
   speed: 5
   strength: 8
   shield: 0
@@ -15151,18 +15150,6 @@ MonoBehaviour:
   batteryPlayer: {fileID: 2071470849}
   equipmentPanel: {fileID: 657399705}
   gameManagerToby: {fileID: 0}
---- !u!114 &370204292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370204284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f042833a98d74c66ba19c2744f70176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &370868419
 GameObject:
   m_ObjectHideFlags: 0
@@ -20004,7 +19991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -22614,7 +22601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -24350,8 +24337,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 321326444}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 178679146}
+  rock: {fileID: 567473002}
 --- !u!61 &585955159
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25720,7 +25707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -25848,7 +25835,7 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1744050742}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
+  ice: {fileID: 1142897850}
   rock: {fileID: 615903211}
 --- !u!61 &617538931
 BoxCollider2D:
@@ -26695,8 +26682,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 921476021}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 38549603}
+  rock: {fileID: 184414637}
 --- !u!61 &633976683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27095,8 +27082,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1134154584}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 592763234}
+  rock: {fileID: 2007578823}
 --- !u!61 &647082642
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28168,8 +28155,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1141395598}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 548992209}
+  rock: {fileID: 2007578823}
 --- !u!61 &656680620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28308,9 +28295,9 @@ MonoBehaviour:
   - {fileID: 1782287852}
   - {fileID: 1109140885}
   statsPanel: {fileID: 898054975}
-  toby: {fileID: 0}
-  batteryPlayer: {fileID: 0}
-  character: {fileID: 0}
+  toby: {fileID: 370204288}
+  batteryPlayer: {fileID: 655197851}
+  character: {fileID: 370204291}
 --- !u!1 &661610030
 GameObject:
   m_ObjectHideFlags: 0
@@ -28949,8 +28936,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1977969018}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 1995409063}
 --- !u!61 &682018728
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30541,8 +30528,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1744050742}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 1995409063}
 --- !u!61 &714053943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31149,7 +31136,7 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1141395598}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
   rock: {fileID: 698523929}
 --- !u!61 &731517379
 BoxCollider2D:
@@ -31278,7 +31265,7 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1744050742}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
+  ice: {fileID: 2032366961}
   rock: {fileID: 273227461}
 --- !u!61 &733017209
 BoxCollider2D:
@@ -32100,7 +32087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bed14fb077ad52792d2c01282f65f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: localhost:8000
+  url: http://127.0.0.1:8000
   getUsersEP: /api/users
   getUserEP: /api/user?usernameID=
   putUsersEP: /api/users/:id
@@ -33708,7 +33695,7 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1744050742}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
+  ice: {fileID: 713970419}
   rock: {fileID: 1800553969}
 --- !u!61 &791953878
 BoxCollider2D:
@@ -33847,8 +33834,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 7785024434585368558}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 273227461}
 --- !u!61 &794505836
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34637,8 +34624,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1307451108}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 1995409063}
 --- !u!61 &812022090
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34823,7 +34810,7 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 7785024434585368558}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
   rock: {fileID: 1857648851}
 --- !u!61 &815131473
 BoxCollider2D:
@@ -35756,8 +35743,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 226219472}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 1995409063}
 --- !u!61 &838424490
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35977,8 +35964,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 1141395598}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 1995409063}
 --- !u!61 &841033744
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36996,8 +36983,8 @@ MonoBehaviour:
   canvas: {fileID: 2009674975}
   bombs: {fileID: 833691372}
   wave: {fileID: 1518244703789858552, guid: e33f705e1bae64a4bb4d14bc72e730b6, type: 3}
-  ice: {fileID: 0}
-  rock: {fileID: 0}
+  ice: {fileID: 5504359948473495413}
+  rock: {fileID: 1995409063}
 --- !u!61 &855653752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40617,7 +40604,6 @@ GameObject:
   - component: {fileID: 924125314}
   - component: {fileID: 924125317}
   - component: {fileID: 924125316}
-  - component: {fileID: 924125315}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -40645,18 +40631,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 551.1696, y: 324.8813}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &924125315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924125313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d5f7d9549914b13bf0b8e23b7c9ffd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &924125316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46932,7 +46906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -49817,7 +49791,7 @@ GameObject:
   - component: {fileID: 1102282250}
   m_Layer: 0
   m_Name: Flower_Collider
-  m_TagString: Flower
+  m_TagString: Flower4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56225,7 +56199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -57733,7 +57707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -63385,7 +63359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -66133,7 +66107,6 @@ GameObject:
   - component: {fileID: 1429053871}
   - component: {fileID: 1429053873}
   - component: {fileID: 1429053872}
-  - component: {fileID: 1429053874}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -66200,18 +66173,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429053870}
   m_CullTransparentMesh: 1
---- !u!114 &1429053874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429053870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d5f7d9549914b13bf0b8e23b7c9ffd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1431146421
 GameObject:
   m_ObjectHideFlags: 0
@@ -78436,7 +78397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -87339,7 +87300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.7113495}
+  m_AnchoredPosition: {x: 0, y: -0.71136475}
   m_SizeDelta: {x: -276.0518, y: -118.0773}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1921551550
@@ -87396,7 +87357,7 @@ MonoBehaviour:
   itemImage: {fileID: 279385782}
   ItemNameText: {fileID: 1003443715}
   ItemStatsText: {fileID: 1112050189}
-  gameManagerToby: {fileID: 0}
+  gameManagerToby: {fileID: 2007031440}
 --- !u!114 &1921551553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87412,7 +87373,7 @@ MonoBehaviour:
   equippableItem: {fileID: 0}
   player: {fileID: 370204284}
   inventory: {fileID: 1354601470}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 2007031440}
   onItemPickedUp:
     m_PersistentCalls:
       m_Calls: []
@@ -94767,7 +94728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

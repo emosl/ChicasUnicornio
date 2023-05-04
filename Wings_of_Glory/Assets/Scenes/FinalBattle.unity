@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -4350,10 +4350,14 @@ MonoBehaviour:
   inventory: {fileID: 0}
   equippableItem: {fileID: 0}
   totalScore: {fileID: 0}
-  Audio: {fileID: 0}
-  canvasFlower: {fileID: 0}
+  api: {fileID: 0}
+  Flower: {fileID: 0}
+  Flower2: {fileID: 0}
+  Flower3: {fileID: 0}
+  Flower4: {fileID: 0}
   canvasFight: {fileID: 1085957705}
   character: {fileID: 0}
+  bp: {fileID: 0}
   speed: 5
   strength: 8
   shield: 0
@@ -4369,6 +4373,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  tobyStartPosition: {fileID: 0}
   toby_stats:
     initialPosition: {x: 0, y: 0, z: 0}
     savedPosition: {x: 0, y: 0, z: 0}
@@ -7011,7 +7016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bed14fb077ad52792d2c01282f65f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: localhost:8000
+  url: http://127.0.0.1:8000
   getUsersEP: /api/users
   getUserEP: /api/user?usernameID=
   putUsersEP: /api/users/:id
@@ -7022,6 +7027,8 @@ MonoBehaviour:
   insertKillSpriteEP: /api/save_kill
   getTimesPlayedEP: /api/timesplayed?usernameID=
   getSavedDataEP: /api/save_data?usernameID=
+  getCheckpointEP: 
+  putCheckpointEP: 
   errorText: {fileID: 0}
   allUsers:
     users: []
@@ -11690,7 +11697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

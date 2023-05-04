@@ -8,11 +8,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using UnityEngine.Audio;
 
 public class MenuStream : MonoBehaviour
 {
     public Button PlayButton;
     public string sceneName;
+    public AudioSource Audio;
+
     
     
     // public GameObject canvas;
@@ -35,6 +38,7 @@ public class MenuStream : MonoBehaviour
   {
       ButtonPressed?.Invoke(decision); // Invoke an event called "ButtonPressed" passing the "decision" boolean parameter
       Debug.Log("Play"); // Print "Play" to the Console
+      Audio.Play(); //Play the audio source
       // SceneManager.LoadScene(sceneName); // Load a scene (commented out for now)
       StartCoroutine(WaitAndDoSomething()); // Start a coroutine called "WaitAndDoSomething"
   }
