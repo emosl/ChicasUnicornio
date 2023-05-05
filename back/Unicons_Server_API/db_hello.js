@@ -272,6 +272,32 @@ app.get('/api/final_score', async (request, response)=>{
         }
     }
 })
+app.post('/api/final_score', async (request, response)=>{
+    let connection = null
+    
+    try
+    {
+        connection = await connectToDB()
+        const [results, fields] = await connection.query('insert into final_score set ?', request.body)
+
+        
+        response.json(results)
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+})
 app.get('/api/shields', async (request, response)=>{
     let connection = null
     
@@ -558,6 +584,42 @@ app.put('/api/save_data', async (request, response)=>{
     }
 })
 
+app.post('/api/save_data', async (request, response)=>{
+
+    let connection = null
+
+    try{
+        connection = await connectToDB()
+        console.log(request.body)
+        const [results, fields] = await connection.query('update final_score set total_score = ? where username_ID = ?', [request.body['total_score'], request.body['username_ID']])
+        const [results02, fields02] = await connection.query('update game_history set times_played = ? where username_ID = ?', [request.body['times_played'], request.body['username_ID']])
+        // const [results03, fields03] = await connection.query('insert gadgetinventory set  = ? where username_ID = ?', [request.body['gadgetid'], request.body['username_ID']])
+        const [results03, fields03] = await connection.query('update final_score set score_agility = ? where username_ID = ?', [request.body['score_agility'], request.body['username_ID']])
+        // const [results04, fields04] = await connection.query('update gadgetinventory set gadgetid = ?', [request.body['gadgetid']])
+        const [results04, fields04] = await connection.query('update final_score set score_speed = ? where username_ID = ?', [request.body['score_speed'], request.body['username_ID']])
+        const [results05, fields05] = await connection.query('update final_score set score_strength = ? where username_ID = ?', [request.body['score_strength'], request.body['username_ID']])
+        const [results06, fields06] = await connection.query('update final_score set score_shield = ? where username_ID = ?', [request.body['score_shield'], request.body['username_ID']])
+
+
+        
+        response.json({'message': "Data updated correctly."})
+    }
+    catch(error)
+    {
+        response.status(500)
+        response.json(error)
+        console.log(error)
+    }
+    finally
+    {
+        if(connection!==null) 
+        {
+            connection.end()
+            console.log("Connection closed succesfully!")
+        }
+    }
+})
+
 
 app.post('/api/save_gadget', async (request, response)=>{
 
@@ -801,6 +863,7 @@ app.get('/api/save_data', async (request, response)=>{
         }
 
         response.json(data);
+        
         
     }
     catch(error)
