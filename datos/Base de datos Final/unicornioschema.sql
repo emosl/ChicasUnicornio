@@ -78,7 +78,6 @@ CREATE TABLE `final_score` ( -- final score
 -- Indica el checkpoint por el cual paso el usuario (Donde cambia de mundos)
 CREATE TABLE `checkpoint` (
   `register_ID`  integer unsigned NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp NOT NULL,
   `checkpoint` tinyint unsigned NOT NULL,
   `username_ID` integer unsigned NOT NULL,
   `game_time` smallint unsigned NOT NULL,
@@ -89,14 +88,8 @@ CREATE TABLE `checkpoint` (
 -- Historial final de la partida.
 CREATE TABLE `game_history` (
   `register_ID` integer unsigned NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp NOT NULL,
   `username_ID` integer unsigned NOT NULL,
-  `shield_id` integer NOT NULL,
-  `lives` tinyint NOT NULL,
-  `score_ID` tinyint unsigned NOT NULL ,
   `times_played` integer unsigned NOT NULL,
   PRIMARY KEY (register_ID),
-  CONSTRAINT currentgamehistory FOREIGN KEY (username_ID) REFERENCES users(username_ID) ON DELETE RESTRICT ON UPDATE CASCADE,
-  CONSTRAINT shieldused FOREIGN KEY (shield_id) REFERENCES shields(shield_id) ON DELETE RESTRICT ON UPDATE CASCADE,
-  CONSTRAINT finalscore FOREIGN KEY (score_ID) REFERENCES final_score(score_ID) ON DELETE RESTRICT ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT currentgamehistory FOREIGN KEY (username_ID) REFERENCES users(username_ID) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
