@@ -78,6 +78,20 @@ public class Checkpoint
     public string username_ID;
     public int checkpoint;
 }
+public class Final_Score
+{
+    public string username_ID;
+    public int total_score;
+    public int score_agility;
+    public int score_strength;
+    public int score_shield;
+    public int score_speed;
+}
+public class GameHistory
+{
+    public string username_ID;
+    public int times_played;
+}
 
 // Allow the class to be extracted from Unity
 [System.Serializable]
@@ -97,6 +111,14 @@ public class TimesPlayedList
 {
     public List<TimesPlayed> times_played;
 }
+public class FinalScoresList
+{
+    public List<Final_Score> final_scores;
+}
+public class GameHistoryList
+{
+    public List<GameHistory> game_history;
+}
 
 
 public class APITest : MonoBehaviour
@@ -114,6 +136,8 @@ public class APITest : MonoBehaviour
     [SerializeField] string getSavedDataEP;
     [SerializeField] string getCheckpointEP;
     [SerializeField] string putCheckpointEP;
+    [SerializeField] string postFinalScore;
+    [SerializeField] string postGameHistory;
     [SerializeField] Text errorText;
 
     public static int strength;
@@ -145,6 +169,8 @@ public class APITest : MonoBehaviour
     public TimesPlayed allTimesPlayed;
     public SavedData allSavedData;
     public Checkpoint allCheckpoint;
+    public FinalScoresList allFinalScores;
+    public GameHistoryList allGameHistory;
 
      void Start()
     {
@@ -241,7 +267,22 @@ public class APITest : MonoBehaviour
         checkpoint2 = checkpoint;
         StartCoroutine(SetCheckpointData());
     }
-
+    public void PostFinalScore(int totalScore, string UiD, int agility, int strength, int shield, int speed)
+    {
+        UN2 = UiD;
+        TS2 = totalScore;
+        ag_score = agility;
+        st_score = strength;
+        sh_score = shield;
+        sp_score = speed;
+        StartCoroutine(PostInitialScoreData());
+    }
+    public void PostGameHistory(string UiD, int times_played)
+    {
+        UN2 = UiD;
+        tp = times_played;
+        StartCoroutine(PostGameHistory());
+    }
     public void QueryScores()
     {
         StartCoroutine(GetScores());
@@ -279,6 +320,47 @@ public class APITest : MonoBehaviour
                 string jsonString = "{\"users\":" + www.downloadHandler.text + "}";
                 allUsers = JsonUtility.FromJson<UserList>(jsonString); //nuevo objeto con la lista de usuarios
                 DisplayUsers();
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }
+
+    IEnumerator AddUser()
+    {
+        /*
+        // This should work with an API that does NOT expect JSON
+        WWWForm form = new WWWForm();
+        form.AddField("name", "newGuy" + Random.Range(1000, 9000).ToString());
+        form.AddField("surname", "Tester" + Random.Range(1000, 9000).ToString());
+        Debug.Log(form);
+        */
+
+        // Create the object to be sent as json
+        Users testUser = new Users();
+        testUser.name = "newGuy" + Random.Range(1000, 9000).ToString();
+        testUser.last_name= "Tester" + Random.Range(1000, 9000).ToString();
+        testUser.email = "newGuy" + Random.Range(1000, 9000).ToString() + "@mail.com";
+        testUser.password = "1234";
+
+        //Debug.Log("USER: " + testUser);
+        string jsonData = JsonUtility.ToJson(testUser);
+        //Debug.Log("BODY: " + jsonData);
+
+        // Send using the Put method:
+        // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
+        using (UnityWebRequest www = UnityWebRequest.Put(url + putUsersEP, jsonData))
+        {
+            //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
+            // Set the method later, and indicate the encoding is JSON
+            www.method = "POST";
+            www.SetRequestHeader("Content-Type", "application/json");
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                Debug.Log("Response: " + www.downloadHandler.text);
                 if (errorText != null) errorText.text = "";
             } else {
                 Debug.Log("Error: " + www.error);
@@ -430,30 +512,25 @@ public class APITest : MonoBehaviour
     }
 
 
-    IEnumerator AddUser()
+    
+    IEnumerator PostInitialScoreData()
     {
-        /*
-        // This should work with an API that does NOT expect JSON
-        WWWForm form = new WWWForm();
-        form.AddField("name", "newGuy" + Random.Range(1000, 9000).ToString());
-        form.AddField("surname", "Tester" + Random.Range(1000, 9000).ToString());
-        Debug.Log(form);
-        */
-
-        // Create the object to be sent as json
-        Users testUser = new Users();
-        testUser.name = "newGuy" + Random.Range(1000, 9000).ToString();
-        testUser.last_name= "Tester" + Random.Range(1000, 9000).ToString();
-        testUser.email = "newGuy" + Random.Range(1000, 9000).ToString() + "@mail.com";
-        testUser.password = "1234";
+      
+        Final_Score testData = new Final_Score();
+        testData.username_ID = UN2;
+        testData.total_score = TS2;
+        testData.score_agility = ag_score;
+        testData.score_shield = sh_score;
+        testData.score_speed = sp_score;
+        testData.score_strength = st_score;
 
         //Debug.Log("USER: " + testUser);
-        string jsonData = JsonUtility.ToJson(testUser);
+        string jsonData = JsonUtility.ToJson(testData);
         //Debug.Log("BODY: " + jsonData);
 
         // Send using the Put method:
         // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
-        using (UnityWebRequest www = UnityWebRequest.Put(url + putUsersEP, jsonData))
+        using (UnityWebRequest www = UnityWebRequest.Put(url + postFinalScore, jsonData))
         {
             //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
             // Set the method later, and indicate the encoding is JSON
@@ -470,6 +547,38 @@ public class APITest : MonoBehaviour
             }
         }
     }
+
+     IEnumerator PostGameHistory()
+    {
+      
+        GameHistory testData = new GameHistory();
+        testData.username_ID = UN2;
+        testData.times_played = tp;
+
+        //Debug.Log("USER: " + testUser);
+        string jsonData = JsonUtility.ToJson(testData);
+        //Debug.Log("BODY: " + jsonData);
+
+        // Send using the Put method:
+        // https://stackoverflow.com/questions/68156230/unitywebrequest-post-not-sending-body
+        using (UnityWebRequest www = UnityWebRequest.Put(url + postGameHistory, jsonData))
+        {
+            //UnityWebRequest www = UnityWebRequest.Post(url + getUsersEP, form);
+            // Set the method later, and indicate the encoding is JSON
+            www.method = "POST";
+            www.SetRequestHeader("Content-Type", "application/json");
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success) {
+                Debug.Log("Response: " + www.downloadHandler.text);
+                if (errorText != null) errorText.text = "";
+            } else {
+                Debug.Log("Error: " + www.error);
+                if (errorText != null) errorText.text = "Error: " + www.error;
+            }
+        }
+    }
+
 
     IEnumerator UpdateSavedData()
     {

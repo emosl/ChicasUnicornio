@@ -15,10 +15,17 @@ public class MenuUser : MonoBehaviour
 {
     // Declaring public variables for Unity objects
     public Button PlayButton;
+    public Button NewUserButton;
     public string sceneName;
     public static string UiD; // The global variable to store the username ID
     private string input;
     public AudioSource Audio;
+    public int total_score;
+    public int speed;
+    public int shield;
+    public int strength;
+    public int agility;
+    public int times_played;
 
     [SerializeField] APITest api; // SerializeField attribute allows private fields to be shown in the Inspector
     [SerializeField] public TMP_InputField usernameIDInputField; // Input field displayed in the UI
@@ -30,6 +37,7 @@ public class MenuUser : MonoBehaviour
     {
         // Assigning methods to button click events
         PlayButton.onClick.AddListener(delegate { OnButtonPress(true); });
+        NewUserButton.onClick.AddListener(delegate { OnButtonPress2(true); });
        
     }
 
@@ -46,6 +54,17 @@ public class MenuUser : MonoBehaviour
         OnPlayButtonClicked(); // Calling method to assign username ID from the input field to global variable
         Audio.Play(); // Playing the audio source
         GetUser(); // Calling method to query user data from API
+        StartCoroutine(WaitAndDoSomething()); // Calling coroutine to wait for 5.3 seconds and then load next scene
+    
+    }
+    private void OnButtonPress2(bool decision)
+    {
+        ButtonPressed?.Invoke(decision); // Invoking the ButtonPressed event
+        OnPlayButtonClicked(); // Calling method to assign username ID from the input field to global variable
+        Audio.Play(); // Playing the audio source
+        GetUser(); // Calling method to query user data from API
+        PostFinalScore(); // Calling method to post final score to API
+        PostGameHistory(); // Calling method to post game history to API
         StartCoroutine(WaitAndDoSomething()); // Calling coroutine to wait for 5.3 seconds and then load next scene
     
     }
@@ -67,6 +86,14 @@ public class MenuUser : MonoBehaviour
     public void GetUser()
     {
         api.QueryUser(UiD);
+    }
+    public void PostFinalScore()
+    {
+        api.PostFinalScore(total_score, UiD,agility,strength,speed,shield);
+    }
+    public void PostGameHistory()
+    {
+        api.PostGameHistory(UiD,times_played);
     }
 
     // Method to update user data using API
