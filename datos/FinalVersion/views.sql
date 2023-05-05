@@ -1,4 +1,3 @@
-
 USE chicasunicornio;
 CREATE VIEW  high_scores_users AS SELECT x.name, y.total_score FROM chicasunicornio.users as x INNER JOIN chicasunicornio.final_score as y
 ON x.username_ID = y.username_ID ORDER BY y.total_score DESC LIMIT 5;
@@ -25,5 +24,3 @@ SELECT * FROM high_scores_users;
 SELECT * FROM mostplayed_users;
 SELECT * FROM gadget_name_count_view;
 SELECT * FROM killersprite_name_count_view;
-
--- 
