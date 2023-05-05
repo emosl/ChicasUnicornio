@@ -24,3 +24,5 @@ SELECT * FROM high_scores_users;
 SELECT * FROM mostplayed_users;
 SELECT * FROM gadget_name_count_view;
 SELECT * FROM killersprite_name_count_view;
+
+-- 
